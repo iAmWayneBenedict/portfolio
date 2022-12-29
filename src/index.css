@@ -15,3 +15,8 @@
 	font-family: "Neue Montreal";
 	src: url("./assets/fonts/NeueMontreal-Regular.otf");
 }
+
+@font-face {
+	font-family: "Neue Montreal Bold";
+	src: url("./assets/fonts/NeueMontreal-Bold.otf");
+}
