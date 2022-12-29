@@ -1,18 +1,23 @@
 import React from "react";
 
-const Card = () => {
+interface Props {
+	classes: string;
+	src: string;
+	title: string;
+	description: string;
+}
+
+const Card: React.FC<Props> = ({ classes, src, title, description }) => {
 	return (
-		<div className="bg-red-500 w-[48%] p-10">
+		<div className={`${classes} w-[45%] p-14 h-[35rem] flex flex-col justify-between`}>
 			<div>
-				<div className="logo">
-					<img src="/src/assets/svg/web.svg" alt="web" />
+				<div className="logo w-[70px]">
+					<img src={src} alt={src} />
 				</div>
-				<h1>Web Development</h1>
+				<h1 className="text-bold text-3xl mt-10">{title}</h1>
 			</div>
-			<div>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!
-				</p>
+			<div className="pb-20">
+				<p>{description}</p>
 			</div>
 		</div>
 	);
