@@ -5,6 +5,7 @@ module.exports = {
 		fontFamily: {
 			sans: "Neue Montreal",
 			quicksand: "Quicksand",
+			neueMontrealBold: "Neue Montreal Bold",
 		},
 		extend: {},
 	},

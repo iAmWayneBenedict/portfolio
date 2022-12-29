@@ -1,6 +1,6 @@
 import React from "react";
-import BrandName from "./BrandName.component";
-import ButtonOutline from "./ButtonOutline.component";
+import BrandName from "../../../components/ui/BrandName.component";
+import ButtonOutline from "../../../components/forms/ButtonOutline.component";
 import Hamburger from "./Hamburger.component";
 
 const Nav = () => {
