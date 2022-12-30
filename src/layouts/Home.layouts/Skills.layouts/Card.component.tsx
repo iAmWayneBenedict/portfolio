@@ -38,7 +38,7 @@ const Card: React.FC<Props> = ({ classes, src, title, description }) => {
 			<div>
 				<div className="logo w-[70px]">
 					<img
-						className="transition-all group-hover:animate-[spin_10s_ease_infinite]"
+						className="transition-all group-hover:animate-[spin_10s_ease_infinite_forwards]"
 						src={src}
 						alt={src}
 					/>
