@@ -6,6 +6,7 @@ module.exports = {
 			sans: "Neue Montreal",
 			quicksand: "Quicksand",
 			neueMontrealBold: "Neue Montreal Bold",
+			neueMontrealMedium: "Neue Montreal Medium",
 		},
 		extend: {},
 	},
