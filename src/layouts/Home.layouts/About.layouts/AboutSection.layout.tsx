@@ -6,7 +6,7 @@ const AboutSection = () => {
 		<div className="flex flex-col mt-96">
 			<Line position="mr-auto" color="bg-gray-300" colorHighlight="after:bg-black" />
 			<div className="container mx-auto px-10 my-24">
-				<p className="leading-[2] text-2xl tracking-wide">
+				<p className="text-base sm:text-xl md:text-2xl tracking-wide">
 					Lorem ipsum dolor sit amet consectetur. Risus elementum nibh non semper
 					penatibus porttitor tempus. Ullamcorper at arcu massa amet. Ac nec tempor
 					euismod amet id vel etiam. Suspendisse viverra nisl ac et fusce eu lacinia
