@@ -11,10 +11,13 @@
 		"test": "echo 1"
 	},
 	"dependencies": {
+		"gsap": "^3.11.4",
+		"locomotive-scroll": "^4.1.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
+		"@types/locomotive-scroll": "^4.1.0",
 		"@types/react": "^18.0.26",
 		"@types/react-dom": "^18.0.9",
 		"@vitejs/plugin-react-swc": "^3.0.0",
