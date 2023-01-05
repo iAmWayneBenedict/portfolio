@@ -46,7 +46,7 @@ const Journey = () => {
 							["03", "60"],
 							["04", "85"],
 						].map(([val1, val2]) => (
-							<Dot number={`${val1}`} y_position={`${val2}`} />
+							<Dot number={`${val1}`} key={val1} y_position={`${val2}`} />
 						))}
 					</div>
 					<div className="basis-[49%] flex flex-col">

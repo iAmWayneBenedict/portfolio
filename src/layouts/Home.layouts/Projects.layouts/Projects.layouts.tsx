@@ -7,7 +7,7 @@ const Projects = () => {
 		<div className="mt-96 tracking-wide pb-64">
 			<div className="relative mx-5 md:mx-20">
 				<Title name="projects" />
-				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-[-1]">
+				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-[10]">
 					<a href="#" className="text-white text-lg">
 						Explore all projects
 					</a>

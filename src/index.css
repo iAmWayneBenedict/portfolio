@@ -25,3 +25,7 @@
 	font-family: "Neue Montreal Medium";
 	src: url("./assets/fonts/NeueMontreal-Medium.otf");
 }
+
+html {
+	scroll-behavior: smooth;
+}

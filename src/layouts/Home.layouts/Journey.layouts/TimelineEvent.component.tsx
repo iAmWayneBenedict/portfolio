@@ -25,7 +25,6 @@ const TimelineEvent: React.FC<Props> = ({ position, isEmpty, data }) => {
 		childSpan = "order-2";
 	}
 
-	console.log(data);
 	return (
 		<>
 			{!isEmpty && (
