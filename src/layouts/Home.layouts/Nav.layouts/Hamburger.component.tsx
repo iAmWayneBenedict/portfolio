@@ -63,11 +63,11 @@ const Hamburger = () => {
 	};
 
 	return (
-		<div
+		<button
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
-			className="h-[20px] w-[40px] cursor-pointer transition-all opacity-100 relative"
+			className="h-[20px] w-[40px] cursor-none transition-all opacity-100 relative"
 		>
 			<span
 				ref={topLine}
@@ -78,7 +78,7 @@ const Hamburger = () => {
 				onTransitionEnd={(e) => handleTransitionEnd(e)}
 				className="h-[1px] w-full bg-black absolute bottom-[3px] left-0 transition-all duration-500"
 			></span>
-		</div>
+		</button>
 	);
 };
 

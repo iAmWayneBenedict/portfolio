@@ -11,10 +11,13 @@
 		"test": "echo 1"
 	},
 	"dependencies": {
+		"@grcmichael/gscroll": "^1.0.15",
 		"gsap": "^3.11.4",
 		"locomotive-scroll": "^4.1.4",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-smooth-scrolling": "^1.0.2",
+		"smooth-scrollbar": "^8.8.1"
 	},
 	"devDependencies": {
 		"@types/locomotive-scroll": "^4.1.0",
@@ -25,6 +28,7 @@
 		"postcss": "^8.4.20",
 		"postcss-cli": "^10.1.0",
 		"postcss-import": "^15.1.0",
+		"sass": "^1.57.1",
 		"tailwindcss": "^3.2.4",
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
