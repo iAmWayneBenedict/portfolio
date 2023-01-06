@@ -11,7 +11,7 @@ const useSmoothScroll = (start: boolean) => {
 		const scroller = document.querySelector(".cursor") as HTMLElement;
 		// 3rd party library setup:
 		const bodyScrollBar = Scrollbar.init(scroller, {
-			damping: 0.1,
+			damping: 0.05,
 			delegateTo: document,
 			continuousScrolling: false,
 		});
