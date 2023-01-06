@@ -5,7 +5,7 @@ const Hamburger = () => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
-	let active = false;
+	const [active, setActive] = useState<boolean>(false);
 
 	let handleClick = (event: React.MouseEvent) => {
 		let top = event.currentTarget.children[0] as HTMLSpanElement;
@@ -18,14 +18,14 @@ const Hamburger = () => {
 			top.style.top = "3px";
 			bottom.style.bottom = "3px";
 
-			active = false;
+			setActive(false);
 		} else {
 			top.style.top = "50%";
 			top.style.transform = "translateY(-50%)";
 
 			bottom.style.bottom = "50%";
 			bottom.style.transform = "translateY(-50%)";
-			active = true;
+			setActive(true);
 		}
 	};
 
@@ -50,12 +50,6 @@ const Hamburger = () => {
 		bottom.style.transform = "rotate(0deg)";
 	};
 
-	const handleTransitionEnd = (event: React.TransitionEvent<HTMLSpanElement>) => {
-		if (!event.currentTarget) return;
-
-		// (event.currentTarget as HTMLSpanElement).style.opacity = "0";
-	};
-
 	return (
 		<button
 			onClick={(e) => handleClick(e)}
@@ -69,7 +63,6 @@ const Hamburger = () => {
 			></span>
 			<span
 				ref={bottomLine}
-				onTransitionEnd={(e) => handleTransitionEnd(e)}
 				className="h-[1px] w-full bg-black absolute bottom-[3px] left-0 transition-all duration-500"
 			></span>
 		</button>
