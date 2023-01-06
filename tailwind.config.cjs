@@ -8,7 +8,17 @@ module.exports = {
 			neueMontrealBold: "Neue Montreal Bold",
 			neueMontrealMedium: "Neue Montreal Medium",
 		},
-		extend: {},
+		extend: {
+			animation: {
+				splashScreen: "splashScreen 5s ease forwards",
+			},
+			keyframes: {
+				splashScreen: {
+					from: { width: "0%" },
+					to: { width: "100%" },
+				},
+			},
+		},
 	},
 	plugins: [],
 };

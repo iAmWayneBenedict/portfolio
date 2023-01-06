@@ -40,14 +40,10 @@ const Journey = () => {
 						/>
 					</div>
 					<div className="w-[5px] h-full bg-black rounded-lg relative flex flex-col justify-evenly">
-						{[
-							["01", "10"],
-							["02", "35"],
-							["03", "60"],
-							["04", "85"],
-						].map(([val1, val2]) => (
-							<Dot number={`${val1}`} key={val1} y_position={`${val2}`} />
-						))}
+						<Dot number="01" y_position="top-[10%]" isActive={true} />
+						<Dot number="02" y_position="top-[35%]" />
+						<Dot number="03" y_position="top-[60%]" />
+						<Dot number="04" y_position="top-[85%]" />
 					</div>
 					<div className="basis-[49%] flex flex-col">
 						<TimelineEvent
