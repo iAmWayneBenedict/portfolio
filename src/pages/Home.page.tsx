@@ -9,7 +9,7 @@ import Skills from "../layouts/Home.layouts/Skills.layouts/Skills.layout";
 
 const Home = () => {
 	return (
-		<div className="mb-24 bg-white">
+		<div className="mb-2 bg-con" style={{ backgroundColor: "white" }}>
 			<Hero />
 			<AboutSection />
 			<Skills />

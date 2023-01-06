@@ -5,56 +5,50 @@ const Hamburger = () => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
-	const [active, setActive] = useState<boolean>(false);
+	let active = false;
 
-	let handleClick: (event: React.MouseEvent) => void;
-	let handleMouseOver: (event: React.MouseEvent) => void;
-	let handleMouseLeave: (event: React.MouseEvent) => void;
+	let handleClick = (event: React.MouseEvent) => {
+		let top = event.currentTarget.children[0] as HTMLSpanElement;
+		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
 
-	useEffect(() => {
-		handleClick = (event) => {
-			let top = event.currentTarget.children[0] as HTMLSpanElement;
-			let bottom = event.currentTarget.children[1] as HTMLSpanElement;
+		top.style.transform = "rotate(0deg)";
+		bottom.style.transform = "rotate(0deg)";
 
-			top.style.transform = "rotate(0deg)";
-			bottom.style.transform = "rotate(0deg)";
+		if (active) {
+			top.style.top = "3px";
+			bottom.style.bottom = "3px";
 
-			if (active) {
-				top.style.top = "3px";
-				bottom.style.bottom = "3px";
+			active = false;
+		} else {
+			top.style.top = "50%";
+			top.style.transform = "translateY(-50%)";
 
-				setActive(false);
-			} else {
-				top.style.top = "50%";
-				top.style.transform = "translateY(-50%)";
+			bottom.style.bottom = "50%";
+			bottom.style.transform = "translateY(-50%)";
+			active = true;
+		}
+	};
 
-				bottom.style.bottom = "50%";
-				bottom.style.transform = "translateY(-50%)";
-				setActive(true);
-			}
-		};
+	let handleMouseOver = (event: React.MouseEvent) => {
+		if (!active) return;
 
-		handleMouseOver = (event) => {
-			if (!active) return;
+		let top = event.currentTarget.children[0] as HTMLSpanElement;
+		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
 
-			let top = event.currentTarget.children[0] as HTMLSpanElement;
-			let bottom = event.currentTarget.children[1] as HTMLSpanElement;
+		top.style.transformOrigin = "center center";
+		top.style.transform = "rotate(35deg)";
+		bottom.style.transform = "rotate(-35deg)";
+		bottom.style.transformOrigin = "center center";
+	};
 
-			top.style.transformOrigin = "center center";
-			top.style.transform = "rotate(35deg)";
-			bottom.style.transform = "rotate(-35deg)";
-			bottom.style.transformOrigin = "center center";
-		};
+	let handleMouseLeave = (event: React.MouseEvent) => {
+		if (!active) return;
 
-		handleMouseLeave = (event) => {
-			if (!active) return;
-
-			let top = event.currentTarget.children[0] as HTMLSpanElement;
-			let bottom = event.currentTarget.children[1] as HTMLSpanElement;
-			top.style.transform = "rotate(0deg)";
-			bottom.style.transform = "rotate(0deg)";
-		};
-	}, [active]);
+		let top = event.currentTarget.children[0] as HTMLSpanElement;
+		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
+		top.style.transform = "rotate(0deg)";
+		bottom.style.transform = "rotate(0deg)";
+	};
 
 	const handleTransitionEnd = (event: React.TransitionEvent<HTMLSpanElement>) => {
 		if (!event.currentTarget) return;

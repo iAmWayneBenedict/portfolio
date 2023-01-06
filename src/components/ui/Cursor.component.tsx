@@ -25,10 +25,6 @@ const Cursor = () => {
 		key: -1,
 	});
 
-	window.addEventListener("scroll", (event) => {
-		console.log(event);
-	});
-
 	useEffect(() => {
 		document.addEventListener("mousemove", (event: MouseEvent) => {
 			const { clientX, clientY } = event;
