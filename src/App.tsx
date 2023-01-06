@@ -5,7 +5,7 @@ import Cursor from "./components/ui/Cursor.component";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import SplashScreen from "./layouts/SplashScreen.layout";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -21,20 +21,12 @@ function App() {
 
 	useSmoothScroll(true);
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsLoaded(true);
-		}, 5000);
-
-		return () => clearTimeout(timer);
-	}, []);
-
 	return (
 		<AnimatePresence>
 			<div className="App cursor-none bg-white h-screen">
 				{!isLoaded && (
 					<motion.div key="loader" className="h-full relative">
-						<SplashScreen isLoading={true} />
+						<SplashScreen setIsLoaded={setIsLoaded} />
 					</motion.div>
 				)}
 
