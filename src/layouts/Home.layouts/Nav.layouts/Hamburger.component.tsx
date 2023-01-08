@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 
@@ -50,20 +51,35 @@ const Hamburger = () => {
 		bottom.style.transform = "rotate(0deg)";
 	};
 
+	gsap.timeline()
+		.to(".top-hamburger-line", {
+			duration: 1,
+			delay: 1,
+			width: "100%",
+		})
+		.to(
+			".bottom-hamburger-line",
+			{
+				duration: 1,
+				width: "100%",
+			},
+			"-=.7"
+		);
+
 	return (
 		<button
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
-			className="h-[20px] w-[40px] cursor-none transition-all opacity-100 relative"
+			className="h-[20px] w-[40px] cursor-none transition-all opacity-100 relative justify-end"
 		>
 			<span
 				ref={topLine}
-				className="h-[1px] w-full bg-black absolute top-[3px] left-0 transition-all duration-500"
+				className="top-hamburger-line h-[1px] w-0 bg-black absolute top-[3px] left-0 transition-all duration-500"
 			></span>
 			<span
 				ref={bottomLine}
-				className="h-[1px] w-full bg-black absolute bottom-[3px] left-0 transition-all duration-500"
+				className="bottom-hamburger-line h-[1px] w-0 bg-black absolute bottom-[3px] left-0 transition-all duration-500"
 			></span>
 		</button>
 	);
