@@ -33,6 +33,14 @@ const useSmoothScroll = (start: boolean) => {
 		bodyScrollBar.addListener(ScrollTrigger.update);
 
 		ScrollTrigger.defaults({ scroller: scroller });
+
+		if (document.querySelector(".gsap-marker-scroller-start")) {
+			const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+			bodyScrollBar.addListener(({ offset }) => {
+				gsap.set(markers, { marginTop: -offset.y });
+			});
+		}
 	}, [start]);
 };
 

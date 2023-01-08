@@ -26,6 +26,17 @@
 	src: url("./assets/fonts/NeueMontreal-Medium.otf");
 }
 
+/* 
+
+Custom CSS events
+
+*/
+
 html {
 	scroll-behavior: smooth;
+}
+
+.char {
+	transform: translateY(115px);
+	transition: transform 0.5s;
 }

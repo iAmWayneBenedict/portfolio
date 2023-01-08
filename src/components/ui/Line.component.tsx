@@ -5,6 +5,7 @@ interface Props {
 	color: string;
 	colorHighlight: string;
 	size?: string;
+	id?: string;
 }
 
 /*
@@ -13,11 +14,17 @@ interface Props {
 	includes pseudo elements
 */
 
-const Line: React.FC<Props> = ({ position, color, colorHighlight, size = "w-2/3 sm:w-1/3" }) => {
+const Line: React.FC<Props> = ({
+	position,
+	color,
+	colorHighlight,
+	size = "w-2/3 sm:w-1/3",
+	id,
+}) => {
 	return (
-		<div
-			className={`h-[2px] ${size} ${position} ${color} overflow-hidden relative after:absolute after:content-[""] after:top-0 after:left-0 after:w-full after:h-full ${colorHighlight}`}
-		></div>
+		<div className={`${id} h-[2px] ${size} ${position} ${color} overflow-hidden`}>
+			<div className={`${id}-fill h-full ${colorHighlight}`}></div>
+		</div>
 	);
 };
 
