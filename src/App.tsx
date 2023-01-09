@@ -7,6 +7,7 @@ import { RemoveScrollBar } from "react-remove-scroll-bar";
 import SplashScreen from "./layouts/SplashScreen.layout";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -20,19 +21,29 @@ function App() {
 			: icon?.setAttribute("href", "/logo-lightmode.svg");
 	}, []);
 
-	// useSmoothScroll(true);
+	useSmoothScroll(true);
+
+	// useEffect(() => {
+	// 	if (isLoaded) {
+	// 		ScrollTrigger.update();
+	// 	}
+	// }, [isLoaded]);
+
+	gsap.config({
+		nullTargetWarn: false,
+	});
 
 	return (
 		<AnimatePresence>
-			<div className="App  bg-white h-screen">
+			<div className="App bg-white h-screen relative">
 				{!isLoaded && (
-					// <motion.div key="loader" className="h-full fixed top-0 left-0 bg-white z-[500]">
-						<SplashScreen setIsLoaded={setIsLoaded} />
-					// </motion.div>
+					// <div className="h-full relative">
+					<SplashScreen setIsLoaded={setIsLoaded} />
+					// </div>
 				)}
 
-				{/* <RemoveScrollBar />
-				<Cursor /> */}
+				<RemoveScrollBar />
+				<Cursor />
 				<div className="cursor h-screen">
 					<Nav />
 					<Home />

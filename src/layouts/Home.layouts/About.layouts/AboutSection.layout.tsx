@@ -5,11 +5,22 @@ import React, { useRef } from "react";
 import Line from "../../../components/ui/Line.component";
 import useSmoothScroll from "../../../hooks/useSmoothScroll";
 import { useEffect } from "react";
-
+interface Props {
+	isLoaded: boolean;
+}
 const AboutSection = () => {
 	const d = useRef<HTMLDivElement>(null);
 
 	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.to(d.current!, {
+		color: "red",
+
+		scrollTrigger: {
+			trigger: d.current!,
+			start: "center center",
+		},
+	});
 
 	return (
 		<div className="flex flex-col mt-96" ref={d}>

@@ -52,13 +52,13 @@ const Hamburger = () => {
 	};
 
 	gsap.timeline()
-		.to(".top-hamburger-line", {
+		.to(topLine.current, {
 			duration: 1,
 			delay: 1,
 			width: "100%",
 		})
 		.to(
-			".bottom-hamburger-line",
+			bottomLine.current,
 			{
 				duration: 1,
 				width: "100%",
