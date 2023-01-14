@@ -4,7 +4,7 @@ import Card from "./Card.component";
 
 const Skills = () => {
 	return (
-		<div className="mt-56 md:mt-96 mx-5 md:mx-20 tracking-wide">
+		<div className="md:mt-96 mx-5 md:mx-20 tracking-wide">
 			<p className="text-lg">A set of skills that is compatible with your needs.</p>
 			<Title name="skills" />
 

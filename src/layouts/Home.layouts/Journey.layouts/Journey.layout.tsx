@@ -6,17 +6,11 @@ import TimelineEvent from "./TimelineEvent.component";
 
 const Journey = () => {
 	return (
-		<div className="mt-32 tracking-wide pb-64">
+		<div className="mt-96 tracking-wide ">
 			<div>
 				<div className="relative px-5 md:px-20">
 					<Title name="journey" />
 				</div>
-				<Line
-					position="ml-auto"
-					color="bg-gray-200"
-					colorHighlight="after:bg-black"
-					size="w-[20rem]"
-				/>
 			</div>
 			<div className="mt-72 flex flex-col">
 				<div className="flex justify-center">

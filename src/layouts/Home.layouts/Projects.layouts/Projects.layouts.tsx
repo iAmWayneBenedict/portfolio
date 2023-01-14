@@ -20,7 +20,7 @@ const Projects = () => {
 						<img src="/src/assets/svg/arrow-right.svg" className="w-8" alt="" />
 					</div>
 					<div className="flex justify-center order-1 md:order-2">
-						<h1 className="current text-7xl font-[900]">3</h1>
+						<h1 className="current text-7xl font-[900] font">3</h1>
 						<div className="all text-2xl mt-2">/5</div>
 					</div>
 				</div>

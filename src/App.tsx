@@ -23,19 +23,13 @@ function App() {
 
 	useSmoothScroll(true);
 
-	// useEffect(() => {
-	// 	if (isLoaded) {
-	// 		ScrollTrigger.update();
-	// 	}
-	// }, [isLoaded]);
-
 	gsap.config({
 		nullTargetWarn: false,
 	});
 
 	return (
 		<AnimatePresence>
-			<div className="App bg-white h-screen relative">
+			<div className="App bg-white cursor-none h-screen relative">
 				{!isLoaded && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />
@@ -47,7 +41,6 @@ function App() {
 				<div className="cursor h-screen">
 					<Nav />
 					<Home />
-					<div className="d">asdasdasdasdasd</div>
 				</div>
 			</div>
 		</AnimatePresence>

@@ -3,16 +3,18 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		fontFamily: {
-			sans: "Neue Montreal",
+			sans: "Inter",
 			quicksand: "Quicksand",
 			neueMontrealBold: "Neue Montreal Bold",
 			neueMontrealMedium: "Neue Montreal Medium",
+			cinzel: "Cinzel",
 		},
 		extend: {
 			animation: {
 				splashScreen: "splashScreen 5s ease forwards",
 				transferLogo: "transferLogo 1s ease forwards",
 				outlineBtnSVG: "outlineBtnSVG 2s ease forwards 2s",
+				scrollLine: "scrollLine 3s ease-in-out infinite 17s",
 			},
 			keyframes: {
 				splashScreen: {
@@ -29,6 +31,23 @@ module.exports = {
 					},
 					"100%": {
 						strokeDashoffset: 0,
+					},
+				},
+				scrollLine: {
+					"0%": {
+						top: "-100%",
+						opacity: 1,
+					},
+					"50%": {
+						top: "100%",
+						opacity: 1,
+					},
+					"51%": {
+						opacity: 0,
+					},
+					"100%": {
+						top: "-100%",
+						opacity: 0,
 					},
 				},
 			},
