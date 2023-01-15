@@ -12,9 +12,9 @@ const Home = () => {
 		<div className="mb-2 bg-con overflow-x-hidden" style={{ backgroundColor: "white" }}>
 			<Hero />
 			<AboutSection />
+			<Journey />
 			<Skills />
 			<Projects />
-			<Journey />
 			{/* <Designs />
 			<Certificates /> */}
 		</div>

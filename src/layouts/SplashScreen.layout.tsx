@@ -74,7 +74,7 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 	}, []);
 
 	return (
-		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white">
+		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white z-[1000]">
 			<div className="flex flex-col items-center gap-6 relative">
 				<motion.h1
 					className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-6xl font-quicksand font-extrabold pointer-events-none z-[100]"

@@ -31,7 +31,7 @@ const Card: React.FC<Props> = ({ classes, src, title, description }) => {
 
 	return (
 		<div
-			className={`${classes} w-full md:w-[45%] p-10 md:p-14 h-[30rem] md:h-[40rem] flex flex-col justify-between group`}
+			className={`${classes} w-full md:w-[45%] p-10 md:p-14 h-[30rem] md:h-[45rem] flex flex-col justify-between group`}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseOut={handleMouseOut}
 		>
@@ -46,7 +46,7 @@ const Card: React.FC<Props> = ({ classes, src, title, description }) => {
 				<h1 className="text-bold text-3xl mt-10">{title}</h1>
 			</div>
 			<div className="pb-10 md:pb-16">
-				<p className="text-lg">{description}</p>
+				<p className="text-base">{description}</p>
 			</div>
 		</div>
 	);

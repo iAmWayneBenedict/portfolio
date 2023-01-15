@@ -41,7 +41,8 @@ const Cursor = () => {
 		});
 		return () => {};
 	}, []);
-	React.useEffect(() => {
+
+	useEffect(() => {
 		const followMouse = () => {
 			if (!secondaryCursor.current) return;
 			positionRef.current.key = requestAnimationFrame(followMouse);
@@ -72,7 +73,6 @@ const Cursor = () => {
 
 	useEffect(() => {
 		let links = document.querySelectorAll("a, button");
-		console.log(links);
 		links.forEach((el) => {
 			el.addEventListener("mouseover", () => {
 				if (
@@ -82,8 +82,8 @@ const Cursor = () => {
 				)
 					return;
 				let child = mainCursor.current.firstElementChild as HTMLDivElement;
-				child.style.width = "15px";
-				child.style.height = "15px";
+				child.style.width = "10px";
+				child.style.height = "10px";
 				secondaryCursor.current.style.opacity = "0";
 			});
 			el.addEventListener("mouseout", () => {

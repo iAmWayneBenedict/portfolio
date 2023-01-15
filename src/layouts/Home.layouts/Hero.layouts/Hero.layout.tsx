@@ -52,7 +52,10 @@ const Hero = () => {
 		);
 	return (
 		<div>
-			<div className="flex flex-col gap-5 items-center text-[25px] sm:text-[42px] md:text-5xl lg:text-6xl xl:text-[90px] justify-end h-[50vh] sm:h-[50vh] xl:h-[65vh] leading-tight pointer-events-none">
+			<div
+				className="flex flex-col gap-5 items-center justify-end h-[30vh] sm:h-[50vh] xl:h-[65vh] pointer-events-none font-light"
+				style={{ lineHeight: ".9", fontSize: "clamp(.6rem, 6vw , 10rem)" }}
+			>
 				<span id="hero-1" className="overflow-x-hidden overflow-y-hidden">
 					HI, I’M WAYNE
 				</span>
