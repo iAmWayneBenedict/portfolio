@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const BrandName = () => {
 	return (
-		<div className="flex-1 flex justify-center mr-20">
+		<div className="flex-1 flex justify-center mr-20 order-1 sm:order-2">
 			<motion.a
 				transition={{
 					ease: [0.6, 0.01, -0.05, 0.95],
@@ -14,7 +14,10 @@ const BrandName = () => {
 				href="#"
 				className="font-quicksand font-bold cursor-none"
 			>
-				WAYNE
+				<span className="relative">
+					WAYNE
+					<span className="absolute bottom-[3px] -right-[6px] bg-blue-600 w-[4px] h-[4px] rounded-full"></span>
+				</span>
 			</motion.a>
 		</div>
 	);
