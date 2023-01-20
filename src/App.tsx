@@ -7,7 +7,7 @@ import { RemoveScrollBar } from "react-remove-scroll-bar";
 import SplashScreen from "./layouts/SplashScreen.layout";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { BrowserView } from "react-device-detect";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -37,7 +37,9 @@ function App() {
 				)}
 
 				<RemoveScrollBar />
-				<Cursor />
+				<BrowserView>
+					<Cursor />
+				</BrowserView>
 				<div className="cursor h-screen">
 					<Nav />
 					<Home />
