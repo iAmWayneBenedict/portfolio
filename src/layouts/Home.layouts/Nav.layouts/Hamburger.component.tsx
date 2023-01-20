@@ -71,7 +71,7 @@ const Hamburger = () => {
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
-			className="h-[20px] w-[40px] cursor-none transition-all opacity-100 relative justify-end"
+			className="h-[20px] w-[40px] cursor-none transition-all opacity-100 relative justify-end order-3 ml-5"
 		>
 			<span
 				ref={topLine}
