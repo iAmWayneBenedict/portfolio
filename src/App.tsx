@@ -8,6 +8,7 @@ import SplashScreen from "./layouts/SplashScreen.layout";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import gsap from "gsap";
 import { BrowserView } from "react-device-detect";
+import useLenis from "./hooks/useLenis";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -22,6 +23,7 @@ function App() {
 	}, []);
 
 	useSmoothScroll(true);
+	// useLenis();
 
 	gsap.config({
 		nullTargetWarn: false,

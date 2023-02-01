@@ -16,7 +16,7 @@ const BrandName = () => {
 			>
 				<span className="relative">
 					WAYNE
-					<span className="absolute bottom-[3px] -right-[6px] bg-blue-600 w-[4px] h-[4px] rounded-full"></span>
+					{/* <span className="absolute bottom-[3px] -right-[6px] bg-blue-600 w-[4px] h-[4px] rounded-full"></span> */}
 				</span>
 			</motion.a>
 		</div>
