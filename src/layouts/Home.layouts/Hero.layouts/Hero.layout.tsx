@@ -16,7 +16,7 @@ const Hero = () => {
 		scrollTrigger: {
 			trigger: ".hero-con",
 			start: "top top",
-			end: "bottom top",
+			end: "+=100%",
 			scrub: true,
 		},
 	});
@@ -77,28 +77,28 @@ const Hero = () => {
 			>
 				<span
 					id="hero-1"
-					data-speed="0.30"
+					data-speed="0.10"
 					className="hero overflow-x-hidden overflow-y-hidden"
 				>
 					HI, I’M WAYNE
 				</span>
 				<span
 					id="hero-2"
-					data-speed="0.6"
+					data-speed="0.90"
 					className="hero overflow-x-hidden overflow-y-hidden"
 				>
 					A FULLSTACK DEVELOPER
 				</span>
 				<span
 					id="hero-3"
-					data-speed="1.00"
+					data-speed="1.80"
 					className="hero overflow-x-hidden overflow-y-hidden"
 				>
 					THAT CAN MAKE YOUR IDEAS
 				</span>
 				<span
 					id="hero-4"
-					data-speed="1.50"
+					data-speed="2.80"
 					className="hero overflow-x-hidden overflow-y-hidden"
 				>
 					INTO REALITY

@@ -47,7 +47,7 @@ const Journey = () => {
 	}, []);
 
 	return (
-		<div className="mt-96 tracking-wide ">
+		<div className="mt-56 tracking-wide ">
 			<div>
 				<div className="relative px-5 md:px-20">
 					<Title name="journey" />
@@ -74,7 +74,7 @@ const Journey = () => {
 							data={{ year: "PRESENT", desc: "Lorem ipsum dolor sit amet." }}
 						/>
 					</div>
-					<div className="w-[5px] h-full bg-black rounded-lg flex flex-col justify-evenly"></div>
+					<div className="line-journey w-[5px] h-full bg-black rounded-lg flex flex-col justify-evenly"></div>
 					{[
 						["01", "top-[10%]"],
 						["02", "top-[35%]"],
