@@ -9,9 +9,16 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import gsap from "gsap";
 import { BrowserView } from "react-device-detect";
 import useLenis from "./hooks/useLenis";
+import Menu from "./components/ui/Menu.component";
+import { useCallback } from "react";
+
+interface Timelines {
+	b: boolean;
+}
 
 function App() {
-	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const menu = useRef<HTMLDivElement>(null);
 
 	const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
@@ -29,6 +36,12 @@ function App() {
 		nullTargetWarn: false,
 	});
 
+	useEffect(() => {
+		console.log("render");
+	});
+
+	const handleNavbar = useCallback((isActive: boolean = false) => {}, []);
+
 	return (
 		<AnimatePresence>
 			<div className="App bg-white cursor-none h-screen relative">
@@ -43,7 +56,8 @@ function App() {
 					<Cursor />
 				</BrowserView>
 				<div className="cursor h-screen">
-					<Nav />
+					{/* <Menu useReference={menu} /> */}
+					<Nav handleNavbar={handleNavbar} />
 					<Home />
 				</div>
 			</div>

@@ -1,31 +1,37 @@
 import gsap from "gsap";
 import React from "react";
 import { useRef, useEffect } from "react";
+interface Props {
+	reverse?: boolean;
+}
 
-const ButtonOutline = () => {
+const ButtonOutline: React.FC<Props> = ({ reverse }) => {
 	const textPath = useRef<SVGPathElement>(null);
 	const outlinePath = useRef<SVGRectElement>(null);
 
 	const bg = useRef<HTMLSpanElement>(null);
 
-	gsap.timeline()
-		.to(
-			textPath.current!,
-			{
-				y: 0,
-				opacity: 1,
-			},
-			"+=1"
-		)
-		.to(
-			outlinePath.current!,
-			{
-				duration: 3,
-				strokeDashoffset: 0,
-				ease: "Expo.easeOut",
-			},
-			"+=1"
-		);
+	const tl = gsap.timeline();
+	tl.to(
+		textPath.current!,
+		{
+			y: 0,
+			opacity: 1,
+		},
+		"+=1"
+	).to(
+		outlinePath.current!,
+		{
+			duration: 3,
+			strokeDashoffset: 0,
+			ease: "Expo.easeOut",
+		},
+		"+=1"
+	);
+
+	useEffect(() => {
+		tl.reverse();
+	}, [reverse]);
 
 	const handleMouseOver = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		gsap.to(bg.current!, {
