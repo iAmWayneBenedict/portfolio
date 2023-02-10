@@ -2,21 +2,22 @@ import gsap from "gsap";
 import React from "react";
 import { useEffect, useRef } from "react";
 
-const ScrollDown = () => {
+const ScrollDown: React.FC = () => {
 	const lineCenter = useRef<HTMLSpanElement>(null);
 	const dotCenter = useRef<HTMLSpanElement>(null);
 	const scrollDownTitle = useRef<HTMLSpanElement>(null);
 
-	gsap.timeline()
-		.to(
-			lineCenter.current!,
-			{
-				duration: 0.8,
-				top: 0,
-				ease: "Power3.easeOut",
-			},
-			"+=3"
-		)
+	const tl = gsap.timeline();
+
+	tl.to(
+		lineCenter.current!,
+		{
+			duration: 0.8,
+			top: 0,
+			ease: "Power3.easeOut",
+		},
+		"+=3"
+	)
 		.to(".dot-center", {
 			duration: 1.5,
 			opacity: 1,

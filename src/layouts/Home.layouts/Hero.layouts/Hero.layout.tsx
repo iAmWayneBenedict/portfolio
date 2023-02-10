@@ -3,8 +3,9 @@ import React from "react";
 import ScrollDown from "./ScrollDown.component";
 import SplitType from "split-type";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
-const Hero = () => {
+const Hero: React.FC = () => {
 	const text = new SplitType("#hero-1");
 	const text1 = new SplitType("#hero-2");
 	const text2 = new SplitType("#hero-3");
@@ -28,17 +29,17 @@ const Hero = () => {
 		tl.to(l, { y: movement, ease: "none" }, 0);
 	});
 
-	gsap.timeline()
-		.to(
-			text.chars,
-			{
-				y: 0,
-				stagger: 0.05,
-				delay: 0.2,
-				duration: 0.1,
-			},
-			"+=.5"
-		)
+	const t = gsap.timeline();
+	t.to(
+		text.chars,
+		{
+			y: 0,
+			stagger: 0.05,
+			delay: 0.2,
+			duration: 0.1,
+		},
+		"+=.5"
+	)
 		.to(
 			text1.chars,
 			{
@@ -69,6 +70,7 @@ const Hero = () => {
 			},
 			"-=.8"
 		);
+
 	return (
 		<div>
 			<div
