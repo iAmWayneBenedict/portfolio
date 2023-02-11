@@ -11,8 +11,10 @@ const Hamburger: React.FC<Props> = ({ handleNavbar }) => {
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
 	const [active, setActive] = useState<boolean>(false);
+	const [onMount, setOnMount] = useState<boolean>(true);
 
 	useEffect(() => {
+		if (onMount) return;
 		handleNavbar(active);
 	}, [active]);
 
@@ -36,6 +38,8 @@ const Hamburger: React.FC<Props> = ({ handleNavbar }) => {
 			bottom.style.transform = "translateY(-50%)";
 			setActive(true);
 		}
+
+		setOnMount(false);
 	};
 
 	let handleMouseOver = (event: React.MouseEvent) => {

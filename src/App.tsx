@@ -11,10 +11,7 @@ import { BrowserView } from "react-device-detect";
 import useLenis from "./hooks/useLenis";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
-
-interface Timelines {
-	b: boolean;
-}
+import Preferences from "./utils/Preferences.utils";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -40,8 +37,29 @@ function App() {
 		console.log("render");
 	});
 
-	const handleNavbar = useCallback((isActive: boolean = false) => {}, []);
+	let tl = gsap.timeline();
+	const navAnim = (el: HTMLDivElement, isActive: boolean) => {
+		tl.to(el, {
+			opacity: 1,
+			duration: 0.5,
+		});
 
+		if (!isActive) {
+			tl.reverse();
+			tl = gsap.timeline();
+		}
+	};
+
+	const handleNavbar = useCallback((isActive: boolean = false) => {
+		if (!isActive) {
+			menu.current!.classList.add("hidden");
+			navAnim(menu.current!, isActive);
+			return;
+		}
+
+		menu.current!.classList.remove("hidden");
+		navAnim(menu.current!, isActive);
+	}, []);
 	return (
 		<AnimatePresence>
 			<div className="App bg-white cursor-none h-screen relative">
@@ -56,7 +74,7 @@ function App() {
 					<Cursor />
 				</BrowserView>
 				<div className="cursor h-screen">
-					{/* <Menu useReference={menu} /> */}
+					<Menu useReference={menu} />
 					<Nav handleNavbar={handleNavbar} />
 					<Home />
 				</div>
