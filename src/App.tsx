@@ -11,7 +11,7 @@ import { BrowserView } from "react-device-detect";
 import useLenis from "./hooks/useLenis";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
-import Preferences from "./utils/Preferences.utils";
+import handleMenu from "./utils/handleMenu";
 
 function App() {
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -27,38 +27,13 @@ function App() {
 	}, []);
 
 	useSmoothScroll(true);
-	// useLenis();
 
 	gsap.config({
 		nullTargetWarn: false,
 	});
 
-	useEffect(() => {
-		console.log("render");
-	});
-
-	let tl = gsap.timeline();
-	const navAnim = (el: HTMLDivElement, isActive: boolean) => {
-		tl.to(el, {
-			opacity: 1,
-			duration: 0.5,
-		});
-
-		if (!isActive) {
-			tl.reverse();
-			tl = gsap.timeline();
-		}
-	};
-
 	const handleNavbar = useCallback((isActive: boolean = false) => {
-		if (!isActive) {
-			menu.current!.classList.add("hidden");
-			navAnim(menu.current!, isActive);
-			return;
-		}
-
-		menu.current!.classList.remove("hidden");
-		navAnim(menu.current!, isActive);
+		handleMenu({ isActive, menu });
 	}, []);
 	return (
 		<AnimatePresence>

@@ -1,13 +1,14 @@
 import React from "react";
 
-import Scrollbar from "smooth-scrollbar";
-import { useEffect } from "react";
+import Scrollbar, { ScrollbarPlugin } from "smooth-scrollbar";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const useSmoothScroll = (start: boolean) => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
+
 		const scroller = document.querySelector(".cursor") as HTMLElement;
 		// 3rd party library setup:
 		const bodyScrollBar = Scrollbar.init(scroller, {
