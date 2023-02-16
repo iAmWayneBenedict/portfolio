@@ -25,7 +25,10 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 				{/* <div className="absolute bottom-0 right-0 span-black bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
 				<div className="flex flex-col px-48 justify-evenly h-full">
 					<div className="menu-back">
-						<button type="button" className="flex gap-5 items-center">
+						<button
+							type="button"
+							className="flex gap-5 items-center opacity-0 -translate-y-10"
+						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="20"
@@ -53,7 +56,7 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 
 					<div className="menu-socials flex justify-between items-center">
 						<div className="menu-socials-left flex gap-5">
-							<div className="github-menu-icon">
+							<div className="github-menu-icon translate-y-10 opacity-0">
 								<svg
 									width="30"
 									height="30"
@@ -71,7 +74,7 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 								</svg>
 							</div>
 
-							<div className="linkedin-menu-icon">
+							<div className="linkedin-menu-icon translate-y-10 opacity-0">
 								<svg
 									width="30"
 									height="30"
@@ -102,11 +105,11 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 									/>
 								</svg>
 							</div>
-							<div className="dribble-menu-icon">
+							<div className="dribble-menu-icon translate-y-10 opacity-0">
 								<img src="/assets/png/Dribbble.png" alt="" />
 							</div>
 						</div>
-						<div className="menu-socials-right flex gap-5">
+						<div className="menu-socials-right opacity-0 flex gap-5">
 							<span>© 2022 | WAYNE</span>
 						</div>
 					</div>
