@@ -108,11 +108,14 @@ const Cursor = () => {
 	}, [isMoving]);
 	return (
 		<>
-			<div className="fixed mix-blend-difference z-50 pointer-events-none " ref={mainCursor}>
+			<div
+				className="fixed mix-blend-difference z-[1000] pointer-events-none "
+				ref={mainCursor}
+			>
 				<div className="bg-white w-[30px] h-[30px] rounded-full transition-all duration-500  opacity-0"></div>
 			</div>
 			<div
-				className="fixed mix-blend-difference pointer-events-none z-50 transition-[opacity] duration-500 opacity-0"
+				className="fixed mix-blend-difference pointer-events-none z-[1000] transition-[opacity] duration-500 opacity-0"
 				ref={secondaryCursor}
 			>
 				<div className="w-[100px] animate-[spin_10s_linear_infinite]">
