@@ -5,10 +5,9 @@ import Cursor from "./components/ui/Cursor.component";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import SplashScreen from "./layouts/SplashScreen.layout";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { BrowserView } from "react-device-detect";
-import useLenis from "./hooks/useLenis";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
@@ -16,6 +15,7 @@ import handleMenu from "./utils/handleMenu";
 function App() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
+	const rHistory = useRef<HTMLButtonElement>(null);
 
 	const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
@@ -32,9 +32,12 @@ function App() {
 		nullTargetWarn: false,
 	});
 
-	const handleNavbar = useCallback((isActive: boolean = false) => {
-		handleMenu({ isActive, menu });
-	}, []);
+	const handleNavbar = useCallback(
+		(isActive: boolean = false, setActive: React.Dispatch<React.SetStateAction<boolean>>) => {
+			handleMenu({ isActive, menu, rHistory, setActive });
+		},
+		[]
+	);
 	return (
 		<AnimatePresence>
 			<div className="App bg-white cursor-none h-screen relative">
@@ -49,7 +52,7 @@ function App() {
 					<Cursor />
 				</BrowserView>
 				<div className="cursor h-screen">
-					<Menu useReference={menu} />
+					<Menu useReference={menu} historyReturn={rHistory} />
 					<Nav handleNavbar={handleNavbar} />
 					<Home />
 				</div>

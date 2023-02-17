@@ -7,11 +7,14 @@ import ModalPlugin from "./ModalPlugin";
 interface Params {
 	isActive: boolean;
 	menu: React.RefObject<HTMLDivElement>;
+	rHistory: React.RefObject<HTMLButtonElement>;
+	setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 let tl = gsap.timeline();
 let tl2 = gsap.timeline();
 let tl3 = gsap.timeline();
+
 Scrollbar.use(ModalPlugin);
 
 const navAnim = (el: HTMLDivElement, isActive: boolean) => {
@@ -34,8 +37,7 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 	tl.to(el, {
 		opacity: 1,
 		duration: 0.35,
-		onComplete: () => {
-			if (isActive) return;
+		onReverseComplete: () => {
 			el.classList.remove("flex");
 			el.classList.add("hidden");
 		},
@@ -117,9 +119,7 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 	}
 };
 
-const handleMenu = (params: Params): void => {
-	let { isActive, menu } = params;
-
+const menuStyle = (isActive: boolean, menu: React.RefObject<HTMLDivElement>) => {
 	if (!isActive) {
 		navAnim(menu.current!, isActive);
 		return;
@@ -128,6 +128,27 @@ const handleMenu = (params: Params): void => {
 	menu.current!.classList.remove("hidden");
 	menu.current!.classList.add("flex");
 	navAnim(menu.current!, isActive);
+};
+
+const handleMenu = (params: Params): void => {
+	let { isActive, menu, rHistory, setActive } = params;
+
+	rHistory.current!.addEventListener("click", (event) => {
+		let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
+		let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
+
+		top.style.top = "3px";
+		bottom.style.bottom = "3px";
+
+		top.style.transform = "rotate(0deg)";
+		bottom.style.transform = "rotate(0deg)";
+
+		setActive(false);
+
+		menuStyle(false, menu);
+	});
+
+	menuStyle(isActive, menu);
 };
 
 export default handleMenu;
