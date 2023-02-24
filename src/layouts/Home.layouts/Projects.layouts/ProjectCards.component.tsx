@@ -35,10 +35,10 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 
 	return (
 		<div className="w-full h-full flex flex-col gap-5 z-20">
-			<div className="w-full h-full basis-11/12">
+			<div className="w-full h-full basis-11/12 overflow-hidden">
 				<img
 					src={src}
-					className="bg-gray-300 w-full h-[43rem] object-cover border-0"
+					className="bg-gray-300 w-full h-[43rem] object-cover border-0  transition-all duration-700 hover:scale-[1.05]"
 					alt=""
 				/>
 			</div>

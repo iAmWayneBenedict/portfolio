@@ -44,9 +44,9 @@ const Designs = () => {
 				</div>
 			</div>
 			<div className="px-5 md:px-20 mt-20">
-				<div className="w-full h-[70rem]">
+				<div className="w-full h-[70rem] overflow-hidden">
 					<img
-						className="w-full h-full object-cover"
+						className="w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
 						src="/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
 						alt=""
 					/>
