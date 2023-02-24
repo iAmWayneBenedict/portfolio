@@ -58,7 +58,10 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 
 					<div className="menu-socials flex justify-between items-center">
 						<div className="menu-socials-left flex gap-5">
-							<div className="github-menu-icon translate-y-10 opacity-0">
+							<a
+								href="https://github.com/iAmWayneBenedict"
+								className="github-menu-icon translate-y-10 opacity-0"
+							>
 								<svg
 									width="30"
 									height="30"
@@ -74,7 +77,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 										strokeLinejoin="round"
 									/>
 								</svg>
-							</div>
+							</a>
 
 							<div className="linkedin-menu-icon translate-y-10 opacity-0">
 								<svg
