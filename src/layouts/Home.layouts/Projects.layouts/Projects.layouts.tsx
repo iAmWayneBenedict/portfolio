@@ -23,7 +23,7 @@ const Projects = () => {
 	const swiperRef = useRef(null);
 
 	return (
-		<div className="mt-96 tracking-wide pb-64">
+		<div className="mt-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20">
 				<Title name="projects" />
 				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
@@ -57,16 +57,24 @@ const Projects = () => {
 					className="right p-5 md:p-10"
 				>
 					<SwiperSlide>
-						<ProjectCards />
+						<ProjectCards
+							src={"/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+						/>
 					</SwiperSlide>
 					<SwiperSlide>
-						<ProjectCards />
+						<ProjectCards
+							src={"/src/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
+						/>
 					</SwiperSlide>
 					<SwiperSlide>
-						<ProjectCards />
+						<ProjectCards
+							src={"/src/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"}
+						/>
 					</SwiperSlide>
 					<SwiperSlide>
-						<ProjectCards />
+						<ProjectCards
+							src={"/src/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"}
+						/>
 					</SwiperSlide>
 				</Swiper>
 			</div>

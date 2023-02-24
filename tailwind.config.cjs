@@ -15,6 +15,8 @@ module.exports = {
 				transferLogo: "transferLogo 1s ease forwards",
 				outlineBtnSVG: "outlineBtnSVG 2s ease forwards 2s",
 				scrollLine: "scrollLine 3s ease-in-out infinite 17s",
+				linkFirstAnim: "linkFirstAnim .5s ease forwards",
+				linkSecondAnim: "linkSecondAnim .5s ease forwards .4s",
 			},
 			keyframes: {
 				splashScreen: {
@@ -48,6 +50,22 @@ module.exports = {
 					"100%": {
 						top: "-100%",
 						opacity: 0,
+					},
+				},
+				linkFirstAnim: {
+					"0%": {
+						left: "0%",
+					},
+					"100%": {
+						left: "100%",
+					},
+				},
+				linkSecondAnim: {
+					"0%": {
+						left: "-100%",
+					},
+					"100%": {
+						left: "0%",
 					},
 				},
 			},

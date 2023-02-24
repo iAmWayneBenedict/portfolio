@@ -45,7 +45,7 @@ const ScrollDown: React.FC = () => {
 			></span>
 			<span
 				ref={scrollDownTitle}
-				className="scroll-down-title opacity-0 -translate-y-5 mt-10 cursor-pointer"
+				className="scroll-down-title opacity-0 -translate-y-5 mt-10 "
 			>
 				Scroll Down
 			</span>

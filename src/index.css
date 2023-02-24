@@ -58,3 +58,10 @@ html {
 	transform: translateY(115px);
 	transition: transform 0.5s;
 }
+
+/* Remove marquee overlay background */
+
+.overlay::after,
+.overlay:before {
+	background: none;
+}

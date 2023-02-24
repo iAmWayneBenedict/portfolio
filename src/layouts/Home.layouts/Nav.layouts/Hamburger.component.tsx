@@ -86,7 +86,7 @@ const Hamburger: React.FC<Props> = ({ handleNavbar }) => {
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
-			className="hamburger h-[20px] w-[40px] cursor-none transition-all opacity-100 relative justify-end order-3 ml-5 z-[100]"
+			className="hamburger h-[20px] w-[40px] transition-all opacity-100 relative justify-end order-3 ml-5 z-[100]"
 		>
 			<span
 				ref={topLine}

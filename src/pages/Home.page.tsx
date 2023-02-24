@@ -9,14 +9,14 @@ import Skills from "../layouts/Home.layouts/Skills.layouts/Skills.layout";
 
 const Home = () => {
 	return (
-		<div className="mb-2 bg-con overflow-x-hidden" style={{ backgroundColor: "white" }}>
+		<div className="mb-2 bg-con overflow-hidden" style={{ backgroundColor: "white" }}>
 			<Hero />
 			<AboutSection />
 			<Journey />
 			<Skills />
 			<Projects />
-			{/* <Designs />
-			<Certificates /> */}
+			<Designs />
+			{/* <Certificates /> */}
 		</div>
 	);
 };
