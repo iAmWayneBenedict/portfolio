@@ -38,7 +38,7 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 			<div className="w-full h-full basis-11/12 overflow-hidden">
 				<img
 					src={src}
-					className="bg-gray-300 w-full h-[43rem] object-cover border-0  transition-all duration-700 hover:scale-[1.05]"
+					className="bg-gray-300 w-full h-full object-cover border-0  transition-all duration-700 hover:scale-[1.05]"
 					alt=""
 				/>
 			</div>

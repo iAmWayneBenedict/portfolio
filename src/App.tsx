@@ -38,6 +38,7 @@ function App() {
 		},
 		[]
 	);
+
 	return (
 		<AnimatePresence>
 			<div className="App bg-white cursor-none h-screen relative">
