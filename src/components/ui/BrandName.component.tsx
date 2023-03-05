@@ -12,7 +12,7 @@ const BrandName = () => {
 				}}
 				layoutId="brand-logo"
 				href="#"
-				className="font-quicksand font-bold cursor-none"
+				className="font-quicksand font-bold "
 			>
 				<span className="relative">
 					WAYNE

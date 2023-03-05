@@ -3,9 +3,10 @@ import MenuLink from "./MenuLink";
 
 interface Props {
 	useReference: React.RefObject<HTMLDivElement>;
+	historyReturn: React.RefObject<HTMLButtonElement>;
 }
 
-const Menu: React.FC<Props> = ({ useReference }) => {
+const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 	return (
 		<div
 			ref={useReference}
@@ -28,6 +29,7 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 						<button
 							type="button"
 							className="flex gap-5 items-center opacity-0 -translate-y-10"
+							ref={historyReturn}
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +46,7 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 								<line x1="19" y1="12" x2="5" y2="12"></line>
 								<polyline points="12 19 5 12 12 5"></polyline>
 							</svg>
-							<span className="text-lg font-semibold font-quicksand">Home</span>
+							<span className="text-lg font-semibold font-quicksand">Return</span>
 						</button>
 					</div>
 					<div className="menu-nav flex flex-col gap-5">
@@ -56,7 +58,10 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 
 					<div className="menu-socials flex justify-between items-center">
 						<div className="menu-socials-left flex gap-5">
-							<div className="github-menu-icon translate-y-10 opacity-0">
+							<a
+								href="https://github.com/iAmWayneBenedict"
+								className="github-menu-icon translate-y-10 opacity-0"
+							>
 								<svg
 									width="30"
 									height="30"
@@ -72,7 +77,7 @@ const Menu: React.FC<Props> = ({ useReference }) => {
 										strokeLinejoin="round"
 									/>
 								</svg>
-							</div>
+							</a>
 
 							<div className="linkedin-menu-icon translate-y-10 opacity-0">
 								<svg

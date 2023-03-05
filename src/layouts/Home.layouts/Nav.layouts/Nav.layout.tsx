@@ -4,7 +4,10 @@ import ButtonOutline from "../../../components/forms/ButtonOutline.component";
 import Hamburger from "./Hamburger.component";
 
 interface Props {
-	handleNavbar: (isActive: boolean) => void;
+	handleNavbar: (
+		isActive: boolean,
+		setActive: React.Dispatch<React.SetStateAction<boolean>>
+	) => void;
 	reverse?: boolean;
 }
 

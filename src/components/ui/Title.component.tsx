@@ -6,9 +6,11 @@ import { useEffect } from "react";
 
 interface Props {
 	name: string;
+	overrideSubClasses?: string;
+	overrideConClasses?: string;
 }
 
-const Title: React.FC<Props> = ({ name }) => {
+const Title: React.FC<Props> = ({ name, overrideSubClasses = "", overrideConClasses = "" }) => {
 	const titleCon = useRef<HTMLHeadingElement>(null);
 	const main = useRef<HTMLHeadingElement>(null);
 	const sub = useRef<HTMLHeadingElement>(null);
@@ -58,18 +60,23 @@ const Title: React.FC<Props> = ({ name }) => {
 	}, []);
 
 	return (
-		<div ref={titleCon} className="pt-64">
-			<div className="relative z-10 ">
+		<div
+			ref={titleCon}
+			className={`${overrideConClasses ? overrideConClasses : "pt-64"} pb-20`}
+		>
+			<div className="relative">
 				<h1
 					ref={main}
-					className="overflow-hidden text-[45px] sm:text-[70px] md:text-[80px] lg:text-[90px] font-[600] font-cinzel z-[100]"
+					className="absolute overflow-hidden text-[45px] sm:text-[70px] md:text-[80px] lg:text-[90px] z-[1000]"
 				>
 					{name.toUpperCase()}
 				</h1>
 				<h1
 					ref={sub}
 					data-speed="0.5"
-					className="bd-text opacity-0 text-[120px] sm:text-[180px] md:text-[200px] lg:text-[300px] absolute left-0 top-3 md:top-5 font-[900] m-0 leading-none font-cinzel text-[#f1f1f1] -z-20"
+					className={`bg-text opacity-0 text-[120px] sm:text-[180px] md:text-[200px] lg:text-[300px] absolute left-0 top-3 md:top-5 font-[800] m-0 leading-none ${
+						overrideSubClasses ? overrideSubClasses : "text-[#f1f1f1]"
+					}`}
 				>
 					{name.toUpperCase()}
 				</h1>
