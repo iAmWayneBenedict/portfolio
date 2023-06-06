@@ -38,9 +38,10 @@ function App() {
 		},
 		[]
 	);
+
 	return (
 		<AnimatePresence>
-			<div className="App bg-white cursor-none h-screen relative">
+			<div className="App bg-white h-screen relative">
 				{!isLoaded && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />
@@ -56,6 +57,27 @@ function App() {
 					<Nav handleNavbar={handleNavbar} />
 					<Home />
 				</div>
+				<button
+					id="scroll-to-top-btn"
+					className="fixed bottom-[5rem] right-[-150%] w-[7rem] h-[7rem] bg-white text-black border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
+					title="Scroll to top"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="70"
+						height="70"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="1"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="feather feather-arrow-up m-auto"
+					>
+						<line x1="12" y1="19" x2="12" y2="5"></line>
+						<polyline points="5 12 12 5 19 12"></polyline>
+					</svg>
+				</button>
 			</div>
 		</AnimatePresence>
 	);

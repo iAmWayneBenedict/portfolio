@@ -65,3 +65,7 @@ html {
 .overlay:before {
 	background: none;
 }
+
+#scroll-to-top-btn.active {
+	right: 5rem !important;
+}

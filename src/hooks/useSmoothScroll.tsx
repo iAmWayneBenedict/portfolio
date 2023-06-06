@@ -42,6 +42,24 @@ const useSmoothScroll = (start: boolean) => {
 				gsap.set(markers, { marginTop: -offset.y });
 			});
 		}
+
+		// Get the "scroll to top" button element
+		const scrollTopBtn = document.querySelector("#scroll-to-top-btn") as HTMLElement;
+
+		// Show/hide the button based on scroll position
+		bodyScrollBar.addListener((status) => {
+			if (status.offset.y > 100) {
+				scrollTopBtn.classList.add("active");
+			} else {
+				scrollTopBtn.classList.remove("active");
+			}
+		});
+
+		// Add a click event listener to the button
+		scrollTopBtn.addEventListener("click", () => {
+			// Smoothly scroll the scrollbar to the top
+			bodyScrollBar.scrollTo(0, 0, 2000); // 500 is the duration of the animation in milliseconds
+		});
 	}, [start]);
 };
 
