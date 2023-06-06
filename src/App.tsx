@@ -41,7 +41,7 @@ function App() {
 
 	return (
 		<AnimatePresence>
-			<div className="App bg-white cursor-none h-screen relative">
+			<div className="App bg-white h-screen relative">
 				{!isLoaded && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />

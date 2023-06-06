@@ -141,7 +141,8 @@ const Cursor = () => {
 			let targetEl = event.target as HTMLElement;
 			let firstParent = targetEl.parentElement;
 			let fullParent =
-				targetEl.parentElement?.parentElement?.parentElement?.parentElement?.parentElement;
+				targetEl.parentElement?.parentElement?.parentElement?.parentElement?.parentElement
+					?.parentElement;
 
 			let isJourney =
 				firstParent?.classList.contains("mousedrag") ||
@@ -199,11 +200,11 @@ const Cursor = () => {
 
 		gsap.to(mainCursor.current?.firstElementChild!, {
 			opacity: 1,
-			duration: 0.15,
+			duration: 0.3,
 		});
 		gsap.to(secondaryCursor.current!, {
 			opacity: 1,
-			duration: 0.15,
+			duration: 0.3,
 		});
 	}, [cursorStatus]);
 
@@ -255,7 +256,7 @@ const Cursor = () => {
 
 			{cursorStatus === "img" && (
 				<>
-					<div className="fixed z-[1000] pointer-events-none " ref={mainCursor2}>
+					<div className="fixed z-[1000] pointer-events-none cursor-2" ref={mainCursor2}>
 						<div className="bg-black text-white w-[100px] h-[100px] rounded-full transition-all duration-500 opacity-0 flex justify-center items-center">
 							DRAG
 						</div>
@@ -264,7 +265,7 @@ const Cursor = () => {
 			)}
 			{cursorStatus === "view" && (
 				<>
-					<div className="fixed z-[1000] pointer-events-none " ref={mainCursor3}>
+					<div className="fixed z-[1000] pointer-events-none cursor-3" ref={mainCursor3}>
 						<div className="bg-black text-white w-[100px] h-[100px] rounded-full transition-all duration-[5000] opacity-0 flex justify-center items-center">
 							<span>VIEW</span>
 						</div>

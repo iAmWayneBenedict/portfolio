@@ -3,6 +3,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React from "react";
 import { useRef, useEffect } from "react";
 import SplitType from "split-type";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
 	src?: string;
@@ -36,10 +39,16 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 	return (
 		<div className="w-full h-full flex flex-col gap-5 z-20">
 			<div className="w-full h-full basis-11/12 overflow-hidden">
-				<img
+				<LazyLoadImage
+					key={src}
+					alt={src}
 					src={src}
-					className="bg-gray-300 w-full h-full object-cover border-0  transition-all duration-700 hover:scale-[1.05]"
-					alt=""
+					effect="blur"
+					wrapperClassName="w-full h-full"
+					className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
+					style={{
+						transition: "all 1s ease",
+					}}
 				/>
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">

@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import SwiperCore, { FreeMode, Pagination, Navigation } from "swiper";
 import { useRef, useEffect } from "react";
 import SwiperInstance from "swiper";
+import {handleTouchEnd, handleTouchMove, handleTouchStart} from "../../../utils/handleTouchDragEvent";
 // SwiperCore.use([Navigation]);
 const Projects = () => {
 	// const swiper = useRef<typeof Swiper>(null);
@@ -35,10 +36,6 @@ const Projects = () => {
 		}
 	};
 
-	const handleScroll = () => {
-		console.log(123);
-	};
-
 	return (
 		<div className="mt-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20">
@@ -52,18 +49,22 @@ const Projects = () => {
 			<div className="flex border-t border-b border-black mt-40 md:mt-64 h-[35rem] md:h-[52rem] flex-col md:flex-row">
 				<div className="left md:border-r border-black md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
 					<div className="icons flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
-						<img
-							onClick={() => goPrev()}
-							src="/src/assets/svg/arrow-left.svg"
-							className="w-8"
-							alt=""
-						/>
-						<img
-							onClick={() => goNext()}
-							src="/src/assets/svg/arrow-right.svg"
-							className="w-8"
-							alt=""
-						/>
+						<button type="button">
+							<img
+								onClick={() => goPrev()}
+								src="/src/assets/svg/arrow-left.svg"
+								className="w-8"
+								alt=""
+							/>
+						</button>
+						<button type="button">
+							<img
+								onClick={() => goNext()}
+								src="/src/assets/svg/arrow-right.svg"
+								className="w-8"
+								alt=""
+							/>
+						</button>
 					</div>
 					{/* <div className="flex justify-center order-1 md:order-2">
 						<h1 className="current text-7xl font-[900] font">3</h1>
@@ -80,8 +81,11 @@ const Projects = () => {
 						}}
 						onSwiper={setSwiper}
 						navigation={true}
+						onTouchMove={(event) => handleTouchMove(event.touches, '.cursor-2')}
+						onTouchStart={(event) => handleTouchStart(event.touches)}
+						onTouchEnd={() => handleTouchEnd()}
 						modules={[Navigation, FreeMode]}
-						className="mousedrag h-full w-full right p-5 md:p-10"
+						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
 						<SwiperSlide>
 							<ProjectCards
