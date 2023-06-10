@@ -20,6 +20,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {handleTouchEnd, handleTouchMove, handleTouchStart} from "../../../utils/handleTouchDragEvent";
 
+gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
 	const text = useRef<HTMLDivElement>(null);
 
@@ -45,7 +46,7 @@ const Designs = () => {
 		const body = document.querySelector(".App") as HTMLDivElement;
 	}, []);
 
-	gsap.registerPlugin(ScrollTrigger);
+
 
 	const designCon = useRef<HTMLDivElement>(null);
 
