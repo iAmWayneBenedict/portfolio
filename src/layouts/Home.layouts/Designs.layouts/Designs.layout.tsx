@@ -60,14 +60,16 @@ const Designs = () => {
 				start: "top center",
 				toggleActions: "restart none none reverse",
 				onEnterBack: () => {
+					console.log("enter back")
 					gsap.to(bgCon, {
-						background: '#000',
+						background: '#000000',
 						duration: 1,
 					})
 				},
 				onLeave: () => {
+					console.log("leave")
 					gsap.to(bgCon, {
-						background: '#fff',
+						background: '#ffffff',
 						duration: 1,
 					})
 				}
