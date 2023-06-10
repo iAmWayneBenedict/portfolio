@@ -51,36 +51,38 @@ const Designs = () => {
 	const designCon = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
-		console.log("trigger 1")
-		gsap.to(bgCon, {
-			backgroundColor: "black",
-			duration: 1,
+		if (typeof window !== 'undefined') {
+			const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
+			console.log("trigger 1")
+			gsap.to(bgCon, {
+				backgroundColor: "black",
+				duration: 1,
 
-			scrollTrigger: {
-				trigger: designCon.current!,
-				start: "top center",
-				toggleActions: "restart none none reverse",
-				onToggle: () => {
-					console.log("toggle")
+				scrollTrigger: {
+					trigger: designCon.current!,
+					start: "top center",
+					toggleActions: "restart none none reverse",
+					onToggle: () => {
+						console.log("toggle")
+					},
+					onEnterBack: () => {
+						console.log("enter back")
+						gsap.to(bgCon, {
+							background: '#000000',
+							duration: 1,
+						})
+					},
+					onLeave: () => {
+						console.log("leave")
+						gsap.to(bgCon, {
+							background: '#ffffff',
+							duration: 1,
+						})
+					}
 				},
-				onEnterBack: () => {
-					console.log("enter back")
-					gsap.to(bgCon, {
-						background: '#000000',
-						duration: 1,
-					})
-				},
-				onLeave: () => {
-					console.log("leave")
-					gsap.to(bgCon, {
-						background: '#ffffff',
-						duration: 1,
-					})
-				}
-			},
-		});
-		console.log("trigger 2")
+			});
+			console.log("trigger 2")
+		}
 	}, []);
 
 	return (
