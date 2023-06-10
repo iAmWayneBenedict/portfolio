@@ -59,6 +59,9 @@ const Designs = () => {
 				trigger: designCon.current!,
 				start: "top center",
 				toggleActions: "restart none none reverse",
+				onToggle: () => {
+					console.log("toggle")
+				},
 				onEnterBack: () => {
 					console.log("enter back")
 					gsap.to(bgCon, {
