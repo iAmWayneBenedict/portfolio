@@ -53,6 +53,7 @@ const Designs = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
+			console.log(ScrollTrigger.getAll())
 			console.log("trigger 1")
 			gsap.to(bgCon, {
 				backgroundColor: "black",
@@ -81,6 +82,8 @@ const Designs = () => {
 					}
 				},
 			});
+
+			ScrollTrigger.refresh()
 			console.log("trigger 2")
 		}
 	}, []);
