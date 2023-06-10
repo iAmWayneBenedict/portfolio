@@ -36,9 +36,9 @@ const Root = () => {
 
 	useSmoothScroll(true);
 
-	gsap.config({
-		nullTargetWarn: false,
-	});
+	// gsap.config({
+	// 	nullTargetWarn: false,
+	// });
 
 	const handleNavbar = useCallback(
 		(isActive: boolean = false, setActive: React.Dispatch<React.SetStateAction<boolean>>) => {
