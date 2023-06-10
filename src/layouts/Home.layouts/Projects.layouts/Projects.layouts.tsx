@@ -52,7 +52,7 @@ const Projects = () => {
 						<button type="button">
 							<img
 								onClick={() => goPrev()}
-								src="/src/assets/svg/arrow-left.svg"
+								src="/assets/svg/arrow-left.svg"
 								className="w-8"
 								alt=""
 							/>
@@ -60,7 +60,7 @@ const Projects = () => {
 						<button type="button">
 							<img
 								onClick={() => goNext()}
-								src="/src/assets/svg/arrow-right.svg"
+								src="/assets/svg/arrow-right.svg"
 								className="w-8"
 								alt=""
 							/>
@@ -89,22 +89,22 @@ const Projects = () => {
 					>
 						<SwiperSlide>
 							<ProjectCards
-								src={"/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+								src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
 							/>
 						</SwiperSlide>
 						<SwiperSlide>
 							<ProjectCards
-								src={"/src/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
+								src={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
 							/>
 						</SwiperSlide>
 						<SwiperSlide>
 							<ProjectCards
-								src={"/src/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"}
+								src={"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"}
 							/>
 						</SwiperSlide>
 						<SwiperSlide>
 							<ProjectCards
-								src={"/src/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"}
+								src={"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"}
 							/>
 						</SwiperSlide>
 					</Swiper>

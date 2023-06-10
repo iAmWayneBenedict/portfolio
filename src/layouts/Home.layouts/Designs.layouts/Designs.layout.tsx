@@ -102,7 +102,7 @@ const Designs = () => {
 						<button type="button">
 							<img
 								onClick={() => goPrev()}
-								src="/src/assets/svg/arrow-left [white].svg"
+								src="/assets/svg/arrow-left [white].svg"
 								className="w-12"
 								alt=""
 							/>
@@ -110,7 +110,7 @@ const Designs = () => {
 						<button type="button">
 							<img
 								onClick={() => goNext()}
-								src="/src/assets/svg/arrow-right [white].svg"
+								src="/assets/svg/arrow-right [white].svg"
 								className="w-12"
 								alt=""
 							/>
@@ -136,28 +136,28 @@ const Designs = () => {
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/src/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>

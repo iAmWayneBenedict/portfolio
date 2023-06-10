@@ -6,6 +6,8 @@ import Hero from "../layouts/Home.layouts/Hero.layouts/Hero.layout";
 import Journey from "../layouts/Home.layouts/Journey.layouts/Journey.layout";
 import Projects from "../layouts/Home.layouts/Projects.layouts/Projects.layouts";
 import Skills from "../layouts/Home.layouts/Skills.layouts/Skills.layout";
+import Technologies from "../layouts/Technologies/Technologies";
+import {ContactLayouts} from "../layouts/Home.layouts/Contact/Contact.layouts";
 
 const Home = () => {
 	return (
@@ -16,7 +18,9 @@ const Home = () => {
 			<Skills />
 			<Projects />
 			<Designs />
-			 <Certificates />
+			<Certificates />
+			<Technologies />
+			<ContactLayouts />
 		</div>
 	);
 };
