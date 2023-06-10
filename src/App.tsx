@@ -13,6 +13,14 @@ import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
 
 function App() {
+	return (
+		<>
+			<Root />
+		</>
+	);
+}
+
+const Root = () => {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);

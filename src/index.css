@@ -16,17 +16,17 @@
 
 @font-face {
 	font-family: "Neue Montreal";
-	src: url("./assets/fonts/NeueMontreal-Regular.otf");
+	src: url("../public/assets/fonts/NeueMontreal-Regular.otf");
 }
 
 @font-face {
 	font-family: "Neue Montreal Bold";
-	src: url("./assets/fonts/NeueMontreal-Bold.otf");
+	src: url("../public/assets/fonts/NeueMontreal-Bold.otf");
 }
 
 @font-face {
 	font-family: "Neue Montreal Medium";
-	src: url("./assets/fonts/NeueMontreal-Medium.otf");
+	src: url("../public/assets/fonts/NeueMontreal-Medium.otf");
 }
 
 /* 
@@ -35,7 +35,7 @@
 
 @font-face {
 	font-family: "Neue Montreal";
-	src: url("./assets/fonts/NeueMontreal-Regular.otf");
+	src: url("../public/assets/fonts/NeueMontreal-Regular.otf");
 }
 
 /* 

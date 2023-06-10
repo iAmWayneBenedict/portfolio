@@ -1,176 +1,123 @@
-import React from "react";
+import React, {useRef} from "react";
 import Line from "../../../components/ui/Line.component";
 import Title from "../../../components/ui/Title.component";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Certificates = () => {
+	gsap.registerPlugin(ScrollTrigger);
+
+	const certCon = useRef<HTMLDivElement>(null);
+	const certBaseCon = useRef<HTMLDivElement>(null);
+
+	gsap.to(".line-one-top-cert-fill", {
+		width: "100%",
+		duration: 1.5,
+
+		scrollTrigger: {
+			trigger: certCon.current!,
+			start: "top center",
+			toggleActions: "restart none none none",
+		},
+	});
+
+	gsap.to(certBaseCon.current!, {
+		opacity: 1,
+		duration: 1.5,
+
+		scrollTrigger: {
+			trigger: certCon.current!,
+			start: "top center",
+			toggleActions: "restart none none none",
+		}
+	})
+
 	return (
-		<div className="mt-48">
-			<Line position="mr-auto" color="bg-gray-300" colorHighlight="after:bg-black" />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<Title name="Certificates" />
+		<div className="mt-96 pt-48" ref={certBaseCon}>
+
+			<div className='relative w-full' ref={certCon}>
+				<div className='px-28 flex flex-col w-full h-full'>
+					<div className='relative flex justify-center'>
+						{/*<Title name="Certificates" overrideConClasses="pt-20" />*/}
+						<h1 className="text-8xl  font-inter uppercase tracking-wider mt-20">Certificates</h1>
+					</div>
+					<div>
+						<p className='text-center mt-10 my-20'>Assurance that you're in the right hands.</p>
+					</div>
+					<Line position="flex self-center" color="bg-gray-300" colorHighlight="bg-black" id='line-one-top-cert' />
+					<div className='flex flex-col flex-wrap gap-20 mt-36 w-full h-full'>
+						<div className='flex flex-wrap gap-20'>
+							<div className='cert-card flex-1'>
+								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+									<LazyLoadImage
+										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										effect="blur"
+										wrapperClassName="w-full h-full"
+										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
+										style={{
+											transition: "all 1s ease",
+										}}
+									/>
+								</div>
+								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling.</p>
+							</div>
+							<div className='cert-card flex-1'>
+								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+									<LazyLoadImage
+										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										effect="blur"
+										wrapperClassName="w-full h-full"
+										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
+										style={{
+											transition: "all 1s ease",
+										}}
+									/>
+								</div>
+								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling. </p>
+							</div>
+						</div><div className='flex flex-wrap gap-20'>
+							<div className='cert-card flex-1'>
+								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+									<LazyLoadImage
+										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										effect="blur"
+										wrapperClassName="w-full h-full"
+										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
+										style={{
+											transition: "all 1s ease",
+										}}
+									/>
+								</div>
+								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling.</p>
+							</div>
+							<div className='cert-card flex-1'>
+								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+									<LazyLoadImage
+										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										effect="blur"
+										wrapperClassName="w-full h-full"
+										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
+										style={{
+											transition: "all 1s ease",
+										}}
+									/>
+								</div>
+								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	);
 };
