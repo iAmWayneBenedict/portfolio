@@ -61,9 +61,8 @@ html {
 
 /* Remove marquee overlay background */
 
-.overlay::after,
-.overlay:before {
-	background: none;
+.overlay {
+	display: none !important;
 }
 
 #scroll-to-top-btn.active {
