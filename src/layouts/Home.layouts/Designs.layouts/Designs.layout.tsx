@@ -51,6 +51,7 @@ const Designs = () => {
 
 	useEffect(() => {
 		const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
+		console.log("trigger 1")
 		gsap.to(bgCon, {
 			backgroundColor: "black",
 			duration: 1,
@@ -78,6 +79,7 @@ const Designs = () => {
 				}
 			},
 		});
+		console.log("trigger 2")
 	}, []);
 
 	return (
