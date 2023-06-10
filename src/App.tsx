@@ -30,8 +30,8 @@ const Root = () => {
 
 	useEffect(() => {
 		isDarkMode().matches
-			? icon?.setAttribute("href", "/logo-darkmode.svg")
-			: icon?.setAttribute("href", "/logo-lightmode.svg");
+			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
+			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
 	}, []);
 
 	useSmoothScroll(true);
