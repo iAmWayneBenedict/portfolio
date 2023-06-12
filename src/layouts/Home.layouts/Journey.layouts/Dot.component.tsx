@@ -43,74 +43,81 @@ const Dot: React.FC = () => {
 			});
 		});
 
-		gsap.to(heroCon.current!, {
-			height: "12%",
+		let ctx = gsap.context(() => {
+			gsap.to(heroCon.current, {
+				height: "12%",
 
-			scrollTrigger: {
-				trigger: heroCon.current!.parentElement,
-				start: "top center",
-				endTrigger: dotCon[0],
-				end: "center center",
-				scrub: 2,
-				id: "first",
-				immediateRender: false,
-			},
-		});
+				scrollTrigger: {
+					trigger: heroCon.current!.parentElement,
+					start: "top center",
+					endTrigger: dotCon[0],
+					end: "center center",
+					scrub: 2,
+					id: "first",
+					immediateRender: false,
+					onToggle: () => {
+						console.log(123)
+					}
+				},
+			});
 
-		gsap.to(heroCon.current!, {
-			height: "37%",
+			gsap.to(heroCon.current, {
+				height: "37%",
 
-			scrollTrigger: {
-				trigger: dotCon[0],
-				start: "center center",
-				endTrigger: dotCon[1],
-				end: "center center",
-				scrub: 2,
-				id: "second",
-				immediateRender: false,
-			},
-		});
+				scrollTrigger: {
+					trigger: dotCon[0],
+					start: "center center",
+					endTrigger: dotCon[1],
+					end: "center center",
+					scrub: 2,
+					id: "second",
+					immediateRender: false,
+				},
+			});
 
-		gsap.to(heroCon.current!, {
-			height: "62%",
+			gsap.to(heroCon.current, {
+				height: "62%",
 
-			scrollTrigger: {
-				trigger: dotCon[1],
-				start: "center center",
-				endTrigger: dotCon[2],
-				end: "center center",
-				scrub: 2,
-				id: "third",
-				immediateRender: false,
-			},
-		});
+				scrollTrigger: {
+					trigger: dotCon[1],
+					start: "center center",
+					endTrigger: dotCon[2],
+					end: "center center",
+					scrub: 2,
+					id: "third",
+					immediateRender: false,
+				},
+			});
 
-		gsap.to(heroCon.current!, {
-			height: "87%",
+			gsap.to(heroCon.current, {
+				height: "87%",
 
-			scrollTrigger: {
-				trigger: dotCon[2],
-				start: "center center",
-				endTrigger: dotCon[3],
-				end: "center center",
-				scrub: 2,
-				id: "fourth",
-				immediateRender: false,
-			},
-		});
+				scrollTrigger: {
+					trigger: dotCon[2],
+					start: "center center",
+					endTrigger: dotCon[3],
+					end: "center center",
+					scrub: 2,
+					id: "fourth",
+					immediateRender: false,
+				},
+			});
 
-		gsap.to(heroCon.current!, {
-			height: "100%",
+			gsap.to(heroCon.current, {
+				height: "100%",
 
-			scrollTrigger: {
-				trigger: dotCon[3],
-				start: "center center",
-				end: "+=100%",
-				scrub: 1,
-				id: "last",
-				immediateRender: false,
-			},
-		});
+				scrollTrigger: {
+					trigger: dotCon[3],
+					start: "center center",
+					end: "+=100%",
+					scrub: 1,
+					id: "last",
+					immediateRender: false,
+				},
+			});
+
+		})
+			return () => ctx.revert()
 	}, []);
 
 	return (

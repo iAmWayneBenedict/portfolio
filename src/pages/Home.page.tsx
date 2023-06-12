@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import AboutSection from "../layouts/Home.layouts/About.layouts/AboutSection.layout";
 import Certificates from "../layouts/Home.layouts/Certificates.layouts/Certificates.layout";
 import Designs from "../layouts/Home.layouts/Designs.layouts/Designs.layout";
@@ -14,7 +14,7 @@ const Home = () => {
 		<div className="bg-con overflow-hidden" style={{ backgroundColor: "white" }}>
 			<Hero />
 			<AboutSection />
-			<Journey />
+			{/*<Journey />*/}
 			<Skills />
 			<Projects />
 			<Designs />

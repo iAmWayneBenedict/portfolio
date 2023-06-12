@@ -13,6 +13,7 @@ interface Props {
 
 const ProjectCards: React.FC<Props> = ({ src }) => {
 	const demoLink = useRef<HTMLAnchorElement>(null);
+	const slide = useRef<HTMLDivElement>(null);
 
 	// const dLink = new SplitType(demoLink.current!);
 
@@ -36,9 +37,27 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 		// });
 	};
 
+	// useEffect(() => {
+	// 	const loadHoverEffect = async () => {
+	// 		const hoverEffect = (await import("hover-effect")).default;
+	// 		let hoverDistort = new hoverEffect({
+	// 			parent: slide.current,
+	// 			intensity: 0.5,
+	// 			image1: src,
+	// 			image2: "/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
+	// 			displacementImage: "/assets/img/4.png",
+	// 		});
+	// 	};
+
+	// 	loadHoverEffect();
+	// }, []);
+
 	return (
 		<div className="w-full h-full flex flex-col gap-5 z-20">
-			<div className="w-full h-full basis-11/12 overflow-hidden">
+			<div
+				ref={slide}
+				className="slide-hover-effect w-full h-full basis-11/12 overflow-hidden"
+			>
 				<LazyLoadImage
 					key={src}
 					alt={src}

@@ -18,15 +18,39 @@ import SwiperCore, { FreeMode, Pagination, Navigation } from "swiper";
 import SwiperInstance from "swiper";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {handleTouchEnd, handleTouchMove, handleTouchStart} from "../../../utils/handleTouchDragEvent";
+import {
+	handleTouchEnd,
+	handleTouchMove,
+	handleTouchStart,
+} from "../../../utils/handleTouchDragEvent";
+import hoverEffect from "hover-effect";
+import { motion, useInView } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
 	const text = useRef<HTMLDivElement>(null);
+	const slide1 = useRef<HTMLDivElement>(null);
 
 	const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
+	const designCon = useRef<HTMLDivElement>(null);
 	const swiperRef = useRef(null);
+	const inView = useInView(designCon);
+
+	useEffect(() => {
+		const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
+		bgCon.style.transition = "all 1s ease";
+		if (inView) {
+			bgCon.style.backgroundColor = "black";
+		} else {
+			bgCon.style.backgroundColor = "white";
+		}
+		console.log(inView, bgCon.style.backgroundColor);
+
+		return () => {
+			bgCon.style.transition = "unset";
+		};
+	}, [inView]);
 
 	const goNext = () => {
 		if (swiperRef.current !== null && swiper !== null) {
@@ -46,50 +70,52 @@ const Designs = () => {
 		const body = document.querySelector(".App") as HTMLDivElement;
 	}, []);
 
-
-
-	const designCon = useRef<HTMLDivElement>(null);
-
 	useEffect(() => {
-		if (typeof window !== 'undefined') {
+		if (typeof window !== "undefined") {
 			const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
-			console.log(ScrollTrigger.getAll())
-			console.log("trigger 1")
-			gsap.to(bgCon, {
-				backgroundColor: "black",
-				duration: 1,
+			const runAnimation = gsap.context(() => {
+				let a = gsap.to(bgCon, {
+					backgroundColor: "black",
+					duration: 1,
 
-				scrollTrigger: {
-					trigger: designCon.current!,
-					start: "top center",
-					toggleActions: "restart none none reverse",
-					onToggle: () => {
-						console.log("toggle")
+					scrollTrigger: {
+						trigger: designCon.current,
+						start: "top center",
+						toggleActions: "none play reverse none",
+						onToggle: () => {
+							console.log("toggle");
+						},
+						onEnterBack: () => {
+							console.log("enter back");
+							gsap.to(bgCon, {
+								background: "#000000",
+								duration: 1,
+							});
+						},
+						onLeave: () => {
+							console.log("leave");
+							gsap.to(bgCon, {
+								background: "#ffffff",
+								duration: 1,
+							});
+						},
 					},
-					onEnterBack: () => {
-						console.log("enter back")
-						gsap.to(bgCon, {
-							background: '#000000',
-							duration: 1,
-						})
-					},
-					onLeave: () => {
-						console.log("leave")
-						gsap.to(bgCon, {
-							background: '#ffffff',
-							duration: 1,
-						})
-					}
-				},
+				});
+				console.log(a, designCon.current);
 			});
 
-			ScrollTrigger.refresh()
-			console.log("trigger 2")
+			ScrollTrigger.refresh();
+			return () => runAnimation.revert();
 		}
 	}, []);
 
 	return (
-		<div ref={designCon} className="mt-56 py-24 text-white bg-black">
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1, transition: { duration: 2, ease: "easeInOut" } }}
+			ref={designCon}
+			className="mt-96 pb-24 text-white bg-transparent"
+		>
 			<div>
 				<h1 className="text-center text-lg">
 					Immersive designs that can suffice your expectations.
@@ -140,7 +166,7 @@ const Designs = () => {
 					}}
 					onSwiper={setSwiper}
 					navigation={true}
-					onTouchMove={(event) => handleTouchMove(event.touches, '.cursor-3')}
+					onTouchMove={(event) => handleTouchMove(event.touches, ".cursor-3")}
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
 					modules={[Navigation, Pagination]}
@@ -176,7 +202,7 @@ const Designs = () => {
 					</SwiperSlide>
 				</Swiper>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

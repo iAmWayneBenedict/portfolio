@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Home from "./pages/Home.page";
 import Nav from "./layouts/Home.layouts/Nav.layouts/Nav.layout";
 import Cursor from "./components/ui/Cursor.component";
@@ -11,16 +11,20 @@ import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
+import {
+	BrowserRouter,Route,Routes
+} from "react-router-dom";
 
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Root />
-		</>
+		</BrowserRouter>
 	);
 }
 
-const Root = () => {
+function Root() {
+
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);
@@ -29,6 +33,7 @@ const Root = () => {
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
 
 	useEffect(() => {
+		// setDOMLoaded(true);
 		isDarkMode().matches
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
@@ -63,7 +68,11 @@ const Root = () => {
 				<div className="cursor h-screen">
 					<Menu useReference={menu} historyReturn={rHistory} />
 					<Nav handleNavbar={handleNavbar} />
-					<Home />
+
+					<Routes>
+						<Route path="/" element={<Home />} />
+					</Routes>
+
 				</div>
 				<button
 					id="scroll-to-top-btn"

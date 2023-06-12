@@ -37,7 +37,7 @@ const Projects = () => {
 	};
 
 	return (
-		<div className="mt-96 tracking-wide">
+		<div className="mt-96 pb-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20">
 				<Title name="projects" />
 				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
