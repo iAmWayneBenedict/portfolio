@@ -58,9 +58,11 @@ const Skills = () => {
 		});
 	}, []);
 	return (
-		<div ref={triggerEl} className="md:mt-96 mx-5 md:mx-20 tracking-wide">
-			<p className="text-xl text-center">Set of skills compatible with your needs.</p>
-			<Title overrideConClasses='pt-36' name="skills" />
+		<div ref={triggerEl} className="mt-48 md:mt-96 mx-5 md:mx-20 tracking-wide">
+			<p className="text-sm lg:text-xl text-center">
+				Set of skills compatible with your needs.
+			</p>
+			<Title overrideConClasses="pt-36" name="skills" />
 
 			<div className="w-full flex gap-5 lg:gap-10 flex-wrap justify-evenly md:px-5 xl:px-20 mt-36 md:mt-72 flex-col md:flex-row">
 				<Card

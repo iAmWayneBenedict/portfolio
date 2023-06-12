@@ -1,9 +1,9 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import Line from "../../../components/ui/Line.component";
 import Title from "../../../components/ui/Title.component";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {LazyLoadImage} from "react-lazy-load-image-component";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Certificates = () => {
 	gsap.registerPlugin(ScrollTrigger);
@@ -30,26 +30,34 @@ const Certificates = () => {
 			trigger: certCon.current!,
 			start: "top center",
 			toggleActions: "restart none none none",
-		}
-	})
+		},
+	});
 
 	return (
 		<div className="mt-96 pt-48" ref={certBaseCon}>
-
-			<div className='relative w-full' ref={certCon}>
-				<div className='px-28 flex flex-col w-full h-full'>
-					<div className='relative flex justify-center'>
+			<div className="relative w-full" ref={certCon}>
+				<div className="px-5 sm:px-12 lg:px-28 flex flex-col w-full h-full">
+					<div className="relative flex justify-center">
 						{/*<Title name="Certificates" overrideConClasses="pt-20" />*/}
-						<h1 className="text-8xl  font-inter uppercase tracking-wider mt-20">Certificates</h1>
+						<h1 className="text-5xl sm:text-6xl lg:text-8xl font-inter uppercase tracking-wider mt-20">
+							Certificates
+						</h1>
 					</div>
 					<div>
-						<p className='text-center mt-10 my-20'>Assurance that you're in the right hands.</p>
+						<p className="text-center mt-10 mb-16 lg:mb-20 text-sm md:text-base">
+							Assurance that you're in the right hands.
+						</p>
 					</div>
-					<Line position="flex self-center" color="bg-gray-300" colorHighlight="bg-black" id='line-one-top-cert' />
-					<div className='flex flex-col flex-wrap gap-20 mt-36 w-full h-full'>
-						<div className='flex flex-wrap gap-20'>
-							<div className='cert-card flex-1'>
-								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+					<Line
+						position="flex self-center"
+						color="bg-gray-300"
+						colorHighlight="bg-black"
+						id="line-one-top-cert"
+					/>
+					<div className="flex flex-col flex-wrap gap-10 lg:gap-20 mt-36 w-full h-full">
+						<div className="flex flex-wrap gap-5 sm:gap-10 lg:gap-20">
+							<div className="cert-card flex-1">
+								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
 										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
 										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
@@ -62,10 +70,12 @@ const Certificates = () => {
 										}}
 									/>
 								</div>
-								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling.</p>
+								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
+									Take a single step at a time. Make it short yet fulfilling.
+								</p>
 							</div>
-							<div className='cert-card flex-1'>
-								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+							<div className="cert-card flex-1">
+								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
 										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
 										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
@@ -78,11 +88,14 @@ const Certificates = () => {
 										}}
 									/>
 								</div>
-								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling. </p>
+								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
+									Take a single step at a time. Make it short yet fulfilling.{" "}
+								</p>
 							</div>
-						</div><div className='flex flex-wrap gap-20'>
-							<div className='cert-card flex-1'>
-								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+						</div>
+						<div className="flex flex-wrap gap-5 sm:gap-10 lg:gap-20">
+							<div className="cert-card flex-1">
+								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
 										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
 										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
@@ -95,10 +108,12 @@ const Certificates = () => {
 										}}
 									/>
 								</div>
-								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling.</p>
+								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
+									Take a single step at a time. Make it short yet fulfilling.
+								</p>
 							</div>
-							<div className='cert-card flex-1'>
-								<div className='w-full h-fit max-h-[40rem] overflow-hidden'>
+							<div className="cert-card flex-1">
+								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
 										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
 										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
@@ -111,13 +126,14 @@ const Certificates = () => {
 										}}
 									/>
 								</div>
-								<p className='mt-10'>Take a single step at a time.  Make it short yet fulfilling. </p>
+								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
+									Take a single step at a time. Make it short yet fulfilling.{" "}
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	);
 };

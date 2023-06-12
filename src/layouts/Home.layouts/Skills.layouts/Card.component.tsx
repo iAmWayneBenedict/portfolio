@@ -29,11 +29,11 @@ const Card: React.FC<Props> = ({ classes, src, title, description }) => {
 
 	return (
 		<div
-			className="card-con w-full md:w-[45%] h-[30rem] md:h-[45rem]"
+			className={`${classes}  card-con flex w-full md:w-[45%] h-[30rem] md:h-[45rem]`}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseOut={handleMouseOut}
 		>
-			<div className={`${classes} skills-con w-0 h-full`}>
+			<div className={`skills-con w-0 h-full`}>
 				<div
 					className="p-10 md:p-14 flex flex-col justify-between group"
 					style={{ width: "inherit", height: "inherit" }}

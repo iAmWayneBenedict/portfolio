@@ -200,11 +200,11 @@ const Cursor = () => {
 
 		gsap.to(mainCursor.current?.firstElementChild!, {
 			opacity: 1,
-			duration: 0.3,
+			duration: 0,
 		});
 		gsap.to(secondaryCursor.current!, {
 			opacity: 1,
-			duration: 0.3,
+			duration: 0,
 		});
 	}, [cursorStatus]);
 
@@ -257,7 +257,7 @@ const Cursor = () => {
 			{cursorStatus === "img" && (
 				<>
 					<div className="fixed z-[1000] pointer-events-none cursor-2" ref={mainCursor2}>
-						<div className="bg-black text-white w-[100px] h-[100px] rounded-full transition-all duration-500 opacity-0 flex justify-center items-center">
+						<div className="bg-black text-white w-[100px] h-[100px] rounded-full opacity-0 flex justify-center items-center">
 							DRAG
 						</div>
 					</div>
@@ -266,7 +266,7 @@ const Cursor = () => {
 			{cursorStatus === "view" && (
 				<>
 					<div className="fixed z-[1000] pointer-events-none cursor-3" ref={mainCursor3}>
-						<div className="bg-black text-white w-[100px] h-[100px] rounded-full transition-all duration-[5000] opacity-0 flex justify-center items-center">
+						<div className="bg-black text-white w-[100px] h-[100px] rounded-full opacity-0 flex justify-center items-center">
 							<span>VIEW</span>
 						</div>
 					</div>

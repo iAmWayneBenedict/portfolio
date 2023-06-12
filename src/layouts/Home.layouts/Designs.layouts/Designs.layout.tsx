@@ -64,50 +64,44 @@ const Designs = () => {
 		}
 	};
 
-	useEffect(() => {
-		if (!text.current) return;
+	// useEffect(() => {
+	// 	if (typeof window !== "undefined") {
+	// 		const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
+	// 		const runAnimation = gsap.context(() => {
+	// 			let a = gsap.to(bgCon, {
+	// 				backgroundColor: "black",
+	// 				duration: 1,
 
-		const body = document.querySelector(".App") as HTMLDivElement;
-	}, []);
+	// 				scrollTrigger: {
+	// 					trigger: designCon.current,
+	// 					start: "top center",
+	// 					toggleActions: "none play reverse none",
+	// 					onToggle: () => {
+	// 						console.log("toggle");
+	// 					},
+	// 					onEnterBack: () => {
+	// 						console.log("enter back");
+	// 						gsap.to(bgCon, {
+	// 							background: "#000000",
+	// 							duration: 1,
+	// 						});
+	// 					},
+	// 					onLeave: () => {
+	// 						console.log("leave");
+	// 						gsap.to(bgCon, {
+	// 							background: "#ffffff",
+	// 							duration: 1,
+	// 						});
+	// 					},
+	// 				},
+	// 			});
+	// 			console.log(a, designCon.current);
+	// 		});
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
-			const runAnimation = gsap.context(() => {
-				let a = gsap.to(bgCon, {
-					backgroundColor: "black",
-					duration: 1,
-
-					scrollTrigger: {
-						trigger: designCon.current,
-						start: "top center",
-						toggleActions: "none play reverse none",
-						onToggle: () => {
-							console.log("toggle");
-						},
-						onEnterBack: () => {
-							console.log("enter back");
-							gsap.to(bgCon, {
-								background: "#000000",
-								duration: 1,
-							});
-						},
-						onLeave: () => {
-							console.log("leave");
-							gsap.to(bgCon, {
-								background: "#ffffff",
-								duration: 1,
-							});
-						},
-					},
-				});
-				console.log(a, designCon.current);
-			});
-
-			ScrollTrigger.refresh();
-			return () => runAnimation.revert();
-		}
-	}, []);
+	// 		ScrollTrigger.refresh();
+	// 		return () => runAnimation.revert();
+	// 	}
+	// }, []);
 
 	return (
 		<motion.div
@@ -117,12 +111,12 @@ const Designs = () => {
 			className="mt-96 pb-24 text-white bg-transparent"
 		>
 			<div>
-				<h1 className="text-center text-lg">
+				<h1 className="text-center text-sm lg:text-lg">
 					Immersive designs that can suffice your expectations.
 				</h1>
 				<MarqueeCon />
 			</div>
-			<div className="px-5 md:px-20 flex">
+			<div className="px-5 md:px-20 flex flex-col lg:flex-row">
 				<div className="basis-3/5">
 					<Title
 						name="Designs"
@@ -132,7 +126,7 @@ const Designs = () => {
 				</div>
 				<TitleHeading />
 			</div>
-			<div className="px-5 md:px-20 mt-24 flex items-center">
+			<div className="px-5 md:px-20 mt-12 lg:mt-24 flex items-center">
 				<div className="basis-1/2">
 					<div className="w-2/3 h-px bg-white"></div>
 				</div>
@@ -157,7 +151,7 @@ const Designs = () => {
 					</div>
 				</div>
 			</div>
-			<div className="px-5 md:px-20 mt-20">
+			<div className="px-5 md:px-20 mt-5 lg:mt-20">
 				<Swiper
 					slidesPerView={1}
 					ref={swiperRef}
@@ -170,7 +164,7 @@ const Designs = () => {
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
 					modules={[Navigation, Pagination]}
-					className="w-full swiper-con cursor-pointer h-[70rem] overflow-hidden"
+					className="w-full swiper-con cursor-pointer h-[40rem] lg:h-[70rem] overflow-hidden"
 				>
 					<SwiperSlide>
 						<img

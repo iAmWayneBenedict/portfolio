@@ -11,9 +11,7 @@ import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
-import {
-	BrowserRouter,Route,Routes
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 	return (
@@ -24,7 +22,6 @@ function App() {
 }
 
 function Root() {
-
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);
@@ -41,9 +38,9 @@ function Root() {
 
 	useSmoothScroll(true);
 
-	// gsap.config({
-	// 	nullTargetWarn: false,
-	// });
+	gsap.config({
+		nullTargetWarn: false,
+	});
 
 	const handleNavbar = useCallback(
 		(isActive: boolean = false, setActive: React.Dispatch<React.SetStateAction<boolean>>) => {
@@ -72,24 +69,21 @@ function Root() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 					</Routes>
-
 				</div>
 				<button
 					id="scroll-to-top-btn"
-					className="fixed bottom-[5rem] right-[-150%] w-[7rem] h-[7rem] bg-white text-black border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
+					className="fixed bottom-[3rem] right-[8%] lg:bottom-[5rem] lg:right-[-150%] w-[5rem] h-[5rem] lg:w-[7rem] lg:h-[7rem] bg-white text-black border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
 					title="Scroll to top"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="70"
-						height="70"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
 						strokeWidth="1"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className="feather feather-arrow-up m-auto"
+						className="feather feather-arrow-up m-auto w-1/2"
 					>
 						<line x1="12" y1="19" x2="12" y2="5"></line>
 						<polyline points="5 12 12 5 19 12"></polyline>
