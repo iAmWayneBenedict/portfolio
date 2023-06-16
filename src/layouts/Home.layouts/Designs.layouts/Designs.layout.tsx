@@ -160,7 +160,7 @@ const Designs = () => {
 					}}
 					onSwiper={setSwiper}
 					navigation={true}
-					onTouchMove={(event) => handleTouchMove(event.touches, ".cursor-3")}
+					onTouchMove={(event) => handleTouchMove(event.touches, ".main-cursor")}
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
 					modules={[Navigation, Pagination]}

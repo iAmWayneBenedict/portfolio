@@ -69,6 +69,10 @@ html {
 	right: 5rem;
 }
 
+.swiper {
+	pointer-events: auto;
+}
+
 @media screen and (min-width: 480px) {
 	#scroll-to-top-btn.active {
 		right: 3rem;

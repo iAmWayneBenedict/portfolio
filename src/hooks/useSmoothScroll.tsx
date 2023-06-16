@@ -58,7 +58,7 @@ const useSmoothScroll = (start: boolean) => {
 		// Add a click event listener to the button
 		scrollTopBtn.addEventListener("click", () => {
 			// Smoothly scroll the scrollbar to the top
-			bodyScrollBar.scrollTo(0, 0, 2000); // 500 is the duration of the animation in milliseconds
+			bodyScrollBar.scrollTo(0, 0, 2000); // 3rd param is the duration of the animation in milliseconds
 		});
 	}, [start]);
 };

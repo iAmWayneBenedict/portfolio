@@ -83,7 +83,7 @@ const Projects = () => {
 						}}
 						onSwiper={setSwiper}
 						navigation={true}
-						onTouchMove={(event) => handleTouchMove(event.touches, ".cursor-2")}
+						onTouchMove={(event) => handleTouchMove(event.touches, ".main-cursor")}
 						onTouchStart={(event) => handleTouchStart(event.touches)}
 						onTouchEnd={() => handleTouchEnd()}
 						modules={[Navigation, FreeMode]}
