@@ -12,6 +12,7 @@ import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { inject } from "@vercel/analytics";
 
 function App() {
 	return (
@@ -34,6 +35,8 @@ function Root() {
 		isDarkMode().matches
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
+
+		inject();
 	}, []);
 
 	useSmoothScroll(true);
