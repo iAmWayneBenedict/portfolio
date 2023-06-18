@@ -1,5 +1,6 @@
 import React from "react";
 import MenuLink from "./MenuLink";
+import { Link } from "react-router-dom";
 
 interface Props {
 	useReference: React.RefObject<HTMLDivElement>;
@@ -58,8 +59,8 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 
 					<div className="menu-socials flex justify-between items-center">
 						<div className="menu-socials-left flex gap-5">
-							<a
-								href="https://github.com/iAmWayneBenedict"
+							<Link
+								to="https://github.com/iAmWayneBenedict"
 								className="github-menu-icon translate-y-10 opacity-0"
 							>
 								<svg
@@ -77,9 +78,12 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 										strokeLinejoin="round"
 									/>
 								</svg>
-							</a>
+							</Link>
 
-							<div className="linkedin-menu-icon translate-y-10 opacity-0">
+							<Link
+								to="https://www.linkedin.com/in/iamwaynebenedict/"
+								className="linkedin-menu-icon translate-y-10 opacity-0"
+							>
 								<svg
 									width="30"
 									height="30"
@@ -109,10 +113,13 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 										strokeLinejoin="round"
 									/>
 								</svg>
-							</div>
-							<div className="dribble-menu-icon translate-y-10 opacity-0">
+							</Link>
+							<Link
+								to="https://dribbble.com/iamwaynebenedict"
+								className="dribble-menu-icon translate-y-10 opacity-0"
+							>
 								<img src="/assets/png/Dribbble.png" alt="" />
-							</div>
+							</Link>
 						</div>
 						<div className="menu-socials-right opacity-0 flex gap-5">
 							<span>© 2022 | WAYNE</span>
