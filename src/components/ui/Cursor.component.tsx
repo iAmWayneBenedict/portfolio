@@ -1,6 +1,4 @@
-import gsap from "gsap";
-import React, { useState } from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface PositionProp {
 	mouseX: number;
@@ -14,7 +12,6 @@ interface PositionProp {
 
 const Cursor = () => {
 	const [isMoving, setIsMoving] = useState<boolean>(false);
-	const [cursorStatus, setCursorStatus] = useState<string>("default");
 
 	// Cursor One
 	const mainCursor = useRef<HTMLDivElement>(null);
@@ -28,10 +25,6 @@ const Cursor = () => {
 		distanceY: 0,
 		key: -1,
 	});
-
-	// Cursor Two
-	const mainCursor2 = useRef<HTMLDivElement>(null);
-	const mainCursor3 = useRef<HTMLDivElement>(null);
 
 	const handleMouseCursor = () => {
 		const followMouse = () => {
@@ -62,12 +55,7 @@ const Cursor = () => {
 		followMouse();
 
 		let links = document.querySelectorAll("a, button, .swiper");
-		// const transitionEndHandler = (el:HTMLDivElement) => {
-		// 	el.addEventListener('transitionend', transitionHandler)
-		// 	function transitionHandler() {
 
-		// 	}
-		// }
 		links.forEach((el) => {
 			el.addEventListener("mouseover", (event) => {
 				let currentEl = event.currentTarget as Element;
@@ -163,38 +151,6 @@ const Cursor = () => {
 		};
 	}, []);
 
-	// useEffect(() => {
-	// 	if (cursorStatus === "img") {
-	// 		gsap.to(mainCursor2.current?.firstElementChild!, {
-	// 			opacity: 1,
-	// 			width: "150px",
-	// 			height: "150px",
-	// 			duration: 0.15,
-	// 		});
-	// 	} else if (cursorStatus === "view") {
-	// 		gsap.to(mainCursor3.current?.firstElementChild!, {
-	// 			opacity: 1,
-	// 			width: "150px",
-	// 			height: "150px",
-	// 			duration: 0.15,
-	// 		});
-	// 	}
-	// }, [cursorStatus]);
-
-	// useEffect(() => {
-	// 	// if (cursorStatus !== "default") return;
-	// 	if (!isMoving) return;
-
-	// 	gsap.to(mainCursor.current?.firstElementChild!, {
-	// 		opacity: 1,
-	// 		duration: 0,
-	// 	});
-	// 	gsap.to(secondaryCursor.current!, {
-	// 		opacity: 1,
-	// 		duration: 0,
-	// 	});
-	// }, [cursorStatus]);
-
 	useEffect(() => {
 		handleMouseCursor();
 		if (!isMoving) return;
@@ -204,74 +160,49 @@ const Cursor = () => {
 	}, [isMoving]);
 	return (
 		<>
-			{/* {cursorStatus === "default" && ( */}
-			<>
-				<div
-					className="fixed mix-blend-difference z-[1000] pointer-events-none w-fit main-cursor"
-					ref={mainCursor}
-				>
-					<div className="bg-white w-[30px] h-[30px] rounded-full transition-transform duration-500 opacity-0 relative"></div>
-					<span
-						style={{
-							transform: "translate(-50%, -50%)",
-							transition: "none",
-							position: "absolute",
-							top: "50%",
-							left: "50%",
-							opacity: 0,
-						}}
-					>
-						asdasd
-					</span>
-				</div>
-				<div
-					className="fixed mix-blend-difference pointer-events-none z-[1000] transition-[opacity] duration-500 opacity-0"
-					ref={secondaryCursor}
-				>
-					<div className="w-[100px] animate-[spin_10s_linear_infinite]">
-						<svg xmlns="http://www.w3.org/2000/svg" lang="en" viewBox="0 0 500 500">
-							<defs>
-								<path
-									id="textcircle"
-									d="M250,400
+			<div
+				className="fixed mix-blend-difference z-[1000] pointer-events-none w-fit main-cursor"
+				ref={mainCursor}
+			>
+				<div className="bg-white w-[30px] h-[30px] rounded-full transition-transform duration-500 opacity-0 relative"></div>
+				<span
+					style={{
+						transform: "translate(-50%, -50%)",
+						transition: "none",
+						position: "absolute",
+						top: "50%",
+						left: "50%",
+						opacity: 0,
+					}}
+				></span>
+			</div>
+			<div
+				className="fixed mix-blend-difference pointer-events-none z-[1000] transition-[opacity] duration-500 opacity-0"
+				ref={secondaryCursor}
+			>
+				<div className="w-[100px] animate-[spin_10s_linear_infinite]">
+					<svg xmlns="http://www.w3.org/2000/svg" lang="en" viewBox="0 0 500 500">
+						<defs>
+							<path
+								id="textcircle"
+								d="M250,400
         a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
-									transform="rotate(12,250,250)"
-								/>
-							</defs>
-							<rect width="100%" height="100%" fill="none" />
-							<text className="text-[4.6rem] font-bold" style={{ fill: "white" }}>
-								<textPath
-									href="#textcircle"
-									aria-label="All for One &amp; One for All"
-									textLength="942"
-								>
-									.WAYNE. .WAYNE. .WAYNE.
-								</textPath>
-							</text>
-						</svg>
-					</div>
+								transform="rotate(12,250,250)"
+							/>
+						</defs>
+						<rect width="100%" height="100%" fill="none" />
+						<text className="text-[4.6rem] font-bold" style={{ fill: "white" }}>
+							<textPath
+								href="#textcircle"
+								aria-label="All for One &amp; One for All"
+								textLength="942"
+							>
+								.WAYNE. .WAYNE. .WAYNE.
+							</textPath>
+						</text>
+					</svg>
 				</div>
-			</>
-			{/* // )} */}
-
-			{/* {cursorStatus === "img" && (
-				<>
-					<div className="fixed z-[1000] pointer-events-none cursor-2" ref={mainCursor2}>
-						<div className="bg-black text-white w-[100px] h-[100px] rounded-full opacity-0 flex justify-center items-center">
-							DRAG
-						</div>
-					</div>
-				</>
-			)}
-			{cursorStatus === "view" && (
-				<>
-					<div className="fixed z-[1000] pointer-events-none cursor-3" ref={mainCursor3}>
-						<div className="bg-black text-white w-[100px] h-[100px] rounded-full opacity-0 flex justify-center items-center">
-							<span>VIEW</span>
-						</div>
-					</div>
-				</>
-			)} */}
+			</div>
 		</>
 	);
 };

@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export const ContactLayouts = () => {
 	return (
 		<div className="mt-40 bg-black pt-48 pb-20 px-10 lg:px-24">
 			<div className="text-white flex justify-between flex-col lg:flex-row">
 				<div>
-					<a href="#">
+					<Link to="#">
 						<h1 className="flex">
 							<span
 								className="font-neueMontrealRegular"
@@ -17,29 +19,29 @@ export const ContactLayouts = () => {
 								alt=""
 							/>
 						</h1>
-					</a>
+					</Link>
 					<div className="mt-16 flex flex-col gap-10">
 						<p>Open for Collaboration</p>
 						<p>Available for Freelance Work</p>
 					</div>
 				</div>
 				<div className="flex flex-row lg:flex-col gap-10 mt-24 lg:mt-0">
-					<a href="#">
+					<Link to="#">
 						<img src="/assets/ico/github.svg" alt="" />
-					</a>
+					</Link>
 
-					<a href="#">
+					<Link to="#">
 						<img src="/assets/ico/linkedin.svg" alt="" />
-					</a>
+					</Link>
 
-					<a href="#">
+					<Link to="#">
 						<img src="/assets/ico/dribbble%201.svg" alt="" />
-					</a>
+					</Link>
 				</div>
 			</div>
 			<div className="text-white mt-36 lg:mt-56 flex justify-between">
 				<div>
-					<a href="#">Terms and Conditions</a>
+					<Link to="#">Terms and Conditions</Link>
 				</div>
 				<div>
 					<span>

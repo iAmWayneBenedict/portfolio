@@ -2,7 +2,7 @@ let isSwiping = false;
 let startX = 0;
 let startY = 0;
 
-const handleTouchStart = ({ currentX, currentY }: { currentX: number; currentY: number }) => {
+const handleTouchStart = ({ currentX, currentY }: { currentX: number; currentY: number }): void => {
 	isSwiping = true;
 	startX = currentX;
 	startY = currentY;
