@@ -202,7 +202,7 @@ const Cursor = () => {
 								aria-label="All for One &amp; One for All"
 								textLength="942"
 							>
-								.WAYNE. .WAYNE. .WAYNE.
+								WAYNE. WAYNE. WAYNE.
 							</textPath>
 						</text>
 					</svg>
