@@ -5,14 +5,16 @@ import Cursor from "./components/ui/Cursor.component";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import SplashScreen from "./layouts/SplashScreen.layout";
+import SplashScreenAll from "./layouts/SplashScreenAll.layout";
 import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { inject } from "@vercel/analytics";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import Projects from "./pages/Projects.page";
 
 function App() {
 	return (
@@ -26,17 +28,17 @@ function Root() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);
+	let path = useLocation();
 
 	const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
 
 	useEffect(() => {
 		// setDOMLoaded(true);
+		console.log(path.pathname);
 		isDarkMode().matches
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
-
-		inject();
 	}, []);
 
 	useSmoothScroll(true);
@@ -55,9 +57,15 @@ function Root() {
 	return (
 		<AnimatePresence>
 			<div className="App bg-white h-screen relative">
-				{!isLoaded && (
+				{!isLoaded && path.pathname === "/" && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />
+					// </div>
+				)}
+
+				{!isLoaded && path.pathname !== "/" && (
+					// <div className="h-full relative">
+					<SplashScreenAll setIsLoaded={setIsLoaded} />
 					// </div>
 				)}
 
@@ -68,10 +76,12 @@ function Root() {
 				<div className="cursor h-screen">
 					<Menu useReference={menu} historyReturn={rHistory} />
 					<Nav handleNavbar={handleNavbar} />
-
-					<Routes>
-						<Route path="/" element={<Home />} />
-					</Routes>
+					<div className="bg-con overflow-hidden" style={{ backgroundColor: "white" }}>
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/projects" element={<Projects />} />
+						</Routes>
+					</div>
 				</div>
 				<button
 					id="scroll-to-top-btn"
@@ -92,6 +102,7 @@ function Root() {
 						<polyline points="5 12 12 5 19 12"></polyline>
 					</svg>
 				</button>
+				<Analytics />
 			</div>
 		</AnimatePresence>
 	);

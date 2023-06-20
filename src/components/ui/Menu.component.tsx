@@ -13,7 +13,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			ref={useReference}
 			className="menu-con fixed opacity-0 hidden top-0 left-0 w-screen h-screen bg-white z-50"
 		>
-			<div className="left-menu bg-black w-[20rem] h-0 flex flex-col justify-between items-start">
+			<div className="left-menu hidden bg-black w-[20rem] h-0 md:flex flex-col justify-between items-start">
 				<div className="top-left-menu text-white font-bold font-quicksand text-2xl w-fit opacity-0">
 					<h1 className="-rotate-90 pr-16 pb-20" style={{ direction: "rtl" }}>
 						WAYNE
@@ -25,8 +25,11 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			</div>
 			<div className="right-menu w-full relative h-full">
 				{/* <div className="absolute bottom-0 right-0 span-black bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
-				<div className="flex flex-col px-48 justify-evenly h-full">
-					<div className="menu-back">
+				<Link to="/" className="font-quicksand font-bold absolute top-5 left-3">
+					WAYNE
+				</Link>
+				<div className="flex flex-col px-24 md:px-32 xl:px-48 justify-evenly h-full">
+					<div className="menu-back hidden md:flex">
 						<button
 							type="button"
 							className="flex gap-5 items-center opacity-0 -translate-y-10"
@@ -57,7 +60,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 						<MenuLink text={"ABOUT"} />
 					</div>
 
-					<div className="menu-socials flex justify-between items-center">
+					<div className="menu-socials flex flex-col gap-10 sm:gap-0 sm:flex-row justify-between items-center">
 						<div className="menu-socials-left flex gap-5">
 							<Link
 								to="https://github.com/iAmWayneBenedict"

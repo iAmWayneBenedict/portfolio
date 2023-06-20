@@ -26,15 +26,15 @@ export const ContactLayouts = () => {
 					</div>
 				</div>
 				<div className="flex flex-row lg:flex-col gap-10 mt-24 lg:mt-0">
-					<Link to="#">
+					<Link to="https://github.com/iAmWayneBenedict">
 						<img src="/assets/ico/github.svg" alt="" />
 					</Link>
 
-					<Link to="#">
+					<Link to="https://www.linkedin.com/in/iamwaynebenedict/">
 						<img src="/assets/ico/linkedin.svg" alt="" />
 					</Link>
 
-					<Link to="#">
+					<Link to="https://dribbble.com/iamwaynebenedict">
 						<img src="/assets/ico/dribbble%201.svg" alt="" />
 					</Link>
 				</div>

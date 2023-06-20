@@ -13,7 +13,7 @@ interface Props {
 
 const Nav: React.FC<Props> = ({ handleNavbar, reverse }) => {
 	return (
-		<nav className="px-3 pt-3 container mx-auto flex items-center">
+		<nav className="px-3 pt-3 bg-white container mx-auto flex items-center">
 			<ButtonOutline reverse={reverse} />
 			<BrandName />
 			<Hamburger handleNavbar={handleNavbar} />
