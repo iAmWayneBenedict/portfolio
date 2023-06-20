@@ -64,6 +64,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 						<div className="menu-socials-left flex gap-5">
 							<Link
 								to="https://github.com/iAmWayneBenedict"
+								target="_blank"
 								className="github-menu-icon translate-y-10 opacity-0"
 							>
 								<svg
@@ -85,6 +86,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 
 							<Link
 								to="https://www.linkedin.com/in/iamwaynebenedict/"
+								target="_blank"
 								className="linkedin-menu-icon translate-y-10 opacity-0"
 							>
 								<svg
@@ -119,6 +121,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 							</Link>
 							<Link
 								to="https://dribbble.com/iamwaynebenedict"
+								target="_blank"
 								className="dribble-menu-icon translate-y-10 opacity-0"
 							>
 								<img src="/assets/png/Dribbble.png" alt="" />
