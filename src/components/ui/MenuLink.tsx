@@ -20,7 +20,7 @@ const MenuLink: React.FC<Props> = ({ text, href = "#" }) => {
 		<Link
 			to={href}
 			ref={menuLinkText}
-			className="menu-link-text text-8xl translate-y-10 opacity-0"
+			className="menu-link-text text-4xl xl:text-6xl 2xl:text-8xl translate-y-10 opacity-0"
 		>
 			{text}
 		</Link>

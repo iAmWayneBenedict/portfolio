@@ -2,13 +2,13 @@ import Marquee from "react-fast-marquee";
 import MarqueeText from "../Home.layouts/Designs.layouts/MarqueeText.layouts";
 import React from "react";
 
-const Technologies = () => {
+const Technologies: React.FC = () => {
 	return (
 		<div className="mt-64">
 			<h1 className="text-center font-bold text-xl lg:text-2xl">TECHNOLOGIES</h1>
 			<div>
 				<div className="mt-20">
-					<div className="mousemove marquee-container text-white py-8 lg:py-12 border-t border-b border-2 border-black">
+					<div className="mousemove marquee-container text-white py-8 lg:py-12 border-t-2 border-b-2 border-black">
 						<Marquee
 							className="overflow-y-hidden cursor-default whitespace-nowrap"
 							speed={50}

@@ -45,7 +45,6 @@ const Designs = () => {
 		} else {
 			bgCon.style.backgroundColor = "white";
 		}
-		console.log(inView, bgCon.style.backgroundColor);
 
 		return () => {
 			bgCon.style.transition = "unset";

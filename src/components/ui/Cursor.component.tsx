@@ -164,7 +164,12 @@ const Cursor = () => {
 				className="fixed mix-blend-difference z-[1000] pointer-events-none w-fit main-cursor"
 				ref={mainCursor}
 			>
-				<div className="bg-white w-[30px] h-[30px] rounded-full transition-transform duration-500 opacity-0 relative"></div>
+				<div
+					className="bg-white w-[30px] h-[30px] rounded-full opacity-0 relative"
+					style={{
+						transition: "transform 500ms cubic-bezier(0.000, 0.405, 0.000, 1.285)",
+					}}
+				></div>
 				<span
 					style={{
 						transform: "translate(-50%, -50%)",
