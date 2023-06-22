@@ -1,37 +1,39 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Line from "../../../components/ui/Line.component";
 import Title from "../../../components/ui/Title.component";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useLocation } from "react-router-dom";
 
 const Certificates = () => {
 	gsap.registerPlugin(ScrollTrigger);
 
 	const certCon = useRef<HTMLDivElement>(null);
 	const certBaseCon = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		gsap.to(".line-one-top-cert-fill", {
+			width: "100%",
+			duration: 1.5,
 
-	gsap.to(".line-one-top-cert-fill", {
-		width: "100%",
-		duration: 1.5,
+			scrollTrigger: {
+				trigger: certCon.current!,
+				start: "top center",
+				toggleActions: "restart none none none",
+			},
+		});
 
-		scrollTrigger: {
-			trigger: certCon.current!,
-			start: "top center",
-			toggleActions: "restart none none none",
-		},
-	});
+		gsap.to(certBaseCon.current!, {
+			opacity: 1,
+			duration: 1.5,
 
-	gsap.to(certBaseCon.current!, {
-		opacity: 1,
-		duration: 1.5,
-
-		scrollTrigger: {
-			trigger: certCon.current!,
-			start: "top center",
-			toggleActions: "restart none none none",
-		},
-	});
+			scrollTrigger: {
+				trigger: certCon.current!,
+				start: "top center",
+				toggleActions: "restart none none none",
+			},
+		});
+	}, []);
 
 	return (
 		<div className="mt-96 pt-48" ref={certBaseCon}>
@@ -77,9 +79,9 @@ const Certificates = () => {
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
-										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										key={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
+										alt={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
+										src={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
 										effect="blur"
 										wrapperClassName="w-full h-full"
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
@@ -97,9 +99,15 @@ const Certificates = () => {
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
-										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										key={
+											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
+										}
+										alt={
+											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
+										}
+										src={
+											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
+										}
 										effect="blur"
 										wrapperClassName="w-full h-full"
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
@@ -115,9 +123,9 @@ const Certificates = () => {
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
-										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
+										key={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
+										alt={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
+										src={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
 										effect="blur"
 										wrapperClassName="w-full h-full"
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"

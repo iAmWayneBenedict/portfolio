@@ -1,37 +1,55 @@
 import gsap from "gsap";
 import React from "react";
 import { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 interface Props {
+	isLoaded: boolean;
 	reverse?: boolean;
 }
 
-const ButtonOutline: React.FC<Props> = ({ reverse }) => {
+const ButtonOutline: React.FC<Props> = ({ isLoaded, reverse }) => {
 	const textPath = useRef<SVGPathElement>(null);
 	const outlinePath = useRef<SVGRectElement>(null);
 
 	const bg = useRef<HTMLSpanElement>(null);
-
-	const tl = gsap.timeline();
-	tl.to(
-		textPath.current!,
-		{
-			y: 0,
-			opacity: 1,
-		},
-		"+=1"
-	).to(
-		outlinePath.current!,
-		{
-			duration: 3,
-			strokeDashoffset: 0,
-			ease: "Expo.easeOut",
-		},
-		"+=1"
-	);
-
+	const location = useLocation();
 	useEffect(() => {
-		tl.reverse();
-	}, [reverse]);
+		const tl = gsap.timeline();
+		let delay = isLoaded ? "+=1.5" : "+=12";
+		console.log(isLoaded);
+		tl.fromTo(
+			textPath.current!,
+			{
+				y: -12,
+				opacity: 0,
+			},
+			{
+				y: 0,
+				opacity: 1,
+			},
+			delay
+		).fromTo(
+			outlinePath.current!,
+			{
+				strokeDashoffset: 310,
+			},
+			{
+				duration: 3,
+				strokeDashoffset: 0,
+				ease: "Expo.easeOut",
+			},
+			"+=1"
+		);
+
+		return () => {
+			tl.kill();
+			gsap.registerPlugin([]);
+		};
+	}, [location]);
+
+	// useEffect(() => {
+	// 	tl.reverse();
+	// }, [reverse]);
 
 	const handleMouseOver = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		gsap.to(bg.current!, {

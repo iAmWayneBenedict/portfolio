@@ -21,7 +21,7 @@ const SplashScreenAll: React.FC<Props> = ({ setIsLoaded }) => {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setIsLoaded(true);
-		}, 10000);
+		}, 1000);
 
 		return () => clearTimeout(timer);
 	}, []);

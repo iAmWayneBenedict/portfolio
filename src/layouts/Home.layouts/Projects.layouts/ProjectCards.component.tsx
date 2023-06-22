@@ -58,12 +58,12 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 				ref={slide}
 				className="slide-hover-effect w-full h-full basis-11/12 overflow-hidden"
 			>
-				<LazyLoadImage
-					key={src}
+				<img
+					// key={src}
 					alt={src}
 					src={src}
-					effect="blur"
-					wrapperClassName="w-full h-full"
+					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}
+					// wrapperClassName="w-full h-full"
 					className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
 					style={{
 						transition: "all 1s ease",

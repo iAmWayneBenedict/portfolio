@@ -8,6 +8,7 @@ import SplashScreen from "./layouts/SplashScreen.layout";
 import SplashScreenAll from "./layouts/SplashScreenAll.layout";
 import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
@@ -15,6 +16,7 @@ import handleMenu from "./utils/handleMenu";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Projects from "./pages/Projects.page";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
 	return (
@@ -27,6 +29,8 @@ function App() {
 function Root() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const menu = useRef<HTMLDivElement>(null);
+	const scroller = useRef<HTMLDivElement>(null);
+	const app = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);
 	let path = useLocation();
 
@@ -35,10 +39,24 @@ function Root() {
 
 	useEffect(() => {
 		// setDOMLoaded(true);
-		console.log(path.pathname);
 		isDarkMode().matches
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
+
+		// gsap.registerPlugin(ScrollTrigger);
+
+		// const lenis = new Lenis({
+		// 	duration: 2,
+		// 	smoothWheel: true,
+		// 	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		// });
+
+		// function raf(time: number) {
+		// 	lenis.raf(time);
+		// 	requestAnimationFrame(raf);
+		// }
+
+		// requestAnimationFrame(raf);
 	}, []);
 
 	useSmoothScroll(true);
@@ -56,7 +74,7 @@ function Root() {
 
 	return (
 		<AnimatePresence>
-			<div className="App bg-white h-screen relative">
+			<div className="App bg-white h-screen relative" ref={app}>
 				{!isLoaded && path.pathname === "/" && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />
@@ -73,12 +91,12 @@ function Root() {
 				<BrowserView>
 					<Cursor />
 				</BrowserView>
-				<div className="cursor h-screen">
+				<div className="cursor h-screen" ref={scroller}>
 					<Menu useReference={menu} historyReturn={rHistory} />
-					<Nav handleNavbar={handleNavbar} />
-					<div className="bg-con overflow-hidden" style={{ backgroundColor: "white" }}>
+					<Nav isLoaded={isLoaded} handleNavbar={handleNavbar} />
+					<div className="bg-con" style={{ backgroundColor: "white" }}>
 						<Routes>
-							<Route path="/" element={<Home />} />
+							<Route path="/" element={<Home isLoaded={isLoaded} />} />
 							<Route path="/projects" element={<Projects />} />
 						</Routes>
 					</div>
