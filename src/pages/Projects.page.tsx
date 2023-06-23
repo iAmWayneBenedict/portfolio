@@ -128,13 +128,13 @@ const Projects = () => {
 									<button
 										type="button"
 										data-name={name}
-										className="project-category italic"
+										className="project-category italic transition-opacity duration-250 ease-linear"
 									>
 										{value}
 									</button>
 									{index !== categoryData.length - 1 ? (
 										<div className="h-[3px] w-[40px]">
-											<div className="line-category h-full w-full transition-all duration-250 ease-linear bg-black"></div>
+											<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-black"></div>
 										</div>
 									) : (
 										""
