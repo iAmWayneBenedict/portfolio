@@ -1,20 +1,24 @@
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 
 interface Props {
+	isLoaded: boolean;
 	handleNavbar: (
 		isActive: boolean,
 		setActive: React.Dispatch<React.SetStateAction<boolean>>
 	) => void;
 }
 
-const Hamburger: React.FC<Props> = ({ handleNavbar }) => {
+const Hamburger: React.FC<Props> = ({ isLoaded, handleNavbar }) => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
 	const [active, setActive] = useState<boolean>(false);
 	const [onMount, setOnMount] = useState<boolean>(true);
+
+	const location = useLocation();
 
 	useEffect(() => {
 		if (onMount) return;
@@ -66,20 +70,33 @@ const Hamburger: React.FC<Props> = ({ handleNavbar }) => {
 		bottom.style.transform = "rotate(0deg)";
 	};
 
-	gsap.timeline()
-		.to(topLine.current, {
-			duration: 1,
-			delay: 1,
-			width: "100%",
-		})
-		.to(
+	useEffect(() => {
+		let delay = isLoaded ? "+=.5" : "+=10";
+		const tl = gsap.timeline();
+		tl.fromTo(
+			topLine.current,
+			{ width: 0 },
+			{
+				duration: 1,
+				delay: 1,
+				width: "100%",
+			},
+			delay
+		).fromTo(
 			bottomLine.current,
+			{ width: 0 },
 			{
 				duration: 1,
 				width: "100%",
 			},
 			"-=.7"
 		);
+
+		return () => {
+			tl.kill();
+			gsap.registerPlugin([]);
+		};
+	}, [location]);
 
 	return (
 		<button

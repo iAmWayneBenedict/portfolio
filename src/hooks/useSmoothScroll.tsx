@@ -37,29 +37,34 @@ const useSmoothScroll = (start: boolean) => {
 
 		if (document.querySelector(".gsap-marker-scroller-start")) {
 			const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-			bodyScrollBar.addListener(({ offset }) => {
+			const handleMarkers = ({ offset }: any) => {
 				gsap.set(markers, { marginTop: -offset.y });
-			});
+			};
+			bodyScrollBar.addListener(handleMarkers);
 		}
 
 		// Get the "scroll to top" button element
 		const scrollTopBtn = document.querySelector("#scroll-to-top-btn") as HTMLElement;
 
-		// Show/hide the button based on scroll position
-		bodyScrollBar.addListener((status) => {
+		const handleScrollTop = (status: { offset: { y: number } }) => {
 			if (status.offset.y > 100) {
 				scrollTopBtn.classList.add("active");
 			} else {
 				scrollTopBtn.classList.remove("active");
 			}
-		});
+		};
+		// Show/hide the button based on scroll position
+		bodyScrollBar.addListener(handleScrollTop);
 
 		// Add a click event listener to the button
 		scrollTopBtn.addEventListener("click", () => {
 			// Smoothly scroll the scrollbar to the top
 			bodyScrollBar.scrollTo(0, 0, 2000); // 3rd param is the duration of the animation in milliseconds
 		});
+		return () => {
+			bodyScrollBar.removeListener(ScrollTrigger.update);
+			bodyScrollBar.removeListener(handleScrollTop);
+		};
 	}, [start]);
 };
 

@@ -73,6 +73,41 @@ html {
 	pointer-events: auto;
 }
 
+/* lenis */
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
+/* lenis end */
+
+.blurred-img.loaded img {
+	opacity: 1;
+}
+.blurred-img.loaded img {
+	filter: none;
+}
+
+.project-category.active {
+	opacity: 1;
+}
+
 @media screen and (min-width: 480px) {
 	#scroll-to-top-btn.active {
 		right: 3rem;

@@ -18,38 +18,40 @@ const AboutSection = () => {
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	gsap.to(des.current!, {
-		duration: 2,
-		y: 0,
-		opacity: 1,
+	useEffect(() => {
+		gsap.to(des.current!, {
+			duration: 2,
+			y: 0,
+			opacity: 1,
 
-		scrollTrigger: {
-			trigger: d.current!,
-			start: "top bottom",
-			toggleActions: "restart none none none",
-		},
-	});
+			scrollTrigger: {
+				trigger: d.current!,
+				start: "top bottom",
+				toggleActions: "restart none none none",
+			},
+		});
 
-	gsap.to(".line-one-top-about-fill", {
-		width: "100%",
-		duration: 1.5,
+		gsap.to(".line-one-top-about-fill", {
+			width: "100%",
+			duration: 1.5,
 
-		scrollTrigger: {
-			trigger: d.current!,
-			start: "top bottom",
-			toggleActions: "restart none none none",
-		},
-	});
+			scrollTrigger: {
+				trigger: d.current!,
+				start: "top bottom",
+				toggleActions: "restart none none none",
+			},
+		});
 
-	gsap.to(".line-one-bottom-about-fill", {
-		width: "100%",
-		duration: 1.5,
+		gsap.to(".line-one-bottom-about-fill", {
+			width: "100%",
+			duration: 1.5,
 
-		scrollTrigger: {
-			trigger: d.current!,
-			start: "bottom bottom",
-			toggleActions: "restart none none none",
-		},
+			scrollTrigger: {
+				trigger: d.current!,
+				start: "bottom bottom",
+				toggleActions: "restart none none none",
+			},
+		});
 	});
 
 	return (

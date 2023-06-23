@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-export const ContactLayouts = () => {
+interface Props {
+	classes?: string;
+}
+export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white" }) => {
+	let filterStyles: string = "";
+	if (classes.includes("bg-white")) {
+		filterStyles = "invert(1)";
+	}
+
 	return (
-		<div className="mt-40 bg-black pt-48 pb-20 px-10 lg:px-24">
-			<div className="text-white flex justify-between flex-col lg:flex-row">
+		<div className={`${classes} mt-40 pt-48 pb-20 px-10 lg:px-24`}>
+			<div className={`flex justify-between flex-col lg:flex-row`}>
 				<div>
 					<Link to="#">
 						<h1 className="flex">
@@ -15,7 +24,10 @@ export const ContactLayouts = () => {
 							</span>
 							<img
 								src="/assets/ico/arrow-up-right.svg"
-								style={{ width: "clamp(6rem, 10vw, 10rem)" }}
+								style={{
+									width: "clamp(6rem, 10vw, 10rem)",
+									filter: filterStyles,
+								}}
 								alt=""
 							/>
 						</h1>
@@ -27,19 +39,27 @@ export const ContactLayouts = () => {
 				</div>
 				<div className="flex flex-row lg:flex-col gap-10 mt-24 lg:mt-0">
 					<Link to="https://github.com/iAmWayneBenedict" target="_blank">
-						<img src="/assets/ico/github.svg" alt="" />
+						<img src="/assets/ico/github.svg" style={{ filter: filterStyles }} alt="" />
 					</Link>
 
 					<Link to="https://www.linkedin.com/in/iamwaynebenedict/" target="_blank">
-						<img src="/assets/ico/linkedin.svg" alt="" />
+						<img
+							src="/assets/ico/linkedin.svg"
+							style={{ filter: filterStyles }}
+							alt=""
+						/>
 					</Link>
 
 					<Link to="https://dribbble.com/iamwaynebenedict" target="_blank">
-						<img src="/assets/ico/dribbble%201.svg" alt="" />
+						<img
+							src="/assets/ico/dribbble%201.svg"
+							style={{ filter: filterStyles }}
+							alt=""
+						/>
 					</Link>
 				</div>
 			</div>
-			<div className="text-white mt-36 lg:mt-56 flex justify-between">
+			<div className="mt-36 lg:mt-56 flex justify-between">
 				<div>
 					<Link to="#">Terms and Conditions</Link>
 				</div>

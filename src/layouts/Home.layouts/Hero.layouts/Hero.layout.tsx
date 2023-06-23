@@ -4,72 +4,84 @@ import ScrollDown from "./ScrollDown.component";
 import SplitType from "split-type";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-
-const Hero: React.FC = () => {
-	const text = new SplitType("#hero-1");
-	const text1 = new SplitType("#hero-2");
-	const text2 = new SplitType("#hero-3");
-	const text3 = new SplitType("#hero-4");
-
+interface Props {
+	isLoaded: boolean;
+}
+const Hero: React.FC<Props> = ({ isLoaded }) => {
 	gsap.registerPlugin(ScrollTrigger);
 
-	const tl = gsap.timeline({
-		scrollTrigger: {
-			trigger: ".hero-con",
-			start: "top top",
-			end: "+=100%",
-			scrub: true,
-		},
-	});
+	useEffect(() => {
+		const text = new SplitType("#hero-1");
+		const text1 = new SplitType("#hero-2");
+		const text2 = new SplitType("#hero-3");
+		const text3 = new SplitType("#hero-4");
+		let delay = isLoaded ? "+=.5" : "+=11";
 
-	gsap.utils.toArray(".hero").forEach((layer) => {
-		let l = layer as HTMLSpanElement;
-		const speed: number = parseFloat(l.dataset.speed!);
-		const movement = -(l.offsetHeight * speed);
-		tl.to(l, { y: movement, ease: "none" }, 0);
-	});
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".hero-con",
+				start: "top top",
+				end: "+=100%",
+				scrub: true,
+			},
+		});
 
-	const t = gsap.timeline();
-	t.to(
-		text.chars,
-		{
-			y: 0,
-			stagger: 0.05,
-			delay: 0.2,
-			duration: 0.1,
-		},
-		"+=.5"
-	)
-		.to(
-			text1.chars,
+		gsap.utils.toArray(".hero").forEach((layer) => {
+			let l = layer as HTMLSpanElement;
+			const speed: number = parseFloat(l.dataset.speed!);
+			const movement = -(l.offsetHeight * speed);
+			tl.to(l, { y: movement, ease: "none" }, 0);
+		});
+
+		const t = gsap.timeline();
+		t.to(
+			text.chars,
 			{
 				y: 0,
 				stagger: 0.05,
 				delay: 0.2,
 				duration: 0.1,
 			},
-			"-=1"
+			delay
 		)
-		.to(
-			text2.chars,
-			{
-				y: 0,
-				stagger: 0.05,
-				delay: 0.2,
-				duration: 0.1,
-			},
-			"-=.9"
-		)
-		.to(
-			text3.chars,
-			{
-				y: 0,
-				stagger: 0.05,
-				delay: 0.2,
-				duration: 0.1,
-			},
-			"-=.8"
-		);
+			.to(
+				text1.chars,
+				{
+					y: 0,
+					stagger: 0.05,
+					delay: 0.2,
+					duration: 0.1,
+				},
+				"-=1"
+			)
+			.to(
+				text2.chars,
+				{
+					y: 0,
+					stagger: 0.05,
+					delay: 0.2,
+					duration: 0.1,
+				},
+				"-=.9"
+			)
+			.to(
+				text3.chars,
+				{
+					y: 0,
+					stagger: 0.05,
+					delay: 0.2,
+					duration: 0.1,
+				},
+				"-=.8"
+			);
+
+		return () => {
+			// Cleanup animation and plugins when component unmounts
+			tl.kill();
+			t.kill();
+			gsap.registerPlugin([]);
+		};
+	}, []);
 
 	return (
 		<div>
@@ -106,7 +118,7 @@ const Hero: React.FC = () => {
 					INTO REALITY
 				</span>
 			</div>
-			<ScrollDown />
+			<ScrollDown isLoaded={isLoaded} />
 		</div>
 	);
 };

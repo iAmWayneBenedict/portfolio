@@ -25,14 +25,17 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			</div>
 			<div className="right-menu w-full relative h-full">
 				{/* <div className="absolute bottom-0 right-0 span-black bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
-				<Link to="/" className="font-quicksand font-bold absolute top-5 left-3">
+				<Link
+					to="/"
+					className="font-quicksand font-bold absolute top-5 flex left-3 md:hidden"
+				>
 					WAYNE
 				</Link>
 				<div className="flex flex-col px-24 md:px-32 xl:px-48 justify-evenly h-full">
 					<div className="menu-back hidden md:flex">
 						<button
 							type="button"
-							className="flex gap-5 items-center opacity-0 -translate-y-10"
+							className="close-menu-btn flex gap-5 items-center opacity-0 -translate-y-10"
 							ref={historyReturn}
 						>
 							<svg
@@ -54,7 +57,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 						</button>
 					</div>
 					<div className="menu-nav flex flex-col gap-5">
-						<MenuLink text={"PROJECTS"} />
+						<MenuLink text={"PROJECTS"} href="/projects" />
 						<MenuLink text={"JOURNEY"} />
 						<MenuLink text={"DESIGNS"} />
 						<MenuLink text={"ABOUT"} />

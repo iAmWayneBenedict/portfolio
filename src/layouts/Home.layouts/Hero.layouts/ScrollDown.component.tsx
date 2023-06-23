@@ -2,33 +2,40 @@ import gsap from "gsap";
 import React from "react";
 import { useEffect, useRef } from "react";
 
-const ScrollDown: React.FC = () => {
+interface Props {
+	isLoaded: boolean;
+}
+
+const ScrollDown: React.FC<Props> = ({ isLoaded }) => {
 	const lineCenter = useRef<HTMLSpanElement>(null);
 	const dotCenter = useRef<HTMLSpanElement>(null);
 	const scrollDownTitle = useRef<HTMLSpanElement>(null);
 
-	const tl = gsap.timeline();
+	useEffect(() => {
+		let delay = isLoaded ? "+=3" : "+=15";
+		const tl = gsap.timeline();
 
-	tl.to(
-		lineCenter.current!,
-		{
-			duration: 0.8,
-			top: 0,
-			ease: "Power3.easeOut",
-		},
-		"+=3"
-	)
-		.to(".dot-center", {
-			duration: 1.5,
-			opacity: 1,
-			y: 0,
-		})
-		.to(".scroll-down-title", {
-			duration: 1,
-			opacity: 0.7,
-			y: 0,
-			ease: "Power3.easeOut",
-		});
+		tl.to(
+			lineCenter.current!,
+			{
+				duration: 0.8,
+				top: 0,
+				ease: "Power3.easeOut",
+			},
+			delay
+		)
+			.to(".dot-center", {
+				duration: 1.5,
+				opacity: 1,
+				y: 0,
+			})
+			.to(".scroll-down-title", {
+				duration: 1,
+				opacity: 0.7,
+				y: 0,
+				ease: "Power3.easeOut",
+			});
+	}, []);
 
 	return (
 		<div className="flex flex-col items-center my-20">

@@ -175,21 +175,21 @@ const Designs = () => {
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
 							alt=""
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<img
 							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
+							src="/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"
 							alt=""
 						/>
 					</SwiperSlide>

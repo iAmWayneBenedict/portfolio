@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
@@ -15,6 +15,13 @@ const MenuLink: React.FC<Props> = ({ text, href = "#" }) => {
 	// const h1 = new SplitType(menuLinkText.current!);
 
 	let tl = gsap.timeline();
+	useEffect(() => {
+		const closeMenu = document.querySelector(".close-menu-btn") as HTMLButtonElement;
+
+		menuLinkText.current!.addEventListener("click", () => {
+			closeMenu.click();
+		});
+	});
 
 	return (
 		<Link

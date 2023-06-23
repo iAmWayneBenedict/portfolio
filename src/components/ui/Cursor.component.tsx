@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 interface PositionProp {
 	mouseX: number;
@@ -12,6 +13,7 @@ interface PositionProp {
 
 const Cursor = () => {
 	const [isMoving, setIsMoving] = useState<boolean>(false);
+	const location = useLocation();
 
 	// Cursor One
 	const mainCursor = useRef<HTMLDivElement>(null);
@@ -113,12 +115,14 @@ const Cursor = () => {
 		const handleMouseMove = (event: MouseEvent) => {
 			let targetEl = event.target as HTMLElement;
 			let firstParent = targetEl.parentElement;
+			let fParent = targetEl.parentElement?.parentElement?.parentElement?.parentElement;
+			let cont = targetEl.parentElement?.parentElement?.parentElement;
 			let fullParent =
-				targetEl.parentElement?.parentElement?.parentElement?.parentElement?.parentElement
-					?.parentElement;
-
+				targetEl.parentElement?.parentElement?.parentElement?.parentElement?.parentElement;
 			let isJourney =
 				firstParent?.classList.contains("mousedrag") ||
+				cont?.classList.contains("mousedrag") ||
+				fParent?.classList.contains("mousedrag") ||
 				fullParent?.classList.contains("mousedrag") ||
 				targetEl.classList.contains("mousedrag");
 
@@ -157,7 +161,7 @@ const Cursor = () => {
 
 		mainCursor.current?.firstElementChild?.classList.remove("opacity-0");
 		secondaryCursor.current?.classList.remove("opacity-0");
-	}, [isMoving]);
+	}, [isMoving, location]);
 	return (
 		<>
 			<div
@@ -167,7 +171,7 @@ const Cursor = () => {
 				<div
 					className="bg-white w-[30px] h-[30px] rounded-full opacity-0 relative"
 					style={{
-						transition: "transform 500ms cubic-bezier(0.000, 0.405, 0.000, 1.285)",
+						transition: "transform 750ms cubic-bezier(0.000, 0.405, 0.000, 1.285)",
 					}}
 				></div>
 				<span
