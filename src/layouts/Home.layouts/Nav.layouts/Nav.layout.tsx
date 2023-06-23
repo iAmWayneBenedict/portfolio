@@ -14,7 +14,7 @@ interface Props {
 
 const Nav: React.FC<Props> = ({ isLoaded, handleNavbar, reverse }) => {
 	return (
-		<nav className="px-3 pt-3 bg-white container mx-auto flex items-center">
+		<nav className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 pt-3 bg-white flex items-center">
 			<ButtonOutline isLoaded={isLoaded} reverse={reverse} />
 			<BrandName />
 			<Hamburger isLoaded={isLoaded} handleNavbar={handleNavbar} />

@@ -14,22 +14,13 @@ interface Props {
 const ProjectCards: React.FC<Props> = ({ src }) => {
 	const demoLink = useRef<HTMLAnchorElement>(null);
 	const slide = useRef<HTMLDivElement>(null);
+	const img = useRef<HTMLImageElement>(null);
 
 	// const dLink = new SplitType(demoLink.current!);
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	const handleMouseOver = (event: React.MouseEvent) => {
-		// gsap.to(dLink.chars, {
-		// 	y: 0,
-		// 	stagger: 0.05,
-		// 	onComplete: () => {
-		// 		gsap.delayedCall(0.5, () => {
-		// 			dLink.chars?.forEach((el) => [(el.style.textDecoration = "underline")]);
-		// 		});
-		// 	},
-		// });
-	};
+	const handleMouseOver = (event: React.MouseEvent) => {};
 	const handleMouseLeave = (event: React.MouseEvent) => {
 		// gsap.to(dLink.chars, {
 		// 	y: "100%",
@@ -38,18 +29,21 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 	};
 
 	// useEffect(() => {
-	// 	const loadHoverEffect = async () => {
-	// 		const hoverEffect = (await import("hover-effect")).default;
-	// 		let hoverDistort = new hoverEffect({
-	// 			parent: slide.current,
-	// 			intensity: 0.5,
-	// 			image1: src,
-	// 			image2: "/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
-	// 			displacementImage: "/assets/img/4.png",
-	// 		});
-	// 	};
+	// 	gsap.fromTo(
+	// 		img.current!,
+	// 		{
+	// 			duration: 1,
+	// 			width: 0,
+	// 		},
+	// 		{
+	// 			duration: 1,
+	// 			width: "100%",
 
-	// 	loadHoverEffect();
+	// 			scrollTrigger: {
+	// 				trigger: img.current!,
+	// 			},
+	// 		}
+	// 	);
 	// }, []);
 
 	return (
@@ -62,6 +56,7 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 					// key={src}
 					alt={src}
 					src={src}
+					ref={img}
 					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}
 					// wrapperClassName="w-full h-full"
 					className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"

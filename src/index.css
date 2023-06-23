@@ -97,6 +97,17 @@ html.lenis {
 
 /* lenis end */
 
+.blurred-img.loaded img {
+	opacity: 1;
+}
+.blurred-img.loaded img {
+	filter: none;
+}
+
+.project-category.active {
+	opacity: 1;
+}
+
 @media screen and (min-width: 480px) {
 	#scroll-to-top-btn.active {
 		right: 3rem;
