@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Home from "./pages/Home.page";
 import Nav from "./layouts/Home.layouts/Nav.layouts/Nav.layout";
 import Cursor from "./components/ui/Cursor.component";
@@ -13,7 +13,7 @@ import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, redirect, useLocation, useNavigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Projects from "./pages/Projects.page";
 import Lenis from "@studio-freight/lenis";
@@ -33,6 +33,7 @@ function Root() {
 	const app = useRef<HTMLDivElement>(null);
 	const rHistory = useRef<HTMLButtonElement>(null);
 	let path = useLocation();
+	const navigate = useNavigate();
 
 	const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
@@ -59,8 +60,6 @@ function Root() {
 		// requestAnimationFrame(raf);
 	}, []);
 
-	useSmoothScroll(true);
-
 	gsap.config({
 		nullTargetWarn: false,
 	});
@@ -71,6 +70,13 @@ function Root() {
 		},
 		[]
 	);
+	let smoothScrollbarHook = useSmoothScroll(true);
+
+	useLayoutEffect(() => {
+		if (smoothScrollbarHook) {
+			smoothScrollbarHook.scrollTo(0, 0, 0);
+		}
+	}, [path.pathname]);
 
 	return (
 		<AnimatePresence>
@@ -80,7 +86,6 @@ function Root() {
 					<SplashScreen setIsLoaded={setIsLoaded} />
 					// </div>
 				)}
-
 				{!isLoaded && path.pathname !== "/" && (
 					// <div className="h-full relative">
 					<SplashScreenAll setIsLoaded={setIsLoaded} />

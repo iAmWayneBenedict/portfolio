@@ -3,20 +3,19 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 interface Props {
-	isLoaded: boolean;
+	delay: string | undefined;
 	reverse?: boolean;
 }
 
-const ButtonOutline: React.FC<Props> = ({ isLoaded, reverse }) => {
+const ButtonOutline: React.FC<Props> = ({ delay, reverse }) => {
 	const textPath = useRef<SVGPathElement>(null);
 	const outlinePath = useRef<SVGRectElement>(null);
 
 	const bg = useRef<HTMLSpanElement>(null);
 	const location = useLocation();
+
 	useEffect(() => {
 		const tl = gsap.timeline();
-		let delay = isLoaded ? "+=1.5" : "+=12";
-		console.log(isLoaded);
 		tl.fromTo(
 			textPath.current!,
 			{
@@ -27,7 +26,7 @@ const ButtonOutline: React.FC<Props> = ({ isLoaded, reverse }) => {
 				y: 0,
 				opacity: 1,
 			},
-			delay
+			location.pathname === "/" && delay === "+=12" ? "+=12" : "+=1.5"
 		).fromTo(
 			outlinePath.current!,
 			{

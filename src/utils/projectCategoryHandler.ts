@@ -37,8 +37,8 @@ export default function categoryHandler({
 		projectCategories.forEach((el) => {
 			const element = el.firstElementChild as HTMLElement;
 			const element2 = el.lastElementChild as HTMLElement;
-			element.style.opacity = "0.4";
-			element2.style.opacity = "0.4";
+			element.style.opacity = "0.2";
+			element2.style.opacity = "0.2";
 		});
 	}
 	function mouseLeaveHandler() {

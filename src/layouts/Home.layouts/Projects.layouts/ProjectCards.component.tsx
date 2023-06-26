@@ -6,6 +6,7 @@ import SplitType from "split-type";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
 
 interface Props {
 	src?: string;
@@ -68,8 +69,8 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 			<div className="basis-1/12 flex items-center justify-between">
 				<span className="text-lg">Sample</span>
 				<div>
-					<a
-						href=""
+					<Link
+						to="/projects"
 						onMouseOver={(event) => handleMouseOver(event)}
 						onMouseLeave={(event) => handleMouseLeave(event)}
 						ref={demoLink}
@@ -78,7 +79,7 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 						<div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-black">
 							Live Demo
 						</div>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>

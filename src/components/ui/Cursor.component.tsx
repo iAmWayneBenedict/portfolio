@@ -151,9 +151,9 @@ const Cursor = () => {
 		document.addEventListener("mousemove", handleMouseMove);
 
 		return () => {
-			removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("mousemove", handleMouseMove);
 		};
-	}, []);
+	}, [location]);
 
 	useEffect(() => {
 		handleMouseCursor();

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const useSmoothScroll = (start: boolean) => {
+	const [a, setA] = useState<any>(null);
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -61,11 +62,14 @@ const useSmoothScroll = (start: boolean) => {
 			// Smoothly scroll the scrollbar to the top
 			bodyScrollBar.scrollTo(0, 0, 2000); // 3rd param is the duration of the animation in milliseconds
 		});
+		setA(bodyScrollBar);
 		return () => {
 			bodyScrollBar.removeListener(ScrollTrigger.update);
 			bodyScrollBar.removeListener(handleScrollTop);
 		};
 	}, [start]);
+
+	return a;
 };
 
 export default useSmoothScroll;

@@ -1,11 +1,12 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback, useLayoutEffect } from "react";
 import imagesLoaded from "imagesloaded";
 import categoryHandler from "../utils/projectCategoryHandler";
 import { ContactLayouts } from "../layouts/Home.layouts/Contact/Contact.layouts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
-import SplitType from "split-type";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import CustomLink from "../components/ui/CustomLink";
 
 const categoryData = [
 	["All.", "all"],
@@ -15,11 +16,13 @@ const categoryData = [
 	["Branding.", "branding"],
 ];
 
-const Projects = () => {
+const Projects: React.FC = () => {
 	const imgCon = useRef<HTMLDivElement>(null);
 	const activeHandler = useRef<HTMLDivElement>(null);
 	const titlePage = useRef<HTMLHeadingElement>(null);
 	const [active, setActive] = useState<string>("");
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(CustomEase);
@@ -27,12 +30,12 @@ const Projects = () => {
 	useEffect(() => {
 		const imgs = imagesLoaded(imgCon.current!);
 		imgs.on("done", (e) => {
-			console.log(e);
+			// const title = new SplitType(titlePage.current!);
+			setAnimation();
 		});
-	}, []);
+	}, [location]);
 
-	useEffect(() => {
-		// const title = new SplitType(titlePage.current!);
+	function setAnimation() {
 		setActive(activeHandler.current!.dataset.active!);
 
 		const tl = gsap.timeline();
@@ -78,6 +81,7 @@ const Projects = () => {
 					stagger: 0.5,
 				}
 			);
+
 		const images = gsap.utils.toArray("div.project-imgCon");
 		images.forEach((image) => {
 			let img = image as HTMLDivElement;
@@ -99,12 +103,21 @@ const Projects = () => {
 				}
 			);
 		});
-		console.log(document.querySelectorAll("div.line-category"));
-	}, []);
+	}
 
 	useEffect(() => {
 		categoryHandler({ active, setActive, imgCon, activeHandler });
 	}, [active]);
+
+	useEffect(() => {
+		if (location.pathname === "/projects") {
+			gsap.to(".App", {
+				opacity: 1,
+				duration: 0,
+				delay: 1,
+			});
+		}
+	}, []);
 
 	return (
 		<>
@@ -145,29 +158,39 @@ const Projects = () => {
 					</div>
 				</div>
 				<div className="grid grid-cols-2 gap-20 mt-24">
-					{[
-						"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp",
-						"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp",
-						"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg",
-						"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
-						"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp",
-					].map((img, index) => (
-						<div
-							className={index % 3 === 0 ? "col-span-2 mt-14" : "mt-14"}
-							key={index + img}
-						>
-							<div className="project-imgCon  w-full h-[70rem] overflow-hidden">
-								<img className="w-full h-full object-cover" src={img} alt="" />
+					{
+						// [
+						// 	"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp",
+						// 	"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp",
+						// 	"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg",
+						// 	"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
+						// 	"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp",
+						// ]
+						[
+							"https://images.unsplash.com/photo-1682687220198-88e9bdea9931?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+							"https://images.unsplash.com/photo-1687444569727-a100d340b485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+							"https://plus.unsplash.com/premium_photo-1677560517139-1836389bf843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+							"https://images.unsplash.com/photo-1687439960843-327512994899?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+							"https://images.unsplash.com/photo-1687440749453-298f255977ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
+						].map((img, index) => (
+							<div
+								className={index % 3 === 0 ? "col-span-2 mt-14" : "mt-14"}
+								key={index + img}
+							>
+								<div className="project-imgCon  w-full h-[70rem] overflow-hidden">
+									<img className="w-full h-full object-cover" src={img} alt="" />
+								</div>
+								<div className="mt-8">
+									<p className="text-2xl max-w-3xl leading-relaxed">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Totam vero eveniet maiores, doloribus dignissimos
+										praesentium a iusto provident cum excepturi.
+										<CustomLink to={"/"}>send</CustomLink>
+									</p>
+								</div>
 							</div>
-							<div className="mt-8">
-								<p className="text-2xl max-w-3xl leading-relaxed">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-									vero eveniet maiores, doloribus dignissimos praesentium a iusto
-									provident cum excepturi.
-								</p>
-							</div>
-						</div>
-					))}
+						))
+					}
 				</div>
 			</div>
 			<ContactLayouts classes="bg-white" />

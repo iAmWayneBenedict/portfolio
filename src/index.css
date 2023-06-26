@@ -50,9 +50,9 @@ Custom CSS events
 	padding: 0;
 }
 
-html {
+/* html {
 	scroll-behavior: smooth;
-}
+} */
 
 .char {
 	transform: translateY(115px);
