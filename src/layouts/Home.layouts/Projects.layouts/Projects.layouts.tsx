@@ -16,6 +16,7 @@ import {
 } from "../../../utils/handleTouchDragEvent";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import CustomLink from "../../../components/ui/CustomLink";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
@@ -44,9 +45,9 @@ const Projects = () => {
 			<div className="relative mx-5 md:mx-20">
 				<Title name="projects" />
 				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
-					<Link to="/projects" className="text-white text-lg">
+					<CustomLink to="/projects" className="text-white text-lg">
 						Explore all projects
-					</Link>
+					</CustomLink>
 				</div>
 			</div>
 			<div className="flex border-t border-b border-black mt-40 md:mt-64 h-[45rem] md:h-[52rem] flex-col md:flex-row">

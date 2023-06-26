@@ -74,20 +74,7 @@ const SplashScreenAll: React.FC<Props> = ({ setIsLoaded }) => {
 	// }, []);
 
 	return (
-		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white z-[1000]">
-			<div className="flex flex-col items-center gap-6 relative">
-				<h1 className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl lg:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]">
-					WAYNE
-				</h1>
-				<div
-					className={`loader w-[10rem] md:w-[15rem] rounded-3xl h-[.3rem] md:h-[.8rem] bg-white flex items-center`}
-				>
-					<div className="loader-fill animate-splashScreen bg-black h-[0.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
-						<div className="loader-fill-curtain bg-white opacity-0 w-[1px] h-[1px] z-[50]"></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white z-[1000]"></div>
 	);
 };
 

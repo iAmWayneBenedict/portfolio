@@ -4,14 +4,14 @@ import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 interface Props {
-	isLoaded: boolean;
+	delay: string | undefined;
 	handleNavbar: (
 		isActive: boolean,
 		setActive: React.Dispatch<React.SetStateAction<boolean>>
 	) => void;
 }
 
-const Hamburger: React.FC<Props> = ({ isLoaded, handleNavbar }) => {
+const Hamburger: React.FC<Props> = ({ delay, handleNavbar }) => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
@@ -71,7 +71,6 @@ const Hamburger: React.FC<Props> = ({ isLoaded, handleNavbar }) => {
 	};
 
 	useEffect(() => {
-		let delay = isLoaded ? "+=.5" : "+=10";
 		const tl = gsap.timeline();
 		tl.fromTo(
 			topLine.current,
@@ -81,7 +80,7 @@ const Hamburger: React.FC<Props> = ({ isLoaded, handleNavbar }) => {
 				delay: 1,
 				width: "100%",
 			},
-			delay
+			location.pathname === "/" && delay === "+=10.5" ? "+=10.5" : "+=.5"
 		).fromTo(
 			bottomLine.current,
 			{ width: 0 },
