@@ -83,25 +83,42 @@ const Projects: React.FC = () => {
 			);
 
 		const images = gsap.utils.toArray("div.project-imgCon");
-		images.forEach((image) => {
-			let img = image as HTMLDivElement;
-			gsap.fromTo(
-				img,
-				{
-					y: 200,
-					opacity: 0,
+		gsap.fromTo(
+			document.querySelector("div.project-imgCon") as NodeListOf<HTMLElement>[0],
+			{
+				y: 200,
+				opacity: 0,
+			},
+			{
+				y: 0,
+				duration: 2.5,
+				ease: CustomEase.create(
+					"custom",
+					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
+				),
+				opacity: 1,
+				delay: 1,
+				scrollTrigger: {
+					trigger: document.querySelector(
+						"div.project-imgCon"
+					) as NodeListOf<HTMLElement>[0],
 				},
-				{
-					y: 0,
-					duration: 2.5,
-					ease: CustomEase.create(
-						"custom",
-						"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
-					),
-					opacity: 1,
-					delay: 1,
-				}
-			);
+			}
+		);
+		images.forEach((image, index) => {
+			let img = image as HTMLDivElement;
+			if (index === 0) return;
+			gsap.to(img.lastElementChild, {
+				width: 0,
+				duration: 2.5,
+				ease: CustomEase.create(
+					"custom",
+					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
+				),
+				scrollTrigger: {
+					trigger: img,
+				},
+			});
 		});
 	}
 
@@ -177,8 +194,11 @@ const Projects: React.FC = () => {
 								className={index % 3 === 0 ? "col-span-2 mt-14" : "mt-14"}
 								key={index + img}
 							>
-								<div className="project-imgCon  w-full h-[70rem] overflow-hidden">
+								<div className="project-imgCon relative w-full h-[70rem] overflow-hidden">
 									<img className="w-full h-full object-cover" src={img} alt="" />
+									{index !== 0 && (
+										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
+									)}
 								</div>
 								<div className="mt-8">
 									<p className="text-2xl max-w-3xl leading-relaxed">
