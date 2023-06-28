@@ -17,6 +17,7 @@ import {
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import CustomLink from "../../../components/ui/CustomLink";
+import data from "../../../utils/data";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
@@ -91,31 +92,11 @@ const Projects = () => {
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
-						<SwiperSlide>
-							<ProjectCards
-								src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<ProjectCards
-								src={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<ProjectCards
-								src={"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<ProjectCards
-								src={"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"}
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<ProjectCards
-								src={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
-							/>
-						</SwiperSlide>
+						{data.designs.get("bagudbudExpressV2")?.images.map((image) => (
+							<SwiperSlide>
+								<ProjectCards src={image.image} />
+							</SwiperSlide>
+						))}
 					</Swiper>
 				</div>
 			</div>
