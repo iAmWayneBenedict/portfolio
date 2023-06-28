@@ -25,6 +25,7 @@ import {
 } from "../../../utils/handleTouchDragEvent";
 import hoverEffect from "hover-effect";
 import { motion, useInView } from "framer-motion";
+import data from "../../../utils/data";
 
 gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
@@ -165,34 +166,15 @@ const Designs = () => {
 					modules={[Navigation, Pagination]}
 					className="w-full swiper-con cursor-pointer h-[40rem] lg:h-[70rem] overflow-hidden"
 				>
-					<SwiperSlide>
-						<img
-							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"
-							alt=""
-						/>
-					</SwiperSlide>
-					<SwiperSlide>
-						<img
-							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
-							alt=""
-						/>
-					</SwiperSlide>
-					<SwiperSlide>
-						<img
-							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"
-							alt=""
-						/>
-					</SwiperSlide>
-					<SwiperSlide>
-						<img
-							className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-							src="/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp"
-							alt=""
-						/>
-					</SwiperSlide>
+					{data.designs.get("bagudbudExpressV2")?.images.map((image) => (
+						<SwiperSlide>
+							<img
+								className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
+								src={image.image}
+								alt=""
+							/>
+						</SwiperSlide>
+					))}
 				</Swiper>
 			</div>
 		</motion.div>
