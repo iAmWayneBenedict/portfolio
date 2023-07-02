@@ -80,7 +80,7 @@ const Projects = () => {
 					<Swiper
 						slidesPerView={isTabletOrMobile ? 1.5 : 3.5}
 						freeMode={true}
-						spaceBetween={20}
+						spaceBetween={isTabletOrMobile ? 20 : 40}
 						ref={swiperRef}
 						onSlideChange={() => {
 							console.log("Slide Change");
@@ -93,9 +93,9 @@ const Projects = () => {
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
-						{data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
+						{data.designs.map((design, index) => (
 							<SwiperSlide key={index}>
-								<ProjectCards src={image.image} />
+								<ProjectCards src={design.thumbnail_small} />
 							</SwiperSlide>
 						))}
 					</Swiper>
