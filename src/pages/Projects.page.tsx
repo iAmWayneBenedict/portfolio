@@ -8,6 +8,8 @@ import { CustomEase } from "gsap/CustomEase";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CustomLink from "../components/ui/CustomLink";
 import data from "../utils/data";
+import { isMobile } from "react-device-detect";
+import { useMediaQuery } from "react-responsive";
 
 const categoryData = [
 	["All.", "all"],
@@ -42,7 +44,7 @@ const Projects: React.FC = () => {
 		tl.fromTo(
 			titlePage.current!,
 			{
-				y: "100%",
+				y: "200%",
 				// opacity: 0,
 			},
 			{
@@ -135,24 +137,29 @@ const Projects: React.FC = () => {
 			});
 		}
 	}, []);
-
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
+	console.log(isMobileView);
 	return (
 		<>
-			<div className="mx-24" ref={imgCon}>
+			<div className="mx-5 md:mx-24" ref={imgCon}>
 				<div className="mt-48">
-					<h1 className="text-8xl overflow-hidden pb-2">
+					<h1
+						className="text-8xl overflow-hidden pb-2"
+						style={{ fontSize: "clamp(2rem, 10vw, 6rem)" }}
+					>
 						<div ref={titlePage}>All Projects</div>
 					</h1>
 					<div
 						key={"activeHandler"}
 						data-active="all"
 						ref={activeHandler}
-						className="mt-16 flex flex-row items-center gap-10 overflow-hidden"
+						className="mt-16 flex flex-row flex-wrap gap-3 md:gap-10 overflow-hidden"
 					>
 						{categoryData.map(([value, name], index) => {
 							return (
 								<div
-									className="flex flex-row items-center gap-10 text-4xl"
+									className="flex flex-row items-center gap-3 md:gap-10"
+									style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}
 									key={index + name}
 								>
 									<button
@@ -163,7 +170,7 @@ const Projects: React.FC = () => {
 										{value}
 									</button>
 									{index !== categoryData.length - 1 ? (
-										<div className="h-[3px] w-[40px]">
+										<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[40px]">
 											<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-black"></div>
 										</div>
 									) : (
@@ -174,7 +181,7 @@ const Projects: React.FC = () => {
 						})}
 					</div>
 				</div>
-				<div className="grid grid-cols-2 gap-20 mt-24">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 mt-10 md:mt-24">
 					{
 						// [
 						// 	"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp",
@@ -185,12 +192,16 @@ const Projects: React.FC = () => {
 						// ]
 						data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
 							<div
-								className={index % 3 === 0 ? "col-span-2 mt-14" : "mt-14"}
+								className={
+									index % 3 === 0 && !isMobileView
+										? "col-span-2 mt-14"
+										: "mt-14 h-fit"
+								}
 								key={index}
 							>
-								<div className="project-imgCon relative w-full h-[70rem] overflow-hidden">
+								<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
 									<img
-										className="w-full h-full object-cover"
+										className="w-full h-full object-cover object-center"
 										src={image.image}
 										alt=""
 									/>
@@ -199,7 +210,7 @@ const Projects: React.FC = () => {
 									)}
 								</div>
 								<div className="mt-8">
-									<p className="text-2xl max-w-3xl leading-relaxed">
+									<p className="text-base md:text-lg lg:text-2xl max-w-3xl leading-relaxed">
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Totam vero eveniet maiores, doloribus dignissimos
 										praesentium a iusto provident cum excepturi.

@@ -76,7 +76,7 @@ const ButtonOutline: React.FC<Props> = ({ delay, reverse }) => {
 	return (
 		<button
 			type="button"
-			className=" order-2 sm:order-1 relative bg-white rounded-3xl overflow-hidden scale-[0.85] sm:scale-1"
+			className=" order-2 sm:order-1 relative bg-white rounded-3xl scale-[0.85] sm:scale-1"
 			onMouseOver={(event) => handleMouseOver(event)}
 			onMouseLeave={(event) => handleMouseLeave(event)}
 		>

@@ -108,7 +108,7 @@ const Designs = () => {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1, transition: { duration: 2, ease: "easeInOut" } }}
 			ref={designCon}
-			className="mt-96 pb-24 text-white bg-transparent"
+			className="mt-96 pb-0 md:pb-24 text-white bg-transparent"
 		>
 			<div>
 				<h1 className="text-center text-sm lg:text-lg">
@@ -126,17 +126,17 @@ const Designs = () => {
 				</div>
 				<TitleHeading />
 			</div>
-			<div className="px-5 md:px-20 mt-12 lg:mt-24 flex items-center">
+			<div className="px-5 md:px-20 mt-8 md:mt-12 lg:mt-24 flex items-center">
 				<div className="basis-1/2">
 					<div className="w-2/3 h-px bg-white"></div>
 				</div>
 				<div className="basis-1/2 flex justify-end">
-					<div className="icons inline-flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
+					<div className="icons inline-flex justify-around my-0 sm:mt-8 sm:mb-10 gap-7 order-2 md:order-1">
 						<button type="button">
 							<img
 								onClick={() => goPrev()}
 								src="/assets/svg/arrow-left [white].svg"
-								className="w-12"
+								className="w-8 md:w-12"
 								alt=""
 							/>
 						</button>
@@ -144,14 +144,14 @@ const Designs = () => {
 							<img
 								onClick={() => goNext()}
 								src="/assets/svg/arrow-right [white].svg"
-								className="w-12"
+								className="w-8 md:w-12"
 								alt=""
 							/>
 						</button>
 					</div>
 				</div>
 			</div>
-			<div className="px-5 md:px-20 mt-5 lg:mt-20">
+			<div className="px-1 md:px-20 mt-3 md:mt-5 lg:mt-20">
 				<Swiper
 					slidesPerView={1}
 					ref={swiperRef}
@@ -164,7 +164,7 @@ const Designs = () => {
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
 					modules={[Navigation, Pagination]}
-					className="w-full swiper-con cursor-pointer h-[40rem] lg:h-[70rem] overflow-hidden"
+					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[40rem] lg:h-[70rem] overflow-hidden"
 				>
 					{data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
 						<SwiperSlide key={index}>

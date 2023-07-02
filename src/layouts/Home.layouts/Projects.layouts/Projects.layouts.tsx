@@ -42,7 +42,7 @@ const Projects = () => {
 	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
 	return (
-		<div className="mt-48 lg:mt-96 pb-96 tracking-wide">
+		<div className="mt-48 lg:mt-96 pb-48 lg:pb-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20">
 				<Title name="projects" />
 				<div className="absolute bg-black right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
@@ -51,7 +51,7 @@ const Projects = () => {
 					</CustomLink>
 				</div>
 			</div>
-			<div className="flex border-t border-b border-black mt-40 md:mt-64 h-[45rem] md:h-[52rem] flex-col md:flex-row">
+			<div className="flex border-t border-b-0 md:border-b border-black mt-40 md:mt-64 h-[30rem] md:h-[52rem] flex-col md:flex-row">
 				<div className="left md:border-r border-black md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
 					<div className="icons flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
 						<button type="button">
@@ -76,10 +76,11 @@ const Projects = () => {
 						<div className="all text-2xl mt-2">/5</div>
 					</div> */}
 				</div>
-				<div className="w-[90%] h-full">
+				<div className="w-full h-full md:h-full">
 					<Swiper
-						slidesPerView={isTabletOrMobile ? 1 : 3}
-						spaceBetween={40}
+						slidesPerView={isTabletOrMobile ? 1.5 : 3.5}
+						freeMode={true}
+						spaceBetween={20}
 						ref={swiperRef}
 						onSlideChange={() => {
 							console.log("Slide Change");
