@@ -185,7 +185,7 @@ const Projects: React.FC = () => {
 						// 	"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
 						// 	"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp",
 						// ]
-						data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
+						data.designs.map((design, index) => (
 							<div
 								className={
 									index % 3 === 0 && !isMobileView
@@ -197,7 +197,7 @@ const Projects: React.FC = () => {
 								<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
 									<img
 										className="w-full h-full object-cover object-center"
-										src={image.image}
+										src={design.thumbnail}
 										alt=""
 									/>
 									{index !== 0 && (
