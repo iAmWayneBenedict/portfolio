@@ -153,19 +153,19 @@ const Projects: React.FC = () => {
 						key={"activeHandler"}
 						data-active="all"
 						ref={activeHandler}
-						className="mt-16 flex flex-row flex-wrap gap-3 md:gap-10 overflow-hidden"
+						className="mt-16 flex flex-row flex-wrap gap-3 md:gap-10 "
 					>
 						{categoryData.map(([value, name], index) => {
 							return (
 								<div
-									className="flex flex-row items-center gap-3 md:gap-10"
+									className="flex flex-row items-center gap-3 md:gap-10 overflow-hidden"
 									style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}
 									key={index + name}
 								>
 									<button
 										type="button"
 										data-name={name}
-										className="project-category italic transition-opacity opacity-0 duration-250 ease-linear"
+										className="project-category italic transition-opacity duration-250 ease-linear"
 									>
 										{value}
 									</button>
