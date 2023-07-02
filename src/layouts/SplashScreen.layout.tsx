@@ -67,12 +67,12 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 				.to(".brand-logo-splash", {
 					opacity: "1",
 					marginBottom: "0px",
-				})
-				.to(".brand-logo-splash", {
-					opacity: "0",
-					marginBottom: "0px",
-					delay: 1,
 				});
+			// .to(".brand-logo-splash", {
+			// 	opacity: "0",
+			// 	marginBottom: "0px",
+			// 	delay: 1,
+			// });
 		}, 5000);
 
 		return () => clearTimeout(timer);
@@ -81,7 +81,7 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 	return (
 		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white z-[1000]">
 			<div className="flex flex-col items-center gap-6 relative">
-				{/* <motion.h1
+				<motion.h1
 					className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl lg:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]"
 					transition={{
 						ease: [0.6, 0.01, -0.05, 0.95],
@@ -90,10 +90,10 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 					layoutId="brand-logo"
 				>
 					WAYNE
-				</motion.h1> */}
-				<h1 className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl lg:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]">
+				</motion.h1>
+				{/* <h1 className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl lg:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]">
 					WAYNE
-				</h1>
+				</h1> */}
 				<div
 					className={`loader w-[10rem] md:w-[15rem] rounded-3xl h-[.3rem] md:h-[.8rem] bg-white flex items-center`}
 				>

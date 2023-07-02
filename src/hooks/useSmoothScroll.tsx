@@ -63,6 +63,7 @@ const useSmoothScroll = (start: boolean) => {
 			bodyScrollBar.scrollTo(0, 0, 2000); // 3rd param is the duration of the animation in milliseconds
 		});
 		setA(bodyScrollBar);
+		bodyScrollBar.track.xAxis.element.remove();
 		return () => {
 			bodyScrollBar.removeListener(ScrollTrigger.update);
 			bodyScrollBar.removeListener(handleScrollTop);

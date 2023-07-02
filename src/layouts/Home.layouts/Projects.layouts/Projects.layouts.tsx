@@ -92,8 +92,8 @@ const Projects = () => {
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
-						{data.designs.get("bagudbudExpressV2")?.images.map((image) => (
-							<SwiperSlide>
+						{data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
+							<SwiperSlide key={index}>
 								<ProjectCards src={image.image} />
 							</SwiperSlide>
 						))}

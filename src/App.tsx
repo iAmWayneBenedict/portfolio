@@ -39,25 +39,9 @@ function Root() {
 	const icon: HTMLLinkElement = document.querySelector("link[rel=icon]") as HTMLLinkElement;
 
 	useEffect(() => {
-		// setDOMLoaded(true);
 		isDarkMode().matches
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
-
-		// gsap.registerPlugin(ScrollTrigger);
-
-		// const lenis = new Lenis({
-		// 	duration: 2,
-		// 	smoothWheel: true,
-		// 	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-		// });
-
-		// function raf(time: number) {
-		// 	lenis.raf(time);
-		// 	requestAnimationFrame(raf);
-		// }
-
-		// requestAnimationFrame(raf);
 	}, []);
 
 	gsap.config({
@@ -70,17 +54,11 @@ function Root() {
 		},
 		[]
 	);
-	let smoothScrollbarHook = useSmoothScroll(true);
-
-	useLayoutEffect(() => {
-		if (smoothScrollbarHook) {
-			smoothScrollbarHook.scrollTo(0, 0, 0);
-		}
-	}, [path.pathname]);
 
 	return (
 		<AnimatePresence>
-			<div className="App bg-white h-screen relative" ref={app}>
+			<div className="App bg-white h-screen w-full relative" ref={app}>
+				<Scroller />
 				{!isLoaded && path.pathname === "/" && (
 					// <div className="h-full relative">
 					<SplashScreen setIsLoaded={setIsLoaded} />
@@ -96,7 +74,7 @@ function Root() {
 				<BrowserView>
 					<Cursor />
 				</BrowserView>
-				<div className="cursor h-screen" ref={scroller}>
+				<div className="cursor h-screen w-full" ref={scroller}>
 					<Menu useReference={menu} historyReturn={rHistory} />
 					<Nav isLoaded={isLoaded} handleNavbar={handleNavbar} />
 					<div className="bg-con" style={{ backgroundColor: "white" }}>
@@ -129,6 +107,32 @@ function Root() {
 			</div>
 		</AnimatePresence>
 	);
+}
+
+{
+	/* ---------------------------------------------------------------------- */
+}
+
+// Solved re-render  conflict between gsap and framer motion
+
+// DO NOT DELETE THE CODE BLOCK BELOW
+
+const Scroller = () => {
+	let smoothScrollbarHook = useSmoothScroll(true);
+	let path = useLocation();
+	useLayoutEffect(() => {
+		if (smoothScrollbarHook) {
+			smoothScrollbarHook.scrollTo(0, 0, 0);
+		}
+	}, [path.pathname]);
+
+	return <></>;
+};
+
+// 	END OF CODE BLOCK
+
+{
+	/* ---------------------------------------------------------------------- */
 }
 
 export default App;

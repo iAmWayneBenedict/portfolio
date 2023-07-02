@@ -166,8 +166,8 @@ const Designs = () => {
 					modules={[Navigation, Pagination]}
 					className="w-full swiper-con cursor-pointer h-[40rem] lg:h-[70rem] overflow-hidden"
 				>
-					{data.designs.get("bagudbudExpressV2")?.images.map((image) => (
-						<SwiperSlide>
+					{data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
+						<SwiperSlide key={index}>
 							<img
 								className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
 								src={image.image}
