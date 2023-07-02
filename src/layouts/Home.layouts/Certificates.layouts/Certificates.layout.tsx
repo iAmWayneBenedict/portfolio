@@ -36,7 +36,7 @@ const Certificates = () => {
 	}, []);
 
 	return (
-		<div className="mt-96 pt-48" ref={certBaseCon}>
+		<div className="mt-48 md:mt-96 pt-48" ref={certBaseCon}>
 			<div className="relative w-full" ref={certCon}>
 				<div className="px-5 sm:px-12 lg:px-28 flex flex-col w-full h-full">
 					<div className="relative flex justify-center">
@@ -57,7 +57,7 @@ const Certificates = () => {
 						id="line-one-top-cert"
 					/>
 					<div className="flex flex-col flex-wrap gap-10 lg:gap-20 mt-36 w-full h-full">
-						<div className="flex flex-wrap gap-5 sm:gap-10 lg:gap-20">
+						<div className="flex flex-col md:flex-row gap-5 sm:gap-10 lg:gap-20">
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage
@@ -95,7 +95,7 @@ const Certificates = () => {
 								</p>
 							</div>
 						</div>
-						<div className="flex flex-wrap gap-5 sm:gap-10 lg:gap-20">
+						<div className="flex flex-col md:flex-row gap-5 sm:gap-10 lg:gap-20">
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
 									<LazyLoadImage

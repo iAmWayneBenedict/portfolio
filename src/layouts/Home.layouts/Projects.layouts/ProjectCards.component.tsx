@@ -67,7 +67,7 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 				/>
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">
-				<span className="text-lg">Sample</span>
+				<span className="text-sm md:text-lg">Sample</span>
 				<div>
 					<Link
 						to="/projects"
@@ -76,7 +76,7 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 						ref={demoLink}
 						className="text-lg"
 					>
-						<div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-black">
+						<div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-black text-sm md:text-lg">
 							Live Demo
 						</div>
 					</Link>
