@@ -14,21 +14,21 @@ const BrandName: React.FC<Props> = ({ delay }) => {
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	useEffect(() => {
-		gsap.fromTo(
-			brandName.current!,
-			{
-				y: "-100%",
-			},
-			{
-				y: 0,
-				delay: location.pathname === "/" && delay === "11" ? "11" : "1",
-			}
-		);
-	}, [path]);
+	// useEffect(() => {
+	// 	gsap.fromTo(
+	// 		brandName.current!,
+	// 		{
+	// 			y: "-100%",
+	// 		},
+	// 		{
+	// 			y: 0,
+	// 			delay: location.pathname === "/" && delay === "11" ? "11" : "1",
+	// 		}
+	// 	);
+	// }, [path]);
 
 	return (
-		<div className="flex-1 flex sm:justify-center mr-20 order-1 sm:order-2 overflow-hidden">
+		<div className="flex-1 flex sm:justify-center mr-20 order-1 sm:order-2">
 			<motion.div
 				transition={{
 					ease: [0.6, 0.01, -0.05, 0.95],

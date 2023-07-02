@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CustomLink from "../components/ui/CustomLink";
+import data from "../utils/data";
 
 const categoryData = [
 	["All.", "all"],
@@ -30,7 +31,6 @@ const Projects: React.FC = () => {
 	useEffect(() => {
 		const imgs = imagesLoaded(imgCon.current!);
 		imgs.on("done", (e) => {
-			// const title = new SplitType(titlePage.current!);
 			setAnimation();
 		});
 	}, [location]);
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
 			titlePage.current!,
 			{
 				y: "100%",
-				opacity: 0,
+				// opacity: 0,
 			},
 			{
 				y: 0,
@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
 					"custom",
 					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
 				),
-				opacity: 1,
+				// opacity: 1,
 			},
 			"+=2"
 		)
@@ -183,19 +183,17 @@ const Projects: React.FC = () => {
 						// 	"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
 						// 	"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp",
 						// ]
-						[
-							"https://images.unsplash.com/photo-1682687220198-88e9bdea9931?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-							"https://images.unsplash.com/photo-1687444569727-a100d340b485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-							"https://plus.unsplash.com/premium_photo-1677560517139-1836389bf843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-							"https://images.unsplash.com/photo-1687439960843-327512994899?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-							"https://images.unsplash.com/photo-1687440749453-298f255977ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60",
-						].map((img, index) => (
+						data.designs.get("bagudbudExpressV2")?.images.map((image, index) => (
 							<div
 								className={index % 3 === 0 ? "col-span-2 mt-14" : "mt-14"}
-								key={index + img}
+								key={index}
 							>
 								<div className="project-imgCon relative w-full h-[70rem] overflow-hidden">
-									<img className="w-full h-full object-cover" src={img} alt="" />
+									<img
+										className="w-full h-full object-cover"
+										src={image.image}
+										alt=""
+									/>
 									{index !== 0 && (
 										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
 									)}
