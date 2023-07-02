@@ -100,11 +100,6 @@ const Projects: React.FC = () => {
 				),
 				opacity: 1,
 				delay: 1,
-				scrollTrigger: {
-					trigger: document.querySelector(
-						"div.project-imgCon"
-					) as NodeListOf<HTMLElement>[0],
-				},
 			}
 		);
 		images.forEach((image, index) => {
@@ -142,7 +137,7 @@ const Projects: React.FC = () => {
 	return (
 		<>
 			<div className="mx-5 md:mx-24" ref={imgCon}>
-				<div className="mt-48">
+				<div className="mt-32 md:mt-48">
 					<h1
 						className="text-8xl overflow-hidden pb-2"
 						style={{ fontSize: "clamp(2rem, 10vw, 6rem)" }}
@@ -153,7 +148,7 @@ const Projects: React.FC = () => {
 						key={"activeHandler"}
 						data-active="all"
 						ref={activeHandler}
-						className="mt-16 flex flex-row flex-wrap gap-3 md:gap-10 "
+						className="mt-12 md:mt-16 flex flex-row flex-wrap gap-3 md:gap-10 "
 					>
 						{categoryData.map(([value, name], index) => {
 							return (
