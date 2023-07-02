@@ -165,7 +165,7 @@ const Projects: React.FC = () => {
 									<button
 										type="button"
 										data-name={name}
-										className="project-category italic transition-opacity duration-250 ease-linear"
+										className="project-category italic transition-opacity opacity-0 duration-250 ease-linear"
 									>
 										{value}
 									</button>
