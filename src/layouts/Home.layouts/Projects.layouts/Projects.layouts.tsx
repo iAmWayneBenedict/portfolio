@@ -76,11 +76,11 @@ const Projects = () => {
 						<div className="all text-2xl mt-2">/5</div>
 					</div> */}
 				</div>
-				<div className="w-full h-full md:h-full">
+				<div className="w-full md:w-[90%] h-full">
 					<Swiper
-						slidesPerView={isTabletOrMobile ? 1.5 : 3.5}
+						slidesPerView={isTabletOrMobile ? 1.5 : 2.5}
 						freeMode={true}
-						spaceBetween={isTabletOrMobile ? 20 : 40}
+						spaceBetween={isTabletOrMobile ? 20 : 60}
 						ref={swiperRef}
 						onSlideChange={() => {
 							console.log("Slide Change");
@@ -94,8 +94,12 @@ const Projects = () => {
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
 						{data.designs.map((design, index) => (
-							<SwiperSlide key={index}>
-								<ProjectCards src={design.thumbnail_small} />
+							<SwiperSlide key={index} style={{ width: "fit-content" }}>
+								<ProjectCards
+									title={design.name}
+									image={design.thumbnail_small}
+									src={design.demoLink}
+								/>
 							</SwiperSlide>
 						))}
 					</Swiper>

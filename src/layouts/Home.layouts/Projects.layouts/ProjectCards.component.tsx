@@ -9,10 +9,12 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 
 interface Props {
+	title?: string;
+	image?: string;
 	src?: string;
 }
 
-const ProjectCards: React.FC<Props> = ({ src }) => {
+const ProjectCards: React.FC<Props> = ({ title, image, src }) => {
 	const demoLink = useRef<HTMLAnchorElement>(null);
 	const slide = useRef<HTMLDivElement>(null);
 	const img = useRef<HTMLImageElement>(null);
@@ -55,8 +57,8 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 			>
 				<img
 					// key={src}
-					alt={src}
-					src={src}
+					alt={image}
+					src={image}
 					ref={img}
 					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}
 					// wrapperClassName="w-full h-full"
@@ -67,10 +69,10 @@ const ProjectCards: React.FC<Props> = ({ src }) => {
 				/>
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">
-				<span className="text-sm md:text-lg">Sample</span>
+				<span className="text-sm md:text-lg">{title}</span>
 				<div>
 					<Link
-						to="/projects"
+						to={"/" + src}
 						onMouseOver={(event) => handleMouseOver(event)}
 						onMouseLeave={(event) => handleMouseLeave(event)}
 						ref={demoLink}

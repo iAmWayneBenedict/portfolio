@@ -176,7 +176,7 @@ const Projects: React.FC = () => {
 						})}
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 mt-10 md:mt-24">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24">
 					{
 						// [
 						// 	"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp",
@@ -187,31 +187,31 @@ const Projects: React.FC = () => {
 						// ]
 						data.designs.map((design, index) => (
 							<div
-								className={
-									index % 3 === 0 && !isMobileView
-										? "col-span-2 mt-14"
-										: "mt-14 h-fit"
-								}
+								className={`${
+									index % 3 === 0 && !isMobileView ? "col-span-2" : ""
+								} mt-5 lg:mt-14 h-fit`}
 								key={index}
 							>
-								<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
-									<img
-										className="w-full h-full object-cover object-center"
-										src={design.thumbnail}
-										alt=""
-									/>
-									{index !== 0 && (
-										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
-									)}
-								</div>
-								<div className="mt-8">
-									<p className="text-base md:text-lg lg:text-2xl max-w-3xl leading-relaxed">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Totam vero eveniet maiores, doloribus dignissimos
-										praesentium a iusto provident cum excepturi.
-										<CustomLink to={"/"}>send</CustomLink>
-									</p>
-								</div>
+								<CustomLink className="project-con" to="/">
+									<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
+										<img
+											className="w-full h-full object-cover object-center"
+											src={design.thumbnail}
+											alt=""
+										/>
+										{index !== 0 && (
+											<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
+										)}
+									</div>
+									<div className="mt-8">
+										<h1 className="text-xl lg:text-2xl xl:text-4xl font-bold font-neueMontrealRegular">
+											{design.name + "."}
+										</h1>
+										<p className="mt-1 md:mt-3 text-base lg:text-xl max-w-3xl leading-relaxed">
+											{design.type}
+										</p>
+									</div>
+								</CustomLink>
 							</div>
 						))
 					}

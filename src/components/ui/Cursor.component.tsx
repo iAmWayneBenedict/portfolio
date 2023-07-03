@@ -61,14 +61,15 @@ const Cursor = () => {
 		links.forEach((el) => {
 			el.addEventListener("mouseover", (event) => {
 				let currentEl = event.currentTarget as Element;
+				// if (currentEl.classList.contains("project-con")) return;
 				if (
 					!secondaryCursor.current ||
 					!mainCursor.current ||
 					!mainCursor.current.firstElementChild
 				)
 					return;
-				let child = mainCursor.current.firstElementChild as HTMLDivElement;
-				if (currentEl.tagName === "DIV") {
+				let child = mainCursor.current?.firstElementChild as HTMLDivElement;
+				if (currentEl.tagName === "DIV" || currentEl.classList.contains("project-con")) {
 					child.style.transform = "scale(5)";
 
 					(child.nextElementSibling as HTMLSpanElement)!.style.transition =
@@ -77,8 +78,7 @@ const Cursor = () => {
 				} else {
 					child.style.transform = "scale(.45)";
 				}
-
-				secondaryCursor.current.style.opacity = "0";
+				secondaryCursor.current!.style.opacity = "0";
 			});
 			el.addEventListener("mouseout", () => {
 				if (
@@ -125,6 +125,10 @@ const Cursor = () => {
 				fParent?.classList.contains("mousedrag") ||
 				fullParent?.classList.contains("mousedrag") ||
 				targetEl.classList.contains("mousedrag");
+			let isProjects =
+				firstParent?.classList.contains("project-con") ||
+				firstParent?.parentElement?.classList.contains("project-con") ||
+				targetEl?.classList.contains("project-con");
 
 			let isDesign = targetEl.tagName === "IMG" && targetEl.classList.contains("view-design");
 
@@ -140,6 +144,8 @@ const Cursor = () => {
 				mainCursorLChild.textContent = "DRAG";
 			} else if (isDesign) {
 				mainCursorLChild.textContent = "VIEW";
+			} else if (isProjects) {
+				mainCursorLChild.textContent = "VIEW WORK";
 			} else {
 				mainCursorFChild.style.background = "white";
 				mainCursorLChild.style.color = "black";
@@ -182,6 +188,7 @@ const Cursor = () => {
 						top: "50%",
 						left: "50%",
 						opacity: 0,
+						textAlign: "center",
 					}}
 				></span>
 			</div>
