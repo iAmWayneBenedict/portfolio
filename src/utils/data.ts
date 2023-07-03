@@ -2,10 +2,12 @@ interface Props {
 	projects: { [key: string]: {} };
 	designs: {
 		name: string;
+		type: string;
 		thumbnail: string;
 		thumbnail_small: string;
 		images: {
 			name: string;
+			demoLink: string;
 			image: string;
 			description: string;
 		}[];
@@ -18,6 +20,8 @@ const data = {
 	designs: [
 		{
 			name: "Bagudbud Express V2.0",
+			type: "UI/UX Design",
+			demoLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8161256/file/original-50f2c0ad5493506202e9f3e4dfebd9e1.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -67,6 +71,8 @@ const data = {
 		},
 		{
 			name: "RastaFoods",
+			type: "UI/UX Design, Development",
+			demoLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8214048/file/original-1009503e5f795adda162842b211f1f24.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -101,6 +107,8 @@ const data = {
 		},
 		{
 			name: "MAOB Appointment System",
+			type: "UI/UX Design, Development",
+			demoLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8215417/file/original-c9a2c97de16617842431a20f249acf5a.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -140,6 +148,8 @@ const data = {
 		},
 		{
 			name: "Bagudbud Express",
+			type: "UI/UX Design, Development",
+			demoLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -174,6 +184,8 @@ const data = {
 		},
 		{
 			name: "PH Holidays",
+			type: "UI/UX Design, Development",
+			demoLink: "https://dribbble.com/shots/21889146-PH-Holidays",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8245591/file/original-031f882fa1bba823883e21a23046a9e1.png?compress=1&resize=1600x1034",
 			thumbnail_small:
