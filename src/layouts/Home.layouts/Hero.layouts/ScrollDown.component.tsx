@@ -38,7 +38,7 @@ const ScrollDown: React.FC<Props> = ({ isLoaded }) => {
 	}, []);
 
 	return (
-		<div className="flex flex-col items-center my-20">
+		<div className="flex flex-col items-center md:my-20">
 			<span className="h-[50px] w-[2px] relative overflow-hidden">
 				<span
 					ref={lineCenter}
@@ -52,7 +52,7 @@ const ScrollDown: React.FC<Props> = ({ isLoaded }) => {
 			></span>
 			<span
 				ref={scrollDownTitle}
-				className="scroll-down-title opacity-0 -translate-y-5 mt-10 "
+				className="scroll-down-title opacity-0 -translate-y-5 mt-10 text-xs md:text-base"
 			>
 				Scroll Down
 			</span>
