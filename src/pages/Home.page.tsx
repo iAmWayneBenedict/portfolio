@@ -33,7 +33,7 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 	return (
 		<div className="overflow-x-hidden" ref={home}>
 			<Hero isLoaded={isLoaded} />
-			<AboutSection />
+			{/* <AboutSection /> */}
 			{/*<Journey />*/}
 			<Skills />
 			<Projects />

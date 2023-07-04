@@ -17,6 +17,7 @@ import { BrowserRouter, Route, Routes, redirect, useLocation, useNavigate } from
 import { Analytics } from "@vercel/analytics/react";
 import Projects from "./pages/Projects.page";
 import Lenis from "@studio-freight/lenis";
+import Project from "./pages/Project.page";
 
 function App() {
 	return (
@@ -81,6 +82,7 @@ function Root() {
 						<Routes>
 							<Route path="/" element={<Home isLoaded={isLoaded} />} />
 							<Route path="/projects" element={<Projects />} />
+							<Route path="/projects/:name" element={<Project />} />
 						</Routes>
 					</div>
 				</div>

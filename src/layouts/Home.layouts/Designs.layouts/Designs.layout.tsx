@@ -14,7 +14,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import SwiperCore, { FreeMode, Pagination, Navigation } from "swiper";
+import SwiperCore, { FreeMode, Pagination, Navigation, EffectCreative } from "swiper";
 import SwiperInstance from "swiper";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -158,12 +158,24 @@ const Designs = () => {
 					onSlideChange={() => {
 						console.log("Slide Change");
 					}}
+					loop={true}
+					grabCursor={true}
+					effect={"creative"}
+					creativeEffect={{
+						prev: {
+							shadow: true,
+							translate: [0, 0, -400],
+						},
+						next: {
+							translate: ["100%", 0, 0],
+						},
+					}}
 					onSwiper={setSwiper}
 					navigation={true}
 					onTouchMove={(event) => handleTouchMove(event.touches, ".main-cursor")}
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
-					modules={[Navigation, Pagination]}
+					modules={[Navigation, Pagination, EffectCreative]}
 					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[40rem] lg:h-[70rem] overflow-hidden"
 				>
 					{data.designs.map((design, index) => (
