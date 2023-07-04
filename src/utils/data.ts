@@ -2,6 +2,7 @@ interface Props {
 	projects: { [key: string]: {} };
 	designs: {
 		name: string;
+		URIName: string;
 		type: string;
 		thumbnail: string;
 		thumbnail_small: string;
@@ -20,6 +21,7 @@ const data = {
 	designs: [
 		{
 			name: "Bagudbud Express V2.0",
+			URIName: "bagudbud-express-v2.0",
 			type: "UI/UX Design",
 			demoLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
 			thumbnail:
@@ -71,6 +73,7 @@ const data = {
 		},
 		{
 			name: "RastaFoods",
+			URIName: "rastafoods",
 			type: "UI/UX Design, Development",
 			demoLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			thumbnail:
@@ -107,6 +110,7 @@ const data = {
 		},
 		{
 			name: "MAOB Appointment System",
+			URIName: "maob-appointment-system",
 			type: "UI/UX Design, Development",
 			demoLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
 			thumbnail:
@@ -148,6 +152,7 @@ const data = {
 		},
 		{
 			name: "Bagudbud Express",
+			URIName: "bagudbud-express",
 			type: "UI/UX Design, Development",
 			demoLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",
 			thumbnail:
@@ -184,6 +189,7 @@ const data = {
 		},
 		{
 			name: "PH Holidays",
+			URIName: "ph-holidays",
 			type: "UI/UX Design, Development",
 			demoLink: "https://dribbble.com/shots/21889146-PH-Holidays",
 			thumbnail:
@@ -218,3 +224,17 @@ const data = {
 };
 
 export default data;
+
+const getData = (type: string, URIName?: string) => {
+	if (type === "projects") {
+		return data.projects;
+	} else if (type === "designs") {
+		return data.designs.filter((design) => design.URIName === URIName);
+	} else if (type === "certificates") {
+		return data.certificates;
+	} else {
+		return undefined; // Return undefined or handle unrecognized type
+	}
+};
+
+export { getData };
