@@ -152,7 +152,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				{/* <ScrollDown isLoaded={isLoaded} /> */}
 			</div>
 			<div
-				className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-fit mt-10 md:mt-20"
+				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-fit mt-10 md:mt-20"
 				ref={vid}
 			>
 				<video
