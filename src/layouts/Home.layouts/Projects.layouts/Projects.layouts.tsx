@@ -93,12 +93,13 @@ const Projects = () => {
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
-						{data.designs.map((design, index) => (
+						{data.projects.map((project, index) => (
 							<SwiperSlide key={index} style={{ width: "fit-content" }}>
 								<ProjectCards
-									title={design.name}
-									image={design.thumbnail_small}
-									src={design.demoLink}
+									title={project.name}
+									image={project.thumbnail_small}
+									src={project.demoLink}
+									URIName={project.URIName}
 								/>
 							</SwiperSlide>
 						))}

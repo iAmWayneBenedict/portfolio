@@ -2,11 +2,12 @@ import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 interface Props {
-	children: any;
+	children?: any;
+	reference?: React.RefObject<HTMLAnchorElement>;
 	to: string;
 	className?: string;
 }
-const CustomLink: React.FC<Props> = ({ children, to, className }) => {
+const CustomLink: React.FC<Props> = ({ children, reference, to, className }) => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	function clickHandler(event: any, url: string) {
@@ -21,7 +22,12 @@ const CustomLink: React.FC<Props> = ({ children, to, className }) => {
 		});
 	}
 	return (
-		<Link to={to} className={className} onClick={(event) => clickHandler(event, to)}>
+		<Link
+			ref={reference}
+			to={to}
+			className={className}
+			onClick={(event) => clickHandler(event, to)}
+		>
 			{children}
 		</Link>
 	);

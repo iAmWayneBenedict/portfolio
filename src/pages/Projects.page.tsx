@@ -177,44 +177,35 @@ const Projects: React.FC = () => {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24">
-					{
-						// [
-						// 	"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp",
-						// 	"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp",
-						// 	"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg",
-						// 	"/assets/img/osman-rana-BltXOAu8Ckw-unsplash.webp",
-						// 	"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp",
-						// ]
-						data.designs.map((design, index) => (
-							<div
-								className={`${
-									index % 3 === 0 && !isMobileView ? "col-span-2" : ""
-								} mt-5 lg:mt-14 h-fit`}
-								key={index}
-							>
-								<CustomLink className="project-con" to="/">
-									<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
-										<img
-											className="w-full h-full object-cover object-center"
-											src={design.thumbnail}
-											alt=""
-										/>
-										{index !== 0 && (
-											<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
-										)}
-									</div>
-									<div className="mt-8">
-										<h1 className="text-xl lg:text-2xl xl:text-4xl font-bold font-neueMontrealRegular">
-											{design.name + "."}
-										</h1>
-										<p className="mt-1 md:mt-3 text-base lg:text-xl max-w-3xl leading-relaxed">
-											{design.type}
-										</p>
-									</div>
-								</CustomLink>
-							</div>
-						))
-					}
+					{data.projects.map((project, index) => (
+						<div
+							className={`${
+								index % 3 === 0 && !isMobileView ? "col-span-2" : ""
+							} mt-5 lg:mt-14 h-fit`}
+							key={index}
+						>
+							<CustomLink className="project-con" to={"/projects/" + project.URIName}>
+								<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
+									<img
+										className="w-full h-full object-cover object-center"
+										src={project.thumbnail}
+										alt=""
+									/>
+									{index !== 0 && (
+										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
+									)}
+								</div>
+								<div className="mt-8">
+									<h1 className="text-xl lg:text-2xl xl:text-4xl font-bold font-neueMontrealRegular">
+										{project.name + "."}
+									</h1>
+									<p className="mt-1 md:mt-3 text-base lg:text-xl max-w-3xl leading-relaxed">
+										{project.type}
+									</p>
+								</div>
+							</CustomLink>
+						</div>
+					))}
 				</div>
 			</div>
 			<ContactLayouts classes="bg-white" />
