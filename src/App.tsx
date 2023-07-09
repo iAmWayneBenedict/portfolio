@@ -81,8 +81,8 @@ function Root() {
 					<div className="bg-con" style={{ backgroundColor: "white" }}>
 						<Routes>
 							<Route path="/" element={<Home isLoaded={isLoaded} />} />
-							<Route path="/projects" element={<Projects />} />
-							<Route path="/projects/:name" element={<Project />} />
+							<Route path="/:category" element={<Projects />} />
+							<Route path="/:category/:name" element={<Project />} />
 						</Routes>
 					</div>
 				</div>
