@@ -74,8 +74,7 @@ const Cursor = () => {
 				)
 					return;
 				let child = mainCursor.current?.firstElementChild as HTMLDivElement;
-				child.style.transform = "scale(1)";
-				console.log(currentEl);
+
 				if (
 					currentEl.tagName === "DIV" ||
 					currentEl.classList.contains("project-con") ||

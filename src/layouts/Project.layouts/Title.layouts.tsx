@@ -1,8 +1,9 @@
 import React from "react";
 import CustomLink from "../../components/ui/CustomLink";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 interface Props {
-	src: string;
+	src?: string;
 	children?: string;
 }
 const Title: React.FC<Props> = ({ src, children }) => {
@@ -19,18 +20,21 @@ const Title: React.FC<Props> = ({ src, children }) => {
 			style={{ fontSize: "clamp(1.75rem, 6vw, " + defaultTitleSize + ")" }}
 		>
 			<div className="overflow-hidden flex justify-center">
-				<CustomLink
+				<Link
 					className={
-						isMobile
-							? "demo text-center"
-							: "demo text-center link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-300%] before:w-full before:h-px before:bg-black"
+						src
+							? isMobile
+								? "demo text-center"
+								: "demo text-center link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-300%] before:w-full before:h-px before:bg-black"
+							: "text-center pointer-events-none"
 					}
-					to={src}
+					to={src ? src : "/"}
+					target="_blank"
 				>
 					{children}
-				</CustomLink>
+				</Link>
 			</div>
-			{!isMobile && (
+			{!isMobile && src && (
 				<img
 					className={` ${defaultArrowPosition} -right-[4rem] sm:-right-20 absolute top-0 md:-right-[7rem] transition-all duration-200 ease-in`}
 					src="/assets/ico/arrow-up-right.svg"

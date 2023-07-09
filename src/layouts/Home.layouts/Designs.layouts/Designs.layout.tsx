@@ -26,6 +26,7 @@ import {
 import hoverEffect from "hover-effect";
 import { motion, useInView } from "framer-motion";
 import data from "../../../utils/data";
+import CustomLink from "../../../components/ui/CustomLink";
 
 gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
@@ -180,11 +181,13 @@ const Designs = () => {
 				>
 					{data.designs.map((design, index) => (
 						<SwiperSlide key={index}>
-							<img
-								className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-								src={design.thumbnail}
-								alt=""
-							/>
+							<CustomLink to={"/designs/" + design.URIName}>
+								<img
+									className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
+									src={design.thumbnail}
+									alt=""
+								/>
+							</CustomLink>
 						</SwiperSlide>
 					))}
 				</Swiper>

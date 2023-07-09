@@ -4,27 +4,30 @@ interface CategoryProps {
 	type: string;
 	thumbnail: string;
 	thumbnail_small: string;
-	images: {
-		name: string;
-		demoLink: string;
-		image: string;
-		description: string;
-	}[];
+	demoLink?: string;
+	dribbleLink?: string;
+	githubLink?: string;
+	images: ImageProps[];
+}
+
+interface ImageProps {
+	name: string;
+	image: string;
+	description: string;
 }
 
 interface Props {
 	projects: CategoryProps[];
 	designs: CategoryProps[];
-	certificates: CategoryProps[];
 }
 
-const data = {
+const data: Props = {
 	projects: [
 		{
 			name: "RastaFoods",
 			URIName: "rastafoods",
 			type: "UI/UX Design, Development",
-			demoLink: "https://dribbble.com/shots/21744356-RastaFoods",
+			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8214048/file/original-1009503e5f795adda162842b211f1f24.png?compress=1&resize=1600x1034",
@@ -62,7 +65,9 @@ const data = {
 			name: "MAOB Appointment System",
 			URIName: "maob-appointment-system",
 			type: "UI/UX Design, Development",
-			demoLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
+			demoLink: "https://maob-appointments-bato.000webhostapp.com/",
+			dribbleLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
+			githubLink: "https://github.com/iAmWayneBenedict/Appointment-System",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8215417/file/original-c9a2c97de16617842431a20f249acf5a.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -101,47 +106,12 @@ const data = {
 			],
 		},
 		{
-			name: "Bagudbud Express",
-			URIName: "bagudbud-express",
-			type: "UI/UX Design, Development",
-			demoLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",
-			thumbnail:
-				"https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
-			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
-			images: [
-				{
-					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
-					description: "",
-				},
-				{
-					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
-					description: "",
-				},
-				{
-					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244801/file/original-31b7c1115216effb1bd0d308cccae18a.png?compress=1&resize=1600x1034",
-					description: "",
-				},
-				{
-					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244799/file/original-13c3c3972707636a331c403c821cfb9f.png?compress=1&resize=1600x1034",
-					description: "",
-				},
-				{
-					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244802/file/original-6b2ae57a8c0a84a980708472acaa1f0d.png?compress=1&resize=1600x1034",
-					description: "",
-				},
-			],
-		},
-		{
 			name: "PH Holidays",
 			URIName: "ph-holidays",
 			type: "UI/UX Design, Development",
-			demoLink: "https://dribbble.com/shots/21889146-PH-Holidays",
+			demoLink: "https://ph-holidays.vercel.app/",
+			dribbleLink: "https://dribbble.com/shots/21889146-PH-Holidays",
+			githubLink: "https://github.com/iAmWayneBenedict/ph-holidays",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8245591/file/original-031f882fa1bba823883e21a23046a9e1.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -175,8 +145,7 @@ const data = {
 			name: "Bagudbud Express V2.0",
 			URIName: "bagudbud-express-v2",
 			type: "UI/UX Design",
-			demoLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
-			dribbleLink: "",
+			dribbleLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8161256/file/original-50f2c0ad5493506202e9f3e4dfebd9e1.png?compress=1&resize=1600x1034",
 			thumbnail_small:
@@ -224,8 +193,44 @@ const data = {
 				},
 			],
 		},
+		{
+			name: "Bagudbud Express",
+			URIName: "bagudbud-express",
+			type: "UI/UX Design, Development",
+			dribbleLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",
+			thumbnail:
+				"https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
+			thumbnail_small:
+				"https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
+			images: [
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8244801/file/original-31b7c1115216effb1bd0d308cccae18a.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8244799/file/original-13c3c3972707636a331c403c821cfb9f.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8244802/file/original-6b2ae57a8c0a84a980708472acaa1f0d.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+			],
+		},
 	],
-	certificates: { key: {} },
 };
 
 export default data;
@@ -243,4 +248,4 @@ const getData = (type: string, URIName?: string) => {
 };
 
 export { getData };
-export type { CategoryProps };
+export type { CategoryProps, ImageProps };
