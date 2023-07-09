@@ -6,55 +6,38 @@ import SplitType from "split-type";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CustomLink from "../../../components/ui/CustomLink";
 
 interface Props {
 	title?: string;
 	image?: string;
 	src?: string;
+	URIName?: string;
 }
 
-const ProjectCards: React.FC<Props> = ({ title, image, src }) => {
+const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 	const demoLink = useRef<HTMLAnchorElement>(null);
 	const slide = useRef<HTMLDivElement>(null);
 	const img = useRef<HTMLImageElement>(null);
+	const navigate = useNavigate();
+	const hiddenAnchor = useRef<HTMLAnchorElement>(null);
 
 	// const dLink = new SplitType(demoLink.current!);
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	const handleMouseOver = (event: React.MouseEvent) => {};
-	const handleMouseLeave = (event: React.MouseEvent) => {
-		// gsap.to(dLink.chars, {
-		// 	y: "100%",
-		// 	duration: 0,
-		// });
-	};
-
-	// useEffect(() => {
-	// 	gsap.fromTo(
-	// 		img.current!,
-	// 		{
-	// 			duration: 1,
-	// 			width: 0,
-	// 		},
-	// 		{
-	// 			duration: 1,
-	// 			width: "100%",
-
-	// 			scrollTrigger: {
-	// 				trigger: img.current!,
-	// 			},
-	// 		}
-	// 	);
-	// }, []);
+	const handleMouseLeave = (event: React.MouseEvent) => {};
 
 	return (
 		<div className="w-full h-full flex flex-col gap-5 z-20">
 			<div
 				ref={slide}
+				onClick={() => hiddenAnchor.current?.click()}
 				className="slide-hover-effect w-full h-full basis-11/12 overflow-hidden"
 			>
+				<CustomLink reference={hiddenAnchor} to={"/projects/" + URIName} />
 				<img
 					// key={src}
 					alt={image}

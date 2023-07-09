@@ -57,6 +57,11 @@ const Cursor = () => {
 		followMouse();
 
 		let links = document.querySelectorAll("a, button, .swiper");
+		let child = mainCursor.current?.firstElementChild as HTMLDivElement;
+		child.style.transform = "scale(1)";
+		let sChild = child.nextElementSibling as HTMLElement;
+		sChild.innerText = "";
+		secondaryCursor.current!.style.opacity = "1";
 
 		links.forEach((el) => {
 			el.addEventListener("mouseover", (event) => {
@@ -69,7 +74,13 @@ const Cursor = () => {
 				)
 					return;
 				let child = mainCursor.current?.firstElementChild as HTMLDivElement;
-				if (currentEl.tagName === "DIV" || currentEl.classList.contains("project-con")) {
+				child.style.transform = "scale(1)";
+				console.log(currentEl);
+				if (
+					currentEl.tagName === "DIV" ||
+					currentEl.classList.contains("project-con") ||
+					currentEl.classList.contains("demo")
+				) {
 					child.style.transform = "scale(5)";
 
 					(child.nextElementSibling as HTMLSpanElement)!.style.transition =
@@ -146,6 +157,8 @@ const Cursor = () => {
 				mainCursorLChild.textContent = "VIEW";
 			} else if (isProjects) {
 				mainCursorLChild.textContent = "VIEW WORK";
+			} else if (targetEl.classList.contains("demo")) {
+				mainCursorLChild.textContent = "DEMO";
 			} else {
 				mainCursorFChild.style.background = "white";
 				mainCursorLChild.style.color = "black";
