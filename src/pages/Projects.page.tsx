@@ -123,7 +123,7 @@ const Projects: React.FC = () => {
 		categoryHandler({ active, setActive, imgCon, activeHandler });
 	}, [active]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (location.pathname === "/projects") {
 			gsap.to(".App", {
 				opacity: 1,
@@ -133,7 +133,7 @@ const Projects: React.FC = () => {
 		}
 	}, []);
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
-	console.log(isMobileView);
+	const projects = [...data.projects, ...data.designs];
 	return (
 		<>
 			<div className="mx-5 md:mx-24" ref={imgCon}>
@@ -177,7 +177,7 @@ const Projects: React.FC = () => {
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24">
-					{data.projects.map((project, index) => (
+					{projects.map((project, index) => (
 						<div
 							className={`${
 								index % 3 === 0 && !isMobileView ? "col-span-2" : ""

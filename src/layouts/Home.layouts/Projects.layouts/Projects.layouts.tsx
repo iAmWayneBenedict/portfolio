@@ -78,7 +78,7 @@ const Projects = () => {
 				</div>
 				<div className="w-full md:w-[90%] h-full">
 					<Swiper
-						slidesPerView={isTabletOrMobile ? 1.5 : 2.5}
+						slidesPerView={isTabletOrMobile ? 1.5 : 2.15}
 						freeMode={true}
 						spaceBetween={isTabletOrMobile ? 20 : 60}
 						ref={swiperRef}
