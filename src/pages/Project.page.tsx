@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { CategoryProps, ImageProps, getData } from "../utils/data";
 import CustomLink from "../components/ui/CustomLink";
@@ -26,7 +26,7 @@ const Project = () => {
 		});
 	}, [location]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (location.pathname.includes("/projects/") || location.pathname.includes("/designs/")) {
 			gsap.to(".App", {
 				opacity: 1,

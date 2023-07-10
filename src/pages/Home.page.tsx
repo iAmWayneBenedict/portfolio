@@ -19,7 +19,7 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 	const home = useRef<HTMLDivElement>(null);
 	const location = useLocation();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const imgsLoaded = imagesLoaded(home.current!);
 		imgsLoaded.on("done", () => {
 			console.log("done");
