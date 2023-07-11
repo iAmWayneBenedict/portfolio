@@ -27,9 +27,13 @@ const Project = () => {
 
 	useEffect(() => {
 		const imgs = imagesLoaded(imgCon.current!);
+		let triggered = false;
 		imgs.on("done", (e) => {
+			triggered = true
 			setAnimation();
 		});
+
+		if(!triggered) setAnimation()
 
 		if (location.pathname.includes("/projects/") || location.pathname.includes("/designs/")) {
 			gsap.to(".App", {
