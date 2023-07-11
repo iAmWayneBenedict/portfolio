@@ -128,6 +128,11 @@ const Scroller = () => {
 		}
 	}, [path.pathname]);
 
+	return () => {
+		const app = document.querySelector(".App") as HTMLElement;
+		app.style.opacity = "0";
+	};
+
 	return <></>;
 };
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Title from "../../../components/ui/Title.component";
 import ProjectCards from "./ProjectCards.component";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import type { Swiper as SwiperRef } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
@@ -15,7 +14,6 @@ import {
 	handleTouchStart,
 } from "../../../utils/handleTouchDragEvent";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router-dom";
 import CustomLink from "../../../components/ui/CustomLink";
 import data from "../../../utils/data";
 

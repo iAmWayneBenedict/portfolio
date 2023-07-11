@@ -10,6 +10,8 @@ import CustomLink from "../components/ui/CustomLink";
 import data from "../utils/data";
 import { isMobile } from "react-device-detect";
 import { useMediaQuery } from "react-responsive";
+import Category from "../layouts/Projects.layouts/Category";
+import ProjectsDetail from "../layouts/Projects.layouts/ProjectsDetail";
 
 const categoryData = [
 	["All.", "all"],
@@ -123,7 +125,7 @@ const Projects: React.FC = () => {
 		categoryHandler({ active, setActive, imgCon, activeHandler });
 	}, [active]);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		if (location.pathname === "/projects") {
 			gsap.to(".App", {
 				opacity: 1,
@@ -131,9 +133,10 @@ const Projects: React.FC = () => {
 				delay: 1,
 			});
 		}
-	}, []);
+	}, [location]);
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	const projects = [...data.projects, ...data.designs];
+	const projectsLength = data.projects.length;
 	return (
 		<>
 			<div className="mx-5 md:mx-24" ref={imgCon}>
@@ -152,59 +155,24 @@ const Projects: React.FC = () => {
 					>
 						{categoryData.map(([value, name], index) => {
 							return (
-								<div
-									className="flex flex-row items-center gap-3 md:gap-10 overflow-hidden"
-									style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}
-									key={index + name}
-								>
-									<button
-										type="button"
-										data-name={name}
-										className="project-category italic transition-opacity duration-250 ease-linear"
-									>
-										{value}
-									</button>
-									{index !== categoryData.length - 1 ? (
-										<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[40px]">
-											<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-black"></div>
-										</div>
-									) : (
-										""
-									)}
-								</div>
+								<Category
+									index={index}
+									name={name}
+									value={value}
+									categoryData={categoryData}
+								/>
 							);
 						})}
 					</div>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24">
 					{projects.map((project, index) => (
-						<div
-							className={`${
-								index % 3 === 0 && !isMobileView ? "col-span-2" : ""
-							} mt-5 lg:mt-14 h-fit`}
-							key={index}
-						>
-							<CustomLink className="project-con" to={"/projects/" + project.URIName}>
-								<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
-									<img
-										className="w-full h-full object-cover object-center"
-										src={project.thumbnail}
-										alt=""
-									/>
-									{index !== 0 && (
-										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
-									)}
-								</div>
-								<div className="mt-8">
-									<h1 className="text-xl lg:text-2xl xl:text-4xl font-bold font-neueMontrealRegular">
-										{project.name + "."}
-									</h1>
-									<p className="mt-1 md:mt-3 text-base lg:text-xl max-w-3xl leading-relaxed">
-										{project.type}
-									</p>
-								</div>
-							</CustomLink>
-						</div>
+						<ProjectsDetail
+							index={index}
+							isMobileView={isMobileView}
+							projectsLength={projectsLength}
+							project={project}
+						/>
 					))}
 				</div>
 			</div>

@@ -148,8 +148,11 @@ const Cursor = () => {
 			let mainCursorLChild = mainCursor.current!.lastElementChild as HTMLDivElement;
 
 			mainCursor.current!.style.mixBlendMode = "unset";
-			mainCursorFChild.style.background = "black";
-			mainCursorLChild.style.color = "white";
+			const app = document.querySelector(".bg-con") as HTMLElement;
+			mainCursorFChild.style.background =
+				app.style.backgroundColor === "black" ? "white" : "black";
+			mainCursorLChild.style.color =
+				app.style.backgroundColor === "black" ? "black" : "white";
 			if (isJourney) {
 				mainCursorLChild.textContent = "DRAG";
 			} else if (isDesign) {
