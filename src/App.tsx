@@ -44,7 +44,11 @@ function Root() {
 			? icon?.setAttribute("href", "/assets/svg/logo-darkmode.svg")
 			: icon?.setAttribute("href", "/assets/svg/logo-lightmode.svg");
 	}, []);
-
+	window.addEventListener("popstate", (event) => {
+		event.preventDefault();
+		const app = document.querySelector(".App") as HTMLElement;
+		app.style.opacity = "0";
+	});
 	gsap.config({
 		nullTargetWarn: false,
 	});

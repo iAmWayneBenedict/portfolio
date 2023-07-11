@@ -59,7 +59,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white
 					</Link>
 				</div>
 			</div>
-			<div className="mt-36 lg:mt-56 flex justify-between">
+			<div className="mt-36 lg:mt-56 flex justify-between text-sm sm:text-base">
 				<div>
 					<Link to="#">Terms and Conditions</Link>
 				</div>
