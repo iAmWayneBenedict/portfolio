@@ -29,11 +29,11 @@ const Project = () => {
 		const imgs = imagesLoaded(imgCon.current!);
 		let triggered = false;
 		imgs.on("done", (e) => {
-			triggered = true
+			triggered = true;
 			setAnimation();
 		});
 
-		if(!triggered) setAnimation()
+		// if (!triggered) setAnimation();
 
 		if (location.pathname.includes("/projects/") || location.pathname.includes("/designs/")) {
 			gsap.to(".App", {
@@ -91,7 +91,12 @@ const Project = () => {
 				},
 				{ opacity: 1, duration: 1, delay: 0.25 }
 			);
-	}, [location]);
+
+		return () => {
+			tl.kill();
+			gsap.registerPlugin([]);
+		};
+	}, [location.pathname]);
 
 	const filteredItem = getData(params.category!, params.name);
 
@@ -119,18 +124,24 @@ const Project = () => {
 			let img = image as HTMLDivElement;
 			if (index === 0) return;
 			if (index > images.length - 4) delay += 0.2;
-			gsap.to(img.lastElementChild, {
-				width: 0,
-				duration: 2.5,
-				delay: delay,
-				ease: CustomEase.create(
-					"custom",
-					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
-				),
-				scrollTrigger: {
-					trigger: img,
+			gsap.fromTo(
+				img.lastElementChild,
+				{
+					width: "100%",
 				},
-			});
+				{
+					width: 0,
+					duration: 2.5,
+					delay: delay,
+					ease: CustomEase.create(
+						"custom",
+						"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
+					),
+					scrollTrigger: {
+						trigger: img,
+					},
+				}
+			);
 		});
 	}
 	const inView = useInView(changeBg);
@@ -178,7 +189,7 @@ const Project = () => {
 		<>
 			<div
 				ref={imgCon}
-				className="w-full px-5 md:px-20 transition-opacity ease duration-1000"
+				className="w-full px-5 md:px-20 transition-opacity ease duration-1000 overflow-x-hidden"
 			>
 				<div className="flex flex-col items-center">
 					<div className="w-full flex justify-center">

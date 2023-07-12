@@ -14,7 +14,7 @@ const Title: React.FC<Props> = ({ src, children, reference }) => {
 	const defaultArrowPosition =
 		children!.length > 18
 			? "lg:group-hover:right-[-8rem]"
-			: "lg:group-hover:right-[-11rem] lg:-right-40";
+			: "lg:group-hover:right-[-11rem] lg:-right[10rem]";
 	return (
 		<h1
 			ref={reference}
@@ -31,16 +31,12 @@ const Title: React.FC<Props> = ({ src, children, reference }) => {
 					to={src ? src : "/"}
 					target="_blank"
 				>
-					{children?.split(" ").map((word, index) => (
-						<>
-							<span className="translate-y-[200%]">{word}</span>{" "}
-						</>
-					))}
+					{children}
 				</Link>
 			</div>
 			{src && (
 				<img
-					className={` ${defaultArrowPosition} -right-[2.75rem] sm:-right-20 absolute top-0 md:-right-[5rem] lg:-right-[7rem] xl:-right-[10rem] transition-all duration-200 ease-in`}
+					className={` ${defaultArrowPosition} -right-[2.75rem] sm:-right-20 absolute top-0 md:-right-[5rem] lg:-right-[7rem] transition-all duration-200 ease-in`}
 					src="/assets/ico/arrow-up-right.svg"
 					style={{
 						width: "clamp(1.75rem, 10vw, " + defaultArrowSize + ")",
