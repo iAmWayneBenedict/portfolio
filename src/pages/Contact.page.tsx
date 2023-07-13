@@ -41,7 +41,7 @@ const Contact = () => {
 
 		return () => {
 			// nav.style.filter = "invert(0)";
-			bgCon.style.backgroundColor = "white";
+			bgCon.style.background = "white";
 		};
 	}, []);
 
@@ -70,11 +70,13 @@ const Contact = () => {
 				{
 					y: 100,
 					duration: 0,
+					rotate: 4,
 				},
 				{
 					y: 0,
 					stagger: 0.1,
-					duration: 1,
+					duration: 1.25,
+					rotate: 0,
 					delay: 2,
 				}
 			)
@@ -95,9 +97,9 @@ const Contact = () => {
 		bgs.forEach((el) => {
 			gsap.to(el as HTMLElement, {
 				top: "300%",
-				duration: 1.5,
+				duration: 1.75,
 				stagger: 0.1,
-				delay: 2.25,
+				delay: 2,
 			});
 		});
 	}, []);
@@ -114,7 +116,7 @@ const Contact = () => {
 				<p className="mt-16 text-xl">Let me help you become even greater at what you do.</p>
 			</div>
 			<div ref={formCon} className="w-full flex flex-col gap-48 lg:flex-row lg:gap-0">
-				<div className="px-5 md:px-24 flex-1 lg:max-w-2xl">
+				<div className="px-5 md:px-24 flex-1 max-w-6xl">
 					<form action="" className="w-full flex flex-col gap-5">
 						<br />
 						<Input placeholder="Your name" type="text" name="name" />
