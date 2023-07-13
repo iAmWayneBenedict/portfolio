@@ -61,7 +61,7 @@ const Cursor = () => {
 		child.style.transform = "scale(1)";
 		let sChild = child.nextElementSibling as HTMLElement;
 		sChild.innerText = "";
-		secondaryCursor.current!.style.opacity = "1";
+		// secondaryCursor.current!.style.opacity = "1";
 
 		links.forEach((el) => {
 			el.addEventListener("mouseover", (event) => {

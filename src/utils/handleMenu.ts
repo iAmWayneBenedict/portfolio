@@ -136,6 +136,19 @@ const handleMenu = (params: Params): void => {
 	rHistory.current!.addEventListener("click", (event) => {
 		let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
 		let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
+		let nav = document.querySelector("nav")! as HTMLElement;
+
+		if (nav.classList.contains("bg-black") || nav.style.background === "black") {
+			top.classList.remove("bg-black");
+			top.classList.add("bg-white");
+			bottom.classList.remove("bg-black");
+			bottom.classList.add("bg-white");
+		} else {
+			top.classList.remove("bg-white");
+			top.classList.add("bg-black");
+			bottom.classList.remove("bg-white");
+			bottom.classList.add("bg-black");
+		}
 
 		top.style.top = "3px";
 		bottom.style.bottom = "3px";

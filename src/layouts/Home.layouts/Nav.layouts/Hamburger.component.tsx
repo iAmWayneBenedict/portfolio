@@ -120,13 +120,13 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 			<span
 				ref={topLine}
 				className={`top-hamburger-line h-[1px] w-0 ${
-					dark ? "bg-white" : "bg-dark"
+					dark ? "bg-white" : "bg-black"
 				} absolute top-[3px] left-0 transition-all duration-500`}
 			></span>
 			<span
 				ref={bottomLine}
 				className={`bottom-hamburger-line h-[1px] w-0 ${
-					dark ? "bg-white" : "bg-dark"
+					dark ? "bg-white" : "bg-black"
 				} absolute bottom-[3px] left-0 transition-all duration-500`}
 			></span>
 		</button>
