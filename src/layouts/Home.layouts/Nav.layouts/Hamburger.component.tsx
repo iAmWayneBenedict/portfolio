@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 interface Props {
+	dark?: boolean;
 	delay: string | undefined;
 	handleNavbar: (
 		isActive: boolean,
@@ -11,7 +12,7 @@ interface Props {
 	) => void;
 }
 
-const Hamburger: React.FC<Props> = ({ delay, handleNavbar }) => {
+const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
 
@@ -44,6 +45,18 @@ const Hamburger: React.FC<Props> = ({ delay, handleNavbar }) => {
 			bottom.style.bottom = "50%";
 			bottom.style.transform = "translateY(-50%)";
 			setActive(true);
+		}
+
+		if (dark && top.classList.contains("bg-black")) {
+			top.classList.remove("bg-black");
+			top.classList.add("bg-white");
+			bottom.classList.remove("bg-black");
+			bottom.classList.add("bg-white");
+		} else if (dark && top.classList.contains("bg-white")) {
+			top.classList.add("bg-black");
+			top.classList.remove("bg-white");
+			bottom.classList.add("bg-black");
+			bottom.classList.remove("bg-white");
 		}
 
 		setOnMount(false);
@@ -102,15 +115,19 @@ const Hamburger: React.FC<Props> = ({ delay, handleNavbar }) => {
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
-			className="hamburger h-[20px] w-[40px] transition-all opacity-100 relative justify-end order-3 ml-5 z-[100]"
+			className="hamburger h-[20px] w-[40px] transition-all opacity-100 relative justify-end order-3 ml-5 z-[1000]"
 		>
 			<span
 				ref={topLine}
-				className="top-hamburger-line h-[1px] w-0 bg-black absolute top-[3px] left-0 transition-all duration-500"
+				className={`top-hamburger-line h-[1px] w-0 ${
+					dark ? "bg-white" : "bg-dark"
+				} absolute top-[3px] left-0 transition-all duration-500`}
 			></span>
 			<span
 				ref={bottomLine}
-				className="bottom-hamburger-line h-[1px] w-0 bg-black absolute bottom-[3px] left-0 transition-all duration-500"
+				className={`bottom-hamburger-line h-[1px] w-0 ${
+					dark ? "bg-white" : "bg-dark"
+				} absolute bottom-[3px] left-0 transition-all duration-500`}
 			></span>
 		</button>
 	);

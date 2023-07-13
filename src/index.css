@@ -108,6 +108,23 @@ html.lenis {
 	opacity: 1;
 }
 
+@layer components {
+	.input-label {
+		@apply top-[2.5rem] text-xl text-white;
+	}
+
+	.input-label ~ span {
+		@apply -left-full;
+	}
+
+	.input-label.active {
+		@apply top-[.5rem] text-base text-gray-400;
+	}
+	.input-label.active ~ span {
+		@apply left-0;
+	}
+}
+
 @media screen and (max-width: 480px) {
 	#scroll-to-top-btn.active {
 		right: 2rem;
