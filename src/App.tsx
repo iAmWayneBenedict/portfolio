@@ -18,6 +18,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Projects from "./pages/Projects.page";
 import Lenis from "@studio-freight/lenis";
 import Project from "./pages/Project.page";
+import Contact from "./pages/Contact.page";
 
 function App() {
 	return (
@@ -85,6 +86,7 @@ function Root() {
 					<div className="bg-con" style={{ backgroundColor: "white" }}>
 						<Routes>
 							<Route path="/" element={<Home isLoaded={isLoaded} />} />
+							<Route path="/contact" element={<Contact />} />
 							<Route path="/:category" element={<Projects />} />
 							<Route path="/:category/:name" element={<Project />} />
 						</Routes>

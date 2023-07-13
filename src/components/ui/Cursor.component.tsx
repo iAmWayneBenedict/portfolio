@@ -56,7 +56,7 @@ const Cursor = () => {
 		};
 		followMouse();
 
-		let links = document.querySelectorAll("a, button, .swiper");
+		let links = document.querySelectorAll("a, button, .swiper, label, input, textarea");
 		let child = mainCursor.current?.firstElementChild as HTMLDivElement;
 		child.style.transform = "scale(1)";
 		let sChild = child.nextElementSibling as HTMLElement;

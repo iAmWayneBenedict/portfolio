@@ -6,9 +6,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomLink from "./CustomLink";
 interface Props {
+	dark?: boolean;
 	delay: string | undefined;
 }
-const BrandName: React.FC<Props> = ({ delay }) => {
+const BrandName: React.FC<Props> = ({ delay, dark }) => {
 	const brandName = useRef<HTMLDivElement>(null);
 	const path = useLocation();
 
@@ -38,7 +39,7 @@ const BrandName: React.FC<Props> = ({ delay }) => {
 				className="font-quicksand font-bold"
 				ref={brandName}
 			>
-				<CustomLink to="/" className="relative">
+				<CustomLink to="/" className={`relative ${dark ? "text-white" : "text-black"}`}>
 					WAYNE
 					{/* <span className="absolute bottom-[3px] -right-[6px] bg-blue-600 w-[4px] h-[4px] rounded-full"></span> */}
 				</CustomLink>
