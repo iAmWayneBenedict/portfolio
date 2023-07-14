@@ -49,10 +49,6 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 		};
 	}, [location]);
 
-	// useEffect(() => {
-	// 	tl.reverse();
-	// }, [reverse]);
-
 	const handleMouseOver = (event: MouseEvent) => {
 		gsap.to(bg.current!, {
 			duration: 0.3,
@@ -76,6 +72,7 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 	useEffect(() => {
 		btn.current!.addEventListener("mouseover", (event: MouseEvent) => handleMouseOver(event));
 		btn.current!.addEventListener("mouseleave", (event: MouseEvent) => handleMouseLeave(event));
+		// console.log(location.pathname);
 	}, []);
 
 	return (
@@ -113,9 +110,7 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 			</svg>
 			<span
 				ref={bg}
-				className={`absolute -top-full left-0 ${
-					dark ? "bg-white" : "bg-black"
-				} w-full h-full mix-blend-difference`}
+				className={`absolute -top-full bg-white left-0 w-full h-full mix-blend-difference`}
 			></span>
 		</CustomLink>
 	);
