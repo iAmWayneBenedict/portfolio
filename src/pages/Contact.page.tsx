@@ -15,8 +15,7 @@ const Contact = () => {
 	useLayoutEffect(() => {
 		const bgCon = document.querySelector(".bg-con") as HTMLElement;
 		const nav = document.querySelector("nav") as HTMLElement;
-		// nav.style.filter = "invert(1)";
-		// nav.style.zIndex = "1000";
+
 		bgCon.style.background = "black";
 		gsap.fromTo(
 			bgCon,
@@ -40,7 +39,6 @@ const Contact = () => {
 		);
 
 		return () => {
-			// nav.style.filter = "invert(0)";
 			bgCon.style.background = "white";
 		};
 	}, []);

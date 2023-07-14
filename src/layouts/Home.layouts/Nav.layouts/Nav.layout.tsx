@@ -35,7 +35,15 @@ const Nav: React.FC<Props> = ({ isLoaded, handleNavbar, reverse }) => {
 			nav.current!.classList.remove("bg-black");
 			setDark(false);
 		}
-	}, [location]);
+
+		return () => {
+			setDark(false);
+		};
+	}, [location.pathname]);
+
+	useEffect(() => {
+		console.log(dark);
+	}, [dark]);
 
 	return (
 		<nav
