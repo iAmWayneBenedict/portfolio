@@ -58,8 +58,8 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 					</div>
 					<div className="menu-nav flex flex-col gap-5">
 						<MenuLink text={"PROJECTS"} href="/projects" />
-						<MenuLink text={"CONTACT"} />
-						<MenuLink text={"DESIGNS"} />
+						<MenuLink text={"TIMELINE"} href="/timeline" />
+						<MenuLink text={"CONTACT"} href="contact" />
 						<MenuLink text={"ABOUT"} href="/about" />
 					</div>
 

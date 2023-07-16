@@ -5,16 +5,22 @@ import SplitType from "split-type";
 import { ContactLayouts } from "../layouts/Home.layouts/Contact/Contact.layouts";
 
 const AWARDS_LIST = [
-	["DEAN'S LISTER", 2022],
+	["DEAN'S LISTER (4th Year)", 2023],
+	["ICT DIAGNOSTIC EXAM PASSER", 2023],
+	["1ST INTELLISEVEN HACKATHON AWARD", 2023],
+	["PYTHON PROGRAMMING ESSENTIAL COURSE", 2023],
+	["DATA SCIENCE DISCOVERY", 2023],
+	["INTRO TO GAME DEVELOPMENT AND CAREER OPPOTUNITIES", 2023],
 	["CIVIL SERVICE ELIGIBLE (Sub-Professional)", 2022],
-	["ICT DIAGNOSTIC EXAM PASSER", 2022],
-	["1ST INTELLISEVEN HACKATHON AWARD", 2022],
-	["1ST PLACER WEB DESIGN CCS SKILLS COMPETITION", 2022],
+	["GOOGLE TECHNICAL SUPPORT FUNDAMENTALS", 2022],
+	["3RD PLACER ROBOCODE CCS SKILLS COMPETITION", 2021],
+	["1ST PLACER WEB DESIGN CCS SKILLS COMPETITION", 2020],
 ];
 
 const About = () => {
 	gsap.registerPlugin(ScrollTrigger);
 	const title = useRef<HTMLHeadingElement>(null);
+	const body = useRef<HTMLDivElement>(null);
 	const formCon = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -72,7 +78,7 @@ const About = () => {
 				{
 					y: 100,
 					duration: 0,
-					rotate: -4,
+					rotate: -2,
 				},
 				{
 					y: 0,
@@ -90,7 +96,7 @@ const About = () => {
 				{ opacity: 1, duration: 0.5 }
 			)
 			.fromTo(
-				formCon.current!,
+				body.current!,
 				{
 					opacity: 0,
 				},
@@ -118,7 +124,7 @@ const About = () => {
 					</p>
 				</h1>
 			</div>
-			<div className="px-5 md:px-24 ">
+			<div ref={body} className="px-5 md:px-24 ">
 				<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 					<div className="flex-1 max-w-4xl">
 						<p className="text-2xl leading-loose">
@@ -135,7 +141,7 @@ const About = () => {
 						<i className="text-right mt-10 text-lg">— Don Draper, Mad Men</i>
 					</div>
 				</div>
-				<div className="mt-64">
+				<div className="mt-24">
 					<h1 className="text-4xl lg:text-6xl font-semibold mb-14 leading-snug">
 						AWARDS AND <br /> CERTIFICATIONS
 					</h1>

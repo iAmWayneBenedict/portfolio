@@ -20,6 +20,8 @@ import Lenis from "@studio-freight/lenis";
 import Project from "./pages/Project.page";
 import Contact from "./pages/Contact.page";
 import About from "./pages/About.page";
+import Timeline from "./pages/Timeline.pages";
+import Skills from "./pages/Skills.page";
 
 function App() {
 	return (
@@ -89,6 +91,8 @@ function Root() {
 							<Route path="/" element={<Home isLoaded={isLoaded} />} />
 							<Route path="/about" element={<About />} />
 							<Route path="/contact" element={<Contact />} />
+							<Route path="/skills" element={<Skills />} />
+							<Route path="/timeline" element={<Timeline />} />
 							<Route path="/:category" element={<Projects />} />
 							<Route path="/:category/:name" element={<Project />} />
 						</Routes>

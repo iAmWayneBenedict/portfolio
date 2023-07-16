@@ -1,18 +1,30 @@
+import data from "./data";
+
 interface categoryHandlerProps {
 	active: string;
 	setActive: React.Dispatch<React.SetStateAction<string>>;
 	imgCon: React.RefObject<HTMLDivElement>;
 	activeHandler: React.RefObject<HTMLDivElement>;
+	projCon: React.RefObject<HTMLDivElement>;
+	items: any;
+	setItems: React.Dispatch<any>;
+	setDelay: React.Dispatch<number>;
 }
 export default function categoryHandler({
 	active,
 	setActive,
 	imgCon,
 	activeHandler,
+	projCon,
+	items,
+	setItems,
+	setDelay,
 }: categoryHandlerProps) {
 	const projectCategories = Array.from(
 		imgCon.current!.querySelector("div[data-active]")!.children
 	) as HTMLElement[];
+	projCon.current!.style.transition = "all 1s ease";
+	let timer = null;
 	projectCategories.forEach((cat) => {
 		cat.addEventListener("mouseover", (e) => {
 			const el = e.currentTarget as HTMLElement;
@@ -26,11 +38,26 @@ export default function categoryHandler({
 
 		cat.firstElementChild!.addEventListener("click", (el) => {
 			let element = el.currentTarget as HTMLElement;
-			console.log(element?.tagName);
 			if (element?.tagName !== "BUTTON") return;
 			let button = element as HTMLButtonElement;
 			setActive(button.dataset.name!);
 			activeHandler.current!.dataset.active = button.dataset.name;
+			projCon.current!.classList.remove("opacity-1");
+			projCon.current!.classList.add("opacity-0");
+
+			setDelay(2);
+			timer = setTimeout(() => {
+				if (button.dataset.name == "all") setItems([...data.projects, ...data.designs]);
+				else
+					setItems((prev: any) =>
+						[...data.projects, ...data.designs].filter((data: any) =>
+							data.category?.includes(button.dataset.name)
+						)
+					);
+				projCon.current!.classList.remove("opacity-0");
+				projCon.current!.classList.add("opacity-1");
+				setDelay(1);
+			}, 1000);
 		});
 	});
 	function removeActiveState() {

@@ -163,21 +163,21 @@ const Contact = () => {
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://www.linkedin.com/in/iamwaynebenedict/"
 					>
 						<h2>LinkedIn</h2>
 					</Link>
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://github.com/iAmWayneBenedict"
 					>
 						<h2>GitHub</h2>
 					</Link>
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://dribbble.com/iamwaynebenedict"
 					>
 						<h2>Dribbble</h2>
 					</Link>

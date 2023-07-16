@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CustomLink from "../components/ui/CustomLink";
-import data from "../utils/data";
+import data, { CategoryProps } from "../utils/data";
 import { isMobile } from "react-device-detect";
 import { useMediaQuery } from "react-responsive";
 import Category from "../layouts/Projects.layouts/Category";
@@ -25,7 +25,10 @@ const Projects: React.FC = () => {
 	const imgCon = useRef<HTMLDivElement>(null);
 	const activeHandler = useRef<HTMLDivElement>(null);
 	const titlePage = useRef<HTMLHeadingElement>(null);
+	const projCon = useRef<HTMLDivElement>(null);
 	const [active, setActive] = useState<string>("");
+	const [delay, setDelay] = useState<number>(1);
+	const [items, setItems] = useState<any>([...data.projects, ...data.designs]);
 	const location = useLocation();
 	const navigate = useNavigate();
 
@@ -36,8 +39,13 @@ const Projects: React.FC = () => {
 		const imgs = imagesLoaded(imgCon.current!);
 		imgs.on("done", (e) => {
 			setAnimation();
+			imageAnimations();
 		});
 	}, [location]);
+
+	useEffect(() => {
+		imageAnimations();
+	}, [items]);
 
 	function setAnimation() {
 		setActive(activeHandler.current!.dataset.active!);
@@ -85,7 +93,9 @@ const Projects: React.FC = () => {
 					stagger: 0.5,
 				}
 			);
+	}
 
+	function imageAnimations() {
 		const images = gsap.utils.toArray("div.project-imgCon");
 		gsap.fromTo(
 			document.querySelector("div.project-imgCon") as NodeListOf<HTMLElement>[0],
@@ -101,7 +111,7 @@ const Projects: React.FC = () => {
 					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
 				),
 				opacity: 1,
-				delay: 1,
+				delay,
 			}
 		);
 		images.forEach((image, index) => {
@@ -122,8 +132,21 @@ const Projects: React.FC = () => {
 	}
 
 	useEffect(() => {
-		categoryHandler({ active, setActive, imgCon, activeHandler });
+		categoryHandler({
+			active,
+			setActive,
+			imgCon,
+			activeHandler,
+			projCon,
+			items,
+			setItems,
+			setDelay,
+		});
 	}, [active]);
+
+	useEffect(() => {
+		console.log(items);
+	}, [items]);
 
 	useEffect(() => {
 		if (location.pathname === "/projects") {
@@ -165,15 +188,19 @@ const Projects: React.FC = () => {
 						})}
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24">
-					{projects.map((project, index) => (
-						<ProjectsDetail
-							index={index}
-							isMobileView={isMobileView}
-							projectsLength={projectsLength}
-							project={project}
-						/>
-					))}
+				<div
+					ref={projCon}
+					className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24"
+				>
+					{items &&
+						items.map((project: CategoryProps, index: number) => (
+							<ProjectsDetail
+								index={index}
+								isMobileView={isMobileView}
+								projectsLength={projectsLength}
+								project={project}
+							/>
+						))}
 				</div>
 			</div>
 			<ContactLayouts classes="bg-white" />
