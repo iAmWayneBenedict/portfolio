@@ -72,13 +72,13 @@ const Skills = () => {
 					description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!"
 				/>
 				<Card
-					classes="bg-black text-white order-2"
+					classes="bg-[black] text-white order-2"
 					src="/assets/svg/ui.svg"
 					title="UI Design"
 					description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!"
 				/>
 				<Card
-					classes="bg-black text-white order-4 md:order-3"
+					classes="bg-[black] text-white order-4 md:order-3"
 					src="/assets/svg/api.svg"
 					title="API Development"
 					description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!"

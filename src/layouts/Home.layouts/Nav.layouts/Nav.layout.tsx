@@ -26,13 +26,13 @@ const Nav: React.FC<Props> = ({ isLoaded, handleNavbar, reverse }) => {
 	}, [location]);
 
 	useEffect(() => {
-		if (location.pathname === "/contact") {
+		if (location.pathname === "/contact" || location.pathname === "/about") {
 			nav.current!.classList.remove("bg-white");
-			nav.current!.classList.add("bg-black");
+			nav.current!.classList.add("bg-[black]");
 			setDark(true);
 		} else {
 			nav.current!.classList.add("bg-white");
-			nav.current!.classList.remove("bg-black");
+			nav.current!.classList.remove("bg-[black]");
 			setDark(false);
 		}
 

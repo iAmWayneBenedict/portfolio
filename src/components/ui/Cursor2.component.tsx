@@ -17,7 +17,7 @@ const Cursor = () => {
 	};
 	return (
 		<div className="fixed z-[1000] pointer-events-none " ref={mainCursor2}>
-			<div className="bg-black text-white w-[150px] h-[150px] rounded-full transition-all duration-500 opacity-0 flex justify-center items-center">
+			<div className="bg-[black] text-white w-[150px] h-[150px] rounded-full transition-all duration-500 opacity-0 flex justify-center items-center">
 				DRAG
 			</div>
 		</div>

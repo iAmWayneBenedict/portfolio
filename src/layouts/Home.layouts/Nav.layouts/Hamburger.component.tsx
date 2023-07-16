@@ -47,15 +47,15 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 			setActive(true);
 		}
 
-		if (dark && top.classList.contains("bg-black")) {
-			top.classList.remove("bg-black");
+		if (dark && top.classList.contains("bg-[black]")) {
+			top.classList.remove("bg-[black]");
 			top.classList.add("bg-white");
-			bottom.classList.remove("bg-black");
+			bottom.classList.remove("bg-[black]");
 			bottom.classList.add("bg-white");
 		} else if (dark && top.classList.contains("bg-white")) {
-			top.classList.add("bg-black");
+			top.classList.add("bg-[black]");
 			top.classList.remove("bg-white");
-			bottom.classList.add("bg-black");
+			bottom.classList.add("bg-[black]");
 			bottom.classList.remove("bg-white");
 		}
 
@@ -120,13 +120,13 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 			<span
 				ref={topLine}
 				className={`top-hamburger-line h-[1px] w-0 ${
-					dark ? "bg-white" : "bg-black"
+					dark ? "bg-white" : "bg-[black]"
 				} absolute top-[3px] left-0 transition-all duration-500`}
 			></span>
 			<span
 				ref={bottomLine}
 				className={`bottom-hamburger-line h-[1px] w-0 ${
-					dark ? "bg-white" : "bg-black"
+					dark ? "bg-white" : "bg-[black]"
 				} absolute bottom-[3px] left-0 transition-all duration-500`}
 			></span>
 		</button>

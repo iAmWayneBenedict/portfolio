@@ -39,7 +39,7 @@ const BrandName: React.FC<Props> = ({ delay, dark }) => {
 				className="font-quicksand font-bold"
 				ref={brandName}
 			>
-				<CustomLink to="/" className={`relative ${dark ? "text-white" : "text-black"}`}>
+				<CustomLink to="/" className={`relative ${dark ? "text-white" : "text-[black]"}`}>
 					WAYNE
 					{/* <span className="absolute bottom-[3px] -right-[6px] bg-blue-600 w-[4px] h-[4px] rounded-full"></span> */}
 				</CustomLink>

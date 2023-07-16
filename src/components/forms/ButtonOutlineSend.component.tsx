@@ -37,7 +37,7 @@ const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse }) => {
 		<button
 			title="send"
 			type="button"
-			className="overflow-hidden mt-28 relative bg-black rounded-full"
+			className="overflow-hidden mt-28 relative bg-[black] rounded-full"
 			onMouseOver={(event) => handleMouseOver(event)}
 			onMouseLeave={(event) => handleMouseLeave(event)}
 		>

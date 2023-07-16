@@ -6,7 +6,7 @@ const transition = (OgComponent: any) => {
 		<>
 			<OgComponent {...props} ref={ref} />
 			<motion.div
-				className="slide-in fixed top-0 left-0 w-full h-screen bg-black origin-bottom"
+				className="slide-in fixed top-0 left-0 w-full h-screen bg-[black] origin-bottom"
 				initial={{ scaleY: 1 }}
 				animate={{ scaleY: 0 }}
 				exit={{ scaleY: 0 }}
@@ -14,7 +14,7 @@ const transition = (OgComponent: any) => {
 			/>
 
 			<motion.div
-				className="slide-out fixed top-0 left-0 w-full h-screen bg-black origin-top"
+				className="slide-out fixed top-0 left-0 w-full h-screen bg-[black] origin-top"
 				initial={{ scaleY: 1 }}
 				animate={{ scaleY: 0 }}
 				exit={{ scaleY: 0 }}

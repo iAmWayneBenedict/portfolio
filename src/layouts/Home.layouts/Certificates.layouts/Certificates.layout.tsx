@@ -53,7 +53,7 @@ const Certificates = () => {
 					<Line
 						position="flex self-center"
 						color="bg-gray-300"
-						colorHighlight="bg-black"
+						colorHighlight="bg-[black]"
 						id="line-one-top-cert"
 					/>
 					<div className="flex flex-col flex-wrap gap-10 lg:gap-20 mt-36 w-full h-full">

@@ -19,6 +19,7 @@ import Projects from "./pages/Projects.page";
 import Lenis from "@studio-freight/lenis";
 import Project from "./pages/Project.page";
 import Contact from "./pages/Contact.page";
+import About from "./pages/About.page";
 
 function App() {
 	return (
@@ -86,6 +87,7 @@ function Root() {
 					<div className="bg-con" style={{ backgroundColor: "white" }}>
 						<Routes>
 							<Route path="/" element={<Home isLoaded={isLoaded} />} />
+							<Route path="/about" element={<About />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/:category" element={<Projects />} />
 							<Route path="/:category/:name" element={<Project />} />
@@ -94,7 +96,7 @@ function Root() {
 				</div>
 				<button
 					id="scroll-to-top-btn"
-					className="fixed bottom-[3rem] right-[-150%] lg:bottom-[5rem] lg:right-[-150%] w-[4rem] h-[4rem] lg:w-[7rem] lg:h-[7rem] bg-white text-black border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
+					className="fixed bottom-[3rem] right-[-150%] lg:bottom-[5rem] lg:right-[-150%] w-[4rem] h-[4rem] lg:w-[7rem] lg:h-[7rem] bg-white text-[black] border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
 					title="Scroll to top"
 				>
 					<svg

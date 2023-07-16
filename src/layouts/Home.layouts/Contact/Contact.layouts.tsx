@@ -4,7 +4,7 @@ import { useEffect } from "react";
 interface Props {
 	classes?: string;
 }
-export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white" }) => {
+export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-white" }) => {
 	let filterStyles: string = "";
 	if (classes.includes("bg-white")) {
 		filterStyles = "invert(1)";

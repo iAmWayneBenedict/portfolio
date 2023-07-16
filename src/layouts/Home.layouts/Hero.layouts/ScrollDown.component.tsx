@@ -42,13 +42,13 @@ const ScrollDown: React.FC<Props> = ({ isLoaded }) => {
 			<span className="h-[50px] w-[2px] relative overflow-hidden">
 				<span
 					ref={lineCenter}
-					className="line-center animate-scrollLine absolute -top-full left-0 h-full w-[1px] md:w-[2px] bg-black"
+					className="line-center animate-scrollLine absolute -top-full left-0 h-full w-[1px] md:w-[2px] bg-[black]"
 				></span>
 			</span>
 
 			<span
 				ref={dotCenter}
-				className="dot-center -translate-y-7 opacity-0 h-[2px] md:h-[4px] w-[2px] md:w-[4px] bg-black mt-5 rounded-full"
+				className="dot-center -translate-y-7 opacity-0 h-[2px] md:h-[4px] w-[2px] md:w-[4px] bg-[black] mt-5 rounded-full"
 			></span>
 			<span
 				ref={scrollDownTitle}

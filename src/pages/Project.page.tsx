@@ -325,7 +325,7 @@ const Project = () => {
 			<div className="w-full flex flex-col pt-12">
 				<div className="px-5 md:px-20 mt-14 max-w-2xl transition-opacity ease duration-1000">
 					<h5 className="text-[#4E4E4E] mb-5 text-base">ROLES AND RESPONSIBILITIES</h5>
-					<p className="leading-8 text-lg md:text-2xl text-black">
+					<p className="leading-8 text-lg md:text-2xl text-[black]">
 						Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
 						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis
 						interdum turpis in nec metus eleifend molestie bibendum.
@@ -349,7 +349,7 @@ const Project = () => {
 											<h5 className="pt-6 pb-4">{project.type}</h5>
 											<h1 className="text-3xl">{project.name}</h1>
 										</div>
-										<div className="absolute top-0 right-0 w-full h-full bg-black"></div>
+										<div className="absolute top-0 right-0 w-full h-full bg-[black]"></div>
 									</CustomLink>
 								);
 							})}
