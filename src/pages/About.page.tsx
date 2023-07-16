@@ -119,7 +119,7 @@ const About = () => {
 				</h1>
 			</div>
 			<div className="px-5 md:px-24 ">
-				<div className="w-full flex justify-between gap-10 py-64">
+				<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 					<div className="flex-1 max-w-4xl">
 						<p className="text-2xl leading-loose">
 							I have worked and collaborated with startups, industry leaders and
@@ -127,8 +127,8 @@ const About = () => {
 							Holiday Extras. I am currently working at Bark as Lead Product Designer.
 						</p>
 					</div>
-					<div className="flex-1 flex flex-col items-end max-w-3xl">
-						<span className="text-6xl text-right font-semibold text-gray-400">
+					<div className="flex-1 mt-36 lg:mt-0 flex flex-col items-end max-w-3xl">
+						<span className="text-5xl md:text-6xl text-right font-semibold text-gray-400">
 							<span className="font-cinzel">“</span>Make it simple, but significant.{" "}
 							<span className="font-cinzel">”</span>
 						</span>
@@ -136,7 +136,7 @@ const About = () => {
 					</div>
 				</div>
 				<div className="mt-64">
-					<h1 className="text-6xl font-semibold mb-14 leading-snug">
+					<h1 className="text-4xl lg:text-6xl font-semibold mb-14 leading-snug">
 						AWARDS AND <br /> CERTIFICATIONS
 					</h1>
 					<p className="text-xl mb-32 max-w-4xl">
@@ -147,18 +147,18 @@ const About = () => {
 
 					{AWARDS_LIST.map(([name, year], index) => (
 						<div
-							className={`py-10 px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
+							className={`py-10 gap-5 px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
 								AWARDS_LIST.length - 1 === index &&
 								"border-b-[1px] border-b-[#4F4F4F]"
 							}`}
 						>
-							<div className="text-2xl">{name}</div>
-							<div className="text-3xl font-semibold">{year}</div>
+							<div className="text-lg md:text-2xl">{name}</div>
+							<div className="text-xl md:text-3xl font-semibold">{year}</div>
 						</div>
 					))}
 				</div>
 				<div className="w-full mt-64">
-					<p className="text-3xl leading-relaxed text-center">
+					<p className="text-xl md:text-2xl lg:text-3xl leading-relaxed text-center">
 						I have worked and collaborated with startups, industry leaders and global
 						brands including Veolia, USN, goHenry, ChargeNow by BMW and Holiday Extras.
 						I am currently working at Bark as Lead Product Designer.
