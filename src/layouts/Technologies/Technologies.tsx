@@ -8,7 +8,7 @@ const Technologies: React.FC = () => {
 			<h1 className="text-center font-bold text-xl lg:text-2xl">TECHNOLOGIES</h1>
 			<div>
 				<div className="mt-20">
-					<div className="mousemove marquee-container text-white py-8 lg:py-12 border-t-2 border-b-2 border-black">
+					<div className="mousemove marquee-container text-white py-8 lg:py-12 border-t-2 border-b-2 border-[black]">
 						<Marquee
 							className="overflow-y-hidden cursor-default whitespace-nowrap"
 							speed={50}

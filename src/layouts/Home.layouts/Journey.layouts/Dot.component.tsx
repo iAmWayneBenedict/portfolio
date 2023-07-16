@@ -56,8 +56,8 @@ const Dot: React.FC = () => {
 					id: "first",
 					immediateRender: false,
 					onToggle: () => {
-						console.log(123)
-					}
+						console.log(123);
+					},
 				},
 			});
 
@@ -115,16 +115,15 @@ const Dot: React.FC = () => {
 					immediateRender: false,
 				},
 			});
-
-		})
-			return () => ctx.revert()
+		});
+		return () => ctx.revert();
 	}, []);
 
 	return (
 		<>
 			<div
 				ref={heroCon}
-				className="line-journey w-[5px] h-0 bg-black rounded-lg flex flex-col justify-evenly"
+				className="line-journey w-[5px] h-0 bg-[black] rounded-lg flex flex-col justify-evenly"
 			></div>
 			{[
 				["01", "top-[10%]"],
@@ -135,7 +134,7 @@ const Dot: React.FC = () => {
 				return (
 					<div
 						key={number}
-						className={`dot-con w-[25px] h-[25px] bg-white border-[14px] border-black absolute rounded-full left-20 lg:left-1/2 -translate-x-1/2 ${position} flex justify-center items-center`}
+						className={`dot-con w-[25px] h-[25px] bg-white border-[14px] border-[black] absolute rounded-full left-20 lg:left-1/2 -translate-x-1/2 ${position} flex justify-center items-center`}
 					>
 						<span className="text-lg dot-text rounded-full overflow-hidden">
 							{number}

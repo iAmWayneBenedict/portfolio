@@ -59,7 +59,7 @@ const AboutSection = () => {
 			<Line
 				position="mr-auto"
 				color="bg-gray-300"
-				colorHighlight="bg-black"
+				colorHighlight="bg-[black]"
 				id="line-one-top-about"
 			/>
 			<div className="container mx-auto px-10 my-24">
@@ -83,7 +83,7 @@ const AboutSection = () => {
 			<Line
 				position="ml-auto"
 				color="bg-gray-300"
-				colorHighlight="bg-black"
+				colorHighlight="bg-[black]"
 				id="line-one-bottom-about"
 			/>
 		</div>

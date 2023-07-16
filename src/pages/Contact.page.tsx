@@ -12,7 +12,7 @@ const Contact = () => {
 	const title = useRef<HTMLHeadingElement>(null);
 	const formCon = useRef<HTMLDivElement>(null);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const bgCon = document.querySelector(".bg-con") as HTMLElement;
 		const nav = document.querySelector("nav") as HTMLElement;
 
@@ -50,7 +50,7 @@ const Contact = () => {
 			el.classList.add("relative");
 			el.classList.add("overflow-hidden");
 			span.className =
-				"bg absolute rotate-6 -top-[10%] -left-[100%] w-[500%] h-[100rem] bg-black";
+				"bg absolute rotate-6 -top-[10%] -left-[100%] w-[500%] h-[100rem] bg-[black]";
 			el.appendChild(span);
 		});
 		const bgs = gsap.utils.toArray(titleComponents.lines!.map((el) => el.lastElementChild));
@@ -163,21 +163,21 @@ const Contact = () => {
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://www.linkedin.com/in/iamwaynebenedict/"
 					>
 						<h2>LinkedIn</h2>
 					</Link>
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://github.com/iAmWayneBenedict"
 					>
 						<h2>GitHub</h2>
 					</Link>
 					<Link
 						className="font-light w-fit"
 						style={{ fontSize: "clamp(2.5rem, 10vw, 3.75rem)" }}
-						to="/"
+						to="https://dribbble.com/iamwaynebenedict"
 					>
 						<h2>Dribbble</h2>
 					</Link>

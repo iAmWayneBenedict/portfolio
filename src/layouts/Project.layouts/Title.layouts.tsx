@@ -25,7 +25,7 @@ const Title: React.FC<Props> = ({ src, children, reference }) => {
 				<Link
 					className={
 						src
-							? "demo text-center link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-300%] before:w-full before:h-px before:bg-black"
+							? "demo text-center link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[black] before:absolute before:content-[''] before:bottom-0 before:left-[-300%] before:w-full before:h-px before:bg-[black]"
 							: "text-center pointer-events-none"
 					}
 					to={src ? src : "/"}

@@ -143,9 +143,9 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 					{/* <div ref={cta} className="mt-10 flex justify-center opacity-0">
 						<CustomLink
 							to={"/projects"}
-							className="text-xs md:text-base rounded-xl bg-black text-white px-7 md:px-10 py-3 md:py-4"
+							className="text-xs md:text-base rounded-xl bg-[black] text-white px-7 md:px-10 py-3 md:py-4"
 						> */}
-					{/* <div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-black before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-black text-sm md:text-lg"> */}
+					{/* <div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[black] before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-[black] text-sm md:text-lg"> */}
 					{/* View Projects */}
 					{/* </div> */}
 					{/* </CustomLink>

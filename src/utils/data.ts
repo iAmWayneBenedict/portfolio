@@ -2,6 +2,7 @@ interface CategoryProps {
 	name: string;
 	URIName: string;
 	categoryType: string;
+	category: string[];
 	type: string;
 	thumbnail: string;
 	thumbnail_small: string;
@@ -28,6 +29,7 @@ const data: Props = {
 			name: "RastaFoods",
 			URIName: "rastafoods",
 			categoryType: "projects",
+			category: ["branding"],
 			type: "UI/UX Design, Development",
 			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
@@ -67,6 +69,7 @@ const data: Props = {
 			name: "MAOB Appointment System",
 			URIName: "maob-appointment-system",
 			categoryType: "projects",
+			category: ["branding"],
 			type: "UI/UX Design, Development",
 			demoLink: "https://maob-appointments-bato.000webhostapp.com/",
 			dribbleLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
@@ -112,6 +115,7 @@ const data: Props = {
 			name: "PH Holidays",
 			URIName: "ph-holidays",
 			categoryType: "projects",
+			category: ["restful-apis", "branding"],
 			type: "UI/UX Design, Development",
 			demoLink: "https://ph-holidays.vercel.app/",
 			dribbleLink: "https://dribbble.com/shots/21889146-PH-Holidays",
@@ -148,6 +152,7 @@ const data: Props = {
 		{
 			name: "Bagudbud Express V2.0",
 			URIName: "bagudbud-express-v2",
+			category: ["branding"],
 			categoryType: "designs",
 			type: "UI/UX Design",
 			dribbleLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
@@ -201,6 +206,7 @@ const data: Props = {
 		{
 			name: "Bagudbud Express",
 			URIName: "bagudbud-express",
+			category: ["branding"],
 			categoryType: "designs",
 			type: "UI/UX Design, Development",
 			dribbleLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",

@@ -97,7 +97,7 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 				<div
 					className={`loader w-[10rem] md:w-[15rem] rounded-3xl h-[.3rem] md:h-[.8rem] bg-white flex items-center`}
 				>
-					<div className="loader-fill animate-splashScreen bg-black h-[0.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
+					<div className="loader-fill animate-splashScreen bg-[black] h-[0.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
 						<div className="loader-fill-curtain bg-white opacity-0 w-[1px] h-[1px] z-[50]"></div>
 					</div>
 				</div>

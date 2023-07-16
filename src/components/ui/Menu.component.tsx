@@ -13,7 +13,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			ref={useReference}
 			className="menu-con fixed opacity-0 hidden top-0 left-0 w-screen h-screen bg-white z-50"
 		>
-			<div className="left-menu hidden bg-black w-[20rem] h-0 md:flex flex-col justify-between items-start">
+			<div className="left-menu hidden bg-[black] w-[20rem] h-0 md:flex flex-col justify-between items-start">
 				<div className="top-left-menu text-white font-bold font-quicksand text-2xl w-fit opacity-0">
 					<h1 className="-rotate-90 pr-16 pb-20" style={{ direction: "rtl" }}>
 						WAYNE
@@ -24,7 +24,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 				</div>
 			</div>
 			<div className="right-menu w-full relative h-full">
-				{/* <div className="absolute bottom-0 right-0 span-black bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
+				{/* <div className="absolute bottom-0 right-0 span-[black] bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
 				<Link
 					to="/"
 					className="font-quicksand font-bold absolute top-5 flex left-3 md:hidden"
@@ -58,9 +58,9 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 					</div>
 					<div className="menu-nav flex flex-col gap-5">
 						<MenuLink text={"PROJECTS"} href="/projects" />
-						<MenuLink text={"CONTACT"} />
-						<MenuLink text={"DESIGNS"} />
-						<MenuLink text={"ABOUT"} />
+						<MenuLink text={"TIMELINE"} href="/timeline" />
+						<MenuLink text={"CONTACT"} href="contact" />
+						<MenuLink text={"ABOUT"} href="/about" />
 					</div>
 
 					<div className="menu-socials flex flex-col gap-10 sm:gap-0 sm:flex-row justify-between items-center">

@@ -21,7 +21,7 @@ const Category: React.FC<Props> = ({ index, name, value, categoryData }) => {
 			</button>
 			{index !== categoryData.length - 1 ? (
 				<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[40px]">
-					<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-black"></div>
+					<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-[black]"></div>
 				</div>
 			) : (
 				""

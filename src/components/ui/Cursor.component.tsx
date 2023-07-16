@@ -55,7 +55,6 @@ const Cursor = () => {
 			secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
 		};
 		followMouse();
-
 		let links = document.querySelectorAll("a, button, .swiper, label, input, textarea");
 		let child = mainCursor.current?.firstElementChild as HTMLDivElement;
 		child.style.transform = "scale(1)";

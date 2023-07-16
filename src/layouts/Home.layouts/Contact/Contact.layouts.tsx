@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import CustomLink from "../../../components/ui/CustomLink";
 
 interface Props {
 	classes?: string;
 }
-export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white" }) => {
+export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-white" }) => {
 	let filterStyles: string = "";
 	if (classes.includes("bg-white")) {
 		filterStyles = "invert(1)";
@@ -14,7 +15,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white
 		<div className={`${classes} mt-40 pt-48 pb-20 px-10 lg:px-24`}>
 			<div className={`flex justify-between flex-col lg:flex-row`}>
 				<div>
-					<Link to="#">
+					<CustomLink to="/contact" className="group">
 						<h1 className="flex">
 							<span
 								className="font-neueMontrealRegular"
@@ -23,6 +24,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white
 								LET'S TALK.
 							</span>
 							<img
+								className="group-hover:ml-10 transition-all duration-300 ease"
 								src="/assets/ico/arrow-up-right.svg"
 								style={{
 									width: "clamp(6rem, 10vw, 10rem)",
@@ -31,7 +33,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-black text-white
 								alt=""
 							/>
 						</h1>
-					</Link>
+					</CustomLink>
 					<div className="mt-16 flex flex-col gap-10">
 						<p>Open for Collaboration</p>
 						<p>Available for Freelance Work</p>
