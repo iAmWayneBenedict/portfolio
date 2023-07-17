@@ -81,11 +81,10 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 			reference={btn}
 			className={`overflow-hidden order-2 sm:order-1 relative ${
 				dark ? "bg-[black]" : "bg-white"
-			} rounded-3xl scale-[0.85] sm:scale-1`}
+			} rounded-3xl scale-[0.8] sm:scale-1`}
 		>
 			<svg
-				width="130"
-				height="39"
+				className="w-full h-full max-w-[9rem]"
 				viewBox="0 0 130 39"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
