@@ -102,12 +102,12 @@ const Contact = () => {
 		});
 	}, []);
 	return (
-		<div className="pt-48 sm:pt-56 md:pt-96 text-white pb-10">
+		<div className="pt-48 sm:pt-56 2xl:pt-96 text-white pb-10">
 			<div className="px-5 md:px-24">
 				<h1
 					ref={title}
 					className="overflow-hidden block relative max-w-7xl font-light"
-					style={{ fontSize: `clamp(3rem, 10vw, 6rem)` }}
+					style={{ fontSize: `clamp(3rem, 6.75vw, 6rem)` }}
 				>
 					<p className="title-text leading-1">LET’S CONNECT AND GET TO KNOW EACH OTHER</p>
 				</h1>

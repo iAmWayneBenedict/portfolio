@@ -105,7 +105,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 	return (
 		<>
 			<div className="h-auto w-full">
-				<div className="flex flex-col justify-center h-2/3 sm:h-1/2 md:h-2/3 w-full pt-20">
+				<div className="flex flex-col justify-center h-2/3 sm:h-1/2 md:h-2/3 w-full pt-16 2xl:pt-20">
 					<div
 						className="hero-con flex flex-col gap-5 items-center pointer-events-none font-normal md:font-light leading-[1] md:leading-[1.25]"
 						style={{ fontSize: "clamp(1.8rem, 6vw , 6rem)" }}
@@ -127,7 +127,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 					</div>
 					<div
 						ref={des}
-						className="flex flex-col items-center pointer-events-none mt-10 lg:mt-20 w-full opacity-0"
+						className="flex flex-col items-center pointer-events-none mt-10 2xl:mt-20 w-full opacity-0"
 					>
 						<div
 							className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-2xl"
@@ -154,7 +154,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				{/* <ScrollDown isLoaded={isLoaded} /> */}
 			</div>
 			<div
-				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-fit mt-10 md:mt-20"
+				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-fit mt-10 lg:mt-16 2xl:mt-20"
 				ref={vid}
 			>
 				<video

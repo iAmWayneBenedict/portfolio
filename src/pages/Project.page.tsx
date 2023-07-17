@@ -236,7 +236,7 @@ const Project = () => {
 							)}
 						</Link>
 					</div>
-					<div className="mt-16 sm:mt-24 lg:mt-36">
+					<div className="mt-16 sm:mt-24 2xl:mt-36">
 						<p
 							ref={overview}
 							className="text-center max-w-6xl leading-[1.75] text-lg md:text-2xl"
@@ -251,7 +251,7 @@ const Project = () => {
 							<div
 								className={`${
 									index % 3 === 0 && !isMobileView ? "col-span-2" : ""
-								} mt-5 lg:mt-14 h-fit`}
+								} mt-5 2xl:mt-14 h-fit`}
 								key={index}
 							>
 								<div className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">

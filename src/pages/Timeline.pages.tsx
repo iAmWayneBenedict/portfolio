@@ -99,7 +99,7 @@ const Timeline = () => {
 		});
 	}, []);
 	return (
-		<div className="pt-48 sm:pt-56 md:pt-96">
+		<div className="pt-48 sm:pt-56 2xl:pt-96">
 			<div className="px-5 md:px-24 text-white">
 				<h1
 					ref={title}

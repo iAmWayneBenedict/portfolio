@@ -9,7 +9,7 @@ const Category: React.FC<Props> = ({ index, name, value, categoryData }) => {
 	return (
 		<div
 			className="flex flex-row items-center gap-3 md:gap-10 overflow-hidden"
-			style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}
+			style={{ fontSize: "clamp(1.25rem, 2.25vw, 2.25rem)" }}
 			key={index + name}
 		>
 			<button

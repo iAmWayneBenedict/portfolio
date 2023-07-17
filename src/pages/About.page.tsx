@@ -111,13 +111,14 @@ const About = () => {
 			});
 		});
 	}, []);
+
 	return (
-		<div className="pt-48 sm:pt-56 md:pt-96 pb-10 text-white">
+		<div className="pt-48 sm:pt-56 2xl:pt-96 pb-10 text-white">
 			<div className="px-5 md:px-24 flex flex-col items-end">
 				<h1
 					ref={title}
 					className="overflow-hidden block relative max-w-7xl font-light"
-					style={{ fontSize: `clamp(1.5rem, 7vw, 6rem)` }}
+					style={{ fontSize: `clamp(1.5rem, 6vw, 6rem)` }}
 				>
 					<p className="title-text text-right">
 						Developing extraordinary digital outcomes, today and for the years ahead.
