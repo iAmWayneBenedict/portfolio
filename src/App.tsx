@@ -33,6 +33,7 @@ function App() {
 
 function Root() {
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [categoryChanged, setCategoryChanged] = useState<string>("");
 	const menu = useRef<HTMLDivElement>(null);
 	const scroller = useRef<HTMLDivElement>(null);
 	const app = useRef<HTMLDivElement>(null);
@@ -81,7 +82,7 @@ function Root() {
 
 				<RemoveScrollBar />
 				<BrowserView>
-					<Cursor />
+					<Cursor categoryChanged={categoryChanged} />
 				</BrowserView>
 				<div className="cursor h-screen w-full" ref={scroller}>
 					<Menu useReference={menu} historyReturn={rHistory} />
@@ -93,7 +94,10 @@ function Root() {
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/skills" element={<Skills />} />
 							<Route path="/timeline" element={<Timeline />} />
-							<Route path="/:category" element={<Projects />} />
+							<Route
+								path="/:category"
+								element={<Projects setCategoryChanged={setCategoryChanged} />}
+							/>
 							<Route path="/:category/:name" element={<Project />} />
 						</Routes>
 					</div>

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 interface PositionProp {
@@ -10,8 +10,10 @@ interface PositionProp {
 	distanceY: number;
 	key: number;
 }
-
-const Cursor = () => {
+interface Props {
+	categoryChanged: string;
+}
+const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 	const [isMoving, setIsMoving] = useState<boolean>(false);
 	const location = useLocation();
 
@@ -182,6 +184,10 @@ const Cursor = () => {
 		mainCursor.current?.firstElementChild?.classList.remove("opacity-0");
 		secondaryCursor.current?.classList.remove("opacity-0");
 	}, [isMoving, location]);
+	useEffect(() => {
+		handleMouseCursor();
+		console.log(categoryChanged);
+	}, [categoryChanged]);
 	return (
 		<>
 			<div
