@@ -9,6 +9,7 @@ interface categoryHandlerProps {
 	items: any;
 	setItems: React.Dispatch<any>;
 	setDelay: React.Dispatch<number>;
+	setCategoryChanged: React.Dispatch<React.SetStateAction<string>>;
 }
 export default function categoryHandler({
 	active,
@@ -19,6 +20,7 @@ export default function categoryHandler({
 	items,
 	setItems,
 	setDelay,
+	setCategoryChanged,
 }: categoryHandlerProps) {
 	const projectCategories = Array.from(
 		imgCon.current!.querySelector("div[data-active]")!.children
@@ -54,6 +56,7 @@ export default function categoryHandler({
 							data.category?.includes(button.dataset.name)
 						)
 					);
+				setCategoryChanged(button.dataset.name!);
 				projCon.current!.classList.remove("opacity-0");
 				projCon.current!.classList.add("opacity-1");
 				setDelay(1);

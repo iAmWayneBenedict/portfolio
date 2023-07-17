@@ -21,7 +21,11 @@ const categoryData = [
 	["Branding.", "branding"],
 ];
 
-const Projects: React.FC = () => {
+interface Props {
+	setCategoryChanged: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	const imgCon = useRef<HTMLDivElement>(null);
 	const activeHandler = useRef<HTMLDivElement>(null);
 	const titlePage = useRef<HTMLHeadingElement>(null);
@@ -141,12 +145,9 @@ const Projects: React.FC = () => {
 			items,
 			setItems,
 			setDelay,
+			setCategoryChanged,
 		});
 	}, [active]);
-
-	useEffect(() => {
-		console.log(items);
-	}, [items]);
 
 	useEffect(() => {
 		if (location.pathname === "/projects") {
