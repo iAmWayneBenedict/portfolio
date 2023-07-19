@@ -52,7 +52,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 				/>
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">
-				<span className="text-sm md:text-lg">{title}</span>
+				<span className="text-sm md:text-lg font-bold">{title}</span>
 				<div>
 					<Link
 						to={"/" + src}

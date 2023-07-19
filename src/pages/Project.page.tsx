@@ -193,7 +193,10 @@ const Project = () => {
 			>
 				<div className="flex flex-col items-center">
 					<div className="w-full flex justify-center">
-						<Title reference={title} src={filteredItem[0]?.demoLink}>
+						<Title
+							reference={title}
+							src={filteredItem[0]?.demoLink || filteredItem[0]?.videoDemo}
+						>
 							{filteredItem[0]?.name}
 						</Title>
 					</div>
@@ -341,6 +344,7 @@ const Project = () => {
 									<CustomLink
 										className="project-con relative overflow-hidden"
 										to={`/${project.categoryType}/${project.URIName}`}
+										key={index}
 									>
 										<div>
 											<img src={project.thumbnail} alt="" />

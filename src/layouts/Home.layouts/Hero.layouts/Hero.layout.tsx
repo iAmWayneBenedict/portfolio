@@ -39,7 +39,6 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 		});
 
 		const t = gsap.timeline();
-		console.log(text.chars);
 		t.to(
 			text.chars,
 			{
