@@ -149,10 +149,15 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 
 			mainCursor.current!.style.mixBlendMode = "unset";
 			const app = document.querySelector(".bg-con") as HTMLElement;
-			mainCursorFChild.style.background =
-				app.style.backgroundColor === "black" ? "white" : "black";
-			mainCursorLChild.style.color =
-				app.style.backgroundColor === "black" ? "black" : "white";
+			if (location.pathname !== "/") {
+				mainCursorFChild.style.background =
+					app.style.backgroundColor === "black" ? "white" : "black";
+				mainCursorLChild.style.color =
+					app.style.backgroundColor === "black" ? "black" : "white";
+			} else {
+				mainCursorFChild.style.background = "black";
+				mainCursorLChild.style.color = "white";
+			}
 			if (isJourney) {
 				mainCursorLChild.textContent = "DRAG";
 			} else if (isDesign) {
@@ -186,7 +191,6 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 	}, [isMoving, location]);
 	useEffect(() => {
 		handleMouseCursor();
-		console.log(categoryChanged);
 	}, [categoryChanged]);
 	return (
 		<>
