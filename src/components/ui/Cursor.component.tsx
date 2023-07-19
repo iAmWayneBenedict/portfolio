@@ -62,7 +62,6 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		child.style.transform = "scale(1)";
 		let sChild = child.nextElementSibling as HTMLElement;
 		sChild.innerText = "";
-		// secondaryCursor.current!.style.opacity = "1";
 
 		links.forEach((el) => {
 			el.addEventListener("mouseover", (event) => {
@@ -183,6 +182,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 
 		mainCursor.current?.firstElementChild?.classList.remove("opacity-0");
 		secondaryCursor.current?.classList.remove("opacity-0");
+		secondaryCursor.current!.style.opacity = "1";
 	}, [isMoving, location]);
 	useEffect(() => {
 		handleMouseCursor();

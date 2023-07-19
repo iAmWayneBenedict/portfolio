@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import CustomLink from "../../../components/ui/CustomLink";
+import useDate from "../../../hooks/useDate";
 
 interface Props {
 	classes?: string;
 }
 export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-white" }) => {
+	const { year } = useDate();
 	let filterStyles: string = "";
 	if (classes.includes("bg-white")) {
 		filterStyles = "invert(1)";
@@ -68,7 +70,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 				<div>
 					<span>
 						<span>©</span>
-						<span>2022 | WAYNE</span>
+						<span> {year} | WAYNE</span>
 					</span>
 				</div>
 			</div>

@@ -177,7 +177,7 @@ const Designs = () => {
 					onTouchStart={(event) => handleTouchStart(event.touches)}
 					onTouchEnd={() => handleTouchEnd()}
 					modules={[Navigation, Pagination, EffectCreative]}
-					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[40rem] lg:h-[70rem] overflow-hidden"
+					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[50rem] 2xl:h-[70rem] overflow-hidden"
 				>
 					{data.designs.map((design, index) => (
 						<SwiperSlide key={index}>

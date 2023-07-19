@@ -1,6 +1,7 @@
 import React from "react";
 import MenuLink from "./MenuLink";
 import { Link } from "react-router-dom";
+import useDate from "../../hooks/useDate";
 
 interface Props {
 	useReference: React.RefObject<HTMLDivElement>;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
+	const { year } = useDate();
 	return (
 		<div
 			ref={useReference}
@@ -131,7 +133,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 							</Link>
 						</div>
 						<div className="menu-socials-right opacity-0 flex gap-5">
-							<span>© 2022 | WAYNE</span>
+							<span>© {year} | WAYNE</span>
 						</div>
 					</div>
 				</div>

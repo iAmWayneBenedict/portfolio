@@ -46,10 +46,6 @@ const Nav: React.FC<Props> = ({ isLoaded, handleNavbar, reverse }) => {
 		};
 	}, [location.pathname]);
 
-	useEffect(() => {
-		console.log(dark);
-	}, [dark]);
-
 	return (
 		<nav
 			ref={nav}

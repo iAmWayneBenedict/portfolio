@@ -164,7 +164,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	return (
 		<>
 			<div className="mx-5 md:mx-24" ref={imgCon}>
-				<div className="mt-32 md:mt-48">
+				<div className="mt-32 2xl:mt-48">
 					<h1
 						className="text-8xl overflow-hidden pb-2"
 						style={{ fontSize: "clamp(2rem, 10vw, 6rem)" }}
@@ -191,7 +191,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 				</div>
 				<div
 					ref={projCon}
-					className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 lg:mt-24"
+					className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10 2xl:mt-24"
 				>
 					{items &&
 						items.map((project: CategoryProps, index: number) => (

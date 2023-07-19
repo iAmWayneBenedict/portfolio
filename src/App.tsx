@@ -22,7 +22,6 @@ import Contact from "./pages/Contact.page";
 import About from "./pages/About.page";
 import Timeline from "./pages/Timeline.pages";
 import Skills from "./pages/Skills.page";
-
 function App() {
 	return (
 		<BrowserRouter>
@@ -143,7 +142,6 @@ const Scroller = () => {
 			smoothScrollbarHook.scrollTo(0, 0, 0);
 		}
 	}, [path.pathname]);
-
 	return <></>;
 };
 

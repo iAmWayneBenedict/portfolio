@@ -64,7 +64,7 @@ const Skills = () => {
 			</p>
 			<Title overrideConClasses="pt-36" name="skills" />
 
-			<div className="w-full flex gap-5 lg:gap-10 flex-wrap justify-evenly md:px-5 xl:px-20 mt-36 md:mt-72 flex-col md:flex-row">
+			<div className="w-full flex gap-5 lg:gap-10 flex-wrap justify-evenly md:px-5 2xl:px-20 mt-36 md:mt-72 flex-col md:flex-row">
 				<Card
 					classes="bg-white order-1"
 					src="/assets/svg/web.svg"

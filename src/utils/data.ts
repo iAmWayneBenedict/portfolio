@@ -3,6 +3,7 @@ interface CategoryProps {
 	URIName: string;
 	categoryType: string;
 	category: string[];
+	videoDemo?: string;
 	type: string;
 	thumbnail: string;
 	thumbnail_small: string;
@@ -143,6 +144,42 @@ const data: Props = {
 				{
 					name: "Dashboard",
 					image: "https://cdn.dribbble.com/userupload/8245592/file/original-861e724b32774d394077dd374e6dfa67.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+			],
+		},
+		{
+			name: "Chapters",
+			URIName: "chapters",
+			categoryType: "projects",
+			category: ["open-source", "branding"],
+			videoDemo: "https://youtu.be/oCVN1QKzsdk",
+			type: "UI/UX Design, Development, Automation",
+			dribbleLink: "https://dribbble.com/shots/22039382-Chapters",
+			githubLink: "https://github.com/iAmWayneBenedict/chapters",
+			thumbnail:
+				"https://cdn.dribbble.com/userupload/8684405/file/original-ef8abc566ce0ba61759d332b8bbda572.png?compress=1&resize=1600x1034",
+			thumbnail_small:
+				"https://cdn.dribbble.com/userupload/8684407/file/original-36b520162b57977a579a57b554a502c6.png?compress=1&resize=1600x1034",
+			images: [
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8684405/file/original-ef8abc566ce0ba61759d332b8bbda572.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8684407/file/original-36b520162b57977a579a57b554a502c6.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8684406/file/original-5265787dab0026f2b01c30ebbfe3152f.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8684408/file/original-b7a64fb5a679ebf95bad215e9a48c05b.png?compress=1&resize=1600x1034",
 					description: "",
 				},
 			],

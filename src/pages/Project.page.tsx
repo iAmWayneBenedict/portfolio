@@ -193,7 +193,10 @@ const Project = () => {
 			>
 				<div className="flex flex-col items-center">
 					<div className="w-full flex justify-center">
-						<Title reference={title} src={filteredItem[0]?.demoLink}>
+						<Title
+							reference={title}
+							src={filteredItem[0]?.demoLink || filteredItem[0]?.videoDemo}
+						>
 							{filteredItem[0]?.name}
 						</Title>
 					</div>
@@ -236,7 +239,7 @@ const Project = () => {
 							)}
 						</Link>
 					</div>
-					<div className="mt-16 sm:mt-24 lg:mt-36">
+					<div className="mt-16 sm:mt-24 2xl:mt-36">
 						<p
 							ref={overview}
 							className="text-center max-w-6xl leading-[1.75] text-lg md:text-2xl"
@@ -251,7 +254,7 @@ const Project = () => {
 							<div
 								className={`${
 									index % 3 === 0 && !isMobileView ? "col-span-2" : ""
-								} mt-5 lg:mt-14 h-fit`}
+								} mt-5 2xl:mt-14 h-fit`}
 								key={index}
 							>
 								<div className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
@@ -341,6 +344,7 @@ const Project = () => {
 									<CustomLink
 										className="project-con relative overflow-hidden"
 										to={`/${project.categoryType}/${project.URIName}`}
+										key={index}
 									>
 										<div>
 											<img src={project.thumbnail} alt="" />
