@@ -116,7 +116,7 @@ const data: Props = {
 			name: "PH Holidays",
 			URIName: "ph-holidays",
 			categoryType: "projects",
-			category: ["restful-apis", "open-source", "branding"],
+			category: ["restful-apis", "open-source"],
 			type: "UI/UX Design, Development",
 			demoLink: "https://ph-holidays.vercel.app/",
 			dribbleLink: "https://dribbble.com/shots/21889146-PH-Holidays",
@@ -180,6 +180,42 @@ const data: Props = {
 				{
 					name: "Dashboard",
 					image: "https://cdn.dribbble.com/userupload/8684408/file/original-b7a64fb5a679ebf95bad215e9a48c05b.png?compress=1&resize=1600x1034",
+					description: "",
+				},
+			],
+		},
+		{
+			name: "Redcart",
+			URIName: "redcart",
+			categoryType: "projects",
+			category: ["branding"],
+			demoLink: "https://shop-redcart.000webhostapp.com/",
+			type: "UI/UX Design, Development, Automation",
+			dribbleLink: "https://dribbble.com/shots/22043286-Redcart",
+			githubLink: "https://github.com/iAmWayneBenedict/redcart",
+			thumbnail:
+				"https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+			thumbnail_small:
+				"https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+			images: [
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8693602/file/original-898407957a193cc59c2149266b8fd6e3.png?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8693603/file/original-be284e608664be39fbdbaf0229380581.png?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8693601/file/original-36c7aa27241b4e2f34343651fd67c8d0.png?resize=1600x1034",
 					description: "",
 				},
 			],
