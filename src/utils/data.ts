@@ -117,7 +117,7 @@ const data: Props = {
 			URIName: "ph-holidays",
 			categoryType: "projects",
 			category: ["restful-apis", "open-source"],
-			type: "UI/UX Design, Development",
+			type: "UI/UX Design, Development, Automation",
 			demoLink: "https://ph-holidays.vercel.app/",
 			dribbleLink: "https://dribbble.com/shots/21889146-PH-Holidays",
 			githubLink: "https://github.com/iAmWayneBenedict/ph-holidays",
@@ -190,7 +190,7 @@ const data: Props = {
 			categoryType: "projects",
 			category: ["branding"],
 			demoLink: "https://shop-redcart.000webhostapp.com/",
-			type: "UI/UX Design, Development, Automation",
+			type: "UI/UX Design, Development",
 			dribbleLink: "https://dribbble.com/shots/22043286-Redcart",
 			githubLink: "https://github.com/iAmWayneBenedict/redcart",
 			thumbnail:

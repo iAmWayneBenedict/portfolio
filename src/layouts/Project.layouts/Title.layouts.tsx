@@ -14,7 +14,7 @@ const Title: React.FC<Props> = ({ src, children, reference }) => {
 	const defaultArrowPosition =
 		children!.length > 18
 			? "lg:group-hover:right-[-8rem]"
-			: "lg:group-hover:right-[-11rem] lg:-right-[10rem]";
+			: "lg:group-hover:right-[-11rem] xl:-right-[10rem]";
 	return (
 		<h1
 			ref={reference}
