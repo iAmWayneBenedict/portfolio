@@ -1,16 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 interface Props {
 	placeholder?: string;
 	name?: string;
 	type?: string;
+	error?: string;
 }
-const Input: React.FC<Props> = ({ placeholder, name, type }) => {
+const Input: React.FC<Props> = ({ placeholder, name, type, error }) => {
 	const input = useRef<HTMLInputElement>(null);
+	const [value, setValue] = useState<string>("");
+	const line = useRef<HTMLSpanElement>(null);
+	const label = useRef<HTMLLabelElement>(null);
 
 	const handleLabel = (event: FocusEvent) => {
-		input.current!.previousElementSibling?.classList.add("active");
+		label.current!.classList.add("active");
 		if (event.type === "focusout" && input.current!.value === "") {
-			input.current!.previousElementSibling?.classList.remove("active");
+			label.current!.classList.remove("active");
 		}
 	};
 
@@ -19,21 +23,38 @@ const Input: React.FC<Props> = ({ placeholder, name, type }) => {
 		input.current!.addEventListener("focusout", handleLabel);
 	}, []);
 	return (
-		<div className="flex relative w-full overflow-hidden">
+		<div className="flex relative flex-col w-full">
 			<label
+				ref={label}
 				className="input-label absolute w-full left-0 text-white text-xl cursor-[text] transition-all duration-300 ease"
 				htmlFor={name}
 			>
 				{placeholder}
 			</label>
-			<input
-				className="mt-10 pb-3 text-xl bg-transparent border-b-[1px] w-full border-b-gray-500 border-opacity-50 focus:outline-none active:outline-none outline-none"
-				name={name}
-				id={name}
-				type={type}
-				ref={input}
-			/>
-			<span className="absolute bottom-0 bg-white h-[1px] w-full  transition-all duration-300 ease-out"></span>
+			<div className="flex relative flex-col w-full overflow-hidden">
+				<input
+					className={`${
+						error ? "border-b-red-500" : "border-b-gray-500"
+					} mt-10 pb-3 text-2xl lg:text-3xl 2xl:text-4xl font-light bg-transparent border-b-[1px] border-opacity-50 w-full  focus:outline-none active:outline-none outline-none`}
+					name={name}
+					id={name}
+					type={type}
+					ref={input}
+					value={value}
+					onChange={(event) => setValue(event.target.value)}
+				/>
+				<span
+					ref={line}
+					className={`${
+						error && value ? "bg-red-500" : "bg-white"
+					} absolute bottom-0 h-[1px] w-full  transition-all duration-300 ease-out`}
+				></span>
+			</div>
+			{error && (
+				<p className="absolute text-red-500 text-xs md:text-sm -bottom-[1.3rem] right-0">
+					{error}
+				</p>
+			)}
 		</div>
 	);
 };

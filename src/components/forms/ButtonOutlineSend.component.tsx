@@ -5,9 +5,10 @@ import { useLocation } from "react-router-dom";
 interface Props {
 	delay?: string | undefined;
 	reverse?: boolean;
+	type?: "button" | "submit" | "reset";
 }
 
-const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse }) => {
+const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse, type = "button" }) => {
 	const bg = useRef<HTMLSpanElement>(null);
 
 	const handleMouseOver = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -36,7 +37,7 @@ const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse }) => {
 	return (
 		<button
 			title="send"
-			type="button"
+			type={type}
 			className="overflow-hidden mt-28 relative bg-[black] rounded-full"
 			onMouseOver={(event) => handleMouseOver(event)}
 			onMouseLeave={(event) => handleMouseLeave(event)}

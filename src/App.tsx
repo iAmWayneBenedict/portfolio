@@ -22,6 +22,8 @@ import Contact from "./pages/Contact.page";
 import About from "./pages/About.page";
 import Timeline from "./pages/Timeline.pages";
 import Skills from "./pages/Skills.page";
+import emailjs from "@emailjs/browser";
+
 function App() {
 	return (
 		<BrowserRouter>
