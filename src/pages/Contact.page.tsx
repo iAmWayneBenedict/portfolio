@@ -30,6 +30,7 @@ const Contact = () => {
 		message: string;
 		captcha: string;
 	}>({ name: "", email: "", subject: "", message: "", captcha: "" });
+	const [resetValues, setResetValues] = useState<boolean>(false);
 
 	useEffect(() => {
 		const bgCon = document.querySelector(".bg-con") as HTMLElement;
@@ -167,6 +168,7 @@ const Contact = () => {
 			setOpenModal(true);
 			setStatusEmail("success");
 			setShowCaptcha(false);
+			setResetValues(true);
 		} catch (error: any) {
 			console.error(error);
 			setLoading(false);
@@ -201,24 +203,28 @@ const Contact = () => {
 						>
 							<br />
 							<Input
+								reset={resetValues}
 								error={error.name}
 								placeholder="Your name"
 								type="text"
 								name="name"
 							/>
 							<Input
+								reset={resetValues}
 								error={error.email}
 								placeholder="Email address"
 								type="email"
 								name="email"
 							/>
 							<Input
+								reset={resetValues}
 								error={error.subject}
 								placeholder="Subject"
 								type="text"
 								name="subject"
 							/>
 							<TextArea
+								reset={resetValues}
 								error={error.message}
 								name="message"
 								placeholder="What do you wanna talk about?"
