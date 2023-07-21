@@ -4,8 +4,9 @@ interface Props {
 	name?: string;
 	type?: string;
 	error?: string;
+	reset?: boolean;
 }
-const Input: React.FC<Props> = ({ placeholder, name, type, error }) => {
+const Input: React.FC<Props> = ({ placeholder, name, type, error, reset }) => {
 	const input = useRef<HTMLInputElement>(null);
 	const [value, setValue] = useState<string>("");
 	const line = useRef<HTMLSpanElement>(null);
@@ -22,6 +23,10 @@ const Input: React.FC<Props> = ({ placeholder, name, type, error }) => {
 		input.current!.addEventListener("focus", handleLabel);
 		input.current!.addEventListener("focusout", handleLabel);
 	}, []);
+
+	useEffect(() => {
+		setValue("");
+	}, [reset]);
 	return (
 		<div className="flex relative flex-col w-full">
 			<label
