@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Overlay from "./Overlay";
 import Scrollbar from "smooth-scrollbar";
 import ModalPlugin from "../../utils/ModalPlugin";
+import { useNavigate } from "react-router-dom";
 
 const data = {
 	success: {
@@ -44,6 +45,7 @@ interface Props {
 const Modal: React.FC<Props> = ({ status, active, setOpen }) => {
 	const modal = useRef<HTMLDivElement>(null);
 	const overlay = useRef<HTMLDivElement>(null);
+	const navigate = useNavigate();
 	useEffect(() => {
 		const scroller = document.querySelector(".cursor") as HTMLElement;
 
@@ -83,7 +85,13 @@ const Modal: React.FC<Props> = ({ status, active, setOpen }) => {
 							</div>
 							<p className="mt-5">{status && data[status].body}</p>
 							<div className="flex self-end mt-10">
-								<button type="button" onClick={() => setOpen(false)}>
+								<button
+									type="button"
+									onClick={() => {
+										setOpen(false);
+										navigate("/contact");
+									}}
+								>
 									Close
 								</button>
 							</div>
