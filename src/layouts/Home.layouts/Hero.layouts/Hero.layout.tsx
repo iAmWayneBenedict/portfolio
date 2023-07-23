@@ -128,10 +128,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 						ref={des}
 						className="flex flex-col items-center pointer-events-none mt-10 2xl:mt-20 w-full opacity-0"
 					>
-						<div
-							className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-2xl"
-							style={{ lineHeight: "1.75" }}
-						>
+						<div className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-2xl leading-0 md:leading-[1.75]">
 							<span>I am a Developer and UX/UI Designer based in Philippines. </span>
 							<span>
 								Likes to experiment with new techniques and mess around with

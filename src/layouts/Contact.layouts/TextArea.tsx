@@ -4,9 +4,8 @@ interface Props {
 	name?: string;
 	children?: any;
 	error?: string;
-	reset?: boolean
 }
-const TextArea: React.FC<Props> = ({ placeholder, name, children, error, reset }) => {
+const TextArea: React.FC<Props> = ({ placeholder, name, children, error }) => {
 	const [value, setValue] = useState<string>("");
 	const textArea = useRef<HTMLTextAreaElement>(null);
 	const line = useRef<HTMLSpanElement>(null);
@@ -37,10 +36,6 @@ const TextArea: React.FC<Props> = ({ placeholder, name, children, error, reset }
 		const scrollHeight = textArea.current!.scrollHeight;
 		textArea.current!.style.height = scrollHeight + "px";
 	}, [textArea]);
-
-	useEffect(() => {
-		setValue("")
-	}, [reset])
 
 	return (
 		<div className="flex relative w-full">

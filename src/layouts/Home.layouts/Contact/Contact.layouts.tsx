@@ -36,7 +36,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 							/>
 						</h1>
 					</CustomLink>
-					<div className="mt-16 flex flex-col gap-10">
+					<div className="mt-16 flex flex-col gap-10 text-lg">
 						<p>Open for Collaboration</p>
 						<p>Available for Freelance Work</p>
 					</div>
