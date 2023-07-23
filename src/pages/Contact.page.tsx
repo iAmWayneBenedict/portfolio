@@ -187,7 +187,7 @@ const Contact = () => {
 							LET’S CONNECT AND GET TO KNOW EACH OTHER
 						</p>
 					</h1>
-					<p className="mt-16 text-xl">
+					<p className="mt-16 text-base lg:text-xl">
 						Let me help you become even greater at what you do.
 					</p>
 				</div>

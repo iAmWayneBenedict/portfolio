@@ -118,7 +118,7 @@ const About = () => {
 				<h1
 					ref={title}
 					className="overflow-hidden block relative max-w-7xl font-light"
-					style={{ fontSize: `clamp(1.5rem, 6vw, 6rem)` }}
+					style={{ fontSize: `clamp(2.75rem, 6vw, 6rem)` }}
 				>
 					<p className="title-text text-right">
 						Developing extraordinary digital outcomes, today and for the years ahead.
@@ -128,7 +128,7 @@ const About = () => {
 			<div ref={body} className="px-5 md:px-24 ">
 				<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 					<div className="flex-1 max-w-4xl">
-						<p className="text-2xl leading-loose">
+						<p className="text-lg lg:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
 							I have worked and collaborated with startups, industry leaders and
 							global brands including Veolia, USN, goHenry, ChargeNow by BMW and
 							Holiday Extras. I am currently working at Bark as Lead Product Designer.
@@ -146,7 +146,7 @@ const About = () => {
 					<h1 className="text-4xl lg:text-6xl font-semibold mb-14 leading-snug">
 						AWARDS AND <br /> CERTIFICATIONS
 					</h1>
-					<p className="text-xl mb-32 max-w-4xl">
+					<p className="text-lg md:text-xl mb-24 max-w-4xl">
 						I have worked and collaborated with startups, industry leaders and global
 						brands including Veolia, USN, goHenry, ChargeNow by BMW and Holiday Extras.
 						I am currently working at Bark as Lead Product Designer.
@@ -154,7 +154,7 @@ const About = () => {
 
 					{AWARDS_LIST.map(([name, year], index) => (
 						<div
-							className={`py-10 gap-5 px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
+							className={`py-10 gap-5 px-5 md:px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
 								AWARDS_LIST.length - 1 === index &&
 								"border-b-[1px] border-b-[#4F4F4F]"
 							}`}
@@ -165,7 +165,7 @@ const About = () => {
 					))}
 				</div>
 				<div className="w-full mt-64">
-					<p className="text-xl md:text-2xl lg:text-3xl leading-relaxed text-center">
+					<p className="text-lg md:text-2xl leading-normal md:leading-relaxed text-center">
 						I have worked and collaborated with startups, industry leaders and global
 						brands including Veolia, USN, goHenry, ChargeNow by BMW and Holiday Extras.
 						I am currently working at Bark as Lead Product Designer.

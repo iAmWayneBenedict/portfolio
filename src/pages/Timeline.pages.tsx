@@ -104,13 +104,13 @@ const Timeline = () => {
 				<h1
 					ref={title}
 					className="overflow-hidden block relative max-w-7xl font-light"
-					style={{ fontSize: `clamp(3rem, 10vw, 5rem)` }}
+					style={{ fontSize: `clamp(2.5rem, 8vw, 5rem)` }}
 				>
 					<p className="title-text leading-1 uppercase">
 						Nurturing breakthroughs into a foundation for growth.
 					</p>
 				</h1>
-				<p className="mt-16 text-xl">Transforms experiences into knowledge.</p>
+				<p className="mt-16 text-lg lg:text-xl">Transforms experiences into knowledge.</p>
 			</div>
 			<table
 				ref={body}
@@ -132,11 +132,11 @@ const Timeline = () => {
 								2023
 							</h1>
 							<h3 className="text-3xl md:text-5xl">Web Developer</h3>
-							<h5 className="text-xl md:text-2xl text-[#858585] max-w-5xl">
+							<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
 								Department of Information and Communication Technology Region V
 								Camarines Sur Provincial Office
 							</h5>
-							<p className="mt-5 max-w-5xl text-xl text-[#d8d8d8]">
+							<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
 								velit fugit alias, ab nisi ducimus, minus facilis exercitationem nam
 								deserunt recusandae adipisci nesciunt, voluptates non. Ea aliquid
@@ -159,10 +159,10 @@ const Timeline = () => {
 								2023
 							</h1>
 							<h3 className="text-3xl md:text-5xl">BS in Information Technology</h3>
-							<h5 className="text-xl md:text-2xl text-[#858585]">
+							<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
 								Camarines Sur Polytechnic Colleges
 							</h5>
-							<p className="mt-5 max-w-5xl text-xl text-[#d8d8d8]">
+							<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
 								velit fugit alias, ab nisi ducimus, minus facilis exercitationem nam
 								deserunt recusandae adipisci nesciunt, voluptates non. Ea aliquid
@@ -185,10 +185,10 @@ const Timeline = () => {
 								2019
 							</h1>
 							<h3 className="text-3xl md:text-5xl">General Academic Strand</h3>
-							<h5 className="text-xl md:text-2xl text-[#858585]">
+							<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
 								ACLC College of Iriga, Inc.
 							</h5>
-							<p className="mt-5 max-w-5xl text-xl text-[#d8d8d8]">
+							<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
 								velit fugit alias, ab nisi ducimus, minus facilis exercitationem nam
 								deserunt recusandae adipisci nesciunt, voluptates non. Ea aliquid
