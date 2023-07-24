@@ -253,7 +253,7 @@ const Project = () => {
 					<div className="mt-16 sm:mt-24 2xl:mt-36">
 						<p
 							ref={overview}
-							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-lg md:text-2xl"
+							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-2xl"
 						>
 							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
 							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
@@ -299,10 +299,10 @@ const Project = () => {
 										<div className="w-full flex justify-end">
 											<div className="w-full mb-20 md:mb-0 md:w-1/2 flex justify-center">
 												<div className="mt-14 max-w-2xl">
-													<h5 className="text-[#4E4E4E] mb-5 text-base">
+													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 														THE PROJECT PURPOSE
 													</h5>
-													<p className="leading-normal lg:leading-8 text-xl md:text-2xl">
+													<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
 														Lorem ipsum dolor sit amet consectetur. Mi
 														nec scelerisque et venenatis suspendisse
 														vitae velit. Tincidunt sit in eu at bibendum
@@ -318,10 +318,10 @@ const Project = () => {
 								{index !== 0 && index % 3 === 0 && (
 									<div className="w-full flex">
 										<div className="mt-14 max-w-2xl">
-											<h5 className="text-[#4E4E4E] mb-5 text-base">
+											<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 												KEY FEATURES
 											</h5>
-											<p className="leading-normal lg:leading-8 text-xl md:text-2xl">
+											<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
 												Lorem ipsum dolor sit amet consectetur. Mi nec
 												scelerisque et venenatis suspendisse vitae velit.
 												Tincidunt sit in eu at bibendum elit felis. Magnis
@@ -338,8 +338,10 @@ const Project = () => {
 			</div>
 			<div className="w-full flex flex-col pt-12">
 				<div className="px-5 md:px-20 mt-14 max-w-2xl transition-opacity ease duration-1000">
-					<h5 className="text-[#4E4E4E] mb-5 text-base">ROLES AND RESPONSIBILITIES</h5>
-					<p className="leading-normal lg:leading-8 text-xl md:text-2xl text-[black]">
+					<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+						ROLES AND RESPONSIBILITIES
+					</h5>
+					<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl text-[black]">
 						Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
 						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis
 						interdum turpis in nec metus eleifend molestie bibendum.
