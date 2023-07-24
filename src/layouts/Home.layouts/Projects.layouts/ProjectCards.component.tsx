@@ -40,7 +40,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 				<CustomLink reference={hiddenAnchor} to={"/projects/" + URIName} />
 				<img
 					// key={src}
-					alt={image}
+					alt={URIName}
 					src={image}
 					ref={img}
 					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}

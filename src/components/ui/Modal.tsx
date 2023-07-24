@@ -86,6 +86,7 @@ const Modal: React.FC<Props> = ({ status, active, setOpen }) => {
 							<p className="mt-5">{status && data[status].body}</p>
 							<div className="flex self-end mt-10">
 								<button
+									title="contact"
 									type="button"
 									onClick={() => {
 										setOpen(false);

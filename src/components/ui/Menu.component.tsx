@@ -36,6 +36,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 				<div className="flex flex-col px-24 md:px-32 xl:px-48 justify-evenly h-full">
 					<div className="menu-back hidden md:flex">
 						<button
+							title="return"
 							type="button"
 							className="close-menu-btn flex gap-5 items-center opacity-0 -translate-y-10"
 							ref={historyReturn}

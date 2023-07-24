@@ -32,7 +32,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 									width: "clamp(6rem, 10vw, 10rem)",
 									filter: filterStyles,
 								}}
-								alt=""
+								alt="arrow-up-right"
 							/>
 						</h1>
 					</CustomLink>
@@ -43,14 +43,18 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 				</div>
 				<div className="flex flex-row lg:flex-col gap-10 mt-24 lg:mt-0">
 					<Link to="https://github.com/iAmWayneBenedict" target="_blank">
-						<img src="/assets/ico/github.svg" style={{ filter: filterStyles }} alt="" />
+						<img
+							src="/assets/ico/github.svg"
+							style={{ filter: filterStyles }}
+							alt="github"
+						/>
 					</Link>
 
 					<Link to="https://www.linkedin.com/in/iamwaynebenedict/" target="_blank">
 						<img
 							src="/assets/ico/linkedin.svg"
 							style={{ filter: filterStyles }}
-							alt=""
+							alt="linkedin"
 						/>
 					</Link>
 
@@ -58,7 +62,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 						<img
 							src="/assets/ico/dribbble%201.svg"
 							style={{ filter: filterStyles }}
-							alt=""
+							alt="dribbble"
 						/>
 					</Link>
 				</div>
