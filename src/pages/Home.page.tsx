@@ -34,10 +34,10 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 	return (
 		<div className="overflow-x-hidden" ref={home}>
 			<Helmet>
-				<title>Home</title>
+				<title>Wayne Benedict Iraola</title>
 				<meta
 					name="description"
-					content="I am Wayne a Fullstack Developer and UX/UI Designer based in Philippines. Likes to experiment with new techniques and mess around with emerging technologies."
+					content="I am Wayne Benedict Iraola a Fullstack Developer and UX/UI Designer based in Philippines. Likes to experiment with new techniques and mess around with emerging technologies."
 				/>
 				<link rel="canonical" href="/" />
 			</Helmet>
