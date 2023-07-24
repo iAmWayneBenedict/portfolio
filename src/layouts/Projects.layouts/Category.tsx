@@ -28,6 +28,7 @@ const Category: React.FC<Props> = ({ index, name, value, categoryData }) => {
 			key={index + name}
 		>
 			<button
+				title={name}
 				type="button"
 				data-name={name}
 				className="project-category relative italic transition-opacity duration-250 ease-linear"

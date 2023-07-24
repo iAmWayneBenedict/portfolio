@@ -112,6 +112,7 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 
 	return (
 		<button
+			title="menu"
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}

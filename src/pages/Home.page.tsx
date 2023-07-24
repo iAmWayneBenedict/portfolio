@@ -39,7 +39,7 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 					name="description"
 					content="I am Wayne Benedict Iraola a Fullstack Developer and UX/UI Designer based in Philippines. Likes to experiment with new techniques and mess around with emerging technologies."
 				/>
-				<link rel="canonical" href="/" />
+				<link rel="canonical" href="https://www.iamwayne.tech/" />
 			</Helmet>
 			<Hero isLoaded={isLoaded} />
 			{/* <AboutSection /> */}
