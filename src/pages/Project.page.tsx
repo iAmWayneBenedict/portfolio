@@ -270,7 +270,7 @@ const Project = () => {
 							>
 								<div
 									className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden"
-									style={{ opacity: 0 }}
+									style={index === 0 ? { opacity: 0 } : {}}
 								>
 									<img
 										className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
