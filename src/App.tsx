@@ -55,6 +55,7 @@ function Root() {
 		const app = document.querySelector(".App") as HTMLElement;
 		app.style.opacity = "0";
 	});
+
 	gsap.config({
 		nullTargetWarn: false,
 	});

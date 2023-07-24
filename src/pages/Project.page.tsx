@@ -11,6 +11,7 @@ import { CustomEase } from "gsap/CustomEase";
 import { useMediaQuery } from "react-responsive";
 import { ContactLayouts } from "../layouts/Home.layouts/Contact/Contact.layouts";
 import { useInView } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const Project = () => {
 	const location = useLocation();
@@ -187,6 +188,16 @@ const Project = () => {
 	};
 	return (
 		<>
+			<Helmet>
+				<title>{filteredItem[0]?.name}</title>
+				<meta
+					name="description"
+					content="Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
+					suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
+					Magnis interdum turpis in nec metus eleifend molestie bibendum."
+				/>
+				<link rel="canonical" href={"/projects/" + filteredItem[0].URIName} />
+			</Helmet>
 			<div
 				ref={imgCon}
 				className="w-full px-5 md:px-20 transition-opacity ease duration-1000 overflow-x-hidden"

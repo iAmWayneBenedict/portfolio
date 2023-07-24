@@ -12,6 +12,7 @@ import imagesLoaded from "imagesloaded";
 import { useLocation, useMatch } from "react-router-dom";
 import useSmoothScroll from "../hooks/useSmoothScroll";
 import gsap from "gsap";
+import { Helmet } from "react-helmet-async";
 interface Props {
 	isLoaded: boolean;
 }
@@ -32,6 +33,14 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 
 	return (
 		<div className="overflow-x-hidden" ref={home}>
+			<Helmet>
+				<title>Home</title>
+				<meta
+					name="description"
+					content="I am Wayne a Fullstack Developer and UX/UI Designer based in Philippines. Likes to experiment with new techniques and mess around with emerging technologies."
+				/>
+				<link rel="canonical" href="/" />
+			</Helmet>
 			<Hero isLoaded={isLoaded} />
 			{/* <AboutSection /> */}
 			{/*<Journey />*/}

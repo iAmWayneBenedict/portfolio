@@ -12,6 +12,7 @@ import isEmail from "validator/lib/isEmail";
 import PulseLoader from "react-spinners/PulseLoader";
 import Modal from "../components/ui/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
 	gsap.registerPlugin(ScrollTrigger);
@@ -176,6 +177,16 @@ const Contact = () => {
 	};
 	return (
 		<>
+			<Helmet>
+				<title>Contact</title>
+				<meta
+					name="description"
+					content="LET’S CONNECT AND
+					GET TO KNOW EACH
+					OTHER"
+				/>
+				<link rel="canonical" href="/contact" />
+			</Helmet>
 			<div className="pt-48 sm:pt-56 2xl:pt-96 text-white pb-10">
 				<div className="px-5 md:px-24">
 					<h1

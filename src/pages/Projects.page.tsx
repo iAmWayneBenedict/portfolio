@@ -12,6 +12,7 @@ import { isMobile } from "react-device-detect";
 import { useMediaQuery } from "react-responsive";
 import Category from "../layouts/Projects.layouts/Category";
 import ProjectsDetail from "../layouts/Projects.layouts/ProjectsDetail";
+import { Helmet } from "react-helmet-async";
 
 const categoryData = [
 	["All.", "all"],
@@ -163,6 +164,11 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	const projectsLength = data.projects.length;
 	return (
 		<>
+			<Helmet>
+				<title>Projects</title>
+				<meta name="description" content="Discover all projects" />
+				<link rel="canonical" href="/projects" />
+			</Helmet>
 			<div className="mx-5 md:mx-24" ref={imgCon}>
 				<div className="mt-32 2xl:mt-48">
 					<h1
