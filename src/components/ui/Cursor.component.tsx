@@ -59,7 +59,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		followMouse();
 		let links = document.querySelectorAll("a, button, .swiper, label, input, textarea");
 		let child = mainCursor.current?.firstElementChild as HTMLDivElement;
-		child.style.transform = "scale(1)";
+		child.style.transform = "scale(.85)";
 		let sChild = child.nextElementSibling as HTMLElement;
 		sChild.innerText = "";
 
@@ -98,7 +98,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				)
 					return;
 				let child = mainCursor.current.firstElementChild as HTMLDivElement;
-				child.style.transform = "scale(1)";
+				child.style.transform = "scale(.85)";
 				(child.nextElementSibling as HTMLSpanElement)!.style.opacity = "0";
 				child.nextElementSibling!.textContent = "";
 				secondaryCursor.current.style.opacity = "1";
@@ -195,7 +195,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 	return (
 		<>
 			<div
-				className="fixed mix-blend-difference z-[1000] pointer-events-none w-fit main-cursor"
+				className="fixed mix-blend-difference z-[1000] pointer-events-none w-fit main-cursor scale-[.85]"
 				ref={mainCursor}
 			>
 				<div
@@ -220,7 +220,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				className="fixed mix-blend-difference pointer-events-none z-[1000] transition-[opacity] duration-500 opacity-0"
 				ref={secondaryCursor}
 			>
-				<div className="w-[100px] animate-[spin_10s_linear_infinite]">
+				<div className="w-[80px] animate-[spin_10s_linear_infinite]">
 					<svg xmlns="http://www.w3.org/2000/svg" lang="en" viewBox="0 0 500 500">
 						<defs>
 							<path
