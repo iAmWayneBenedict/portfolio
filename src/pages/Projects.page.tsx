@@ -49,7 +49,11 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	}, [location]);
 
 	useEffect(() => {
-		imageAnimations();
+		const tl = imageAnimations();
+
+		return () => {
+			tl.kill();
+		};
 	}, [items]);
 
 	function setAnimation() {
@@ -102,7 +106,8 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 
 	function imageAnimations() {
 		const images = gsap.utils.toArray("div.project-imgCon");
-		gsap.fromTo(
+		const tl = gsap.timeline();
+		tl.fromTo(
 			document.querySelector("div.project-imgCon") as NodeListOf<HTMLElement>[0],
 			{
 				y: 200,
@@ -134,6 +139,8 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 				},
 			});
 		});
+
+		return tl;
 	}
 
 	useEffect(() => {
