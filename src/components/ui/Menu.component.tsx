@@ -80,7 +80,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 							<span className="text-lg font-semibold font-quicksand">Return</span>
 						</button>
 					</div>
-					<div className="menu-nav flex flex-col items-center md:items-start">
+					<div className="menu-nav flex flex-col items-center md:items-start gap-5">
 						<MenuLink text={"PROJECTS"} href="/projects" />
 						<MenuLink text={"TIMELINE"} href="/timeline" />
 						<MenuLink text={"CONTACT"} href="contact" />
