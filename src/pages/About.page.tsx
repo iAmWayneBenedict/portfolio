@@ -140,10 +140,9 @@ const About = () => {
 					<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 						<div className="flex-1 max-w-4xl">
 							<p className="text-lg lg:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
-								Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et
-								venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum
-								elit felis. Magnis interdum turpis in nec metus eleifend molestie
-								bibendum.
+								Wayne Benedict Iraola consectetur. Mi nec scelerisque et venenatis
+								suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
+								Magnis interdum turpis in nec metus eleifend molestie bibendum.
 							</p>
 						</div>
 						<div className="flex-1 mt-36 lg:mt-0 flex flex-col items-end max-w-3xl">
