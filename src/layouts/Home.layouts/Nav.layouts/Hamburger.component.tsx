@@ -15,6 +15,7 @@ interface Props {
 const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
+	const hamburger = useRef<HTMLButtonElement>(null);
 
 	const [active, setActive] = useState<boolean>(false);
 	const [onMount, setOnMount] = useState<boolean>(true);
@@ -27,36 +28,33 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	}, [active]);
 
 	let handleClick = (event: React.MouseEvent) => {
-		let top = event.currentTarget.children[0] as HTMLSpanElement;
-		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
-
-		top.style.transform = "rotate(0deg)";
-		bottom.style.transform = "rotate(0deg)";
+		topLine.current!.style.transform = "rotate(0deg)";
+		bottomLine.current!.style.transform = "rotate(0deg)";
 
 		if (active) {
-			top.style.top = "3px";
-			bottom.style.bottom = "3px";
+			topLine.current!.style.top = "3px";
+			bottomLine.current!.style.bottom = "3px";
 
 			setActive(false);
 		} else {
-			top.style.top = "50%";
-			top.style.transform = "translateY(-50%)";
+			topLine.current!.style.top = "50%";
+			topLine.current!.style.transform = "translateY(-50%)";
 
-			bottom.style.bottom = "50%";
-			bottom.style.transform = "translateY(-50%)";
+			bottomLine.current!.style.bottom = "50%";
+			bottomLine.current!.style.transform = "translateY(-50%)";
 			setActive(true);
 		}
 
-		if (dark && top.classList.contains("bg-[black]")) {
-			top.classList.remove("bg-[black]");
-			top.classList.add("bg-white");
-			bottom.classList.remove("bg-[black]");
-			bottom.classList.add("bg-white");
-		} else if (dark && top.classList.contains("bg-white")) {
-			top.classList.add("bg-[black]");
-			top.classList.remove("bg-white");
-			bottom.classList.add("bg-[black]");
-			bottom.classList.remove("bg-white");
+		if (dark && topLine.current!.classList.contains("bg-[black]")) {
+			topLine.current!.classList.remove("bg-[black]");
+			topLine.current!.classList.add("bg-white");
+			bottomLine.current!.classList.remove("bg-[black]");
+			bottomLine.current!.classList.add("bg-white");
+		} else if (dark && topLine.current!.classList.contains("bg-white")) {
+			topLine.current!.classList.add("bg-[black]");
+			topLine.current!.classList.remove("bg-white");
+			bottomLine.current!.classList.add("bg-[black]");
+			bottomLine.current!.classList.remove("bg-white");
 		}
 
 		setOnMount(false);
@@ -65,22 +63,17 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	let handleMouseOver = (event: React.MouseEvent) => {
 		if (!active) return;
 
-		let top = event.currentTarget.children[0] as HTMLSpanElement;
-		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
-
-		top.style.transformOrigin = "center center";
-		top.style.transform = "rotate(35deg)";
-		bottom.style.transform = "rotate(-35deg)";
-		bottom.style.transformOrigin = "center center";
+		topLine.current!.style.transformOrigin = "center center";
+		topLine.current!.style.transform = "rotate(35deg)";
+		bottomLine.current!.style.transform = "rotate(-35deg)";
+		bottomLine.current!.style.transformOrigin = "center center";
 	};
 
 	let handleMouseLeave = (event: React.MouseEvent) => {
 		if (!active) return;
 
-		let top = event.currentTarget.children[0] as HTMLSpanElement;
-		let bottom = event.currentTarget.children[1] as HTMLSpanElement;
-		top.style.transform = "rotate(0deg)";
-		bottom.style.transform = "rotate(0deg)";
+		topLine.current!.style.transform = "rotate(0deg)";
+		bottomLine.current!.style.transform = "rotate(0deg)";
 	};
 
 	useEffect(() => {
@@ -113,6 +106,7 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	return (
 		<button
 			title="menu"
+			ref={hamburger}
 			onClick={(e) => handleClick(e)}
 			onMouseOver={(e) => handleMouseOver(e)}
 			onMouseLeave={(e) => handleMouseLeave(e)}
