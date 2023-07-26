@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect } from "react";
 import Scrollbar from "smooth-scrollbar";
 import ModalPlugin from "./ModalPlugin";
+import SplitType from "split-type";
+import CustomEase from "gsap/CustomEase";
 
 interface Params {
 	isActive: boolean;
@@ -16,6 +18,7 @@ let tl2 = gsap.timeline();
 let tl3 = gsap.timeline();
 
 Scrollbar.use(ModalPlugin);
+gsap.registerPlugin(CustomEase);
 
 const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 	const scroller = document.querySelector(".cursor") as HTMLElement;
@@ -24,7 +27,7 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 	const topLeftMenu = el.querySelector(".top-left-menu") as HTMLDivElement;
 	const bottomLeftMenu = el.querySelector(".bottom-left-menu") as HTMLDivElement;
 	const menuBack = el.querySelector(".menu-back") as HTMLDivElement;
-	const menuLinkText = el.querySelectorAll(".menu-link-text") as NodeListOf<Element>;
+	const menuLinkText = el.querySelectorAll(".menu-link-text") as NodeListOf<HTMLElement>;
 	const menuSocialsLeft = el.querySelector(".menu-socials-left") as HTMLDivElement;
 	const menuSocialsRight = el.querySelector(".menu-socials-right") as HTMLDivElement;
 
@@ -87,16 +90,16 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 		.to(menuSocialsRight, {
 			opacity: 1,
 		});
-
+	let delay = 1;
 	menuLinkText.forEach((el) => {
 		tl3.to(
-			el,
-
+			el.firstElementChild,
 			{
 				y: 0,
 				opacity: 1,
-				duration: 0.25,
-			}
+				duration: 0.35,
+			},
+			`-=${(delay -= 0.2)}`
 		);
 	});
 
@@ -105,12 +108,11 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 
 	if (!isActive) {
 		tl3.reverse();
-		tl3 = gsap.timeline();
-
 		tl2.reverse();
-		tl2 = gsap.timeline();
-
 		tl.reverse();
+
+		tl3 = gsap.timeline();
+		tl2 = gsap.timeline();
 		tl = gsap.timeline();
 
 		stopScroll(isActive);

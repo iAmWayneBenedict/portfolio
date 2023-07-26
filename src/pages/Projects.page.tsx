@@ -193,6 +193,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 						{categoryData.map(([value, name], index) => {
 							return (
 								<Category
+									key={name}
 									index={index}
 									name={name}
 									value={value}

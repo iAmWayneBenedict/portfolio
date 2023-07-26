@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MenuLink from "./MenuLink";
 import { Link } from "react-router-dom";
 import useDate from "../../hooks/useDate";
@@ -10,10 +10,31 @@ interface Props {
 
 const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 	const { year } = useDate();
+
+	useEffect(() => {
+		const menuLinkText = document.querySelectorAll(".menu-text") as NodeListOf<HTMLDivElement>;
+		menuLinkText.forEach((el) => {
+			el.addEventListener("mouseover", (event) => {
+				for (const el of [...menuLinkText]) {
+					const self = el.firstElementChild as HTMLSpanElement;
+					self.style.opacity = "0.3";
+				}
+				const self = event.currentTarget as HTMLDivElement;
+				const curEl = self.firstElementChild as HTMLSpanElement;
+				curEl.style.opacity = "1";
+			});
+			el.addEventListener("mouseleave", (event) => {
+				for (const el of [...menuLinkText]) {
+					const self = el.firstElementChild as HTMLSpanElement;
+					self.style.opacity = "1";
+				}
+			});
+		});
+	}, []);
 	return (
 		<div
 			ref={useReference}
-			className="menu-con fixed opacity-0 hidden top-0 left-0 w-screen h-screen bg-white z-50"
+			className="menu-con fixed opacity-0 hidden top-0 left-0 w-screen h-screen bg-white z-50 pb-[1px]"
 		>
 			<div className="left-menu hidden bg-[black] w-[20rem] h-0 md:flex flex-col justify-between items-start">
 				<div className="top-left-menu text-white font-bold font-quicksand text-2xl w-fit opacity-0">
@@ -59,7 +80,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 							<span className="text-lg font-semibold font-quicksand">Return</span>
 						</button>
 					</div>
-					<div className="menu-nav flex flex-col gap-5">
+					<div className="menu-nav flex flex-col items-center md:items-start">
 						<MenuLink text={"PROJECTS"} href="/projects" />
 						<MenuLink text={"TIMELINE"} href="/timeline" />
 						<MenuLink text={"CONTACT"} href="contact" />
