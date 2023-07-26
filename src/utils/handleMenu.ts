@@ -136,10 +136,10 @@ const handleMenu = (params: Params): void => {
 	let { isActive, menu, rHistory, setActive } = params;
 
 	rHistory.current!.addEventListener("click", (event) => {
+		setActive(false);
 		let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
 		let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
 		let nav = document.querySelector("nav")! as HTMLElement;
-
 		if (nav.classList.contains("bg-[black]") || nav.style.background === "black") {
 			top.classList.remove("bg-[black]");
 			top.classList.add("bg-white");
@@ -151,16 +151,10 @@ const handleMenu = (params: Params): void => {
 			bottom.classList.remove("bg-white");
 			bottom.classList.add("bg-[black]");
 		}
-
 		top.style.top = "3px";
 		bottom.style.bottom = "3px";
-
 		top.style.transform = "rotate(0deg)";
 		bottom.style.transform = "rotate(0deg)";
-
-		setActive(false);
-
-		menuStyle(false, menu);
 	});
 
 	menuStyle(isActive, menu);
