@@ -29,7 +29,7 @@ const MenuLink: React.FC<Props> = ({ text, href = "#" }) => {
 			className="menu-link-text text-4xl md:text-5xl xl:text-6xl 2xl:text-8xl w-fit overflow-hidden"
 		>
 			<div ref={menuText} className="menu-text translate-y-40 opacity-0">
-				<span className="transition-opacity duration-500 ease-out">{text}</span>
+				<span className="transition-opacity duration-700 ease-in-out">{text}</span>
 			</div>
 		</Link>
 	);

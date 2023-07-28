@@ -55,14 +55,15 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 				<span className="text-sm md:text-lg font-bold">{title}</span>
 				<div>
 					<Link
-						to={"/" + src}
+						to={src || "/"}
+						target="_blank"
 						onMouseOver={(event) => handleMouseOver(event)}
 						onMouseLeave={(event) => handleMouseLeave(event)}
 						ref={demoLink}
 						className="text-lg"
 					>
 						<div className="link-bottom-style hover:after:animate-linkFirstAnim hover:before:animate-linkSecondAnim relative overflow-hidden after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[black] before:absolute before:content-[''] before:bottom-0 before:left-[-200%] before:w-full before:h-px before:bg-[black] text-sm md:text-lg">
-							Live Demo
+							{src && "Live Demo"}
 						</div>
 					</Link>
 				</div>

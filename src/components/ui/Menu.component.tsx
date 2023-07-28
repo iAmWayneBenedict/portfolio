@@ -17,7 +17,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			el.addEventListener("mouseover", (event) => {
 				for (const el of [...menuLinkText]) {
 					const self = el.firstElementChild as HTMLSpanElement;
-					self.style.opacity = "0.3";
+					self.style.opacity = "0.25";
 				}
 				const self = event.currentTarget as HTMLDivElement;
 				const curEl = self.firstElementChild as HTMLSpanElement;

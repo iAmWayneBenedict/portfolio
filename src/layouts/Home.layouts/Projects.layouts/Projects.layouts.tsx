@@ -42,10 +42,10 @@ const Projects = () => {
 	return (
 		<div id="projects" className="mt-48 lg:mt-96 pb-48 lg:pb-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20">
-				<Title name="projects" />
+				<Title name="works" />
 				<div className="absolute bg-[black] right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
 					<CustomLink to="/projects" className="text-white text-lg">
-						Explore all projects
+						Explore all works
 					</CustomLink>
 				</div>
 			</div>
@@ -96,7 +96,7 @@ const Projects = () => {
 								<ProjectCards
 									title={project.name}
 									image={project.thumbnail_small}
-									src={project.demoLink}
+									src={project.demoLink || project.videoDemo}
 									URIName={project.URIName}
 								/>
 							</SwiperSlide>

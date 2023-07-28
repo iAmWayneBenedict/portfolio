@@ -34,8 +34,13 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	const [active, setActive] = useState<string>("");
 	const [delay, setDelay] = useState<number>(1);
 	const [items, setItems] = useState<any>([...data.projects, ...data.designs]);
-	const location = useLocation();
+	const loc = useLocation();
 	const navigate = useNavigate();
+
+	useLayoutEffect(() => {
+		if (loc.pathname === "/works") navigate("/projects");
+		else if (loc.pathname !== "/projects" && loc.pathname !== "/designs") location.href = "/";
+	}, [loc]);
 
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(CustomEase);
@@ -46,7 +51,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 			setAnimation();
 			imageAnimations();
 		});
-	}, [location]);
+	}, [loc]);
 
 	useEffect(() => {
 		const tl = imageAnimations();
@@ -158,21 +163,21 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 	}, [active]);
 
 	useEffect(() => {
-		if (location.pathname === "/projects") {
+		if (loc.pathname === "/projects") {
 			gsap.to(".App", {
 				opacity: 1,
 				duration: 0,
 				delay: 1,
 			});
 		}
-	}, [location]);
+	}, [loc]);
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	const projects = [...data.projects, ...data.designs];
 	const projectsLength = data.projects.length;
 	return (
 		<>
 			<Helmet>
-				<title>Projects</title>
+				<title>Works</title>
 				<meta name="description" content="Discover all projects" />
 				<link rel="canonical" href="/projects" />
 			</Helmet>
@@ -182,7 +187,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 						className="text-8xl overflow-hidden pb-2"
 						style={{ fontSize: "clamp(2rem, 10vw, 6rem)" }}
 					>
-						<div ref={titlePage}>All Projects</div>
+						<div ref={titlePage}>All Works</div>
 					</h1>
 					<div
 						key={"activeHandler"}

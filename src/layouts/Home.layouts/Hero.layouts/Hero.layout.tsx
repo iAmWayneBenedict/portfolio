@@ -128,11 +128,18 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 						ref={des}
 						className="flex flex-col items-center pointer-events-none mt-10 2xl:mt-20 w-full opacity-0"
 					>
-						<div className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-2xl leading-0 md:leading-[1.75]">
-							<span>I am a Developer and UX/UI Designer based in Philippines. </span>
+						<div className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-4xl leading-0 md:leading-[1.75]">
 							<span>
-								Likes to experiment with new techniques and mess around with
-								emerging technologies.
+								I am a developer and UX/UI designer based in the Philippines.
+							</span>
+
+							<span>
+								I like to explore new possibilities with emerging technologies,
+								providing digital solutions and outcomes.{" "}
+							</span>
+							<span>
+								I am specializing in React, Node.js, MongoDB, and Express.js. I am
+								also exploring .NET Web API and Next.js.
 							</span>
 						</div>
 					</div>
