@@ -86,6 +86,15 @@ const Project = () => {
 				}
 			)
 			.fromTo(
+				links.current!.nextElementSibling,
+				{
+					opacity: 0,
+				},
+				{
+					opacity: 1,
+				}
+			)
+			.fromTo(
 				overview.current!,
 				{
 					opacity: 0,
@@ -154,10 +163,10 @@ const Project = () => {
 		if (inView) {
 			bgCon.style.backgroundColor = "black";
 			mainBody.style.opacity = "0";
-			r.style.opacity = "0";
+			if (r) r.style.opacity = "0";
 		} else {
 			mainBody.style.opacity = "1";
-			r.style.opacity = "1";
+			if (r) r.style.opacity = "1";
 			bgCon.style.backgroundColor = "white";
 		}
 
@@ -198,6 +207,9 @@ const Project = () => {
 				/>
 				<link rel="canonical" href={"/projects/" + filteredItem[0].URIName} />
 			</Helmet>
+			{/* <div className="absolute top-[20vh] right-0 bg-black text-xl text-white font-medium font-quicksand py-2 px-10">
+				Designs
+			</div> */}
 			<div
 				ref={imgCon}
 				className="w-full px-5 md:px-20 transition-opacity ease duration-1000 overflow-x-hidden"
@@ -250,14 +262,30 @@ const Project = () => {
 							)}
 						</Link>
 					</div>
-					<div className="mt-16 sm:mt-24 2xl:mt-36">
+					<div className="mt-7">
+						{/* <div>{filteredItem[0].type}</div> */}
+						{filteredItem[0].status === "ongoing" && (
+							<div className="text-amber-500 w-fit bg-amber-100 px-3 py-1 rounded-xl text-sm font-semibold text-center">
+								Ongoing
+							</div>
+						)}
+						{filteredItem[0].status === "soon" && (
+							<div className="text-gray-700 w-fit bg-gray-300 px-3 py-1 rounded-xl text-sm font-semibold text-center">
+								Soon
+							</div>
+						)}
+					</div>
+					<div className="mt-16 sm:mt-24 2xl:mt-32">
 						<p
 							ref={overview}
 							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-2xl"
 						>
-							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
-							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
-							Magnis interdum turpis in nec metus eleifend molestie bibendum.
+							{filteredItem[0].description ||
+								"Lorem ipsum dolor sit amet consectetur. Mi\
+														nec scelerisque et venenatis suspendisse\
+														vitae velit. Tincidunt sit in eu at bibendum\
+														elit felis. Magnis interdum turpis in nec\
+														metus eleifend molestie bibendum."}
 						</p>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10">
@@ -284,18 +312,20 @@ const Project = () => {
 								{index === 0 && (
 									<>
 										<div className="w-full">
-											<div className="mt-14 mb-24 max-w-2xl">
+											<div className="mt-14 mb-24 max-w-3xl">
 												<h1
 													ref={categoryTitle}
-													className="text-3xl lg:text-5xl xl:text-7xl font-medium font-neueMontrealRegular"
+													className={`${
+														filteredItem[0].categoryDescription
+															? filteredItem[0].categoryDescription!
+																	.length > 10
+																? "text-3xl lg:text-5xl xl:text-7xl"
+																: "text-4xl lg:text-6xl xl:text-8xl"
+															: "text-3xl lg:text-5xl xl:text-7xl"
+													} uppercase  font-medium font-neueMontrealRegular`}
 												>
-													<span className="overflow-hidden">
-														DEVELOPMENT
-													</span>{" "}
-													<span className="overflow-hidden">FOR</span>{" "}
-													<span className="overflow-hidden">
-														COMMUNITY
-													</span>
+													{filteredItem[0].categoryDescription ||
+														"development for community"}
 												</h1>
 											</div>
 										</div>
@@ -303,14 +333,17 @@ const Project = () => {
 											<div className="w-full mb-20 md:mb-0 md:w-1/2 flex justify-center">
 												<div className="mt-14 max-w-2xl">
 													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-														THE PROJECT PURPOSE
+														{filteredItem[0].purpose
+															? "THE PROJECT PURPOSE"
+															: "THE DESIGN PROCESS"}
 													</h5>
 													<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
-														Lorem ipsum dolor sit amet consectetur. Mi
-														nec scelerisque et venenatis suspendisse
-														vitae velit. Tincidunt sit in eu at bibendum
-														elit felis. Magnis interdum turpis in nec
-														metus eleifend molestie bibendum.
+														{filteredItem[0].purpose ||
+															"Lorem ipsum dolor sit amet consectetur. Mi\
+														nec scelerisque et venenatis suspendisse\
+														vitae velit. Tincidunt sit in eu at bibendum\
+														elit felis. Magnis interdum turpis in nec\
+														metus eleifend molestie bibendum."}
 													</p>
 												</div>
 											</div>
@@ -318,18 +351,67 @@ const Project = () => {
 									</>
 								)}
 
-								{index !== 0 && index % 3 === 0 && (
+								{index !== 0 &&
+									index % 3 === 0 &&
+									location.pathname.includes("projects") && (
+										<div className="w-full flex flex-col xl:flex-row">
+											<div className="flex-1">
+												<div className="mt-14 max-w-2xl">
+													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+														KEY FEATURES
+													</h5>
+													<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+														{filteredItem[0].key_features ||
+															"Lorem ipsum dolor sit amet consectetur. Mi\
+														nec scelerisque et venenatis suspendisse\
+														vitae velit. Tincidunt sit in eu at bibendum\
+														elit felis. Magnis interdum turpis in nec\
+														metus eleifend molestie bibendum."}
+													</p>
+												</div>
+											</div>
+											<div className="flex-1">
+												<div className="mt-14 max-w-2xl">
+													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+														TECHNOLOGIES
+													</h5>
+													<div className="flex flex-wrap max-w-2xl gap-10 justify-start">
+														{[
+															"/assets/ico/sass.svg",
+															"/assets/ico/bootstrap.svg",
+															"/assets/ico/html5.svg",
+															"/assets/ico/css3.svg",
+															"/assets/ico/figma-logo.svg",
+															"/assets/ico/git(1).svg",
+															"/assets/ico/mysql.svg",
+															"/assets/ico/java-script.svg",
+															"/assets/ico/php.svg",
+														].map((src, index) => (
+															<img
+																key={index}
+																src={src}
+																className="w-8 lg:w-12"
+																alt=""
+															/>
+														))}
+													</div>
+												</div>
+											</div>
+										</div>
+									)}
+								{index === 3 && location.pathname.includes("designs") && (
 									<div className="w-full flex">
 										<div className="mt-14 max-w-2xl">
 											<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-												KEY FEATURES
+												REFLECTION AND LEARNING
 											</h5>
 											<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
-												Lorem ipsum dolor sit amet consectetur. Mi nec
-												scelerisque et venenatis suspendisse vitae velit.
-												Tincidunt sit in eu at bibendum elit felis. Magnis
-												interdum turpis in nec metus eleifend molestie
-												bibendum.
+												{filteredItem[0].key_features ||
+													"Lorem ipsum dolor sit amet consectetur. Mi\
+														nec scelerisque et venenatis suspendisse\
+														vitae velit. Tincidunt sit in eu at bibendum\
+														elit felis. Magnis interdum turpis in nec\
+														metus eleifend molestie bibendum."}
 											</p>
 										</div>
 									</div>
@@ -340,16 +422,19 @@ const Project = () => {
 				</div>
 			</div>
 			<div className="w-full flex flex-col pt-12">
-				<div className="px-5 md:px-20 mt-14 max-w-2xl transition-opacity ease duration-1000">
-					<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-						ROLES AND RESPONSIBILITIES
-					</h5>
-					<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl text-[black]">
-						Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
-						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis
-						interdum turpis in nec metus eleifend molestie bibendum.
-					</p>
-				</div>
+				{location.pathname.includes("projects") && (
+					<div className="px-5 md:px-20 mt-14 max-w-2xl transition-opacity ease duration-1000">
+						<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+							ROLES AND RESPONSIBILITIES
+						</h5>
+						<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl text-[black]">
+							{filteredItem[0].roles_and_responsibilities ||
+								"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis\
+						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis\
+						interdum turpis in nec metus eleifend molestie bibendum."}
+						</p>
+					</div>
+				)}
 				<div className="mt-96" ref={changeBg}>
 					<div className="text-white px-5 md:px-24 mb-56 lg:mb-96">
 						<h1 className="text-6xl">MORE WORKS.</h1>

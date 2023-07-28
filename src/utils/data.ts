@@ -2,6 +2,8 @@ interface CategoryProps {
 	name: string;
 	URIName: string;
 	categoryType: string;
+	categoryDescription?: string;
+	status?: string;
 	category: string[];
 	videoDemo?: string;
 	type: string;
@@ -10,6 +12,11 @@ interface CategoryProps {
 	demoLink?: string;
 	dribbleLink?: string;
 	githubLink?: string;
+	description?: string;
+	purpose?: string;
+	key_features?: string;
+	roles_and_responsibilities?: string;
+	technologies?: string[];
 	images: ImageProps[];
 }
 
@@ -31,6 +38,17 @@ const data: Props = {
 			URIName: "rastafoods",
 			categoryType: "projects",
 			category: ["branding"],
+			status: "ongoing",
+			categoryDescription: "RastaFoods Brand Ecosystem",
+			description:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			purpose:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			key_features:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			roles_and_responsibilities:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			technologies: ["react, mongodb, express, nodejs, tailwindss"],
 			type: "UI/UX Design, Development",
 			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
