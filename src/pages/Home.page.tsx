@@ -37,7 +37,7 @@ const Home: React.FC<Props> = ({ isLoaded }) => {
 				<title>Wayne Benedict Iraola</title>
 				<meta
 					name="description"
-					content="I am Wayne Benedict Iraola a Fullstack Developer and UX/UI Designer based in Philippines. Likes to explore new possibilities with the emerging technologies, providing digital solutions and outcomes."
+					content="I am Wayne Benedict Iraola a Fullstack Developer and UX/UI Designer based in Philippines. Likes to explore new possibilities with the emerging technologies, providing digital solutions and outcomes.. Likes to explore new possibilities with the emerging technologies, providing digital solutions and outcomes."
 				/>
 				<link rel="canonical" href="https://www.iamwayne.tech/" />
 			</Helmet>
