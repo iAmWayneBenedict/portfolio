@@ -278,12 +278,12 @@ const Project = () => {
 					<div className="mt-7">
 						{/* <div>{filteredItem[0].type}</div> */}
 						{filteredItem[0].status === "ongoing" && (
-							<div className="text-amber-500 w-fit bg-amber-100 px-3 py-1 rounded-xl text-sm font-semibold text-center">
+							<div className="text-amber-500 w-fit bg-amber-100 px-3 py-1 rounded-xl text-xs md:text-sm font-semibold text-center">
 								Ongoing
 							</div>
 						)}
 						{filteredItem[0].status === "soon" && (
-							<div className="text-gray-700 w-fit bg-gray-300 px-3 py-1 rounded-xl text-sm font-semibold text-center">
+							<div className="text-gray-700 w-fit bg-gray-300 px-3 py-1 rounded-xl text-xs md:text-sm font-semibold text-center">
 								Soon
 							</div>
 						)}
@@ -476,17 +476,7 @@ const Project = () => {
 										key={index}
 									>
 										<div>
-											<img
-												src={
-													isMobileView
-														? project.thumbnail.replace(
-																"1600x1034",
-																"752x486&vertical=center"
-														  )
-														: project.thumbnail
-												}
-												alt={project.thumbnail}
-											/>
+											<img src={project.thumbnail} alt={project.thumbnail} />
 										</div>
 										<div>
 											<h5 className="pt-6 text-[#9e9e9e] pb-0 md:pb-1 text-sm md:text-base">
