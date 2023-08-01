@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import React from "react";
 import { useRef, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
 interface Props {
 	delay?: string | undefined;
@@ -11,14 +12,14 @@ interface Props {
 const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse, type = "button" }) => {
 	const bg = useRef<HTMLSpanElement>(null);
 
-	const handleMouseOver = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+	const handleMouseOver = () => {
 		gsap.to(bg.current!, {
 			duration: 0.4,
 			top: 0,
 		});
 	};
 
-	const handleMouseLeave = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+	const handleMouseLeave = () => {
 		gsap.to(bg.current!, {
 			duration: 0.4,
 			top: "100%",
@@ -34,13 +35,16 @@ const ButtonOutlineSend: React.FC<Props> = ({ delay, reverse, type = "button" })
 	const handleComplete = () => {
 		bg.current!.style.top = "-100%";
 	};
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	return (
 		<button
 			title="send"
 			type={type}
 			className="overflow-hidden mt-28 relative bg-[black] rounded-full"
-			onMouseOver={(event) => handleMouseOver(event)}
-			onMouseLeave={(event) => handleMouseLeave(event)}
+			onMouseOver={() => !isMobileView && handleMouseOver()}
+			onMouseLeave={() => !isMobileView && handleMouseLeave()}
+			onTouchStart={() => isMobileView && handleMouseOver()}
+			onTouchEnd={() => isMobileView && handleMouseLeave()}
 		>
 			<svg
 				className="w-full h-full"

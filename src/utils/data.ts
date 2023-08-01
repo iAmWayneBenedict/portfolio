@@ -53,33 +53,33 @@ const data: Props = {
 			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
 			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8214048/file/original-1009503e5f795adda162842b211f1f24.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8214048/file/original-1009503e5f795adda162842b211f1f24.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8214048/file/original-1009503e5f795adda162842b211f1f24.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8214051/file/original-2b750afecbc09461f8c342e3e1a5bea8.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982554/file/original-c969bb6fd653545b7a8cc8c52fae5f3b.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8214052/file/original-f301766d4567d4421a863565f163f556.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982551/file/original-1eea638b4c915e851c6dc583dcfb9050.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8214049/file/original-b3f54f08c70b36450cfb097d580072db.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982550/file/original-bca95c8a716a8a0bc63cc03dc6546338.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8214050/file/original-76c4916e9dc5bf1fcfb0a3c1b1c43ce3.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982552/file/original-40078b7eb8115fe9f535e2c0ed6a5997.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -94,38 +94,38 @@ const data: Props = {
 			dribbleLink: "https://dribbble.com/shots/21879862-MAOB-Appointment-System",
 			githubLink: "https://github.com/iAmWayneBenedict/Appointment-System",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8215417/file/original-c9a2c97de16617842431a20f249acf5a.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8981727/file/original-7d89a233a178698a18793454aba3e4ca.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8215422/file/original-ed5a8b67e14d0b70baf9f54c89fa07b1.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8981728/file/original-619e4d0c5d1cf7d1e61c85ba14fa51d7.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215417/file/original-c9a2c97de16617842431a20f249acf5a.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981727/file/original-7d89a233a178698a18793454aba3e4ca.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215421/file/original-33e88a5acae36aae5fec85963e6f9613.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981724/file/original-8f7718cb4d05768cf7360e98acc2dc46.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215419/file/original-8ad9e780560f768ba2af74ac8be1a518.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981725/file/original-1c96e6f4a709ebd6a50ecc236f5046db.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215420/file/original-fce38a57e2eb9d7684879b909fc537a8.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981729/file/original-d0a4a3129d81223617b67ccf62fefcb0.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215422/file/original-ed5a8b67e14d0b70baf9f54c89fa07b1.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981728/file/original-619e4d0c5d1cf7d1e61c85ba14fa51d7.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8215418/file/original-8134bba60d66eaa4e772e3a0db4dab5d.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8981726/file/original-4f2e0186764c74fde3404865a51afd64.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -140,28 +140,28 @@ const data: Props = {
 			dribbleLink: "https://dribbble.com/shots/21889146-PH-Holidays",
 			githubLink: "https://github.com/iAmWayneBenedict/ph-holidays",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8245591/file/original-031f882fa1bba823883e21a23046a9e1.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982629/file/original-849f198c31365e2b4e41d91204ad2cee.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8245593/file/original-cc26b1265a082e40e0f2b965dddaaea1.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982631/file/original-ae05bbd60de3ab1f3f9c7b5327d837ee.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8245591/file/original-031f882fa1bba823883e21a23046a9e1.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982629/file/original-849f198c31365e2b4e41d91204ad2cee.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8245593/file/original-cc26b1265a082e40e0f2b965dddaaea1.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982631/file/original-ae05bbd60de3ab1f3f9c7b5327d837ee.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8245590/file/original-0cf2d98535dafdf1cdfdf3215b444b68.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982632/file/original-4fb7d0b81d473441323347a8b93cd7e6.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8245592/file/original-861e724b32774d394077dd374e6dfa67.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982630/file/original-72ba0a5e10eab06612797c934a6b2ade.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -176,28 +176,28 @@ const data: Props = {
 			dribbleLink: "https://dribbble.com/shots/22039382-Chapters",
 			githubLink: "https://github.com/iAmWayneBenedict/chapters",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8684405/file/original-ef8abc566ce0ba61759d332b8bbda572.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982822/file/original-5856b24acd313a9ed0d5bc4a95fa9ef2.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8684407/file/original-36b520162b57977a579a57b554a502c6.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982821/file/original-2b4ffb1da0fef593b1edfc4bbc0d4d48.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8684405/file/original-ef8abc566ce0ba61759d332b8bbda572.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982822/file/original-5856b24acd313a9ed0d5bc4a95fa9ef2.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8684407/file/original-36b520162b57977a579a57b554a502c6.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982821/file/original-2b4ffb1da0fef593b1edfc4bbc0d4d48.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8684406/file/original-5265787dab0026f2b01c30ebbfe3152f.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982820/file/original-70c97872bd657125ef55499e9c0af1c1.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8684408/file/original-b7a64fb5a679ebf95bad215e9a48c05b.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982819/file/original-348730a5425a8097df126f6e9128ae7c.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -212,28 +212,28 @@ const data: Props = {
 			dribbleLink: "https://dribbble.com/shots/22043286-Redcart",
 			githubLink: "https://github.com/iAmWayneBenedict/redcart",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982312/file/original-35762fc008affb6c44299341a4a83726.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982312/file/original-35762fc008affb6c44299341a4a83726.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8693600/file/original-ad4adc333bf59054bb84bad162b61361.png?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982312/file/original-35762fc008affb6c44299341a4a83726.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8693602/file/original-898407957a193cc59c2149266b8fd6e3.png?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982315/file/original-58055bd06dec104d27a99fa5340bcb98.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8693603/file/original-be284e608664be39fbdbaf0229380581.png?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982314/file/original-cdd644d03c287535ca54a7639238a461.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8693601/file/original-36c7aa27241b4e2f34343651fd67c8d0.png?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982313/file/original-6767f7923db49a3412331397722acee6.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -248,48 +248,48 @@ const data: Props = {
 			type: "UI/UX Design",
 			dribbleLink: "https://dribbble.com/shots/21744719-Bagudbud-Express-v2-0",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8161256/file/original-50f2c0ad5493506202e9f3e4dfebd9e1.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982953/file/original-48adfd1d0c17eb36889d9684a90c0b93.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8159576/file/original-8614c4f590c94481cc78a7851335cc34.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8982955/file/original-fa3490061814f40dc80140ff1b49b5ea.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8161604/file/original-82b64ddf0ec7a644faf1c3880c686881.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982949/file/original-820583929835792c0660a7d26f8be94b.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8161256/file/original-50f2c0ad5493506202e9f3e4dfebd9e1.png?compress=1&resize=2400x1551",
+					image: "https://cdn.dribbble.com/userupload/8982953/file/original-48adfd1d0c17eb36889d9684a90c0b93.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159576/file/original-8614c4f590c94481cc78a7851335cc34.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982955/file/original-fa3490061814f40dc80140ff1b49b5ea.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159580/file/original-97851a2eb4ee1deec75883b7cff1a4b1.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982950/file/original-581f5af4b088412101ae523833903b5d.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159578/file/original-e4e1db56ee872a370089cac251c13783.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982948/file/original-7b135218fea64d2e777e87983e111f38.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159581/file/original-1337318bf097665da90b8edbd56ecd01.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982948/file/original-7b135218fea64d2e777e87983e111f38.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159577/file/original-746b4cceb2a870fe7d4aad92413e8795.png?compress=1&resize=640x990",
+					image: "https://cdn.dribbble.com/userupload/8982951/file/original-3045f85031259d7858552da74c7638ba.webp?resize=640x990",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8159579/file/original-49aac1b31dc49889b3b2b5dfdce43eed.png?compress=1&resize=640x990",
+					image: "https://cdn.dribbble.com/userupload/8982952/file/original-772e067ec9b7d95e5b080c3038b5d58a.webp?resize=640x990",
 					description: "",
 				},
 			],
@@ -302,33 +302,33 @@ const data: Props = {
 			type: "UI/UX Design, Development",
 			dribbleLink: "https://dribbble.com/shots/21744974-Bagudbud-Express",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8983151/file/original-5f233fc8954f91012eeeea2843a7edf0.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8983149/file/original-1b81719b1acf6ed70eea8e69478fbc0a.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244800/file/original-9137b3039416a7d695eb76613f49bad6.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8983151/file/original-5f233fc8954f91012eeeea2843a7edf0.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244803/file/original-54e1af652ada46abe3259736c22fafad.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8983149/file/original-1b81719b1acf6ed70eea8e69478fbc0a.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244801/file/original-31b7c1115216effb1bd0d308cccae18a.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8983147/file/original-98a139cec3dee50454c68d2b1354822a.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244799/file/original-13c3c3972707636a331c403c821cfb9f.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8983150/file/original-f2a6b3cd77f2d0ab710fe407230ba55e.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8244802/file/original-6b2ae57a8c0a84a980708472acaa1f0d.png?compress=1&resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8983148/file/original-30fe02dde59e33269b14d7c27dcfc951.webp?resize=1600x1034",
 					description: "",
 				},
 			],

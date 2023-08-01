@@ -22,8 +22,12 @@ const ProjectsDetail: React.FC<Props> = ({ index, isMobileView, projectsLength, 
 				<div className="project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden">
 					<img
 						className="w-full h-full object-cover object-center"
-						src={project.thumbnail}
-						alt=""
+						src={
+							isMobileView
+								? project.thumbnail.replace("1600x1034", "752x486&vertical=center")
+								: project.thumbnail
+						}
+						alt={project.thumbnail}
 					/>
 					{index !== 0 && (
 						<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
