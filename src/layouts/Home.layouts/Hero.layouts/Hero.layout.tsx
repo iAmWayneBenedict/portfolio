@@ -189,14 +189,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 							>
 								<img
 									className="w-full pointer-events-none select-none"
-									src={
-										isMobileView
-											? design.thumbnail?.replace(
-													"1600x1034",
-													"752x486&vertical=center"
-											  )
-											: design.thumbnail
-									}
+									src={design.thumbnail}
 									alt={design.thumbnail}
 								/>
 							</SwiperSlide>
