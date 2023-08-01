@@ -27,6 +27,7 @@ import hoverEffect from "hover-effect";
 import { motion, useInView } from "framer-motion";
 import data from "../../../utils/data";
 import CustomLink from "../../../components/ui/CustomLink";
+import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
@@ -103,7 +104,7 @@ const Designs = () => {
 	// 		return () => runAnimation.revert();
 	// 	}
 	// }, []);
-
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -184,8 +185,15 @@ const Designs = () => {
 							<CustomLink to={"/designs/" + design.URIName}>
 								<img
 									className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-									src={design.thumbnail}
-									alt={design.name}
+									src={
+										isMobileView
+											? design.thumbnail?.replace(
+													"1600x1034",
+													"752x486&vertical=center"
+											  )
+											: design.thumbnail
+									}
+									alt={design.URIName}
 								/>
 							</CustomLink>
 						</SwiperSlide>

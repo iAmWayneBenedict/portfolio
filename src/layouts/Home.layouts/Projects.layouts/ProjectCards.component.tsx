@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link, useNavigate } from "react-router-dom";
 import CustomLink from "../../../components/ui/CustomLink";
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
 	title?: string;
@@ -29,6 +30,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 
 	const handleMouseOver = (event: React.MouseEvent) => {};
 	const handleMouseLeave = (event: React.MouseEvent) => {};
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 
 	return (
 		<div className="w-full h-full flex flex-col gap-5 z-20">
@@ -40,8 +42,12 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 				<CustomLink reference={hiddenAnchor} to={"/projects/" + URIName} />
 				<img
 					// key={src}
+					src={
+						isMobileView
+							? image?.replace("1600x1034", "752x486&vertical=center")
+							: image
+					}
 					alt={URIName}
-					src={image}
 					ref={img}
 					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}
 					// wrapperClassName="w-full h-full"

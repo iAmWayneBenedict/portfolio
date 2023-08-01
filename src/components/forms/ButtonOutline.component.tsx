@@ -3,6 +3,7 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CustomLink from "../ui/CustomLink";
+import { useMediaQuery } from "react-responsive";
 interface Props {
 	delay: string | undefined;
 	reverse?: boolean;
@@ -49,14 +50,14 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 		};
 	}, [location]);
 
-	const handleMouseOver = (event: MouseEvent) => {
+	const handleMouseOver = (event?: MouseEvent) => {
 		gsap.to(bg.current!, {
 			duration: 0.3,
 			top: 0,
 		});
 	};
 
-	const handleMouseLeave = (event: MouseEvent) => {
+	const handleMouseLeave = (event?: MouseEvent) => {
 		gsap.to(bg.current!, {
 			duration: 0.3,
 			top: "100%",
@@ -69,9 +70,19 @@ const ButtonOutline: React.FC<Props> = ({ delay, dark, reverse }) => {
 		});
 	};
 
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	useEffect(() => {
-		btn.current!.addEventListener("mouseover", (event: MouseEvent) => handleMouseOver(event));
-		btn.current!.addEventListener("mouseleave", (event: MouseEvent) => handleMouseLeave(event));
+		if (isMobileView) {
+			btn.current!.addEventListener("touchstart", (event) => handleMouseOver());
+			btn.current!.addEventListener("touchend", (event) => handleMouseLeave());
+		} else {
+			btn.current!.addEventListener("mouseover", (event: MouseEvent) =>
+				handleMouseOver(event)
+			);
+			btn.current!.addEventListener("mouseleave", (event: MouseEvent) =>
+				handleMouseLeave(event)
+			);
+		}
 		// console.log(location.pathname);
 	}, []);
 

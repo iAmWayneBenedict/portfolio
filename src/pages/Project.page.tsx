@@ -300,10 +300,32 @@ const Project = () => {
 									className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden"
 									style={index === 0 ? { opacity: 0 } : {}}
 								>
+									{/* <picture>
+										<source
+											media="(max-width: 640px)"
+											srcSet={current.image.replace(
+												"1600x1034",
+												"752x486&vertical=center"
+											)}
+										/>
+										<source media="(min-width: 641px)" srcSet={current.image} />
+										<img
+											className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
+											src={current.image}
+											alt="Flowers"
+										/>
+									</picture> */}
 									<img
 										className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
-										src={current.image}
-										alt=""
+										src={
+											isMobileView
+												? current.image.replace(
+														"1600x1034",
+														"752x486&vertical=center"
+												  )
+												: current.image
+										}
+										alt={current.image}
 									/>
 									{index !== 0 && (
 										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
@@ -448,7 +470,17 @@ const Project = () => {
 										key={index}
 									>
 										<div>
-											<img src={project.thumbnail} alt="" />
+											<img
+												src={
+													isMobileView
+														? project.thumbnail.replace(
+																"1600x1034",
+																"752x486&vertical=center"
+														  )
+														: project.thumbnail
+												}
+												alt={project.thumbnail}
+											/>
 										</div>
 										<div>
 											<h5 className="pt-6 text-[#9e9e9e] pb-0 md:pb-1 text-sm md:text-base">

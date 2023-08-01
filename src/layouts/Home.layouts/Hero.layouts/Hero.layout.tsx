@@ -161,7 +161,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				ref={vid}
 			>
 				<video
-					src="/assets/video/Promotional Video.mp4"
+					src="https://rvrmhvoeeskwmwrgbuus.supabase.co/storage/v1/object/public/portfolio_storage/Promotional%20Video.mp4"
 					className="w-full h-full"
 					autoPlay={true}
 					loop={true}
