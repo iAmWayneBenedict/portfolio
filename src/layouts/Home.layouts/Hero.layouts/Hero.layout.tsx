@@ -1,11 +1,18 @@
 import gsap from "gsap";
 import React, { useRef } from "react";
-import ScrollDown from "./ScrollDown.component";
 import SplitType from "split-type";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import CustomLink from "../../../components/ui/CustomLink";
 import { CustomEase } from "gsap/CustomEase";
+import data from "../../../utils/data";
+
+import { EffectFade, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "react-responsive";
 interface Props {
 	isLoaded: boolean;
 }
@@ -100,7 +107,10 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 			gsap.registerPlugin([]);
 		};
 	}, []);
-
+	const previews = [...data.projects, ...data.designs]
+		.map((el) => el.images.filter((e, index) => (index < 3 ? e : null)))
+		.flat();
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	return (
 		<>
 			<div className="h-auto w-full">
@@ -157,16 +167,49 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				{/* <ScrollDown isLoaded={isLoaded} /> */}
 			</div>
 			<div
-				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-fit mt-10 lg:mt-16 2xl:mt-20"
+				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-full mt-10 lg:mt-16 2xl:mt-20"
 				ref={vid}
 			>
-				<video
+				<div className="w-full h-full">
+					<Swiper
+						slidesPerView={1}
+						loop={true}
+						autoplay={{
+							delay: 3000,
+							disableOnInteraction: false,
+						}}
+						effect={"fade"}
+						modules={[EffectFade, Autoplay]}
+						className="w-full overflow-hidden no-cursor"
+					>
+						{previews.map((design, index) => (
+							<SwiperSlide
+								className="swiper-no-swiping pointer-events-none select-none"
+								key={index}
+							>
+								<img
+									className="w-full pointer-events-none select-none"
+									src={
+										isMobileView
+											? design.image?.replace(
+													"1600x1034",
+													"752x486&vertical=center"
+											  )
+											: design.image
+									}
+									alt={design.image}
+								/>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+				{/* <video
 					src="https://rvrmhvoeeskwmwrgbuus.supabase.co/storage/v1/object/public/portfolio_storage/Promotional%20Video.mp4"
 					className="w-full h-full"
 					autoPlay={true}
 					loop={true}
 					muted={true}
-				></video>
+				></video> */}
 			</div>
 		</>
 	);

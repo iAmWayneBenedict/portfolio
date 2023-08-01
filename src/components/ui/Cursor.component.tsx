@@ -64,6 +64,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		sChild.innerText = "";
 
 		links.forEach((el) => {
+			if (el.classList.contains("no-cursor")) return;
 			el.addEventListener("mouseover", (event) => {
 				let currentEl = event.currentTarget as Element;
 				// if (currentEl.classList.contains("project-con")) return;
