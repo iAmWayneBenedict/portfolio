@@ -279,7 +279,7 @@ const data: Props = {
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982948/file/original-7b135218fea64d2e777e87983e111f38.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/8982954/file/original-a738382af0028c4319a1fd727f58366a.webp?resize=1600x1034",
 					description: "",
 				},
 				{
