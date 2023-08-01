@@ -317,14 +317,7 @@ const Project = () => {
 									</picture> */}
 									<img
 										className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
-										src={
-											isMobileView
-												? current.image.replace(
-														"1600x1034",
-														"752x486&vertical=center"
-												  )
-												: current.image
-										}
+										src={current.image}
 										alt={current.image}
 									/>
 									{index !== 0 && (

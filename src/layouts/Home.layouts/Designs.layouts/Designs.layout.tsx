@@ -23,7 +23,6 @@ import {
 	handleTouchMove,
 	handleTouchStart,
 } from "../../../utils/handleTouchDragEvent";
-import hoverEffect from "hover-effect";
 import { motion, useInView } from "framer-motion";
 import data from "../../../utils/data";
 import CustomLink from "../../../components/ui/CustomLink";
@@ -185,14 +184,7 @@ const Designs = () => {
 							<CustomLink to={"/designs/" + design.URIName}>
 								<img
 									className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-									src={
-										isMobileView
-											? design.thumbnail?.replace(
-													"1600x1034",
-													"752x486&vertical=center"
-											  )
-											: design.thumbnail
-									}
+									src={design.thumbnail}
 									alt={design.URIName}
 								/>
 							</CustomLink>
