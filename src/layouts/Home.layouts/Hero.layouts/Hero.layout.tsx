@@ -170,7 +170,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-full mt-10 lg:mt-16 2xl:mt-20"
 				ref={vid}
 			>
-				<div className="w-full h-full">
+				{/* <div className="w-full h-full">
 					<Swiper
 						slidesPerView={1}
 						loop={true}
@@ -202,14 +202,14 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 							</SwiperSlide>
 						))}
 					</Swiper>
-				</div>
-				{/* <video
+				</div> */}
+				<video
 					src="https://rvrmhvoeeskwmwrgbuus.supabase.co/storage/v1/object/public/portfolio_storage/Promotional%20Video.mp4"
 					className="w-full h-full"
 					autoPlay={true}
 					loop={true}
 					muted={true}
-				></video> */}
+				></video>
 			</div>
 		</>
 	);
