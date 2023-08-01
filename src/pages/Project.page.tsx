@@ -305,7 +305,7 @@ const Project = () => {
 											media="(max-width: 640px)"
 											srcSet={current.image.replace(
 												"1600x1034",
-												"752x486&vertical=center"
+												"455x294&vertical=center"
 											)}
 										/>
 										<source media="(min-width: 641px)" srcSet={current.image} />
@@ -321,7 +321,7 @@ const Project = () => {
 											isMobileView
 												? current.image.replace(
 														"1600x1034",
-														"752x486&vertical=center"
+														"455x294&vertical=center"
 												  )
 												: current.image
 										}
@@ -475,7 +475,7 @@ const Project = () => {
 													isMobileView
 														? project.thumbnail.replace(
 																"1600x1034",
-																"752x486&vertical=center"
+																"455x294&vertical=center"
 														  )
 														: project.thumbnail
 												}
