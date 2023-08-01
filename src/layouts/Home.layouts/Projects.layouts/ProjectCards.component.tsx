@@ -42,11 +42,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 				<CustomLink reference={hiddenAnchor} to={"/projects/" + URIName} />
 				<img
 					// key={src}
-					src={
-						isMobileView
-							? image?.replace("1600x1034", "752x486&vertical=center")
-							: image
-					}
+					src={image}
 					alt={URIName}
 					ref={img}
 					// placeholderSrc={src!.split(".")[0] + "-small.jpg"}
