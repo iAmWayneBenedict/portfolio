@@ -26,12 +26,26 @@ const Project = () => {
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(CustomEase);
 
+	function initImages(images: unknown[], value: number) {
+		images.forEach((el) => {
+			const div = el as HTMLDivElement;
+			const self = div.firstElementChild as HTMLImageElement;
+			gsap.to(self, {
+				opacity: value,
+				duration: 0,
+			});
+		});
+	}
+
 	useEffect(() => {
 		const imgs = imagesLoaded(imgCon.current!);
+		const images = gsap.utils.toArray("div.project-imgCon, a.project-con");
+		initImages(images, 0);
 		let triggered = false;
 		imgs.on("done", (e) => {
 			triggered = true;
-			setAnimation();
+			initImages(images, 1);
+			setAnimation(images);
 		});
 
 		// if (!triggered) setAnimation();
@@ -110,8 +124,7 @@ const Project = () => {
 
 	const filteredItem = getData(params.category!, params.name);
 
-	function setAnimation() {
-		const images = gsap.utils.toArray("div.project-imgCon, a.project-con");
+	function setAnimation(images: unknown[]) {
 		gsap.fromTo(
 			document.querySelector("div.project-imgCon") as NodeListOf<HTMLElement>[0],
 			{
