@@ -44,7 +44,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 					// key={src}
 					src={
 						isMobileView
-							? image?.replace("1600x1034", "752x486&vertical=center")
+							? image?.replace("1600x1034", "455x294&vertical=center")
 							: image
 					}
 					alt={URIName}
