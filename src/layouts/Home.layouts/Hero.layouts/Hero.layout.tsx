@@ -107,9 +107,9 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 			gsap.registerPlugin([]);
 		};
 	}, []);
-	const previews = [...data.projects, ...data.designs]
-		.map((el) => el.images.filter((e, index) => (index < 3 ? e : null)))
-		.flat();
+	// const previews = [...data.projects, ...data.designs]
+	// 	.map((el) => el.images.filter((e, index) => (index < 3 ? e : null)))
+	// 	.flat();
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	return (
 		<>
@@ -182,7 +182,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 						modules={[EffectFade, Autoplay]}
 						className="w-full overflow-hidden no-cursor"
 					>
-						{previews.map((design, index) => (
+						{[...data.designs, ...data.projects].map((design, index) => (
 							<SwiperSlide
 								className="swiper-no-swiping pointer-events-none select-none"
 								key={index}
@@ -191,13 +191,13 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 									className="w-full pointer-events-none select-none"
 									src={
 										isMobileView
-											? design.image?.replace(
+											? design.thumbnail?.replace(
 													"1600x1034",
 													"752x486&vertical=center"
 											  )
-											: design.image
+											: design.thumbnail
 									}
-									alt={design.image}
+									alt={design.thumbnail}
 								/>
 							</SwiperSlide>
 						))}
