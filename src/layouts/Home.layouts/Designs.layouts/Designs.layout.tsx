@@ -189,7 +189,7 @@ const Designs = () => {
 										isMobileView
 											? design.thumbnail?.replace(
 													"1600x1034",
-													"455x294&vertical=center"
+													"752x486&vertical=center"
 											  )
 											: design.thumbnail
 									}
