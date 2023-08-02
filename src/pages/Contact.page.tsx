@@ -13,6 +13,8 @@ import PulseLoader from "react-spinners/PulseLoader";
 import Modal from "../components/ui/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet-async";
+import ButtonOutlineSendMobile from "../components/forms/ButtonOutlineSendMobile.component";
+import { useMediaQuery } from "react-responsive";
 
 const Contact = () => {
 	gsap.registerPlugin(ScrollTrigger);
@@ -175,6 +177,7 @@ const Contact = () => {
 				setError((prev) => ({ ...prev, captcha: "ReCAPTCHA is required" }));
 		}
 	};
+	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	return (
 		<>
 			<Helmet>
@@ -239,6 +242,8 @@ const Contact = () => {
 									<PulseLoader size={10} color="#ffffff" />
 									<h1 className="text-xl xl:text-2xl 2xl:text-3xl">Sending</h1>
 								</div>
+							) : isMobileView ? (
+								<ButtonOutlineSendMobile type="submit" />
 							) : (
 								<ButtonOutlineSend type="submit" />
 							)}
