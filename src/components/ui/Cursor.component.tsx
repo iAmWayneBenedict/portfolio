@@ -8,8 +8,15 @@ interface PositionProp {
 	destinationY: number;
 	distanceX: number;
 	distanceY: number;
+	destinationMainX: number;
+	destinationMainY: number;
+	distanceMainX: number;
+	distanceMainY: number;
 	key: number;
 }
+
+let handleMouseCursor: () => void;
+let mouseOne: (clientX: number, clientY: number) => void;
 interface Props {
 	categoryChanged: string;
 }
@@ -27,21 +34,39 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		destinationY: 0,
 		distanceX: 0,
 		distanceY: 0,
+		destinationMainX: 0,
+		destinationMainY: 0,
+		distanceMainX: 0,
+		distanceMainY: 0,
 		key: -1,
 	});
 
-	const handleMouseCursor = () => {
+	handleMouseCursor = () => {
 		const followMouse = () => {
 			if (!secondaryCursor.current) return;
 			positionRef.current.key = requestAnimationFrame(followMouse);
-			const { mouseX, mouseY, destinationX, destinationY, distanceX, distanceY } =
-				positionRef.current;
+			const {
+				mouseX,
+				mouseY,
+				destinationX,
+				destinationY,
+				distanceX,
+				distanceY,
+				destinationMainX,
+				destinationMainY,
+				distanceMainX,
+				distanceMainY,
+			} = positionRef.current;
 			if (!destinationX || !destinationY) {
 				positionRef.current.destinationX = mouseX;
 				positionRef.current.destinationY = mouseY;
+				positionRef.current.destinationMainX = mouseX;
+				positionRef.current.destinationMainY = mouseY;
 			} else {
-				positionRef.current.distanceX = (mouseX - destinationX) * 0.03;
-				positionRef.current.distanceY = (mouseY - destinationY) * 0.03;
+				positionRef.current.distanceX = (mouseX - destinationX) * 0.011;
+				positionRef.current.distanceY = (mouseY - destinationY) * 0.011;
+				positionRef.current.distanceMainX = (mouseX - destinationMainX) * 0.035;
+				positionRef.current.distanceMainY = (mouseY - destinationMainY) * 0.035;
 				if (
 					Math.abs(positionRef.current.distanceX) +
 						Math.abs(positionRef.current.distanceY) <
@@ -49,12 +74,18 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				) {
 					positionRef.current.destinationX = mouseX;
 					positionRef.current.destinationY = mouseY;
+					positionRef.current.destinationMainX = mouseX;
+					positionRef.current.destinationMainY = mouseY;
 				} else {
 					positionRef.current.destinationX += distanceX;
 					positionRef.current.destinationY += distanceY;
+					positionRef.current.destinationMainX += distanceMainX;
+					positionRef.current.destinationMainY += distanceMainY;
 				}
 			}
 			secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+			mainCursor.current!.style.top = `${destinationMainY + 25}px`;
+			mainCursor.current!.style.left = `${destinationMainX + 25}px`;
 		};
 		followMouse();
 		let links = document.querySelectorAll("a, button, .swiper, label, input, textarea");
@@ -107,9 +138,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		});
 	};
 
-	const mouseOne = (event: MouseEvent) => {
-		const { clientX, clientY } = event;
-
+	mouseOne = (clientX: number, clientY: number) => {
 		setIsMoving(true);
 
 		const mouseX = clientX;
@@ -118,8 +147,8 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		if (!mainCursor.current || !secondaryCursor.current) return;
 		positionRef.current.mouseX = mouseX - secondaryCursor.current.clientWidth / 2;
 		positionRef.current.mouseY = mouseY - secondaryCursor.current.clientHeight / 2;
-		mainCursor.current.style.top = `${mouseY - mainCursor.current.clientHeight / 2}px`;
-		mainCursor.current.style.left = `${mouseX - mainCursor.current.clientWidth / 2}px`;
+		// mainCursor.current.style.top = `${mouseY - mainCursor.current.clientHeight / 2}px`;
+		// mainCursor.current.style.left = `${mouseX - mainCursor.current.clientWidth / 2}px`;
 	};
 
 	useEffect(() => {
@@ -172,9 +201,8 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				mainCursorLChild.style.color = "black";
 				mainCursor.current!.style.mixBlendMode = "difference";
 			}
-			mouseOne(event);
+			mouseOne(event.clientX, event.clientY);
 		};
-
 		document.addEventListener("mousemove", handleMouseMove);
 
 		return () => {
@@ -202,7 +230,7 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				<div
 					className="bg-white w-[30px] h-[30px] rounded-full opacity-0 relative"
 					style={{
-						transition: "transform 750ms cubic-bezier(0.000, 0.405, 0.000, 1.285)",
+						transition: "transform 750ms cubic-bezier(0.200, 0.405, 0.200, 1.285)",
 					}}
 				></div>
 				<span
@@ -249,3 +277,4 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 };
 
 export default Cursor;
+export { handleMouseCursor, mouseOne };
