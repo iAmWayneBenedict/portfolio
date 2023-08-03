@@ -189,7 +189,7 @@ const Project = () => {
 		};
 	}, [inView]);
 
-	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
+	let isMobileView = useMediaQuery({ query: "(max-width: 767px)" });
 	const projects = [...data.projects, ...data.designs];
 	const randomProjects = () => {
 		let min = 0;
@@ -302,18 +302,24 @@ const Project = () => {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10">
-						{filteredItem[0]?.images.map((current: ImageProps, index: number) => (
-							<div
-								className={`${
-									index % 3 === 0 && !isMobileView ? "col-span-2" : ""
-								} mt-5 2xl:mt-14 h-fit`}
-								key={index}
-							>
+						{filteredItem[0]?.images.map((current: ImageProps, index: number) => {
+							console.log(
+								index % 3 === 0 && !isMobileView ? "col-span-2" : "col-span-1"
+							);
+							return (
 								<div
-									className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden"
-									style={index === 0 ? { opacity: 0 } : {}}
+									className={`${
+										index % 3 === 0 && !isMobileView
+											? "col-span-2"
+											: "col-span-1"
+									} mt-5 2xl:mt-14 h-fit`}
+									key={index}
 								>
-									{/* <picture>
+									<div
+										className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden"
+										style={index === 0 ? { opacity: 0 } : {}}
+									>
+										{/* <picture>
 										<source
 											media="(max-width: 640px)"
 											srcSet={current.image.replace(
@@ -328,124 +334,126 @@ const Project = () => {
 											alt="Flowers"
 										/>
 									</picture> */}
-									<img
-										className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
-										src={current.image}
-										alt={current.image}
-									/>
-									{index !== 0 && (
-										<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
-									)}
-								</div>
-								{index === 0 && (
-									<>
-										<div className="w-full">
-											<div className="mt-14 mb-24 max-w-3xl">
-												<h1
-													ref={categoryTitle}
-													className={`${
-														filteredItem[0].categoryDescription
-															? filteredItem[0].categoryDescription!
-																	.length > 10
-																? "text-3xl lg:text-5xl xl:text-7xl"
-																: "text-4xl lg:text-6xl xl:text-8xl"
-															: "text-3xl lg:text-5xl xl:text-7xl"
-													} uppercase  font-medium font-neueMontrealRegular`}
-												>
-													{filteredItem[0].categoryDescription ||
-														"development for community"}
-												</h1>
+										<img
+											className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
+											src={current.image}
+											alt={current.image}
+										/>
+										{index !== 0 && (
+											<div className="absolute top-0 right-0 bg-white w-full h-full"></div>
+										)}
+									</div>
+									{index === 0 && (
+										<>
+											<div className="w-full">
+												<div className="mt-14 mb-24 max-w-3xl">
+													<h1
+														ref={categoryTitle}
+														className={`${
+															filteredItem[0].categoryDescription
+																? filteredItem[0]
+																		.categoryDescription!
+																		.length > 10
+																	? "text-3xl lg:text-5xl xl:text-7xl"
+																	: "text-4xl lg:text-6xl xl:text-8xl"
+																: "text-3xl lg:text-5xl xl:text-7xl"
+														} uppercase  font-medium font-neueMontrealRegular`}
+													>
+														{filteredItem[0].categoryDescription ||
+															"development for community"}
+													</h1>
+												</div>
 											</div>
-										</div>
-										<div className="w-full flex justify-end">
-											<div className="w-full mb-20 md:mb-0 md:w-1/2 flex justify-center">
-												<div className="mt-14 max-w-2xl">
-													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-														{filteredItem[0].purpose
-															? "THE PROJECT PURPOSE"
-															: "THE DESIGN PROCESS"}
-													</h5>
-													<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
-														{filteredItem[0].purpose ||
-															"Lorem ipsum dolor sit amet consectetur. Mi\
+											<div className="w-full flex justify-end">
+												<div className="w-full mb-20 md:mb-0 md:w-1/2 flex justify-center">
+													<div className="mt-14 max-w-2xl">
+														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+															{filteredItem[0].purpose
+																? "THE PROJECT PURPOSE"
+																: "THE DESIGN PROCESS"}
+														</h5>
+														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+															{filteredItem[0].purpose ||
+																"Lorem ipsum dolor sit amet consectetur. Mi\
 														nec scelerisque et venenatis suspendisse\
 														vitae velit. Tincidunt sit in eu at bibendum\
 														elit felis. Magnis interdum turpis in nec\
 														metus eleifend molestie bibendum."}
-													</p>
-												</div>
-											</div>
-										</div>
-									</>
-								)}
-
-								{index !== 0 &&
-									index % 3 === 0 &&
-									location.pathname.includes("projects") && (
-										<div className="w-full flex flex-col xl:flex-row">
-											<div className="flex-1">
-												<div className="mt-14 max-w-2xl">
-													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-														KEY FEATURES
-													</h5>
-													<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
-														{filteredItem[0].key_features ||
-															"Lorem ipsum dolor sit amet consectetur. Mi\
-														nec scelerisque et venenatis suspendisse\
-														vitae velit. Tincidunt sit in eu at bibendum\
-														elit felis. Magnis interdum turpis in nec\
-														metus eleifend molestie bibendum."}
-													</p>
-												</div>
-											</div>
-											<div className="flex-1">
-												<div className="mt-14 max-w-2xl">
-													<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-														TECHNOLOGIES
-													</h5>
-													<div className="flex flex-wrap max-w-2xl gap-10 justify-start">
-														{[
-															"/assets/ico/sass.svg",
-															"/assets/ico/bootstrap.svg",
-															"/assets/ico/html5.svg",
-															"/assets/ico/css3.svg",
-															"/assets/ico/figma-logo.svg",
-															"/assets/ico/git(1).svg",
-															"/assets/ico/mysql.svg",
-															"/assets/ico/java-script.svg",
-															"/assets/ico/php.svg",
-														].map((src, index) => (
-															<img
-																key={index}
-																src={src}
-																className="w-8 lg:w-12"
-																alt=""
-															/>
-														))}
+														</p>
 													</div>
 												</div>
 											</div>
-										</div>
+										</>
 									)}
-								{index === 3 && location.pathname.includes("designs") && (
-									<div className="w-full flex">
-										<div className="mt-14 max-w-2xl">
-											<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-												REFLECTION AND LEARNING
-											</h5>
-											<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
-												{filteredItem[0].key_features ||
-													"Lorem ipsum dolor sit amet consectetur. Mi\
+
+									{index !== 0 &&
+										index % 3 === 0 &&
+										location.pathname.includes("projects") && (
+											<div className="w-full flex flex-col xl:flex-row">
+												<div className="flex-1">
+													<div className="mt-14 max-w-2xl">
+														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+															KEY FEATURES
+														</h5>
+														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+															{filteredItem[0].key_features ||
+																"Lorem ipsum dolor sit amet consectetur. Mi\
 														nec scelerisque et venenatis suspendisse\
 														vitae velit. Tincidunt sit in eu at bibendum\
 														elit felis. Magnis interdum turpis in nec\
 														metus eleifend molestie bibendum."}
-											</p>
+														</p>
+													</div>
+												</div>
+												<div className="flex-1">
+													<div className="mt-14 max-w-2xl">
+														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+															TECHNOLOGIES
+														</h5>
+														<div className="flex flex-wrap max-w-2xl gap-10 justify-start">
+															{[
+																"/assets/ico/sass.svg",
+																"/assets/ico/bootstrap.svg",
+																"/assets/ico/html5.svg",
+																"/assets/ico/css3.svg",
+																"/assets/ico/figma-logo.svg",
+																"/assets/ico/git(1).svg",
+																"/assets/ico/mysql.svg",
+																"/assets/ico/java-script.svg",
+																"/assets/ico/php.svg",
+															].map((src, index) => (
+																<img
+																	key={index}
+																	src={src}
+																	className="w-8 lg:w-12"
+																	alt=""
+																/>
+															))}
+														</div>
+													</div>
+												</div>
+											</div>
+										)}
+									{index === 3 && location.pathname.includes("designs") && (
+										<div className="w-full flex">
+											<div className="mt-14 max-w-2xl">
+												<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
+													REFLECTION AND LEARNING
+												</h5>
+												<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+													{filteredItem[0].key_features ||
+														"Lorem ipsum dolor sit amet consectetur. Mi\
+														nec scelerisque et venenatis suspendisse\
+														vitae velit. Tincidunt sit in eu at bibendum\
+														elit felis. Magnis interdum turpis in nec\
+														metus eleifend molestie bibendum."}
+												</p>
+											</div>
 										</div>
-									</div>
-								)}
-							</div>
-						))}
+									)}
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>
