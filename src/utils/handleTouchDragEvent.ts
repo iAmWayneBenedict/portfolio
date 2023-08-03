@@ -4,8 +4,8 @@ let startY = 0;
 
 const handleTouchStart = ({ currentX, currentY }: { currentX: number; currentY: number }): void => {
 	isSwiping = true;
-	startX = currentX;
-	startY = currentY;
+	// startX = currentX;
+	// startY = currentY;
 };
 
 const handleTouchMove = (
@@ -29,7 +29,7 @@ const handleTouchMove = (
 			mainCursor.style.left = `${mouseX - mainCursor.clientWidth / 2}px`;
 			mainCursor.style.top = `${mouseY - mainCursor.clientHeight / 2}px`;
 		};
-		mouseThree();
+		// mouseThree();
 	}
 };
 

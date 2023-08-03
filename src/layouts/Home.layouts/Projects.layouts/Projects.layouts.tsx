@@ -16,6 +16,7 @@ import {
 import { useMediaQuery } from "react-responsive";
 import CustomLink from "../../../components/ui/CustomLink";
 import data from "../../../utils/data";
+import { handleMouseCursor, mouseOne } from "../../../components/ui/Cursor.component";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
@@ -85,9 +86,7 @@ const Projects = () => {
 						}}
 						onSwiper={setSwiper}
 						navigation={true}
-						onTouchMove={(event) => handleTouchMove(event.touches, ".main-cursor")}
-						onTouchStart={(event) => handleTouchStart(event.touches)}
-						onTouchEnd={() => handleTouchEnd()}
+						onTouchMove={({ touches }) => mouseOne(touches.currentX, touches.currentY)}
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>

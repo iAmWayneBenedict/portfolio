@@ -27,6 +27,7 @@ import { motion, useInView } from "framer-motion";
 import data from "../../../utils/data";
 import CustomLink from "../../../components/ui/CustomLink";
 import { useMediaQuery } from "react-responsive";
+import { mouseOne } from "../../../components/ui/Cursor.component";
 
 gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
@@ -173,9 +174,7 @@ const Designs = () => {
 					}}
 					onSwiper={setSwiper}
 					navigation={true}
-					onTouchMove={(event) => handleTouchMove(event.touches, ".main-cursor")}
-					onTouchStart={(event) => handleTouchStart(event.touches)}
-					onTouchEnd={() => handleTouchEnd()}
+					onTouchMove={({ touches }) => mouseOne(touches.currentX, touches.currentY)}
 					modules={[Navigation, Pagination, EffectCreative]}
 					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[50rem] 2xl:h-[70rem] overflow-hidden"
 				>
