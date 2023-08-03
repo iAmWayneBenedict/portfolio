@@ -217,10 +217,18 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		mainCursor.current?.firstElementChild?.classList.remove("opacity-0");
 		secondaryCursor.current?.classList.remove("opacity-0");
 		secondaryCursor.current!.style.opacity = "1";
-	}, [isMoving, location]);
+
+		return () => {
+			cancelAnimationFrame(positionRef.current.key);
+		};
+	}, [isMoving]);
 	useEffect(() => {
 		handleMouseCursor();
-	}, [categoryChanged]);
+
+		return () => {
+			cancelAnimationFrame(positionRef.current.key);
+		};
+	}, [categoryChanged, location]);
 	return (
 		<>
 			<div
