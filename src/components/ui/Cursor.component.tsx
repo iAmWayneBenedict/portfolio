@@ -221,14 +221,14 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 		return () => {
 			cancelAnimationFrame(positionRef.current.key);
 		};
-	}, [isMoving]);
+	}, [isMoving, location]);
 	useEffect(() => {
 		handleMouseCursor();
 
 		return () => {
 			cancelAnimationFrame(positionRef.current.key);
 		};
-	}, [categoryChanged, location]);
+	}, [categoryChanged]);
 	return (
 		<>
 			<div
