@@ -171,7 +171,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 			});
 		}
 	}, [loc]);
-	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
+	let isMobileView = useMediaQuery({ query: "(max-width: 767px)" });
 	const projects = [...data.projects, ...data.designs];
 	const projectsLength = data.projects.length;
 	return (
@@ -215,6 +215,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 					{items &&
 						items.map((project: CategoryProps, index: number) => (
 							<ProjectsDetail
+								key={index}
 								index={index}
 								isMobileView={isMobileView}
 								projectsLength={projectsLength}
