@@ -91,13 +91,13 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				{
 					opacity: 1,
 					y: "0",
-					duration: 1,
+					duration: 1.5,
 					ease: CustomEase.create(
 						"custom",
 						"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
 					),
 				},
-				"-=2"
+				"-=5"
 			);
 
 		return () => {
