@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Title from "../../../components/ui/Title.component";
 import ProjectCards from "./ProjectCards.component";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import SwiperCore, { FreeMode, Pagination, Navigation } from "swiper";
-import { useRef, useEffect } from "react";
+import { FreeMode, Navigation } from "swiper";
+import { useRef } from "react";
 import SwiperInstance from "swiper";
-import {
-	handleTouchEnd,
-	handleTouchMove,
-	handleTouchStart,
-} from "../../../utils/handleTouchDragEvent";
 import { useMediaQuery } from "react-responsive";
 import CustomLink from "../../../components/ui/CustomLink";
 import data from "../../../utils/data";
@@ -77,16 +72,15 @@ const Projects = () => {
 				</div>
 				<div className="w-full md:w-[90%] h-full">
 					<Swiper
-						slidesPerView={isTabletOrMobile ? 1.15 : 1.7}
+						slidesPerView={isTabletOrMobile ? 1.1 : 1.7}
 						freeMode={true}
 						spaceBetween={isTabletOrMobile ? 20 : 60}
 						ref={swiperRef}
-						onSlideChange={() => {
-							console.log("Slide Change");
-						}}
 						onSwiper={setSwiper}
 						navigation={true}
-						onTouchMove={({ touches }) => mouseOne(touches.currentX, touches.currentY)}
+						onTouchMove={({ touches }) =>
+							!isTabletOrMobile && mouseOne(touches.currentX, touches.currentY)
+						}
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>

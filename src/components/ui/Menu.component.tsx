@@ -50,7 +50,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 				{/* <div className="absolute bottom-0 right-0 span-[black] bg-white w-[25rem] h-[20rem] mix-blend-difference"></div> */}
 				<Link
 					to="/"
-					className="font-quicksand font-bold absolute top-5 flex left-3 md:hidden"
+					className="font-quicksand font-bold absolute top-5 flex left-5 md:hidden"
 				>
 					WAYNE
 				</Link>
