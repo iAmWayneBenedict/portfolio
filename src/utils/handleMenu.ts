@@ -97,7 +97,7 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 			{
 				y: 0,
 				opacity: 1,
-				duration: 0.35,
+				duration: 0.5,
 			},
 			`-=${(delay -= 0.2)}`
 		);

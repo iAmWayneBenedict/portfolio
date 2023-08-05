@@ -105,6 +105,7 @@ const Designs = () => {
 	// 	}
 	// }, []);
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
+	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -174,7 +175,9 @@ const Designs = () => {
 					}}
 					onSwiper={setSwiper}
 					navigation={true}
-					onTouchMove={({ touches }) => mouseOne(touches.currentX, touches.currentY)}
+					onTouchMove={({ touches }) =>
+						!isTabletOrMobile && mouseOne(touches.currentX, touches.currentY)
+					}
 					modules={[Navigation, Pagination, EffectCreative]}
 					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[50rem] 2xl:h-[70rem] overflow-hidden"
 				>

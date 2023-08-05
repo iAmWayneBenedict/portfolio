@@ -117,7 +117,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				<div className="flex flex-col justify-center h-2/3 sm:h-1/2 md:h-2/3 w-full pt-16 2xl:pt-20">
 					<div
 						className="hero-con flex flex-col gap-5 items-center pointer-events-none font-normal md:font-light leading-[1] md:leading-[1.25]"
-						style={{ fontSize: "clamp(1.8rem, 6vw , 6rem)" }}
+						style={{ fontSize: "clamp(1.8rem, 5vw , 6rem)" }}
 					>
 						<span
 							id="hero-1"
@@ -138,19 +138,19 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 						ref={des}
 						className="flex flex-col items-center pointer-events-none mt-10 2xl:mt-20 w-full opacity-0"
 					>
-						<div className="text-center text-base md:text-lg lg:text-2xl mx-5 lg:mx:0 max-w-4xl leading-0 md:leading-[1.75]">
+						<div className="text-center text-base lg:text-lg 2xl:text-2xl mx-5 lg:mx:0 max-w-4xl leading-0 md:leading-[1.75]">
 							<span>
 								I am a developer and UX/UI designer based in the Philippines.
 							</span>
 
 							<span>
 								I like to explore new possibilities with emerging technologies,
-								providing digital solutions and outcomes.{" "}
+								providing digital solutions and outcomes. I am specializing in
+								React, Node.js, MongoDB, and Express.js.{" "}
 							</span>
-							<span>
-								I am specializing in React, Node.js, MongoDB, and Express.js. I am
-								also exploring .NET Web API and Next.js.
-							</span>
+							{!isMobileView && (
+								<span>I am also exploring .NET Web API and Next.js.</span>
+							)}
 						</div>
 					</div>
 					{/* <div ref={cta} className="mt-10 flex justify-center opacity-0">
@@ -175,7 +175,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 						slidesPerView={1}
 						loop={true}
 						autoplay={{
-							delay: 3000,
+							delay: 2500,
 							disableOnInteraction: false,
 						}}
 						effect={"fade"}

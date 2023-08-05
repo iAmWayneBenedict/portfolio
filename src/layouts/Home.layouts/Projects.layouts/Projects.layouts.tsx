@@ -86,7 +86,9 @@ const Projects = () => {
 						}}
 						onSwiper={setSwiper}
 						navigation={true}
-						onTouchMove={({ touches }) => mouseOne(touches.currentX, touches.currentY)}
+						onTouchMove={({ touches }) =>
+							!isTabletOrMobile && mouseOne(touches.currentX, touches.currentY)
+						}
 						modules={[Navigation, FreeMode]}
 						className="mousedrag cursor-pointer h-full w-full right p-5 md:p-10"
 					>
