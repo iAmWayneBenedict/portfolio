@@ -1,7 +1,7 @@
-import gsap from "gsap";
+import { gsap } from "gsap";
 import React, { useRef } from "react";
 import SplitType from "split-type";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { CustomEase } from "gsap/CustomEase";
 import data from "../../../utils/data";
@@ -23,6 +23,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 	const cta = useRef<HTMLDivElement>(null);
 
 	gsap.registerPlugin(CustomEase);
+	gsap.registerPlugin(ScrollTrigger);
 
 	useEffect(() => {
 		const text = new SplitType("#hero-1");
@@ -117,7 +118,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				<div className="flex flex-col justify-center h-2/3 sm:h-1/2 md:h-2/3 w-full pt-16 2xl:pt-20">
 					<div
 						className="hero-con flex flex-col gap-5 items-center pointer-events-none font-normal md:font-light leading-[1] md:leading-[1.25]"
-						style={{ fontSize: "clamp(1.8rem, 5vw , 6rem)" }}
+						style={{ fontSize: "clamp(1.8rem, 6vw , 7rem)" }}
 					>
 						<span
 							id="hero-1"
@@ -170,7 +171,7 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 				className="px-0 sm:px-8 md:px-12 xl:px-16 2xl:px-24 w-full mt-10 lg:mt-16 2xl:mt-20"
 				ref={vid}
 			>
-				<div className="w-full h-full">
+				<div className="w-full h-full parent">
 					<Swiper
 						slidesPerView={1}
 						loop={true}

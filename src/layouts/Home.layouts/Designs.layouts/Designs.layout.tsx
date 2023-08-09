@@ -33,6 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Designs = () => {
 	const text = useRef<HTMLDivElement>(null);
 	const slide1 = useRef<HTMLDivElement>(null);
+	const swiperCon = useRef<HTMLDivElement>(null);
 
 	const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
@@ -65,6 +66,19 @@ const Designs = () => {
 			swiper.slidePrev();
 		}
 	};
+
+	// useEffect(() => {
+	// 	gsap.to(swiperCon.current!.firstElementChild, {
+	// 		paddingLeft: 0,
+	// 		paddingRight: 0,
+	// 		scrollTrigger: {
+	// 			trigger: swiperCon.current!,
+	// 			start: "center center",
+	// 			pin: true,
+	// 			scrub: true,
+	// 		},
+	// 	});
+	// }, []);
 
 	// useEffect(() => {
 	// 	if (typeof window !== "undefined") {
@@ -154,45 +168,47 @@ const Designs = () => {
 					</div>
 				</div>
 			</div>
-			<div className="px-1 md:px-20 mt-3 md:mt-5 lg:mt-20">
-				<Swiper
-					slidesPerView={1}
-					ref={swiperRef}
-					onSlideChange={() => {
-						console.log("Slide Change");
-					}}
-					loop={true}
-					grabCursor={true}
-					effect={"creative"}
-					creativeEffect={{
-						prev: {
-							shadow: true,
-							translate: [0, 0, -400],
-						},
-						next: {
-							translate: ["100%", 0, 0],
-						},
-					}}
-					onSwiper={setSwiper}
-					navigation={true}
-					onTouchMove={({ touches }) =>
-						!isTabletOrMobile && mouseOne(touches.currentX, touches.currentY)
-					}
-					modules={[Navigation, Pagination, EffectCreative]}
-					className="w-full swiper-con cursor-pointer h-[25rem] md:h-[50rem] 2xl:h-[70rem] overflow-hidden"
-				>
-					{data.designs.map((design, index) => (
-						<SwiperSlide key={index}>
-							<CustomLink to={"/designs/" + design.URIName}>
-								<img
-									className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
-									src={design.thumbnail}
-									alt={design.URIName}
-								/>
-							</CustomLink>
-						</SwiperSlide>
-					))}
-				</Swiper>
+			<div ref={swiperCon}>
+				<div className="px-1 md:px-20 mt-3 md:mt-5 lg:mt-20">
+					<Swiper
+						slidesPerView={1}
+						ref={swiperRef}
+						onSlideChange={() => {
+							console.log("Slide Change");
+						}}
+						loop={true}
+						grabCursor={true}
+						effect={"creative"}
+						creativeEffect={{
+							prev: {
+								shadow: true,
+								translate: [0, 0, -400],
+							},
+							next: {
+								translate: ["100%", 0, 0],
+							},
+						}}
+						onSwiper={setSwiper}
+						navigation={true}
+						onTouchMove={({ touches }) =>
+							!isTabletOrMobile && mouseOne(touches.currentX, touches.currentY)
+						}
+						modules={[Navigation, Pagination, EffectCreative]}
+						className="w-full swiper-con cursor-pointer h-[25rem] md:h-[50rem] 2xl:h-[70rem] overflow-hidden"
+					>
+						{data.designs.map((design, index) => (
+							<SwiperSlide key={index}>
+								<CustomLink to={"/designs/" + design.URIName}>
+									<img
+										className="view-design w-full h-full object-cover transition-all duration-700 hover:scale-[1.05]"
+										src={design.thumbnail}
+										alt={design.URIName}
+									/>
+								</CustomLink>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 			</div>
 		</motion.div>
 	);
