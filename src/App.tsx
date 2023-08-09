@@ -106,7 +106,7 @@ function Root() {
 				</div>
 				<button
 					id="scroll-to-top-btn"
-					className="fixed bottom-[3rem] right-[-150%] lg:bottom-[5rem] lg:right-[-150%] w-[4rem] h-[4rem] lg:w-[7rem] lg:h-[7rem] bg-white text-[black] border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
+					className="fixed bottom-[3rem] right-[-150%] 2xl:bottom-[5rem] 2xl:right-[-150%] w-[4rem] h-[4rem] lg:w-[5rem] lg:h-[5rem] 2xl:w-[7rem] 2xl:h-[7rem] bg-white text-[black] border-none rounded-full cursor-pointer mix-blend-difference transition-all duration-[1.5s] hover:bg-[#666]"
 					title="Scroll to top"
 				>
 					<svg

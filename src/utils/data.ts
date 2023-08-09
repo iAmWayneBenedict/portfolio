@@ -96,7 +96,7 @@ const data: Props = {
 			thumbnail:
 				"https://cdn.dribbble.com/userupload/8981727/file/original-7d89a233a178698a18793454aba3e4ca.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8981728/file/original-619e4d0c5d1cf7d1e61c85ba14fa51d7.webp?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/8981727/file/original-7d89a233a178698a18793454aba3e4ca.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",

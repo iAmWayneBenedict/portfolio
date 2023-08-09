@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Title from "../../../components/ui/Title.component";
+import { useEffect, useState } from "react";
 import ProjectCards from "./ProjectCards.component";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,13 +8,15 @@ import { FreeMode, Navigation } from "swiper";
 import { useRef } from "react";
 import SwiperInstance from "swiper";
 import { useMediaQuery } from "react-responsive";
-import CustomLink from "../../../components/ui/CustomLink";
 import data from "../../../utils/data";
-import { handleMouseCursor, mouseOne } from "../../../components/ui/Cursor.component";
+import { mouseOne } from "../../../components/ui/Cursor.component";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
-	// const swiper = useRef<typeof Swiper>(null);
+	gsap.registerPlugin(ScrollTrigger);
+	const title = useRef<HTMLHeadingElement>(null);
 	// let swiper: typeof Swiper | null = null;
 	const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
@@ -35,17 +36,34 @@ const Projects = () => {
 
 	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
+	useEffect(() => {
+		gsap.to(title.current, {
+			letterSpacing: 0,
+			scrollTrigger: {
+				trigger: title.current,
+				toggleActions: "restart none none reset",
+			},
+		});
+	}, []);
+
 	return (
-		<div id="projects" className="mt-48 lg:mt-96 pb-48 lg:pb-96 tracking-wide">
-			<div className="relative mx-5 md:mx-20">
-				<Title name="works" />
-				<div className="absolute bg-[black] right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
+		<div id="projects" className="mt-64 lg:mt-96 pb-48 lg:pb-96 tracking-wide">
+			<div className="relative mx-5 md:mx-20 flex justify-center">
+				{/* <Title name="works" /> */}
+				<h3
+					ref={title}
+					className="text-center"
+					style={{ fontSize: "clamp(4rem, 13vw, 12rem)", letterSpacing: ".5em" }}
+				>
+					WORKS
+				</h3>
+				{/* <div className="absolute bg-[black] right-[-5rem] bottom-[-25rem] w-[27rem] lg:w-[35rem] xl:w-[40rem] h-[23rem] lg:h-[25rem] xl:h-[30rem] hidden md:flex justify-center items-center z-5">
 					<CustomLink to="/projects" className="text-white text-lg">
 						Explore all works
 					</CustomLink>
-				</div>
+				</div> */}
 			</div>
-			<div className="flex border-t border-b-0 md:border-b border-[black] mt-40 md:mt-64 h-[30rem] md:h-[52rem] flex-col md:flex-row">
+			<div className="flex border-t border-b-0 md:border-b border-[black] mt-20 md:mt-48 h-[30rem] md:h-[52rem] flex-col md:flex-row">
 				<div className="left md:border-r border-[black] md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
 					<div className="icons flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
 						<button title="previous" type="button">

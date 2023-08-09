@@ -63,8 +63,8 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				positionRef.current.destinationMainX = mouseX;
 				positionRef.current.destinationMainY = mouseY;
 			} else {
-				positionRef.current.distanceX = (mouseX - destinationX) * 0.011;
-				positionRef.current.distanceY = (mouseY - destinationY) * 0.011;
+				positionRef.current.distanceX = (mouseX - destinationX) * 0.015;
+				positionRef.current.distanceY = (mouseY - destinationY) * 0.015;
 				positionRef.current.distanceMainX = (mouseX - destinationMainX) * 0.035;
 				positionRef.current.distanceMainY = (mouseY - destinationMainY) * 0.035;
 				if (
@@ -88,7 +88,9 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 			mainCursor.current!.style.left = `${destinationMainX + 25}px`;
 		};
 		followMouse();
-		let links = document.querySelectorAll("a, button, .swiper, label, input, textarea");
+		let links = document.querySelectorAll(
+			"a, button, .swiper, label, input, textarea, .skills"
+		);
 		let child = mainCursor.current?.firstElementChild as HTMLDivElement;
 		child.style.transform = "scale(.85)";
 		let sChild = child.nextElementSibling as HTMLElement;
@@ -110,7 +112,8 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				if (
 					currentEl.tagName === "DIV" ||
 					currentEl.classList.contains("project-con") ||
-					currentEl.classList.contains("demo")
+					currentEl.classList.contains("demo") ||
+					currentEl.classList.contains("skills")
 				) {
 					child.style.transform = "scale(5)";
 
@@ -169,6 +172,11 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				firstParent?.classList.contains("project-con") ||
 				firstParent?.parentElement?.classList.contains("project-con") ||
 				targetEl?.classList.contains("project-con");
+			let isSkills =
+				targetEl?.classList.contains("skills") ||
+				firstParent?.classList.contains("skills") ||
+				firstParent?.parentElement?.classList.contains("skills") ||
+				firstParent?.parentElement?.parentElement?.classList.contains("skills");
 
 			let isDesign = targetEl.tagName === "IMG" && targetEl.classList.contains("view-design");
 
@@ -196,6 +204,8 @@ const Cursor: React.FC<Props> = ({ categoryChanged }) => {
 				mainCursorLChild.textContent = "VIEW WORK";
 			} else if (targetEl.classList.contains("demo")) {
 				mainCursorLChild.textContent = "DEMO";
+			} else if (isSkills) {
+				mainCursorLChild.textContent = "SERVICES";
 			} else {
 				mainCursorFChild.style.background = "white";
 				mainCursorLChild.style.color = "black";

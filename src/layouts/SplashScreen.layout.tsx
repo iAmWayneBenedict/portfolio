@@ -82,7 +82,7 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 		<div className="w-full h-full flex justify-center items-center absolute top-0 left-0 bg-white z-[1000]">
 			<div className="flex flex-col items-center gap-6 relative">
 				<motion.h1
-					className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl 2xl:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]"
+					className="fixed top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 brand-logo-splash text-4xl lg:text-5xl 2xl:text-6xl font-quicksand font-extrabold pointer-events-none z-[100]"
 					transition={{
 						ease: [0.6, 0.01, -0.05, 0.95],
 						duration: 0.6,
@@ -95,9 +95,9 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 					WAYNE
 				</h1> */}
 				<div
-					className={`loader w-[10rem] md:w-[15rem] rounded-3xl h-[.3rem] md:h-[.8rem] bg-white flex items-center`}
+					className={`loader w-[8rem] md:w-[10rem] xl:w-[12rem] 2xl:w-[15rem] rounded-3xl h-[.5rem] lg:h-[.7rem] 2xl:h-[.8rem] bg-white flex items-center`}
 				>
-					<div className="loader-fill animate-splashScreen bg-[black] h-[0.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
+					<div className="loader-fill animate-splashScreen bg-[black] h-[.5rem] lg:h-[.7rem] 2xl:h-[.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
 						<div className="loader-fill-curtain bg-white opacity-0 w-[1px] h-[1px] z-[50]"></div>
 					</div>
 				</div>
