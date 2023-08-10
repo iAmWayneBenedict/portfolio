@@ -13,6 +13,7 @@ import { mouseOne } from "../../../components/ui/Cursor.component";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomEase from "gsap/CustomEase";
+import CustomLink from "../../../components/ui/CustomLink";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
@@ -142,7 +143,7 @@ const Projects = () => {
 	}, []);
 
 	return (
-		<div id="projects" className="mt-64 lg:mt-96 pb-48 lg:pb-96 tracking-wide">
+		<div id="projects" className="mt-64 lg:mt-96 pb-0 sm:pb-48 lg:pb-96 tracking-wide">
 			<div className="relative mx-5 md:mx-20 flex justify-center">
 				{/* <Title name="works" /> */}
 				<h3
@@ -163,9 +164,9 @@ const Projects = () => {
 				{!isTabletOrMobile && (
 					<div className="line2 absolute bottom-0 left-0 bg-black w-full h-[1px]"></div>
 				)}
-				<div className="left relative md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
+				<div className="left relative md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0 mt-5 md:mt-0">
 					<div className="line3 absolute top-0 right-0 bg-black w-[1px] h-full"></div>
-					<div className="icons flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
+					<div className="icons hidden md:flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
 						<button title="previous" type="button">
 							<img
 								onClick={() => goPrev()}
@@ -214,6 +215,14 @@ const Projects = () => {
 						))}
 					</Swiper>
 				</div>
+			</div>
+			<div className="flex md:hidden justify-center mt-20">
+				<CustomLink
+					to="/works"
+					className="bg-black text-white py-2 px-6 rounded-3xl text-sm w-fit"
+				>
+					View all works
+				</CustomLink>
 			</div>
 		</div>
 	);
