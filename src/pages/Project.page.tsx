@@ -225,7 +225,7 @@ const Project = () => {
 			</div> */}
 			<div
 				ref={imgCon}
-				className="w-full px-5 md:px-20 transition-opacity ease duration-1000 overflow-x-hidden"
+				className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 transition-opacity ease duration-1000 overflow-x-hidden"
 			>
 				<div className="flex flex-col items-center">
 					<div className="w-full flex justify-center">
@@ -238,7 +238,7 @@ const Project = () => {
 					</div>
 					<div
 						ref={links}
-						className="flex gap-4 md:gap-10 mt-4 md:mt-10 text-xs md:text-base"
+						className="flex gap-4 md:gap-10 mt-4 lg:mt-7 2xl:mt-10 text-xs md:text-base"
 					>
 						<Link
 							to={filteredItem[0]?.githubLink || ""}
@@ -291,7 +291,7 @@ const Project = () => {
 					<div className="mt-16 sm:mt-24 2xl:mt-32">
 						<p
 							ref={overview}
-							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-2xl"
+							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-xl 2xl:text-2xl"
 						>
 							{filteredItem[0].description ||
 								"Lorem ipsum dolor sit amet consectetur. Mi\
@@ -301,7 +301,7 @@ const Project = () => {
 														metus eleifend molestie bibendum."}
 						</p>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-10">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-7 2xl:mt-10">
 						{filteredItem[0]?.images.map((current: ImageProps, index: number) => {
 							console.log(
 								index % 3 === 0 && !isMobileView ? "col-span-2" : "col-span-1"
@@ -372,7 +372,7 @@ const Project = () => {
 																? "THE PROJECT PURPOSE"
 																: "THE DESIGN PROCESS"}
 														</h5>
-														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
 															{filteredItem[0].purpose ||
 																"Lorem ipsum dolor sit amet consectetur. Mi\
 														nec scelerisque et venenatis suspendisse\
@@ -389,13 +389,13 @@ const Project = () => {
 									{index !== 0 &&
 										index % 3 === 0 &&
 										location.pathname.includes("projects") && (
-											<div className="w-full flex flex-col xl:flex-row">
+											<div className="w-full flex flex-col xl:flex-row gap-0 xl:gap-10">
 												<div className="flex-1">
 													<div className="mt-14 max-w-2xl">
 														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 															KEY FEATURES
 														</h5>
-														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
 															{filteredItem[0].key_features ||
 																"Lorem ipsum dolor sit amet consectetur. Mi\
 														nec scelerisque et venenatis suspendisse\
@@ -440,7 +440,7 @@ const Project = () => {
 												<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 													REFLECTION AND LEARNING
 												</h5>
-												<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl">
+												<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
 													{filteredItem[0].key_features ||
 														"Lorem ipsum dolor sit amet consectetur. Mi\
 														nec scelerisque et venenatis suspendisse\
@@ -459,11 +459,11 @@ const Project = () => {
 			</div>
 			<div className="w-full flex flex-col pt-12">
 				{location.pathname.includes("projects") && (
-					<div className="px-5 md:px-20 mt-14 max-w-2xl transition-opacity ease duration-1000">
+					<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 mt-14 max-w-2xl transition-opacity ease duration-1000">
 						<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 							ROLES AND RESPONSIBILITIES
 						</h5>
-						<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-2xl text-[black]">
+						<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl text-[black]">
 							{filteredItem[0].roles_and_responsibilities ||
 								"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis\
 						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis\

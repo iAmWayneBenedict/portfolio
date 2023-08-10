@@ -181,11 +181,11 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 				<meta name="description" content="Discover all projects" />
 				<link rel="canonical" href="/projects" />
 			</Helmet>
-			<div className="mx-5 md:mx-24" ref={imgCon}>
+			<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24" ref={imgCon}>
 				<div className="mt-32 2xl:mt-48">
 					<h1
 						className="text-8xl overflow-hidden pb-2"
-						style={{ fontSize: "clamp(2rem, 10vw, 6rem)" }}
+						style={{ fontSize: "clamp(2rem, 7vw, 6rem)" }}
 					>
 						<div ref={titlePage}>All Works</div>
 					</h1>
@@ -193,7 +193,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 						key={"activeHandler"}
 						data-active="all"
 						ref={activeHandler}
-						className="mt-12 md:mt-16 flex flex-row flex-wrap gap-3 md:gap-10 "
+						className="mt-12 md:mt-16 flex flex-row flex-wrap gap-3 md:gap-6 2xl:gap-10 "
 					>
 						{categoryData.map(([value, name], index) => {
 							return (

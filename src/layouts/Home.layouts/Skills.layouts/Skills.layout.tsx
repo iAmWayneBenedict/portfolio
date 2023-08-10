@@ -109,11 +109,11 @@ const Skills = () => {
 					<div className="mx-5 md:mx-20 py-14 lg:py-20">
 						<h4
 							className="max-w-4xl mb-20 lg:mb-28 md:mb-40"
-							style={{ fontSize: "clamp(1.6rem, 5vw, 3.5rem)" }}
+							style={{ fontSize: "clamp(1.4rem, 5vw, 3.5rem)" }}
 						>
 							SERVICES OFFERED FOR YOUR BUSINESS NEEDS
 						</h4>
-						<div className="flex flex-col gap-20 skills">
+						<div className="flex flex-col gap-14 md:gap-20 skills">
 							{SKILLS_LIST.map((el, index) => (
 								<Skill
 									key={index}

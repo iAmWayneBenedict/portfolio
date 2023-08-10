@@ -14,7 +14,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 	}
 
 	return (
-		<div className={`${classes} mt-40 pt-48 pb-20 px-5 md:px-20 lg:px-24`}>
+		<div className={`${classes} mt-40 pt-48 pb-4 2xl:pb-20 px-5 sm:px-8 md:px-12 xl:px-16 `}>
 			<div className={`flex justify-between flex-col lg:flex-row`}>
 				<div>
 					<CustomLink to="/contact" className="group">
@@ -36,7 +36,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 							/>
 						</h1>
 					</CustomLink>
-					<div className="mt-36 flex flex-col gap-10 text-lg ">
+					<div className="mt-20 2xl:mt-36 flex flex-col gap-5 md:gap-10 text-base md:text-lg ">
 						<p className="md:text-left text-center">Open for Collaboration</p>
 						<p className="md:text-left text-center">Available for Freelance Work</p>
 					</div>
@@ -67,7 +67,7 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 					</Link>
 				</div>
 			</div>
-			<div className="mt-36 pb-10 lg:mt-56 flex justify-between text-sm sm:text-base">
+			<div className="mt-24 md:mt-36 pb-10 2xl:mt-56 flex justify-between text-sm sm:text-base">
 				<div>
 					<Link to="#">Terms and Conditions</Link>
 				</div>

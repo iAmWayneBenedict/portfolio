@@ -107,11 +107,11 @@ const Timeline = () => {
 				<link rel="canonical" href="/timeline" />
 			</Helmet>
 			<div className="pt-48 sm:pt-56 2xl:pt-96">
-				<div className="px-5 md:px-24 text-white">
+				<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 text-white">
 					<h1
 						ref={title}
 						className="overflow-hidden block relative max-w-7xl font-light"
-						style={{ fontSize: `clamp(2.5rem, 8vw, 5rem)` }}
+						style={{ fontSize: `clamp(2.5rem, 5.5vw, 5rem)` }}
 					>
 						<p className="title-text leading-1 uppercase">
 							Nurturing breakthroughs into a foundation for growth.
@@ -127,9 +127,9 @@ const Timeline = () => {
 				>
 					<tbody className="text-white">
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
-							<td className="py-10 px-5 md:px-20 hidden lg:flex flex-col w-[25rem]">
-								<h1 className="text-6xl font-bold h-full">2023</h1>
-								<h1 className="text-xl h-full mt-5">March - June</h1>
+							<td className="py-10 px-5 pl-20 pr-14 2xl:px-20 hidden lg:flex flex-col w-[22rem] 2xl:w-[25rem]">
+								<h1 className="text-5xl 2xl:text-6xl font-bold h-full">2023</h1>
+								<h1 className="text-lg 2xl:text-xl h-full mt-5">March - June</h1>
 							</td>
 							<td className="py-10 px-5 md:px-20 border-0 md:border-y-[1px] border-l-[1px] border-[#4F4F4F]">
 								<div className="w-full flex justify-end">
@@ -140,23 +140,106 @@ const Timeline = () => {
 								<h1 className="mb-3 text-3xl md:text-6xl font-bold h-full block md:hidden">
 									2023
 								</h1>
-								<h3 className="text-3xl md:text-5xl">Web Developer</h3>
-								<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
+								<h3 className="text-3xl xl:text-4xl 2xl:text-5xl">
+									Lead Developer | Front end Developer
+								</h3>
+								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									Department of Information and Communication Technology Region V
 									Camarines Sur Provincial Office
 								</h5>
-								<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Dignissimos velit fugit alias, ab nisi ducimus, minus facilis
-									exercitationem nam deserunt recusandae adipisci nesciunt,
-									voluptates non. Ea aliquid corrupti numquam culpa.
+								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
+									<ul className="list-disc flex flex-col gap-5 ml-5">
+										<li>
+											<p>
+												Spearheaded the creation and design of the primary
+												website for DICT R5 - Camarines Sur. Developed a
+												visually appealing and user-friendly interface,
+												incorporating dynamic content for landing pages,
+												users, and admin pages. Ensured a seamless user
+												experience and strong visual impact.
+											</p>
+										</li>
+										<li>
+											<p>
+												Planned, managed, and instructed packages and APIs
+												to co-developers. Facilitated effective
+												collaboration and maintained a cohesive development
+												process, ensuring seamless integration of components
+												and efficient project execution.
+											</p>
+										</li>
+										<li>
+											<p>
+												Manage multiple tasks, possess a variety of skills,
+												and be detail-oriented and organized to effectively
+												perform website development, project management, and
+												customer support duties.
+											</p>
+										</li>
+									</ul>
 								</p>
 							</td>
 						</tr>
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
-							<td className="py-10 px-5 md:px-20 hidden lg:flex flex-col w-[25rem]">
-								<h1 className="text-6xl font-bold h-full">2023</h1>
-								<h1 className="text-xl h-full mt-5">August 2019 - July 2023</h1>
+							<td className="py-10 px-5 pl-20 pr-14 2xl:px-20 hidden lg:flex flex-col w-[22rem] 2xl:w-[25rem]">
+								<h1 className="text-5xl 2xl:text-6xl font-bold h-full">2023</h1>
+								<h1 className="text-lg 2xl:text-xl h-full mt-5">
+									January 2022 - February 2023
+								</h1>
+							</td>
+							<td className="py-10 px-5 md:px-20 border-0 md:border-y-[1px] border-l-[1px] border-[#4F4F4F]">
+								<div className="w-full flex justify-end">
+									<h6 className="text-xl md:text-2xl italic text-[#858585] hidden md:block">
+										Capstone
+									</h6>
+								</div>
+								<h1 className="mb-3 text-3xl md:text-6xl font-bold h-full block md:hidden">
+									2023
+								</h1>
+								<h3 className="text-3xl xl:text-4xl 2xl:text-5xl">
+									Project Head | Front end Developer | QA Tester
+								</h3>
+								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
+									Municipal Agriculture Office of Bato - <i>Capstone Project</i>
+								</h5>
+								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
+									<ul className="list-disc flex flex-col gap-5 ml-5">
+										<li>
+											<p>
+												Led a team of four in developing a capstone project
+												for the Municipal Agriculture Office of Bato,
+												delivering an Appointment Scheduling System and
+												Stocks Inventory to enhance efficiency and support
+												staff and client interactions.
+											</p>
+										</li>
+										<li>
+											<p>
+												Designed intuitive user interfaces to facilitate
+												seamless interactions between end users and the
+												developed system, ensuring a user-friendly
+												experience and maximizing usability
+											</p>
+										</li>
+										<li>
+											<p>
+												Conducted thorough manual and automated testing
+												using Apache JMeter, iterating on the system to meet
+												project requirements and align with stakeholders'
+												needs, while consistently improving functionality
+												and performance.
+											</p>
+										</li>
+									</ul>
+								</p>
+							</td>
+						</tr>
+						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
+							<td className="py-10 px-5 pl-20 pr-14 2xl:px-20 hidden lg:flex flex-col w-[22rem] 2xl:w-[25rem]">
+								<h1 className="text-5xl 2xl:text-6xl font-bold h-full">2023</h1>
+								<h1 className="text-lg 2xl:text-xl h-full mt-5">
+									August 2019 - July 2023
+								</h1>
 							</td>
 							<td className="py-10 px-5 md:px-20 border-0 md:border-y-[1px] border-l-[1px] border-[#4F4F4F]">
 								<div className="w-full flex justify-end">
@@ -167,13 +250,13 @@ const Timeline = () => {
 								<h1 className="mb-3 text-3xl md:text-6xl font-bold h-full block md:hidden">
 									2023
 								</h1>
-								<h3 className="text-3xl md:text-5xl">
+								<h3 className="text-3xl xl:text-4xl 2xl:text-5xl">
 									BS in Information Technology
 								</h3>
-								<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
+								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									Camarines Sur Polytechnic Colleges
 								</h5>
-								<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
+								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
 									Dignissimos velit fugit alias, ab nisi ducimus, minus facilis
 									exercitationem nam deserunt recusandae adipisci nesciunt,
@@ -182,9 +265,11 @@ const Timeline = () => {
 							</td>
 						</tr>
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
-							<td className="py-10 px-5 md:px-20 hidden lg:flex flex-col w-[25rem]">
-								<h1 className="text-6xl font-bold h-full">2019</h1>
-								<h1 className="text-xl h-full mt-5">July 2017 - May 2019</h1>
+							<td className="py-10 px-5 pl-20 pr-14 2xl:px-20 hidden lg:flex flex-col w-[22rem] 2xl:w-[25rem]">
+								<h1 className="text-5xl 2xl:text-6xl font-bold h-full">2023</h1>
+								<h1 className="text-lg 2xl:text-xl h-full mt-5">
+									July 2017 - May 2019
+								</h1>
 							</td>
 							<td className="py-10 px-5 md:px-20 border-0 md:border-y-[1px] border-l-[1px] border-[#4F4F4F]">
 								<div className="w-full flex justify-end">
@@ -195,11 +280,13 @@ const Timeline = () => {
 								<h1 className="mb-3 text-3xl md:text-6xl font-bold h-full block md:hidden">
 									2019
 								</h1>
-								<h3 className="text-3xl md:text-5xl">General Academic Strand</h3>
-								<h5 className="text-sm xl:text-lg text-[#858585] max-w-5xl">
+								<h3 className="text-3xl xl:text-4xl 2xl:text-5xl">
+									General Academic Strand
+								</h3>
+								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									ACLC College of Iriga, Inc.
 								</h5>
-								<p className="mt-5 max-w-5xl text-base xl:text-xl text-[#d8d8d8]">
+								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
 									Dignissimos velit fugit alias, ab nisi ducimus, minus facilis
 									exercitationem nam deserunt recusandae adipisci nesciunt,
