@@ -42,6 +42,7 @@ const Projects = () => {
 	useEffect(() => {
 		gsap.to(title.current, {
 			letterSpacing: 0,
+			duration: 0.75,
 			scrollTrigger: {
 				trigger: title.current,
 			},
@@ -88,7 +89,7 @@ const Projects = () => {
 			},
 			{
 				width: "100%",
-				duration: 1,
+				duration: 1.5,
 				scrollTrigger: {
 					trigger: ".mousedrag",
 					start: "top bottom",
@@ -102,7 +103,7 @@ const Projects = () => {
 			},
 			{
 				width: "100%",
-				duration: 1,
+				duration: 1.5,
 				delay: 1.2,
 				scrollTrigger: {
 					trigger: ".mousedrag",
@@ -117,7 +118,7 @@ const Projects = () => {
 			},
 			{
 				height: "100%",
-				duration: 1,
+				duration: 1.5,
 				delay: 0.2,
 				scrollTrigger: {
 					trigger: ".mousedrag",

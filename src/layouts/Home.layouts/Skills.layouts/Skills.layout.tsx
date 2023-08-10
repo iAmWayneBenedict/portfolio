@@ -36,6 +36,7 @@ const Skills = () => {
 		if (isTabletOrMobile) return;
 		gsap.to(skillOpening.current!.firstElementChild!.firstElementChild, {
 			paddingRight: "10vw",
+			duration: 0.5,
 			scrollTrigger: {
 				trigger: skillOpening.current,
 				start: "top bottom",
@@ -43,6 +44,7 @@ const Skills = () => {
 		});
 		gsap.to(skillOpening.current!.lastElementChild!.lastElementChild, {
 			paddingLeft: "10vw",
+			duration: 0.5,
 			scrollTrigger: {
 				trigger: skillOpening.current,
 				start: "top bottom",
