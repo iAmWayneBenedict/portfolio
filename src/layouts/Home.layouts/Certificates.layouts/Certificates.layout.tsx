@@ -41,7 +41,7 @@ const Certificates = () => {
 				<div className="px-5 sm:px-12 lg:px-28 flex flex-col w-full h-full">
 					<div className="relative flex justify-center">
 						{/*<Title name="Certificates" overrideConClasses="pt-20" />*/}
-						<h1 className="text-5xl sm:text-6xl lg:text-8xl font-inter uppercase tracking-wider mt-20">
+						<h1 className="text-5xl sm:text-6xl lg:text-8xl font-inter uppercase tracking-normal md:tracking-wider mt-20">
 							Certificates
 						</h1>
 					</div>

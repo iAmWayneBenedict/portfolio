@@ -23,7 +23,6 @@ const Skill: React.FC<Props> = ({ el, index, SKILLS_LIST }) => {
 			scrollTrigger: {
 				trigger: con.current,
 				start: "top center",
-				toggleActions: "restart none none reset",
 			},
 		});
 
