@@ -185,7 +185,7 @@ const Projects: React.FC<Props> = ({ setCategoryChanged }) => {
 				<div className="mt-32 2xl:mt-48">
 					<h1
 						className="text-8xl overflow-hidden pb-2"
-						style={{ fontSize: "clamp(2rem, 7vw, 6rem)" }}
+						style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}
 					>
 						<div ref={titlePage}>All Works</div>
 					</h1>
