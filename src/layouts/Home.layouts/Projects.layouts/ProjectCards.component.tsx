@@ -56,7 +56,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">
 				<span className="text-sm md:text-lg font-bold">{title}</span>
-				<div>
+				{/* <div>
 					<Link
 						to={src || "/"}
 						target="_blank"
@@ -69,7 +69,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 							{src && "Live Demo"}
 						</div>
 					</Link>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
