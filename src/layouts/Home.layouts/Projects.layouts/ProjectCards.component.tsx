@@ -2,13 +2,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React from "react";
 import { useRef, useEffect } from "react";
-import SplitType from "split-type";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link, useNavigate } from "react-router-dom";
 import CustomLink from "../../../components/ui/CustomLink";
 import { useMediaQuery } from "react-responsive";
+import CustomEase from "gsap/CustomEase";
 
 interface Props {
 	title?: string;
@@ -27,6 +26,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 	// const dLink = new SplitType(demoLink.current!);
 
 	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(CustomEase);
 
 	const handleMouseOver = (event: React.MouseEvent) => {};
 	const handleMouseLeave = (event: React.MouseEvent) => {};
@@ -37,7 +37,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 			<div
 				ref={slide}
 				onClick={() => hiddenAnchor.current?.click()}
-				className="slide-hover-effect w-full h-full basis-11/12 overflow-hidden"
+				className="slide-hover-effect slider-image-con w-full h-full basis-11/12 overflow-hidden relative"
 			>
 				<CustomLink reference={hiddenAnchor} to={"/projects/" + URIName} />
 				<img
@@ -52,6 +52,7 @@ const ProjectCards: React.FC<Props> = ({ title, image, src, URIName }) => {
 						transition: "all 1s ease",
 					}}
 				/>
+				<div className="image-slider-overlay absolute bottom-0 left-0 bg-white h-full w-full duration-1000 ease-out"></div>
 			</div>
 			<div className="basis-1/12 flex items-center justify-between">
 				<span className="text-sm md:text-lg font-bold">{title}</span>

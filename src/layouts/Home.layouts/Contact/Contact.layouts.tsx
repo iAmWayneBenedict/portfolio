@@ -18,10 +18,10 @@ export const ContactLayouts: React.FC<Props> = ({ classes = "bg-[black] text-whi
 			<div className={`flex justify-between flex-col lg:flex-row`}>
 				<div>
 					<CustomLink to="/contact" className="group">
-						<h1 className="flex justify-center md:justify-start">
+						<h1 className="flex justify-center items-center md:justify-start">
 							<span
 								className="font-light font-neueMontrealRegular text-center"
-								style={{ fontSize: "clamp(3.75rem, 10vw, 10rem)" }}
+								style={{ fontSize: "clamp(3.3rem, 10vw, 10rem)" }}
 							>
 								Let’s talk.
 							</span>
