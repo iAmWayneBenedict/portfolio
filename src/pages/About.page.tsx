@@ -61,7 +61,7 @@ const About = () => {
 			el.classList.add("relative");
 			el.classList.add("overflow-hidden");
 			span.className =
-				"bg absolute -rotate-6 -top-[120%] -left-[100%] w-[500%] h-[100rem] bg-[black]";
+				"bg absolute -rotate-6 -top-[150%] -left-[100%] w-[500%] h-[100rem] bg-[black]";
 			el.appendChild(span);
 		});
 		const bgs = gsap.utils.toArray(titleComponents.lines!.map((el) => el.lastElementChild));
@@ -128,7 +128,7 @@ const About = () => {
 					<h1
 						ref={title}
 						className="overflow-hidden block relative max-w-7xl font-light"
-						style={{ fontSize: `clamp(2.75rem, 6vw, 6rem)` }}
+						style={{ fontSize: `clamp(2.75rem, 4.75vw, 6rem)` }}
 					>
 						<p className="title-text text-right">
 							Developing extraordinary digital outcomes, today and for the years
@@ -139,14 +139,14 @@ const About = () => {
 				<div ref={body} className="px-5 md:px-24 ">
 					<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 						<div className="flex-1 max-w-4xl">
-							<p className="text-lg lg:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
+							<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
 								Wayne Benedict Iraola consectetur. Mi nec scelerisque et venenatis
 								suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
 								Magnis interdum turpis in nec metus eleifend molestie bibendum.
 							</p>
 						</div>
 						<div className="flex-1 mt-36 lg:mt-0 flex flex-col items-end max-w-3xl">
-							<span className="text-5xl md:text-6xl text-right font-semibold text-gray-400">
+							<span className="text-5xl 2xl:text-6xl text-right font-semibold text-gray-400">
 								<span className="font-cinzel">“</span>Make it simple, but
 								significant. <span className="font-cinzel">”</span>
 							</span>
@@ -157,7 +157,7 @@ const About = () => {
 						<h1 className="text-4xl lg:text-6xl font-semibold mb-14 leading-snug">
 							AWARDS AND <br /> CERTIFICATIONS
 						</h1>
-						<p className="text-lg md:text-xl mb-24 max-w-4xl">
+						<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl  mb-24 max-w-4xl">
 							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
 							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
 							Magnis interdum turpis in nec metus eleifend molestie bibendum.
@@ -165,18 +165,20 @@ const About = () => {
 
 						{AWARDS_LIST.map(([name, year], index) => (
 							<div
-								className={`py-10 gap-5 px-5 md:px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
+								className={`py-7 2xl:py-10 gap-5 px-5 md:px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
 									AWARDS_LIST.length - 1 === index &&
 									"border-b-[1px] border-b-[#4F4F4F]"
 								}`}
 							>
-								<div className="text-lg md:text-2xl">{name}</div>
-								<div className="text-xl md:text-3xl font-semibold">{year}</div>
+								<div className="text-lg md:text-xl 2xl:text-2xl">{name}</div>
+								<div className="text-xl md:text-2xl 2xl:text-3xl font-semibold">
+									{year}
+								</div>
 							</div>
 						))}
 					</div>
 					<div className="w-full mt-64">
-						<p className="text-lg md:text-2xl leading-normal md:leading-relaxed text-center">
+						<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl  leading-normal md:leading-relaxed text-center">
 							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
 							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
 							Magnis interdum turpis in nec metus eleifend molestie bibendum.

@@ -10,12 +10,14 @@ import SwiperInstance from "swiper";
 import { useMediaQuery } from "react-responsive";
 import data from "../../../utils/data";
 import { mouseOne } from "../../../components/ui/Cursor.component";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CustomEase from "gsap/CustomEase";
 
 // SwiperCore.use([Navigation]);
 const Projects = () => {
 	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(CustomEase);
 	const title = useRef<HTMLHeadingElement>(null);
 	// let swiper: typeof Swiper | null = null;
 	const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
@@ -41,9 +43,102 @@ const Projects = () => {
 			letterSpacing: 0,
 			scrollTrigger: {
 				trigger: title.current,
-				toggleActions: "restart none none reset",
 			},
 		});
+
+		const imgSlides = gsap.utils.toArray(".image-slider-overlay");
+		let delay = 0.5;
+		imgSlides.forEach((el, index) => {
+			const element = el as HTMLDivElement;
+			delay += 0.3;
+			gsap.to(element, {
+				duration: 1,
+				height: 0,
+				delay,
+				ease: CustomEase.create(
+					"custom",
+					"M0,0,C0.084,0.61,0.106,0.822,0.172,0.876,0.248,0.938,0.374,1,1,1"
+				),
+				scrollTrigger: {
+					trigger: element.parentElement,
+					start: "top center",
+				},
+			});
+
+			gsap.fromTo(
+				element.parentElement!.nextElementSibling,
+				{ opacity: 0 },
+				{
+					opacity: 1,
+					duration: 1,
+					delay,
+					scrollTrigger: {
+						trigger: element.parentElement,
+						start: "top center",
+					},
+				}
+			);
+		});
+
+		gsap.fromTo(
+			".line1",
+			{
+				width: 0,
+			},
+			{
+				width: "100%",
+				duration: 1,
+				scrollTrigger: {
+					trigger: ".mousedrag",
+					start: "top bottom",
+				},
+			}
+		);
+		gsap.fromTo(
+			".line2",
+			{
+				width: 0,
+			},
+			{
+				width: "100%",
+				duration: 1,
+				delay: 1.2,
+				scrollTrigger: {
+					trigger: ".mousedrag",
+					start: "top bottom",
+				},
+			}
+		);
+		gsap.fromTo(
+			".line3",
+			{
+				height: 0,
+			},
+			{
+				height: "100%",
+				duration: 1,
+				delay: 0.2,
+				scrollTrigger: {
+					trigger: ".mousedrag",
+					start: "top bottom",
+				},
+			}
+		);
+		gsap.fromTo(
+			".icons",
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 1,
+				delay: 1.2,
+				scrollTrigger: {
+					trigger: ".icons",
+					start: "top bottom",
+				},
+			}
+		);
 	}, []);
 
 	return (
@@ -63,8 +158,13 @@ const Projects = () => {
 					</CustomLink>
 				</div> */}
 			</div>
-			<div className="flex border-t border-b-0 md:border-b border-[black] mt-20 md:mt-48 h-[30rem] md:h-[52rem] flex-col md:flex-row">
-				<div className="left md:border-r border-[black] md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
+			<div className="flex mt-20 md:mt-48 h-[30rem] md:h-[52rem] flex-col md:flex-row relative">
+				<div className="line1 absolute top-0 left-0 bg-black w-full h-[1px]"></div>
+				{!isTabletOrMobile && (
+					<div className="line2 absolute bottom-0 left-0 bg-black w-full h-[1px]"></div>
+				)}
+				<div className="left relative md:w-[208px] flex flex-row md:flex-col justify-between md:justify-start items-center px-5 md:px-0">
+					<div className="line3 absolute top-0 right-0 bg-black w-[1px] h-full"></div>
 					<div className="icons flex justify-around mt-8 mb-10 gap-7 order-2 md:order-1">
 						<button title="previous" type="button">
 							<img

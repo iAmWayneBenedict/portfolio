@@ -23,8 +23,8 @@ const Category: React.FC<Props> = ({ index, name, value, categoryData }) => {
 	}, []);
 	return (
 		<div
-			className="flex flex-row items-center gap-3 md:gap-10 relative overflow-hidden"
-			style={{ fontSize: "clamp(1.25rem, 2.25vw, 2.25rem)" }}
+			className="flex flex-row items-center gap-3 md:gap-8 2xl:gap-10 relative overflow-hidden"
+			style={{ fontSize: "clamp(1.25rem, 1.75vw, 2.25rem)" }}
 			key={index + name}
 		>
 			<button
@@ -37,11 +37,11 @@ const Category: React.FC<Props> = ({ index, name, value, categoryData }) => {
 				<span className="absolute top-0 -right-[1rem] text-xs md:text-base">({count})</span>
 			</button>
 			{index !== categoryData.length - 1 ? (
-				<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[40px]">
+				<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[30px] 2xl:w-[40px]">
 					<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-[black]"></div>
 				</div>
 			) : (
-				<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[40px]">
+				<div className="h-[1px] md:h-[3px] w-[20px] lg:w-[30px] 2xl:w-[40px]">
 					<div className="line-category h-full w-full transition-opacity duration-250 ease-linear bg-transparent"></div>
 				</div>
 			)}

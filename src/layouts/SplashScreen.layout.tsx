@@ -95,9 +95,9 @@ const SplashScreen: React.FC<Props> = ({ setIsLoaded }) => {
 					WAYNE
 				</h1> */}
 				<div
-					className={`loader w-[8rem] md:w-[10rem] xl:w-[12rem] 2xl:w-[15rem] rounded-3xl h-[.5rem] lg:h-[.7rem] 2xl:h-[.8rem] bg-white flex items-center`}
+					className={`loader w-[8rem] md:w-[10rem] xl:w-[12rem] 2xl:w-[15rem] rounded-3xl h-[.7rem] 2xl:h-[.8rem] bg-white flex items-center`}
 				>
-					<div className="loader-fill animate-splashScreen bg-[black] h-[.5rem] lg:h-[.7rem] 2xl:h-[.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
+					<div className="loader-fill animate-splashScreen bg-[black] h-[.7rem] 2xl:h-[.8rem] rounded-3xl transition-[width] duration-[5000] flex items-center justify-center">
 						<div className="loader-fill-curtain bg-white opacity-0 w-[1px] h-[1px] z-[50]"></div>
 					</div>
 				</div>

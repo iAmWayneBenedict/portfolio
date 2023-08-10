@@ -191,22 +191,22 @@ const Contact = () => {
 				<link rel="canonical" href="/contact" />
 			</Helmet>
 			<div className="pt-48 sm:pt-56 2xl:pt-96 text-white pb-10">
-				<div className="px-5 md:px-24">
+				<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24">
 					<h1
 						ref={title}
 						className="overflow-hidden block relative max-w-7xl font-light"
-						style={{ fontSize: `clamp(3rem, 6.75vw, 6rem)` }}
+						style={{ fontSize: `clamp(3rem, 5.5vw, 6rem)` }}
 					>
 						<p className="title-text leading-1">
 							LET’S CONNECT AND GET TO KNOW EACH OTHER
 						</p>
 					</h1>
-					<p className="mt-16 text-base lg:text-xl">
+					<p className="mt-16 text-base lg:text-lg 2xl:text-xl">
 						Let me help you become even greater at what you do.
 					</p>
 				</div>
 				<div ref={formCon} className="w-full flex flex-col gap-48 lg:flex-row lg:gap-0">
-					<div className="px-5 md:px-24 flex-1 max-w-6xl">
+					<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 flex-1 max-w-6xl">
 						<form
 							onSubmit={(event) => submitHandler(event)}
 							action=""
@@ -270,13 +270,13 @@ const Contact = () => {
 					<div className="px-5 md:px-24 flex flex-col gap-36 items-end flex-1 mt-20">
 						<div className="flex flex-col gap-10 items-end">
 							<h1
-								style={{ fontSize: "clamp(1.5rem, 6vw, 2.25rem)" }}
+								style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)" }}
 								className="text-right"
 							>
 								Open for collaboration
 							</h1>
 							<h1
-								style={{ fontSize: "clamp(1.5rem, 6vw, 2.25rem)" }}
+								style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)" }}
 								className="text-right"
 							>
 								Available for freelance work
@@ -285,7 +285,7 @@ const Contact = () => {
 						<div className="flex flex-col gap-3 items-end">
 							<p className="text-gray-400">Directly drop me a line</p>
 							<Link
-								style={{ fontSize: "clamp(1.25rem, 6vw, 1.875rem)" }}
+								style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.875rem)" }}
 								to="mailto:wayneb.iraola@outlook.com"
 							>
 								<h2>wayneb.iraola@outlook.com</h2>
