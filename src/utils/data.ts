@@ -78,12 +78,17 @@ const data: Props = {
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/9239912/file/original-f0bcad40158e0f4b57650804227137de.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9241829/file/original-88993ff6b02bf381bf10ee227bbdb22a.png?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/9239913/file/original-83764e8dd9d633f4a007a236118517eb.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239912/file/original-636bf67a0ac5943e2e3322f31294e63a.png?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/9239913/file/original-29be57d73c28d097d2fbd4b96aa516a7.png?resize=1600x1034",
 					description: "",
 				},
 			],
