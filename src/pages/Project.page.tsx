@@ -387,7 +387,7 @@ const Project = () => {
 									)}
 
 									{index !== 0 &&
-										index % 3 === 0 &&
+										index === 3 &&
 										location.pathname.includes("projects") && (
 											<div className="w-full flex flex-col xl:flex-row gap-0 xl:gap-10">
 												<div className="flex-1">
