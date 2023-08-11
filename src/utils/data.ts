@@ -34,52 +34,56 @@ interface Props {
 const data: Props = {
 	projects: [
 		{
-			name: "RastaFoods",
-			URIName: "rastafoods",
+			name: "DICT Management System",
+			URIName: "dict-management-system",
 			categoryType: "projects",
-			category: ["branding"],
-			status: "ongoing",
-			categoryDescription: "RastaFoods Brand Ecosystem",
-			description:
-				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
-			purpose:
-				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
-			key_features:
-				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
-			roles_and_responsibilities:
-				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
-			technologies: ["react, mongodb, express, nodejs, tailwindss"],
+			category: ["community-projects"],
 			type: "UI/UX Design, Development",
-			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
-			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
+			dribbleLink:
+				"https://dribbble.com/shots/22251731-ICT-Diagnostic-Examination-Management-System",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982554/file/original-c969bb6fd653545b7a8cc8c52fae5f3b.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239915/file/original-7c0623ba1338003ab45df41523a5c6a9.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982551/file/original-1eea638b4c915e851c6dc583dcfb9050.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239918/file/original-0e097a5853f456d1c6b40245839641c1.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982550/file/original-bca95c8a716a8a0bc63cc03dc6546338.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239917/file/original-be86749fcc4e82028648d7066fc7c3cd.webp?resize=1600x1034",
 					description: "",
 				},
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/8982552/file/original-40078b7eb8115fe9f535e2c0ed6a5997.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239919/file/original-c32c1714f202d69cfe745dff3b27799f.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/9239916/file/original-3c6fbb80f3ff8a455eae3ae99b637f45.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/9239912/file/original-f0bcad40158e0f4b57650804227137de.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/9239913/file/original-83764e8dd9d633f4a007a236118517eb.webp?resize=1600x1034",
 					description: "",
 				},
 			],
@@ -130,6 +134,58 @@ const data: Props = {
 				},
 			],
 		},
+		{
+			name: "RastaFoods",
+			URIName: "rastafoods",
+			categoryType: "projects",
+			category: ["branding"],
+			status: "ongoing",
+			categoryDescription: "RastaFoods Brand Ecosystem",
+			description:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			purpose:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			key_features:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			roles_and_responsibilities:
+				"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis interdum turpis in nec metus eleifend molestie bibendum.",
+			technologies: ["react, mongodb, express, nodejs, tailwindss"],
+			type: "UI/UX Design, Development",
+			dribbleLink: "https://dribbble.com/shots/21744356-RastaFoods",
+			githubLink: "https://github.com/iAmWayneBenedict/rastafoods",
+			thumbnail:
+				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+			thumbnail_small:
+				"https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+			images: [
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8982553/file/original-fd075104842702938f24a4e946a71333.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8982554/file/original-c969bb6fd653545b7a8cc8c52fae5f3b.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8982551/file/original-1eea638b4c915e851c6dc583dcfb9050.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8982550/file/original-bca95c8a716a8a0bc63cc03dc6546338.webp?resize=1600x1034",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://cdn.dribbble.com/userupload/8982552/file/original-40078b7eb8115fe9f535e2c0ed6a5997.webp?resize=1600x1034",
+					description: "",
+				},
+			],
+		},
+
 		{
 			name: "PH Holidays",
 			URIName: "ph-holidays",
