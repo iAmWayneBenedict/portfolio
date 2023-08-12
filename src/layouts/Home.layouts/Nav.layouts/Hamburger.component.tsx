@@ -2,6 +2,7 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { handleHamburgerAnim } from "../../../utils/handleMenu";
 
 interface Props {
 	dark?: boolean;
@@ -11,7 +12,8 @@ interface Props {
 		setActive: React.Dispatch<React.SetStateAction<boolean>>
 	) => void;
 }
-
+let isToggle = true;
+let timerId: number;
 const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	const topLine = useRef<HTMLSpanElement>(null);
 	const bottomLine = useRef<HTMLSpanElement>(null);
@@ -25,37 +27,47 @@ const Hamburger: React.FC<Props> = ({ dark, delay, handleNavbar }) => {
 	useEffect(() => {
 		if (onMount) return;
 		handleNavbar(active, setActive);
+		const leftMenu = document.querySelector(".left-menu");
+		leftMenu?.addEventListener("transitionend", () => console.log("ended"));
 	}, [active]);
 
 	let handleClick = (event: React.MouseEvent) => {
-		topLine.current!.style.transform = "rotate(0deg)";
-		bottomLine.current!.style.transform = "rotate(0deg)";
+		handleHamburgerAnim(active, setActive);
+		// timerId = setTimeout(() => {
+		// 	isToggle = true;
+		// }, 1000);
 
-		if (active) {
-			topLine.current!.style.top = "3px";
-			bottomLine.current!.style.bottom = "3px";
+		// if (!isToggle) return;
+		// isToggle = false;
+		// clearTimeout(timerId);
+		// topLine.current!.style.transform = "rotate(0deg)";
+		// bottomLine.current!.style.transform = "rotate(0deg)";
 
-			setActive(false);
-		} else {
-			topLine.current!.style.top = "50%";
-			topLine.current!.style.transform = "translateY(-50%)";
+		// if (active) {
+		// 	topLine.current!.style.top = "3px";
+		// 	bottomLine.current!.style.bottom = "3px";
 
-			bottomLine.current!.style.bottom = "50%";
-			bottomLine.current!.style.transform = "translateY(-50%)";
-			setActive(true);
-		}
+		// 	setActive(false);
+		// } else {
+		// 	topLine.current!.style.top = "50%";
+		// 	topLine.current!.style.transform = "translateY(-50%)";
 
-		if (dark && topLine.current!.classList.contains("bg-[black]")) {
-			topLine.current!.classList.remove("bg-[black]");
-			topLine.current!.classList.add("bg-white");
-			bottomLine.current!.classList.remove("bg-[black]");
-			bottomLine.current!.classList.add("bg-white");
-		} else if (dark && topLine.current!.classList.contains("bg-white")) {
-			topLine.current!.classList.add("bg-[black]");
-			topLine.current!.classList.remove("bg-white");
-			bottomLine.current!.classList.add("bg-[black]");
-			bottomLine.current!.classList.remove("bg-white");
-		}
+		// 	bottomLine.current!.style.bottom = "50%";
+		// 	bottomLine.current!.style.transform = "translateY(-50%)";
+		// 	setActive(true);
+		// }
+
+		// if (dark && topLine.current!.classList.contains("bg-[black]")) {
+		// 	topLine.current!.classList.remove("bg-[black]");
+		// 	topLine.current!.classList.add("bg-white");
+		// 	bottomLine.current!.classList.remove("bg-[black]");
+		// 	bottomLine.current!.classList.add("bg-white");
+		// } else if (dark && topLine.current!.classList.contains("bg-white")) {
+		// 	topLine.current!.classList.add("bg-[black]");
+		// 	topLine.current!.classList.remove("bg-white");
+		// 	bottomLine.current!.classList.add("bg-[black]");
+		// 	bottomLine.current!.classList.remove("bg-white");
+		// }
 
 		setOnMount(false);
 	};

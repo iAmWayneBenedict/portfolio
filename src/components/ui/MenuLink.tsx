@@ -2,7 +2,7 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface Props {
 	text: string;
@@ -11,17 +11,22 @@ interface Props {
 
 const MenuLink: React.FC<Props> = ({ text, href = "#" }) => {
 	const menuText = useRef<HTMLDivElement>(null);
+	const location = useLocation();
+	let clicked = false;
 
 	// const spanText = new SplitType(menuText.current!);
 
 	let tl = gsap.timeline();
 	useEffect(() => {
-		const closeMenu = document.querySelector(".close-menu-btn") as HTMLButtonElement;
+		const closeMenu = document.querySelector(".hamburger") as HTMLButtonElement;
 
-		menuText.current!.addEventListener("click", () => {
+		menuText.current!.addEventListener("click", (event) => {
+			event.preventDefault();
+			if (clicked) return;
+			clicked = true;
 			closeMenu.click();
 		});
-	}, []);
+	}, [location]);
 
 	return (
 		<Link

@@ -36,7 +36,7 @@ const Menu: React.FC<Props> = ({ useReference, historyReturn }) => {
 			ref={useReference}
 			className="menu-con fixed opacity-0 hidden top-0 left-0 w-screen h-screen bg-white z-50 pb-[1px]"
 		>
-			<div className="left-menu hidden bg-[black] w-[15rem] 2xl:w-[20rem] h-0 md:flex flex-col justify-between items-start">
+			<div className="left-menu transition-all duration-0 hidden bg-[black] w-[15rem] 2xl:w-[20rem] h-0 md:flex flex-col justify-between items-start">
 				<div className="top-left-menu text-white font-bold font-quicksand text-2xl w-fit opacity-0">
 					<h1 className="-rotate-90 pr-16 pb-20" style={{ direction: "rtl" }}>
 						WAYNE
