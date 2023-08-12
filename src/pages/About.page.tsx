@@ -165,6 +165,7 @@ const About = () => {
 
 						{AWARDS_LIST.map(([name, year], index) => (
 							<div
+								key={index}
 								className={`py-7 2xl:py-10 gap-5 px-5 md:px-10 border-t-[1px] border-t-[#4F4F4F] flex justify-between ${
 									AWARDS_LIST.length - 1 === index &&
 									"border-b-[1px] border-b-[#4F4F4F]"
