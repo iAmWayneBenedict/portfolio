@@ -20,6 +20,8 @@ let tl3 = gsap.timeline();
 Scrollbar.use(ModalPlugin);
 gsap.registerPlugin(CustomEase);
 
+let isToggle: boolean = true;
+
 const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 	const scroller = document.querySelector(".cursor") as HTMLElement;
 
@@ -43,6 +45,10 @@ const navAnim = (el: HTMLDivElement, isActive: boolean) => {
 		onReverseComplete: () => {
 			el.classList.remove("flex");
 			el.classList.add("hidden");
+			isToggle = true;
+		},
+		onComplete: () => {
+			isToggle = true;
 		},
 	})
 		.to(right, {
@@ -136,28 +142,62 @@ const handleMenu = (params: Params): void => {
 	let { isActive, menu, rHistory, setActive } = params;
 
 	rHistory.current!.addEventListener("click", (event) => {
-		setActive(false);
-		let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
-		let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
-		let nav = document.querySelector("nav")! as HTMLElement;
-		if (nav.classList.contains("bg-[black]") || nav.style.background === "black") {
-			top.classList.remove("bg-[black]");
-			top.classList.add("bg-white");
-			bottom.classList.remove("bg-[black]");
-			bottom.classList.add("bg-white");
-		} else {
-			top.classList.remove("bg-white");
-			top.classList.add("bg-[black]");
-			bottom.classList.remove("bg-white");
-			bottom.classList.add("bg-[black]");
-		}
+		handleHamburgerAnim(isActive, setActive);
+	});
+
+	menuStyle(isActive, menu);
+};
+
+export const handleHamburgerAnim = (
+	active: boolean,
+	setActive: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+	if (!isToggle) return;
+	if (tl.progress() > 0 && tl.progress() < 1) return;
+	isToggle = false;
+	let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
+	let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
+	let nav = document.querySelector("nav")! as HTMLElement;
+
+	if (active) {
 		top.style.top = "3px";
 		bottom.style.bottom = "3px";
 		top.style.transform = "rotate(0deg)";
 		bottom.style.transform = "rotate(0deg)";
-	});
 
-	menuStyle(isActive, menu);
+		setActive(false);
+	} else {
+		top.style.top = "50%";
+		top.style.transform = "translateY(-50%)";
+
+		bottom.style.bottom = "50%";
+		bottom.style.transform = "translateY(-50%)";
+
+		setActive(true);
+	}
+	let dark: boolean;
+	let pathname = window.location.pathname;
+	if (
+		pathname === "/contact" ||
+		pathname === "/about" ||
+		pathname === "/skills" ||
+		pathname === "/timeline"
+	) {
+		dark = true;
+	} else {
+		dark = false;
+	}
+	if (dark && (top.classList.contains("bg-[black]") || top.style.background === "black")) {
+		top.classList.remove("bg-[black]");
+		top.classList.add("bg-white");
+		bottom.classList.remove("bg-[black]");
+		bottom.classList.add("bg-white");
+	} else {
+		top.classList.remove("bg-white");
+		top.classList.add("bg-[black]");
+		bottom.classList.remove("bg-white");
+		bottom.classList.add("bg-[black]");
+	}
 };
 
 export default handleMenu;

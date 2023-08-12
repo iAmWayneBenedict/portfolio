@@ -147,7 +147,7 @@ const Timeline = () => {
 									Department of Information and Communication Technology Region V
 									Camarines Sur Provincial Office
 								</h5>
-								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
+								<div className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
 									<ul className="list-disc flex flex-col gap-5 ml-5">
 										<li>
 											<p>
@@ -177,7 +177,7 @@ const Timeline = () => {
 											</p>
 										</li>
 									</ul>
-								</p>
+								</div>
 							</td>
 						</tr>
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
@@ -202,7 +202,7 @@ const Timeline = () => {
 								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									Municipal Agriculture Office of Bato - <i>Capstone Project</i>
 								</h5>
-								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
+								<div className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
 									<ul className="list-disc flex flex-col gap-5 ml-5">
 										<li>
 											<p>
@@ -231,7 +231,7 @@ const Timeline = () => {
 											</p>
 										</li>
 									</ul>
-								</p>
+								</div>
 							</td>
 						</tr>
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">

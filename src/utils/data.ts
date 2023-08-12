@@ -42,13 +42,13 @@ const data: Props = {
 			dribbleLink:
 				"https://dribbble.com/shots/22251731-ICT-Diagnostic-Examination-Management-System",
 			thumbnail:
-				"https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/9239914/file/original-bdd6381521f1e01c9f0218b8c90b41a8.png?resize=1600x1034",
 			thumbnail_small:
-				"https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
+				"https://cdn.dribbble.com/userupload/9239914/file/original-bdd6381521f1e01c9f0218b8c90b41a8.png?resize=1600x1034",
 			images: [
 				{
 					name: "Dashboard",
-					image: "https://cdn.dribbble.com/userupload/9239914/file/original-26a9b8457d79c45aa82851090ac721fc.webp?resize=1600x1034",
+					image: "https://cdn.dribbble.com/userupload/9239914/file/original-bdd6381521f1e01c9f0218b8c90b41a8.png?resize=1600x1034",
 					description: "",
 				},
 				{
