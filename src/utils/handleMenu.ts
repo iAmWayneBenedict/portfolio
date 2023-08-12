@@ -147,13 +147,16 @@ const handleMenu = (params: Params): void => {
 
 	menuStyle(isActive, menu);
 };
-
+let clicked = false;
 export const handleHamburgerAnim = (
 	active: boolean,
 	setActive: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
 	if (!isToggle) return;
-	if (tl.progress() > 0 && tl.progress() < 1) return;
+	if (tl.progress() === 0) clicked = false;
+	if (tl.progress() === 1) clicked = true;
+	if (tl.progress() > 0 && tl.progress() < 1 && clicked) return;
+
 	isToggle = false;
 	let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
 	let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;

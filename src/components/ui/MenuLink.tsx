@@ -21,10 +21,15 @@ const MenuLink: React.FC<Props> = ({ text, href = "#" }) => {
 		const closeMenu = document.querySelector(".hamburger") as HTMLButtonElement;
 
 		menuText.current!.addEventListener("click", (event) => {
-			if (clicked) return;
+			// console.log(clicked);
+			// if (clicked) return;
 			clicked = true;
 			closeMenu.click();
 		});
+
+		return () => {
+			clicked = false;
+		};
 	}, [location]);
 
 	return (
