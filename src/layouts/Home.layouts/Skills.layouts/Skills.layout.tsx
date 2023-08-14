@@ -77,7 +77,7 @@ const Skills = () => {
 								>
 									02
 								</span>
-								<span className="order-1 md:order-2">HELP.</span>
+								<span className="order-1 md:order-2">PLAN.</span>
 							</h3>
 						</div>
 						<div
