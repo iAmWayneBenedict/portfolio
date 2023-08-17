@@ -40,9 +40,9 @@ const Skill: React.FC<Props> = ({ el, index, SKILLS_LIST }) => {
 	}, []);
 	return (
 		<div ref={con} className="flex flex-col items-end opacity-20" key={index}>
-			<h5 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-semibold text-[#444444]">
+			<span className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-semibold text-[#444444]">
 				0{index + 1}.
-			</h5>
+			</span>
 			<div
 				className={`w-full flex flex-col gap-2 2xl:gap-5 pb-10 relative overflow-hidden ${
 					!isLast && "border-b-[1px] border-b-gray-300"
