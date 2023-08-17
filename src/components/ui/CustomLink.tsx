@@ -27,6 +27,7 @@ const CustomLink: React.FC<Props> = ({ children, reference, to, className }) => 
 			to={to}
 			className={className}
 			onClick={(event) => clickHandler(event, to)}
+			aria-label={to.split("/").at(to.split("/").length - 1)}
 		>
 			{children}
 		</Link>
