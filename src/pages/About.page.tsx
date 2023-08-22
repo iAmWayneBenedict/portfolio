@@ -210,9 +210,9 @@ const About = () => {
 					</div>
 					<div className="w-full mt-64">
 						<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl  leading-normal md:leading-relaxed text-center">
-							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
-							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
-							Magnis interdum turpis in nec metus eleifend molestie bibendum.
+							Developing web applications using wide array of technologies. I am
+							currently learning and exploring other technologies to broaden the
+							perspective for software development.
 						</p>
 					</div>
 					<div className="mt-36 flex flex-col items-center">
@@ -220,13 +220,13 @@ const About = () => {
 						<div className="flex flex-wrap max-w-3xl gap-14 justify-center mt-20">
 							<IconContext.Provider
 								value={{
-									size: isMobileView ? "2rem" : "3rem",
+									size: isMobileView ? "2rem" : "3.5rem",
 								}}
 							>
 								{Object.keys(icons)
 									.filter((key) => key !== "laravel" && key !== "codeigniter")
 									.map((key, index) => (
-										<Icon key={key} name={key} />
+										<Icon key={key} className="flex-1" name={key} />
 									))}
 							</IconContext.Provider>
 						</div>

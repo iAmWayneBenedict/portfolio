@@ -60,11 +60,13 @@ export const icons: IconProps = {
 	git: <BiLogoGit />,
 };
 
-const Icon = ({ name }: { name: keyof typeof icons }) => {
+const Icon = ({ name, className = "" }: { name: keyof typeof icons; className?: string }) => {
 	return (
-		<div className="flex flex-col items-center">
-			{icons[name]}
-			<span className="text-sm mt-2">{name}</span>
+		<div className={"flex justify-center " + className}>
+			<div className="flex flex-col items-center">
+				{icons[name]}
+				<span className="text-sm mt-2 text-center">{name}</span>
+			</div>
 		</div>
 	);
 };

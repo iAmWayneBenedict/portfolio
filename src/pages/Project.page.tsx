@@ -392,7 +392,10 @@ const Project = () => {
 															>
 																{filteredItem[0].technologies!.map(
 																	(tech) => (
-																		<Icon name={tech} />
+																		<Icon
+																			key={tech}
+																			name={tech}
+																		/>
 																	)
 																)}
 															</IconContext.Provider>
