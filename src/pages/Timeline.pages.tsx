@@ -256,12 +256,6 @@ const Timeline = () => {
 								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									Camarines Sur Polytechnic Colleges
 								</h5>
-								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Dignissimos velit fugit alias, ab nisi ducimus, minus facilis
-									exercitationem nam deserunt recusandae adipisci nesciunt,
-									voluptates non. Ea aliquid corrupti numquam culpa.
-								</p>
 							</td>
 						</tr>
 						<tr className="border-0 md:border-y-[1px] border-[#4F4F4F]">
@@ -286,12 +280,6 @@ const Timeline = () => {
 								<h5 className="text-sm md:text-base 2xl:text-lg text-[#858585] max-w-5xl">
 									ACLC College of Iriga, Inc.
 								</h5>
-								<p className="mt-5 max-w-5xl text-base md:text-lg 2xl:text-xl text-[#d8d8d8]">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Dignissimos velit fugit alias, ab nisi ducimus, minus facilis
-									exercitationem nam deserunt recusandae adipisci nesciunt,
-									voluptates non. Ea aliquid corrupti numquam culpa.
-								</p>
 							</td>
 						</tr>
 					</tbody>

@@ -66,58 +66,6 @@ const Designs = () => {
 			swiper.slidePrev();
 		}
 	};
-
-	// useEffect(() => {
-	// 	gsap.to(swiperCon.current!.firstElementChild, {
-	// 		paddingLeft: 0,
-	// 		paddingRight: 0,
-	// 		scrollTrigger: {
-	// 			trigger: swiperCon.current!,
-	// 			start: "center center",
-	// 			pin: true,
-	// 			scrub: true,
-	// 		},
-	// 	});
-	// }, []);
-
-	// useEffect(() => {
-	// 	if (typeof window !== "undefined") {
-	// 		const bgCon = document.querySelector(".bg-con") as HTMLDivElement;
-	// 		const runAnimation = gsap.context(() => {
-	// 			let a = gsap.to(bgCon, {
-	// 				backgroundColor: "black",
-	// 				duration: 1,
-
-	// 				scrollTrigger: {
-	// 					trigger: designCon.current,
-	// 					start: "top center",
-	// 					toggleActions: "none play reverse none",
-	// 					onToggle: () => {
-	// 						console.log("toggle");
-	// 					},
-	// 					onEnterBack: () => {
-	// 						console.log("enter back");
-	// 						gsap.to(bgCon, {
-	// 							background: "#000000",
-	// 							duration: 1,
-	// 						});
-	// 					},
-	// 					onLeave: () => {
-	// 						console.log("leave");
-	// 						gsap.to(bgCon, {
-	// 							background: "#ffffff",
-	// 							duration: 1,
-	// 						});
-	// 					},
-	// 				},
-	// 			});
-	// 			console.log(a, designCon.current);
-	// 		});
-
-	// 		ScrollTrigger.refresh();
-	// 		return () => runAnimation.revert();
-	// 	}
-	// }, []);
 	let isMobileView = useMediaQuery({ query: "(max-width: 480px)" });
 	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 	return (
@@ -141,9 +89,8 @@ const Designs = () => {
 						overrideConClasses="pt-24"
 					/>
 				</div>
-				<TitleHeading />
 			</div>
-			<div className="px-5 md:px-20 mt-8 md:mt-12 lg:mt-24 flex items-center">
+			<div className="px-5 md:px-20 mt-8 md:mt-12 lg:mt-56 flex items-center">
 				<div className="basis-1/2">
 					<div className="w-2/3 h-px bg-white"></div>
 				</div>

@@ -13,7 +13,7 @@ import { BrowserView } from "react-device-detect";
 import Menu from "./components/ui/Menu.component";
 import { useCallback } from "react";
 import handleMenu from "./utils/handleMenu";
-import { BrowserRouter, Route, Routes, redirect, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Projects from "./pages/Projects.page";
 import Lenis from "@studio-freight/lenis";
@@ -22,7 +22,6 @@ import Contact from "./pages/Contact.page";
 import About from "./pages/About.page";
 import Timeline from "./pages/Timeline.pages";
 import Skills from "./pages/Skills.page";
-import emailjs from "@emailjs/browser";
 
 function App() {
 	return (
