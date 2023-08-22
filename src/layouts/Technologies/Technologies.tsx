@@ -17,10 +17,10 @@ const Technologies: React.FC = () => {
 							className="overflow-y-hidden cursor-default whitespace-nowrap"
 							speed={50}
 						>
-							<div className="flex gap-14 marquee-title relative text-[#3f3e3c] m-0 will-change-transform">
+							<div className="flex gap-14 marquee-title relative text-[#3f3e3c] m-0 will-change-transform px-6">
 								<IconContext.Provider
 									value={{
-										size: isMobileView ? "2.5rem" : "4rem",
+										size: isMobileView ? "2.5rem" : "3.75rem",
 									}}
 								>
 									{Object.keys(icons)

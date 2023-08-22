@@ -147,7 +147,10 @@ const Hero: React.FC<Props> = ({ isLoaded }) => {
 								React, Node.js, MongoDB, and Express.js.{" "}
 							</span>
 							{!isMobileView && (
-								<span>I am also exploring .NET Web API and Next.js.</span>
+								<span>
+									I am also exploring Next.js for building SEO friendly
+									applications.
+								</span>
 							)}
 						</div>
 					</div>
