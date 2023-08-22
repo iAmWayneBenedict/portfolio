@@ -12,6 +12,9 @@ import { useMediaQuery } from "react-responsive";
 import { ContactLayouts } from "../layouts/Home.layouts/Contact/Contact.layouts";
 import { useInView } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import parse from "html-react-parser";
+import Icon from "../utils/Icon";
+import { IconContext } from "react-icons";
 
 const Project = () => {
 	const location = useLocation();
@@ -291,14 +294,9 @@ const Project = () => {
 					<div className="mt-16 sm:mt-24 2xl:mt-32">
 						<p
 							ref={overview}
-							className="text-center max-w-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-xl 2xl:text-2xl"
+							className="text-center max-6xl leading-normal md:leading-relaxed xl:leading-[1.75] text-base md:text-lg lg:text-xl 2xl:text-2xl"
 						>
-							{filteredItem[0].description ||
-								"Lorem ipsum dolor sit amet consectetur. Mi\
-														nec scelerisque et venenatis suspendisse\
-														vitae velit. Tincidunt sit in eu at bibendum\
-														elit felis. Magnis interdum turpis in nec\
-														metus eleifend molestie bibendum."}
+							{filteredItem[0].description}
 						</p>
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-7 2xl:mt-10">
@@ -319,21 +317,6 @@ const Project = () => {
 										className="group project-imgCon relative w-full h-full max-h-[70rem] overflow-hidden"
 										style={index === 0 ? { opacity: 0 } : {}}
 									>
-										{/* <picture>
-										<source
-											media="(max-width: 640px)"
-											srcSet={current.image.replace(
-												"1600x1034",
-												"752x486&vertical=center"
-											)}
-										/>
-										<source media="(min-width: 641px)" srcSet={current.image} />
-										<img
-											className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
-											src={current.image}
-											alt="Flowers"
-										/>
-									</picture> */}
 										<img
 											className="group-hover:scale-[1.05] transition-transform duration-500 ease-out w-full h-full object-cover object-center"
 											src={current.image}
@@ -368,17 +351,11 @@ const Project = () => {
 												<div className="w-full mb-20 md:mb-0 md:w-1/2 flex justify-center">
 													<div className="mt-14 max-w-2xl">
 														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
-															{filteredItem[0].purpose
-																? "THE PROJECT PURPOSE"
-																: "THE DESIGN PROCESS"}
+															{filteredItem[0].purpose &&
+																"THE PROJECT PURPOSE"}
 														</h5>
 														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
-															{filteredItem[0].purpose ||
-																"Lorem ipsum dolor sit amet consectetur. Mi\
-														nec scelerisque et venenatis suspendisse\
-														vitae velit. Tincidunt sit in eu at bibendum\
-														elit felis. Magnis interdum turpis in nec\
-														metus eleifend molestie bibendum."}
+															{filteredItem[0].purpose}
 														</p>
 													</div>
 												</div>
@@ -389,19 +366,14 @@ const Project = () => {
 									{index !== 0 &&
 										index === 3 &&
 										location.pathname.includes("projects") && (
-											<div className="w-full flex flex-col xl:flex-row gap-0 xl:gap-10">
+											<div className="w-full flex flex-col xl:flex-row gap-0 xl:gap-10 my-14 md:my-0">
 												<div className="flex-1">
 													<div className="mt-14 max-w-2xl">
 														<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 															KEY FEATURES
 														</h5>
 														<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
-															{filteredItem[0].key_features ||
-																"Lorem ipsum dolor sit amet consectetur. Mi\
-														nec scelerisque et venenatis suspendisse\
-														vitae velit. Tincidunt sit in eu at bibendum\
-														elit felis. Magnis interdum turpis in nec\
-														metus eleifend molestie bibendum."}
+															{parse(filteredItem[0].key_features!)}
 														</p>
 													</div>
 												</div>
@@ -411,46 +383,36 @@ const Project = () => {
 															TECHNOLOGIES
 														</h5>
 														<div className="flex flex-wrap max-w-2xl gap-10 justify-start">
-															{[
-																"/assets/ico/sass.svg",
-																"/assets/ico/bootstrap.svg",
-																"/assets/ico/html5.svg",
-																"/assets/ico/css3.svg",
-																"/assets/ico/figma-logo.svg",
-																"/assets/ico/git(1).svg",
-																"/assets/ico/mysql.svg",
-																"/assets/ico/java-script.svg",
-																"/assets/ico/php.svg",
-															].map((src, index) => (
-																<img
-																	key={index}
-																	src={src}
-																	className="w-8 lg:w-12"
-																	alt=""
-																/>
-															))}
+															<IconContext.Provider
+																value={{
+																	size: isMobileView
+																		? "2rem"
+																		: "2.5rem",
+																}}
+															>
+																{filteredItem[0].technologies!.map(
+																	(tech) => (
+																		<Icon name={tech} />
+																	)
+																)}
+															</IconContext.Provider>
 														</div>
 													</div>
 												</div>
 											</div>
 										)}
-									{index === 3 && location.pathname.includes("designs") && (
+									{/* {index === 3 && location.pathname.includes("designs") && (
 										<div className="w-full flex">
 											<div className="mt-14 max-w-2xl">
 												<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 													REFLECTION AND LEARNING
 												</h5>
 												<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
-													{filteredItem[0].key_features ||
-														"Lorem ipsum dolor sit amet consectetur. Mi\
-														nec scelerisque et venenatis suspendisse\
-														vitae velit. Tincidunt sit in eu at bibendum\
-														elit felis. Magnis interdum turpis in nec\
-														metus eleifend molestie bibendum."}
+													{filteredItem[0].learning}
 												</p>
 											</div>
 										</div>
-									)}
+									)} */}
 								</div>
 							);
 						})}
@@ -459,16 +421,16 @@ const Project = () => {
 			</div>
 			<div className="w-full flex flex-col pt-12">
 				{location.pathname.includes("projects") && (
-					<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 mt-14 max-w-2xl transition-opacity ease duration-1000">
+					<div className="px-5 sm:px-8 md:px-12 xl:px-16 2xl:px-24 mt-14 max-w-5xl transition-opacity ease duration-1000">
 						<h5 className="text-[#4E4E4E] mb-3 sm:mb-5 text-sm sm:text-base">
 							ROLES AND RESPONSIBILITIES
 						</h5>
-						<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl text-[black]">
-							{filteredItem[0].roles_and_responsibilities ||
-								"Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis\
-						suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis. Magnis\
-						interdum turpis in nec metus eleifend molestie bibendum."}
-						</p>
+
+						{filteredItem[0].roles_and_responsibilities!.split("\n").map((str) => (
+							<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl text-[black] mb-5">
+								{str}
+							</p>
+						))}
 					</div>
 				)}
 				<div className="mt-96" ref={changeBg}>

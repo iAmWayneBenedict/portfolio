@@ -59,13 +59,10 @@ const Certificates = () => {
 					<div className="flex flex-col flex-wrap gap-10 lg:gap-20 mt-36 w-full h-full">
 						<div className="flex flex-col md:flex-row gap-5 sm:gap-10 lg:gap-20">
 							<div className="cert-card flex-1">
-								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
-									<LazyLoadImage
-										key={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										alt={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										src={"/assets/img/daniel-korpai-r73OFSry5AI-unsplash.webp"}
-										effect="blur"
-										wrapperClassName="w-full h-full"
+								<div className="w-full h-auto max-h-[40rem] overflow-hidden">
+									<img
+										alt={"/assets/img/Screenshot 2023-08-22 165706.webp"}
+										src={"/assets/img/Screenshot 2023-08-22 165706.webp"}
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
 										style={{
 											transition: "all 1s ease",
@@ -73,17 +70,14 @@ const Certificates = () => {
 									/>
 								</div>
 								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
-									Take a single step at a time. Make it short yet fulfilling.
+									Python Programming Essential Course
 								</p>
 							</div>
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
-									<LazyLoadImage
-										key={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
-										alt={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
-										src={"/assets/img/davey-gravy-DmO662qvWO8-unsplash.webp"}
-										effect="blur"
-										wrapperClassName="w-full h-full"
+									<img
+										alt={"/assets/img/Screenshot 2023-08-22 165748.webp"}
+										src={"/assets/img/Screenshot 2023-08-22 165748.webp"}
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
 										style={{
 											transition: "all 1s ease",
@@ -91,25 +85,16 @@ const Certificates = () => {
 									/>
 								</div>
 								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
-									Take a single step at a time. Make it short yet fulfilling.{" "}
+									Data Science Discovery
 								</p>
 							</div>
 						</div>
 						<div className="flex flex-col md:flex-row gap-5 sm:gap-10 lg:gap-20">
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
-									<LazyLoadImage
-										key={
-											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
-										}
-										alt={
-											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
-										}
-										src={
-											"/assets/img/dzmitry-tselabionak-dSWBjiKi5uk-unsplash.jpg"
-										}
-										effect="blur"
-										wrapperClassName="w-full h-full"
+									<img
+										alt={"/assets/img/d156550eaf31155ce7042c592c2564b0.webp"}
+										src={"/assets/img/d156550eaf31155ce7042c592c2564b0.webp"}
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
 										style={{
 											transition: "all 1s ease",
@@ -117,17 +102,14 @@ const Certificates = () => {
 									/>
 								</div>
 								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
-									Take a single step at a time. Make it short yet fulfilling.
+									Technical Support Fundamentals
 								</p>
 							</div>
 							<div className="cert-card flex-1">
 								<div className="w-full h-fit max-h-[40rem] overflow-hidden">
-									<LazyLoadImage
-										key={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
-										alt={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
-										src={"/assets/img/steve-johnson-bTulpIPKxGg-unsplash.webp"}
-										effect="blur"
-										wrapperClassName="w-full h-full"
+									<img
+										alt={"/assets/img/8da46cdf1200caf0512fe68b1981e20d.webp"}
+										src={"/assets/img/8da46cdf1200caf0512fe68b1981e20d.webp"}
 										className="bg-gray-300 w-full h-full object-cover border-0 hover:scale-[1.05]"
 										style={{
 											transition: "all 1s ease",
@@ -135,7 +117,7 @@ const Certificates = () => {
 									/>
 								</div>
 								<p className="mt-5 md:mt-8 lg:mt-10 text-sm md:text-base">
-									Take a single step at a time. Make it short yet fulfilling.{" "}
+									CCS Skills Competition (Web Design)
 								</p>
 							</div>
 						</div>
