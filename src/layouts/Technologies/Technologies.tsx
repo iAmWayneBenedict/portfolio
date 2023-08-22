@@ -1,8 +1,12 @@
 import Marquee from "react-fast-marquee";
 import MarqueeText from "../Home.layouts/Designs.layouts/MarqueeText.layouts";
 import React from "react";
+import { IconContext } from "react-icons";
+import Icon, { icons } from "../../utils/Icon";
+import { useMediaQuery } from "react-responsive";
 
 const Technologies: React.FC = () => {
+	let isMobileView = useMediaQuery({ query: "(max-width: 767px)" });
 	return (
 		<div className="mt-64">
 			<h1 className="text-center font-bold text-xl lg:text-2xl">TECHNOLOGIES</h1>
@@ -13,27 +17,18 @@ const Technologies: React.FC = () => {
 							className="overflow-y-hidden cursor-default whitespace-nowrap"
 							speed={50}
 						>
-							<div className="flex gap-14 marquee-title relative text-[#99948d] m-0 will-change-transform">
-								{[
-									"/assets/ico/react%201.svg",
-									"/assets/ico/express.svg",
-									"/assets/ico/nodejs%201.svg",
-									"/assets/ico/typescript.svg",
-									"/assets/ico/sass.svg",
-									"/assets/ico/tailwind-css.svg",
-									"/assets/ico/bootstrap.svg",
-									"/assets/ico/html5.svg",
-									"/assets/ico/css3.svg",
-									"/assets/ico/figma-logo.svg",
-									"/assets/ico/npm.svg",
-									"/assets/ico/postman.svg",
-									"/assets/ico/git(1).svg",
-									"/assets/ico/mysql.svg",
-									"/assets/ico/java-script.svg",
-									"/assets/ico/php.svg",
-								].map((src, index) => (
-									<img key={index} src={src} className="w-12 lg:w-16" alt="" />
-								))}
+							<div className="flex gap-14 marquee-title relative text-[#3f3e3c] m-0 will-change-transform">
+								<IconContext.Provider
+									value={{
+										size: isMobileView ? "2.5rem" : "4rem",
+									}}
+								>
+									{Object.keys(icons)
+										.filter((key) => key !== "laravel" && key !== "codeigniter")
+										.map((key, index) => (
+											<Icon key={key} name={key} />
+										))}
+								</IconContext.Provider>
 							</div>
 						</Marquee>
 					</div>
