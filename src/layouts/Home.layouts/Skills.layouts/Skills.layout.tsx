@@ -6,24 +6,22 @@ import { useMediaQuery } from "react-responsive";
 
 const SKILLS_LIST = [
 	{
-		name: "Web development",
-		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!",
+		name: "Web Development",
+		description: "Develop static and dynamic web-applications",
 	},
 	{
 		name: "UI Design",
 		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!",
+			"Capable of crafting both low and high fidelity wireframes to provide prototype for your application",
 	},
 	{
 		name: "RESTful API Development",
-		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!",
+		description: "Bridging the gap between your front-end and back-end",
 	},
 	{
 		name: "Web Scraping",
 		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, obcaecati!",
+			"Scraping your needed data from different sources and process it based on your needs",
 	},
 ];
 
