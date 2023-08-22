@@ -116,7 +116,8 @@ const Project = () => {
 				{
 					opacity: 0,
 				},
-				{ opacity: 1, duration: 1, delay: 0.25 }
+				{ opacity: 1, duration: 1 },
+				"-=.75"
 			);
 
 		return () => {
