@@ -4,6 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { ContactLayouts } from "../layouts/Home.layouts/Contact/Contact.layouts";
 import { Helmet } from "react-helmet-async";
+import Icon, { icons } from "../utils/Icon";
+import { IconContext } from "react-icons";
+import { useMediaQuery } from "react-responsive";
 
 const AWARDS_LIST = [
 	["DEAN'S LISTER (4th Year)", 2023],
@@ -112,7 +115,7 @@ const About = () => {
 			});
 		});
 	}, []);
-
+	let isMobileView = useMediaQuery({ query: "(max-width: 767px)" });
 	return (
 		<>
 			<Helmet>
@@ -139,13 +142,41 @@ const About = () => {
 				<div ref={body} className="px-5 md:px-24 ">
 					<div className="w-full flex flex-col lg:flex-row justify-between gap-10 py-64">
 						<div className="flex-1 max-w-4xl">
-							<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
-								Wayne Benedict Iraola consectetur. Mi nec scelerisque et venenatis
-								suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
-								Magnis interdum turpis in nec metus eleifend molestie bibendum.
-							</p>
+							<div className="text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
+								<p>
+									I'm Wayne Benedict Iraola a Fullstack Developer and Designer
+									from the Philippines. I recently graduate with a degree of
+									Bachelor of Science in Information Technology.
+								</p>
+								<br />
+								<p>
+									My goal is to help businesses and individuals in providing
+									software solutions based on their needs. I have a deep passion
+									for creating softwares that is beautiful, responsive, and
+									instinctive experience.
+								</p>
+								<br />
+								<p>
+									I have experience in developing software solutions both as part
+									of a team and as a solo developer. Throughout my Capstone
+									Project and Internship, I was responsible for leading a team in
+									the development of the overall project and coordinating the
+									front-end team to deliver digital outcomes for clients. In
+									addition, I mostly work with the front-end side of the system to
+									deliver a responsive and user friendly web applications. I also
+									have knowledge in creating RESTful APIs, encompassing response
+									structures and HTTPS methods. Furthermore, I possess experience
+									in the back-end side, utilizing technologies such as Node.js,
+									PHP, MySQL, and MongoDB.
+								</p>
+								<br />
+								<p>
+									With these projects I have gained new insights in working with
+									different roles in software development.
+								</p>
+							</div>
 						</div>
-						<div className="flex-1 mt-36 lg:mt-0 flex flex-col items-end max-w-3xl">
+						<div className="flex-1 mt-36 lg:mt-0 flex flex-col items-end justify-center max-w-3xl">
 							<span className="text-5xl 2xl:text-6xl text-right font-semibold text-gray-400">
 								<span className="font-cinzel">“</span>Make it simple, but
 								significant. <span className="font-cinzel">”</span>
@@ -158,9 +189,8 @@ const About = () => {
 							AWARDS AND <br /> CERTIFICATIONS
 						</h1>
 						<p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl  mb-24 max-w-4xl">
-							Lorem ipsum dolor sit amet consectetur. Mi nec scelerisque et venenatis
-							suspendisse vitae velit. Tincidunt sit in eu at bibendum elit felis.
-							Magnis interdum turpis in nec metus eleifend molestie bibendum.
+							I actively participate on challenges and improve my skills in every way
+							possible
 						</p>
 
 						{AWARDS_LIST.map(([name, year], index) => (
@@ -188,32 +218,17 @@ const About = () => {
 					<div className="mt-36 flex flex-col items-center">
 						<h1 className="text-center font-bold text-xl lg:text-2xl">TECHNOLOGIES</h1>
 						<div className="flex flex-wrap max-w-3xl gap-14 justify-center mt-20">
-							{[
-								"/assets/ico/react%201.svg",
-								"/assets/ico/express.svg",
-								"/assets/ico/nodejs%201.svg",
-								"/assets/ico/typescript.svg",
-								"/assets/ico/sass.svg",
-								"/assets/ico/tailwind-css.svg",
-								"/assets/ico/bootstrap.svg",
-								"/assets/ico/html5.svg",
-								"/assets/ico/css3.svg",
-								"/assets/ico/figma-logo.svg",
-								"/assets/ico/npm.svg",
-								"/assets/ico/postman.svg",
-								"/assets/ico/git(1).svg",
-								"/assets/ico/mysql.svg",
-								"/assets/ico/java-script.svg",
-								"/assets/ico/php.svg",
-							].map((src, index) => (
-								<img
-									key={index}
-									src={src}
-									className="w-12 lg:w-20"
-									style={{ filter: "invert(1)" }}
-									alt=""
-								/>
-							))}
+							<IconContext.Provider
+								value={{
+									size: isMobileView ? "2rem" : "3rem",
+								}}
+							>
+								{Object.keys(icons)
+									.filter((key) => key !== "laravel" && key !== "codeigniter")
+									.map((key, index) => (
+										<Icon key={key} name={key} />
+									))}
+							</IconContext.Provider>
 						</div>
 					</div>
 				</div>

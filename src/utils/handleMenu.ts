@@ -161,7 +161,7 @@ export const handleHamburgerAnim = (
 	let top = document.querySelector(".hamburger")!.children[0] as HTMLSpanElement;
 	let bottom = document.querySelector(".hamburger")!.children[1] as HTMLSpanElement;
 	let nav = document.querySelector("nav")! as HTMLElement;
-
+	console.log(active)
 	if (active) {
 		top.style.top = "3px";
 		bottom.style.bottom = "3px";
