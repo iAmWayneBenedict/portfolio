@@ -94,7 +94,7 @@ const Designs = () => {
 				<div className="basis-1/2">
 					<div className="w-2/3 h-px bg-white"></div>
 				</div>
-				<div className="basis-1/2 flex justify-end">
+				<div className="basis-1/2 flex justify-end z-10">
 					<div className="icons inline-flex justify-around my-0 sm:mt-8 sm:mb-10 gap-7 order-2 md:order-1">
 						<button title="back" type="button">
 							<img
