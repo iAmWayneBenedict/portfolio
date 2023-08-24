@@ -24,7 +24,7 @@ const Technologies: React.FC = () => {
 									}}
 								>
 									{Object.keys(icons)
-										.filter((key) => key !== "laravel" && key !== "codeigniter")
+										// .filter((key) => key !== "laravel" && key !== "codeigniter")
 										.map((key, index) => (
 											<Icon key={key} name={key} />
 										))}
