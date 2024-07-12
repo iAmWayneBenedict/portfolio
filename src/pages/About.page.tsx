@@ -9,6 +9,7 @@ import { IconContext } from "react-icons";
 import { useMediaQuery } from "react-responsive";
 
 const AWARDS_LIST = [
+	["CIVIL SERVICE ELIGIBLE (Professional)", 2024],
 	["DEAN'S LISTER (4th Year)", 2023],
 	["ICT DIAGNOSTIC EXAM PASSER", 2023],
 	["1ST INTELLISEVEN CAPTURE THE FLAG WINNER", 2023],
