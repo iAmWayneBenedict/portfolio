@@ -146,8 +146,7 @@ const About = () => {
 							<div className="text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-normal md:leading-relaxed xl:leading-loose">
 								<p>
 									I'm Wayne Benedict Iraola a Fullstack Developer and Designer
-									from the Philippines. I recently graduate with a degree of
-									Bachelor of Science in Information Technology.
+									from the Philippines.
 								</p>
 								<br />
 								<p>
@@ -159,10 +158,9 @@ const About = () => {
 								<br />
 								<p>
 									I have experience in developing software solutions both as part
-									of a team and as a solo developer. Throughout my Capstone
-									Project and Internship, I was responsible for leading a team in
+									of a team and as a solo developer. Throughout my experience, I was responsible for leading a team in
 									the development of the overall project and coordinating the
-									front-end team to deliver digital outcomes for clients. In
+									back-end team to deliver digital outcomes for clients. In
 									addition, I mostly work with the front-end side of the system to
 									deliver a responsive and user friendly web applications. I also
 									have knowledge in creating RESTful APIs, encompassing response
