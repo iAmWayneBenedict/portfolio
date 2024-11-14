@@ -25,6 +25,7 @@ import {
 	SiPostman,
 	SiPuppeteer,
 	SiSupabase,
+	SiMui
 } from "react-icons/si";
 import { DiNodejs, DiReact } from "react-icons/di";
 
@@ -43,6 +44,7 @@ export const icons: IconProps = {
 	alpinejs: <SiAlpinedotjs />,
 	bootstrap: <BiLogoBootstrap />,
 	tailwindcss: <BiLogoTailwindCss />,
+	mui: <SiMui />,
 	ejs: <BiSolidFileJs />,
 	puppeteer: <SiPuppeteer />,
 	nodejs: <DiNodejs />,
