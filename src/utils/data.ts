@@ -36,6 +36,74 @@ interface Props {
 const data: Props = {
 	projects: [
 		{
+			name: "RCollabs",
+			URIName: "rcollabs",
+			categoryType: "projects",
+			category: ["branding"],
+			categoryDescription: "RCollabs",
+			status: "ongoing",
+			description:
+				"A personal project website designed to provide a resource collection for developers. This project was built using Next.js for full-stack development, Supabase Postgres and Drizzle ORM for database management, and TailwindCSS, Shadcn, and NextUI for styling",
+			purpose:
+				"This project is designed to make life easier for developers by offering a centralized space to discover, save, and revisit valuable resources like tools, tutorials, and templates. It’s more than just a resource hub—it also gives developers the chance to showcase their skills through personalized portfolios, making it easier to connect with other developers or potential clients looking to bring their ideas to life. Whether it’s finding what you need or showing off your work, this platform aims to be a one-stop shop for everything developers need to stay organized and stand out.",
+			key_features:
+				"This project comes with a collection of resources and portfolios for users to check out and share. It also packs a bunch of handy features, like:<ul class='list-disc mt-5 ml-10'><li>Resource filtering and bookmarks to quickly find and save stuff you need.</li><li>Web scraping to grab data for resources and portfolios, so you don’t have to fill out endless forms.</li><li>Easy sign-in with Google or GitHub for quick access.</li><li>Email verification for those who prefer regular email sign-ups.</li><li>More features are on the way and still in the works!</li></ul>",
+			roles_and_responsibilities:
+				"As the sole developer, I'm responsible for every aspect of this project, from the initial design to the final deployment. I've got my hands on everything, from crafting a user-friendly interface to building the complex back-end systems and managing the database. My goal is to deliver a top-notch application that not only looks good but also works flawlessly. I'm committed to paying close attention to detail, tackling challenges head-on, and optimizing performance for a seamless user experience. I'm always open to feedback and eager to iterate on the design and functionality to continuously improve the application.",
+			technologies: [
+				"html",
+				"css",
+				"javascript",
+				"tailwindcss",
+				"nextjs",
+				"supabase",
+				"drizzle",
+				"postgresql",
+				"figma",
+				"git",
+				"github",
+			],
+			type: "UI/UX Design, Development",
+			githubLink: "https://github.com/iAmWayneBenedict/resource-collab",
+			thumbnail:
+				"https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182143/MacBook_Pro_16__-_49_pjsgg2.png",
+			thumbnail_small:
+				"https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182143/MacBook_Pro_16__-_49_pjsgg2.png",
+			images: [
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182143/MacBook_Pro_16__-_49_pjsgg2.png",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182143/MacBook_Pro_16__-_48_rpb3zp.png",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182143/MacBook_Pro_16__-_51_wlnprz.png",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182890/MacBook_Pro_16__-_50_p7g15y.png",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182142/MacBook_Pro_16__-_52_qivq71.png",
+					description: "",
+				},
+				{
+					name: "Dashboard",
+					image: "https://res.cloudinary.com/djvrfdu7o/image/upload/v1732182142/MacBook_Pro_16__-_53_qhqzbq.png",
+					description: "",
+				},
+				
+			],
+		},
+		{
 			name: "DICT Management System",
 			URIName: "dict-management-system",
 			categoryType: "projects",

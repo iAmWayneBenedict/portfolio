@@ -302,9 +302,7 @@ const Project = () => {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-20 mt-7 2xl:mt-10">
 						{filteredItem[0]?.images.map((current: ImageProps, index: number) => {
-							console.log(
-								index % 3 === 0 && !isMobileView ? "col-span-2" : "col-span-1"
-							);
+							
 							return (
 								<div
 									className={`${
@@ -430,8 +428,8 @@ const Project = () => {
 							ROLES AND RESPONSIBILITIES
 						</h5>
 
-						{filteredItem[0].roles_and_responsibilities!.split("\n").map((str) => (
-							<p className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl text-[black] mb-5">
+						{filteredItem[0].roles_and_responsibilities!.split("\n").map((str, index) => (
+							<p key={index} className="leading-normal lg:leading-8 text-base md:text-lg lg:text-xl 2xl:text-2xl text-[black] mb-5">
 								{str}
 							</p>
 						))}

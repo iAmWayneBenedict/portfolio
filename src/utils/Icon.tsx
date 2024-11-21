@@ -14,6 +14,7 @@ import {
 	BiLogoTailwindCss,
 	BiLogoTypescript,
 	BiSolidFileJs,
+	BiLogoPostgresql
 } from "react-icons/bi";
 import {
 	SiAlpinedotjs,
@@ -25,6 +26,9 @@ import {
 	SiPostman,
 	SiPuppeteer,
 	SiSupabase,
+	SiMui,
+	SiNextdotjs,
+	SiDrizzle,
 } from "react-icons/si";
 import { DiNodejs, DiReact } from "react-icons/di";
 
@@ -39,8 +43,10 @@ export const icons: IconProps = {
 	javascript: <BiLogoJavascript />,
 	typescript: <BiLogoTypescript />,
 	jquery: <BiLogoJquery />,
+	nextjs: <SiNextdotjs />,
 	reactjs: <BiLogoReact />,
 	alpinejs: <SiAlpinedotjs />,
+	mui: <SiMui />,
 	bootstrap: <BiLogoBootstrap />,
 	tailwindcss: <BiLogoTailwindCss />,
 	ejs: <BiSolidFileJs />,
@@ -53,7 +59,9 @@ export const icons: IconProps = {
 	codeigniter: <SiCodeigniter />,
 	mongodb: <BiLogoMongodb />,
 	mysql: <SiMysql />,
+	postgresql: <BiLogoPostgresql />,
 	supabase: <SiSupabase />,
+	drizzle: <SiDrizzle />,
 	figma: <BiLogoFigma />,
 	postman: <SiPostman />,
 	github: <BiLogoGithub />,
